@@ -45,15 +45,6 @@ public:
       return true;
     }
     
-    void PrintInfo()
-    {
-        std::cout << "Found:" << std::endl;
-        for(auto it = resMap.begin(); it != resMap.end(); ++it)
-        {
-            std::cout << "  " << it->first << ": " << it->second.size() << std::endl; 
-        }
-    }
-    
     void PackBuffer(google::protobuf::Message* m)
     {
       const google::protobuf::Descriptor *desc = m->GetDescriptor();
@@ -108,8 +99,6 @@ public:
       {
         const google::protobuf::FieldDescriptor *field = desc->field(i);
         const google::protobuf::FieldOptions opts = field->options();
-        
-        //bool fieldRepeated = field->is_repeated();
         
         std::string xmlElement = opts.GetExtension(enigma::proto::resource::gmx);
         
