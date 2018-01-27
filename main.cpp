@@ -7,6 +7,16 @@
 #include <vector>
 #include <string>
 
+class visited_walker : public pugi::xml_tree_walker
+{
+    virtual bool for_each(pugi::xml_node& node)
+    {
+      if (node.type() != 3 && std::string(node.attribute("visited").value()) != "true")
+        std::cerr << "Error: Node at " << node.path() << " was never visited " << std::endl;
+      return true;
+    }
+};
+
 class GMXReader : public pugi::xml_tree_walker
 {
 public:
@@ -75,6 +85,7 @@ public:
               pugi::xml_document doc;
               pugi::xml_parse_result result = doc.load_file(fName.c_str());
               pugi::xml_node root = doc.document_element();
+              root.append_attribute("visited") = "true";
               
               if (!result)
                 std::cerr << "Error opening: " << fName << " : " << result.description() << std::endl;
@@ -84,6 +95,10 @@ public:
                 // Start a resource (sprite, object, room)
                 google::protobuf::Message *msg = refl->AddMessage(m, field);
                 PackRes(root, msg);
+                
+                visited_walker walker;
+                doc.traverse(walker);
+                
               }
             }
           } 
@@ -91,7 +106,7 @@ public:
       }
     }
 
-    void PackRes(const pugi::xml_node& node, google::protobuf::Message* m)
+    void PackRes(pugi::xml_node& node, google::protobuf::Message* m)
     {
       const google::protobuf::Descriptor *desc = m->GetDescriptor();
       const google::protobuf::Reflection *refl = m->GetReflection();     
@@ -110,6 +125,7 @@ public:
           std::cerr << "Error: no such element " << xmlElement << std::endl;
         else
         {
+          child.append_attribute("visited") = "true";
           if (field->is_repeated())
           {
             for (; child != nullptr; child = child.next_sibling())
