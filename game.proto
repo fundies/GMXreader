@@ -2,7 +2,9 @@ syntax = "proto2";
 package buffers;
 
 import "resources/Background.proto";
+import "resources/Object.proto";
 
 message Project {
   repeated resources.Background backgrounds = 1;
+  repeated resources.Object objects = 2;
 }

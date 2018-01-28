@@ -36,6 +36,7 @@ void InitDefaultsProjectImpl() {
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   protobuf_resources_2fBackground_2eproto::InitDefaultsBackground();
+  protobuf_resources_2fObject_2eproto::InitDefaultsObject();
   {
     void* ptr = &::buffers::_Project_default_instance_;
     new (ptr) ::buffers::Project();
@@ -58,10 +59,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::buffers::Project, backgrounds_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::buffers::Project, objects_),
+  ~0u,
   ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 6, sizeof(::buffers::Project)},
+  { 0, 7, sizeof(::buffers::Project)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -91,14 +94,17 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\ngame.proto\022\007buffers\032\032resources/Backgro"
-      "und.proto\"=\n\007Project\0222\n\013backgrounds\030\001 \003("
-      "\0132\035.buffers.resources.Background"
+      "und.proto\032\026resources/Object.proto\"i\n\007Pro"
+      "ject\0222\n\013backgrounds\030\001 \003(\0132\035.buffers.reso"
+      "urces.Background\022*\n\007objects\030\002 \003(\0132\031.buff"
+      "ers.resources.Object"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 112);
+      descriptor, 180);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game.proto", &protobuf_RegisterTypes);
   ::protobuf_resources_2fBackground_2eproto::AddDescriptors();
+  ::protobuf_resources_2fObject_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -121,8 +127,12 @@ void Project::InitAsDefaultInstance() {
 void Project::clear_backgrounds() {
   backgrounds_.Clear();
 }
+void Project::clear_objects() {
+  objects_.Clear();
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Project::kBackgroundsFieldNumber;
+const int Project::kObjectsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Project::Project()
@@ -138,7 +148,8 @@ Project::Project(const Project& from)
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       _cached_size_(0),
-      backgrounds_(from.backgrounds_) {
+      backgrounds_(from.backgrounds_),
+      objects_(from.objects_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:buffers.Project)
 }
@@ -185,6 +196,7 @@ void Project::Clear() {
   (void) cached_has_bits;
 
   backgrounds_.Clear();
+  objects_.Clear();
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -204,6 +216,17 @@ bool Project::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_backgrounds()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Object objects = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_objects()));
         } else {
           goto handle_unusual;
         }
@@ -243,6 +266,13 @@ void Project::SerializeWithCachedSizes(
       1, this->backgrounds(static_cast<int>(i)), output);
   }
 
+  // repeated .buffers.resources.Object objects = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->objects_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->objects(static_cast<int>(i)), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -263,6 +293,14 @@ void Project::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, this->backgrounds(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Object objects = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->objects_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->objects(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -290,6 +328,17 @@ size_t Project::ByteSizeLong() const {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           this->backgrounds(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Object objects = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->objects_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->objects(static_cast<int>(i)));
     }
   }
 
@@ -323,6 +372,7 @@ void Project::MergeFrom(const Project& from) {
   (void) cached_has_bits;
 
   backgrounds_.MergeFrom(from.backgrounds_);
+  objects_.MergeFrom(from.objects_);
 }
 
 void Project::CopyFrom(const ::google::protobuf::Message& from) {
@@ -350,6 +400,7 @@ void Project::Swap(Project* other) {
 void Project::InternalSwap(Project* other) {
   using std::swap;
   backgrounds_.InternalSwap(&other->backgrounds_);
+  objects_.InternalSwap(&other->objects_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);

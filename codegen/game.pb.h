@@ -30,6 +30,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "resources/Background.pb.h"
+#include "resources/Object.pb.h"
 // @@protoc_insertion_point(includes)
 
 namespace protobuf_game_2eproto {
@@ -159,6 +160,18 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background >&
       backgrounds() const;
 
+  // repeated .buffers.resources.Object objects = 2;
+  int objects_size() const;
+  void clear_objects();
+  static const int kObjectsFieldNumber = 2;
+  const ::buffers::resources::Object& objects(int index) const;
+  ::buffers::resources::Object* mutable_objects(int index);
+  ::buffers::resources::Object* add_objects();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object >*
+      mutable_objects();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object >&
+      objects() const;
+
   // @@protoc_insertion_point(class_scope:buffers.Project)
  private:
 
@@ -166,6 +179,7 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background > backgrounds_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object > objects_;
   friend struct ::protobuf_game_2eproto::TableStruct;
   friend void ::protobuf_game_2eproto::InitDefaultsProjectImpl();
 };
@@ -205,6 +219,33 @@ inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Backgro
 Project::backgrounds() const {
   // @@protoc_insertion_point(field_list:buffers.Project.backgrounds)
   return backgrounds_;
+}
+
+// repeated .buffers.resources.Object objects = 2;
+inline int Project::objects_size() const {
+  return objects_.size();
+}
+inline const ::buffers::resources::Object& Project::objects(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.objects)
+  return objects_.Get(index);
+}
+inline ::buffers::resources::Object* Project::mutable_objects(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.objects)
+  return objects_.Mutable(index);
+}
+inline ::buffers::resources::Object* Project::add_objects() {
+  // @@protoc_insertion_point(field_add:buffers.Project.objects)
+  return objects_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object >*
+Project::mutable_objects() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.objects)
+  return &objects_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object >&
+Project::objects() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.objects)
+  return objects_;
 }
 
 #ifdef __GNUC__
