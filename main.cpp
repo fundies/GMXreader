@@ -1,6 +1,6 @@
-#include "game.pb.h"
+#include "codegen/game.pb.h"
 
-#include <pugixml.hpp>
+#include <pugixml-1.8/pugixml.hpp>
 
 #include <iostream>
 #include <map>
@@ -21,21 +21,21 @@ class GMXReader : public pugi::xml_tree_walker
 {
 public:
     GMXReader() = default;
-    
+
     bool Open(std::string gmxFile)
     {
       std::cout << "Opening: " << gmxFile << std::endl;
-      
+
       pugi::xml_document doc;
-      
+
       if (!doc.load_file(gmxFile.c_str()))
         return false;
-        
+
       gmxPath = gmxFile.substr(0, gmxFile.find_last_of("/\\")+1);
-        
+
       return doc.traverse(*this);
     }
-    
+
     virtual bool for_each(pugi::xml_node& node)
     {
       if (node.type() == 3)
@@ -51,27 +51,27 @@ public:
           resMap[std::string(node.parent().name()) + "s"].push_back(node.value());
         }
       }
-      
+
       return true;
     }
-    
+
     void PackBuffer(google::protobuf::Message* m)
     {
       const google::protobuf::Descriptor *desc = m->GetDescriptor();
-      const google::protobuf::Reflection *refl = m->GetReflection();      
-      
+      const google::protobuf::Reflection *refl = m->GetReflection();
+
       // Iterate over fbs fields
       for (size_t i = 0; i < desc->field_count(); i++)
       {
         const google::protobuf::FieldDescriptor *field = desc->field(i);
         //fprintf(stderr, "The name of the %zu element is %s and the type is %s \n",i,field->name().c_str(),field->type_name());
-        
+
         std::string name = field->name();
-        
+
         if (resMap.find(name) != resMap.end())
         {
           std::cout << "Found " << resMap.at(name).size() << " " << name << std::endl;
-          
+
           // Scripts and Shaders are plain text not xml
           if (name != "scripts" && name != "shaders")
           {
@@ -81,12 +81,12 @@ public:
               std::replace(fName.begin(), fName.end(), '\\', '/');
               std::string type = name.substr(0, name.length()-1);
               fName = gmxPath + fName + "." + type + ".gmx";
-              
+
               pugi::xml_document doc;
               pugi::xml_parse_result result = doc.load_file(fName.c_str());
               pugi::xml_node root = doc.document_element();
               root.append_attribute("visited") = "true";
-              
+
               if (!result)
                 std::cerr << "Error opening: " << fName << " : " << result.description() << std::endl;
               else
@@ -95,13 +95,13 @@ public:
                 // Start a resource (sprite, object, room)
                 google::protobuf::Message *msg = refl->AddMessage(m, field);
                 PackRes(root, msg);
-                
+
                 visited_walker walker;
                 doc.traverse(walker);
-                
+
               }
             }
-          } 
+          }
         }
       }
     }
@@ -109,17 +109,17 @@ public:
     void PackRes(pugi::xml_node& node, google::protobuf::Message* m)
     {
       const google::protobuf::Descriptor *desc = m->GetDescriptor();
-      const google::protobuf::Reflection *refl = m->GetReflection();     
+      const google::protobuf::Reflection *refl = m->GetReflection();
       for (size_t i = 0; i < desc->field_count(); i++)
       {
         const google::protobuf::FieldDescriptor *field = desc->field(i);
         const google::protobuf::FieldOptions opts = field->options();
-        
-        std::string xmlElement = opts.GetExtension(enigma::proto::resource::gmx);
-        
+
+        std::string xmlElement = opts.GetExtension(buffers::gmx);
+
         if (xmlElement.empty())
           xmlElement = field->name();
-          
+
         pugi::xml_node child = node.child(xmlElement.c_str());
         if (child == nullptr)
           std::cerr << "Error: no such element " << xmlElement << std::endl;
@@ -138,7 +138,7 @@ public:
                   PackRes(child, msg);
                   break;
                 }
-                
+
                 default:
                 {
                   //fprintf(stderr, "The name of the %zu element is %s and the type is %s \n",i,field->name().c_str(),field->type_name());
@@ -153,7 +153,7 @@ public:
             pugi::xml_text xmlValue;
             xmlValue = child.text();
             fprintf(stderr, "Setting %s (%s) as %s \n",field->name().c_str(),field->type_name(), xmlValue.as_string());
-            
+
             switch (field->cpp_type())
             {
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_MESSAGE:
@@ -211,10 +211,10 @@ public:
         }
       }
     }
-    
+
     void PackProjectBuffer()
     {
-      enigma::proto::resource::Project proj;
+      buffers::Project proj;
       PackBuffer(&proj);
     }
 
