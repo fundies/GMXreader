@@ -30,6 +30,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "resources/Sprite.pb.h"
+#include "resources/Sound.pb.h"
 #include "resources/Background.pb.h"
 #include "resources/Object.pb.h"
 // @@protoc_insertion_point(includes)
@@ -161,10 +162,10 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite >&
       sprites() const;
 
-  // repeated .buffers.resources.Background backgrounds = 2;
+  // repeated .buffers.resources.Background backgrounds = 3;
   int backgrounds_size() const;
   void clear_backgrounds();
-  static const int kBackgroundsFieldNumber = 2;
+  static const int kBackgroundsFieldNumber = 3;
   const ::buffers::resources::Background& backgrounds(int index) const;
   ::buffers::resources::Background* mutable_backgrounds(int index);
   ::buffers::resources::Background* add_backgrounds();
@@ -173,10 +174,10 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background >&
       backgrounds() const;
 
-  // repeated .buffers.resources.Object objects = 3;
+  // repeated .buffers.resources.Object objects = 9;
   int objects_size() const;
   void clear_objects();
-  static const int kObjectsFieldNumber = 3;
+  static const int kObjectsFieldNumber = 9;
   const ::buffers::resources::Object& objects(int index) const;
   ::buffers::resources::Object* mutable_objects(int index);
   ::buffers::resources::Object* add_objects();
@@ -235,7 +236,7 @@ Project::sprites() const {
   return sprites_;
 }
 
-// repeated .buffers.resources.Background backgrounds = 2;
+// repeated .buffers.resources.Background backgrounds = 3;
 inline int Project::backgrounds_size() const {
   return backgrounds_.size();
 }
@@ -262,7 +263,7 @@ Project::backgrounds() const {
   return backgrounds_;
 }
 
-// repeated .buffers.resources.Object objects = 3;
+// repeated .buffers.resources.Object objects = 9;
 inline int Project::objects_size() const {
   return objects_.size();
 }

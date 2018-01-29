@@ -97,18 +97,19 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\ngame.proto\022\007buffers\032\026resources/Sprite."
-      "proto\032\032resources/Background.proto\032\026resou"
-      "rces/Object.proto\"\225\001\n\007Project\022*\n\007sprites"
-      "\030\001 \003(\0132\031.buffers.resources.Sprite\0222\n\013bac"
-      "kgrounds\030\002 \003(\0132\035.buffers.resources.Backg"
-      "round\022*\n\007objects\030\003 \003(\0132\031.buffers.resourc"
-      "es.Object"
+      "proto\032\025resources/Sound.proto\032\032resources/"
+      "Background.proto\032\026resources/Object.proto"
+      "\"\225\001\n\007Project\022*\n\007sprites\030\001 \003(\0132\031.buffers."
+      "resources.Sprite\0222\n\013backgrounds\030\003 \003(\0132\035."
+      "buffers.resources.Background\022*\n\007objects\030"
+      "\t \003(\0132\031.buffers.resources.Object"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 249);
+      descriptor, 272);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game.proto", &protobuf_RegisterTypes);
   ::protobuf_resources_2fSprite_2eproto::AddDescriptors();
+  ::protobuf_resources_2fSound_2eproto::AddDescriptors();
   ::protobuf_resources_2fBackground_2eproto::AddDescriptors();
   ::protobuf_resources_2fObject_2eproto::AddDescriptors();
 }
@@ -234,10 +235,10 @@ bool Project::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Background backgrounds = 2;
-      case 2: {
+      // repeated .buffers.resources.Background backgrounds = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_backgrounds()));
         } else {
           goto handle_unusual;
@@ -245,10 +246,10 @@ bool Project::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Object objects = 3;
-      case 3: {
+      // repeated .buffers.resources.Object objects = 9;
+      case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_objects()));
         } else {
           goto handle_unusual;
@@ -289,18 +290,18 @@ void Project::SerializeWithCachedSizes(
       1, this->sprites(static_cast<int>(i)), output);
   }
 
-  // repeated .buffers.resources.Background backgrounds = 2;
+  // repeated .buffers.resources.Background backgrounds = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->backgrounds(static_cast<int>(i)), output);
+      3, this->backgrounds(static_cast<int>(i)), output);
   }
 
-  // repeated .buffers.resources.Object objects = 3;
+  // repeated .buffers.resources.Object objects = 9;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->objects_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->objects(static_cast<int>(i)), output);
+      9, this->objects(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -325,20 +326,20 @@ void Project::SerializeWithCachedSizes(
         1, this->sprites(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .buffers.resources.Background backgrounds = 2;
+  // repeated .buffers.resources.Background backgrounds = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->backgrounds(static_cast<int>(i)), deterministic, target);
+        3, this->backgrounds(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .buffers.resources.Object objects = 3;
+  // repeated .buffers.resources.Object objects = 9;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->objects_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        3, this->objects(static_cast<int>(i)), deterministic, target);
+        9, this->objects(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -369,7 +370,7 @@ size_t Project::ByteSizeLong() const {
     }
   }
 
-  // repeated .buffers.resources.Background backgrounds = 2;
+  // repeated .buffers.resources.Background backgrounds = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->backgrounds_size());
     total_size += 1UL * count;
@@ -380,7 +381,7 @@ size_t Project::ByteSizeLong() const {
     }
   }
 
-  // repeated .buffers.resources.Object objects = 3;
+  // repeated .buffers.resources.Object objects = 9;
   {
     unsigned int count = static_cast<unsigned int>(this->objects_size());
     total_size += 1UL * count;

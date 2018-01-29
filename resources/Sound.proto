@@ -1,0 +1,25 @@
+syntax = "proto2";
+package buffers.resources;
+
+import "options.proto";
+
+message Sound {
+  optional string name = 1;
+  optional int32 id = 2;
+
+  optional bool preload = 3;
+  optional double pan = 4;
+  optional double volume = 5 [(gmx) = "volume/volume"];
+  optional string file_name = 6 [(gmx) = "origname"];
+  optional string file_extension = 7 [(gmx) = "extension"];
+
+  enum Kind { NORMAL = 0; BACKGROUND_MUSIC = 1; THREE_DIMENSIONAL = 2; MULTIMEDIA_PLAYER = 3; }
+
+  optional Kind kind = 8;
+
+  enum Type { MONO = 0; STEREO = 1; POSITIONAL = 2; }
+
+  optional Type type = 9 [(gmx) = "types/type"];
+
+  optional string data = 10;
+}
