@@ -35,6 +35,7 @@ void InitDefaultsProjectImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_resources_2fSprite_2eproto::InitDefaultsSprite();
   protobuf_resources_2fBackground_2eproto::InitDefaultsBackground();
   protobuf_resources_2fObject_2eproto::InitDefaultsObject();
   {
@@ -58,13 +59,15 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::buffers::Project, sprites_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::buffers::Project, backgrounds_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::buffers::Project, objects_),
   ~0u,
   ~0u,
+  ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 7, sizeof(::buffers::Project)},
+  { 0, 8, sizeof(::buffers::Project)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -93,16 +96,19 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\ngame.proto\022\007buffers\032\032resources/Backgro"
-      "und.proto\032\026resources/Object.proto\"i\n\007Pro"
-      "ject\0222\n\013backgrounds\030\001 \003(\0132\035.buffers.reso"
-      "urces.Background\022*\n\007objects\030\002 \003(\0132\031.buff"
-      "ers.resources.Object"
+      "\n\ngame.proto\022\007buffers\032\026resources/Sprite."
+      "proto\032\032resources/Background.proto\032\026resou"
+      "rces/Object.proto\"\225\001\n\007Project\022*\n\007sprites"
+      "\030\001 \003(\0132\031.buffers.resources.Sprite\0222\n\013bac"
+      "kgrounds\030\002 \003(\0132\035.buffers.resources.Backg"
+      "round\022*\n\007objects\030\003 \003(\0132\031.buffers.resourc"
+      "es.Object"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 180);
+      descriptor, 249);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game.proto", &protobuf_RegisterTypes);
+  ::protobuf_resources_2fSprite_2eproto::AddDescriptors();
   ::protobuf_resources_2fBackground_2eproto::AddDescriptors();
   ::protobuf_resources_2fObject_2eproto::AddDescriptors();
 }
@@ -124,6 +130,9 @@ namespace buffers {
 
 void Project::InitAsDefaultInstance() {
 }
+void Project::clear_sprites() {
+  sprites_.Clear();
+}
 void Project::clear_backgrounds() {
   backgrounds_.Clear();
 }
@@ -131,6 +140,7 @@ void Project::clear_objects() {
   objects_.Clear();
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Project::kSpritesFieldNumber;
 const int Project::kBackgroundsFieldNumber;
 const int Project::kObjectsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -148,6 +158,7 @@ Project::Project(const Project& from)
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       _cached_size_(0),
+      sprites_(from.sprites_),
       backgrounds_(from.backgrounds_),
       objects_(from.objects_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -195,6 +206,7 @@ void Project::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  sprites_.Clear();
   backgrounds_.Clear();
   objects_.Clear();
   _has_bits_.Clear();
@@ -211,10 +223,21 @@ bool Project::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .buffers.resources.Background backgrounds = 1;
+      // repeated .buffers.resources.Sprite sprites = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_sprites()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Background backgrounds = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_backgrounds()));
         } else {
           goto handle_unusual;
@@ -222,10 +245,10 @@ bool Project::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Object objects = 2;
-      case 2: {
+      // repeated .buffers.resources.Object objects = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_objects()));
         } else {
           goto handle_unusual;
@@ -259,18 +282,25 @@ void Project::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .buffers.resources.Background backgrounds = 1;
+  // repeated .buffers.resources.Sprite sprites = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->sprites_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->sprites(static_cast<int>(i)), output);
+  }
+
+  // repeated .buffers.resources.Background backgrounds = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->backgrounds(static_cast<int>(i)), output);
+      2, this->backgrounds(static_cast<int>(i)), output);
   }
 
-  // repeated .buffers.resources.Object objects = 2;
+  // repeated .buffers.resources.Object objects = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->objects_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->objects(static_cast<int>(i)), output);
+      3, this->objects(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -287,20 +317,28 @@ void Project::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .buffers.resources.Background backgrounds = 1;
+  // repeated .buffers.resources.Sprite sprites = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->sprites_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->sprites(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Background backgrounds = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->backgrounds(static_cast<int>(i)), deterministic, target);
+        2, this->backgrounds(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .buffers.resources.Object objects = 2;
+  // repeated .buffers.resources.Object objects = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->objects_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->objects(static_cast<int>(i)), deterministic, target);
+        3, this->objects(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -320,7 +358,18 @@ size_t Project::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Background backgrounds = 1;
+  // repeated .buffers.resources.Sprite sprites = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->sprites_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->sprites(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Background backgrounds = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->backgrounds_size());
     total_size += 1UL * count;
@@ -331,7 +380,7 @@ size_t Project::ByteSizeLong() const {
     }
   }
 
-  // repeated .buffers.resources.Object objects = 2;
+  // repeated .buffers.resources.Object objects = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->objects_size());
     total_size += 1UL * count;
@@ -371,6 +420,7 @@ void Project::MergeFrom(const Project& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  sprites_.MergeFrom(from.sprites_);
   backgrounds_.MergeFrom(from.backgrounds_);
   objects_.MergeFrom(from.objects_);
 }
@@ -399,6 +449,7 @@ void Project::Swap(Project* other) {
 }
 void Project::InternalSwap(Project* other) {
   using std::swap;
+  sprites_.InternalSwap(&other->sprites_);
   backgrounds_.InternalSwap(&other->backgrounds_);
   objects_.InternalSwap(&other->objects_);
   swap(_has_bits_[0], other->_has_bits_[0]);

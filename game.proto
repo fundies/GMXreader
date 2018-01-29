@@ -1,10 +1,12 @@
 syntax = "proto2";
 package buffers;
 
+import "resources/Sprite.proto";
 import "resources/Background.proto";
 import "resources/Object.proto";
 
 message Project {
-  repeated resources.Background backgrounds = 1;
-  repeated resources.Object objects = 2;
+  repeated resources.Sprite sprites = 1;
+  repeated resources.Background backgrounds = 2;
+  repeated resources.Object objects = 3;
 }

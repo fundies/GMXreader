@@ -29,6 +29,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "resources/Sprite.pb.h"
 #include "resources/Background.pb.h"
 #include "resources/Object.pb.h"
 // @@protoc_insertion_point(includes)
@@ -148,10 +149,22 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
-  // repeated .buffers.resources.Background backgrounds = 1;
+  // repeated .buffers.resources.Sprite sprites = 1;
+  int sprites_size() const;
+  void clear_sprites();
+  static const int kSpritesFieldNumber = 1;
+  const ::buffers::resources::Sprite& sprites(int index) const;
+  ::buffers::resources::Sprite* mutable_sprites(int index);
+  ::buffers::resources::Sprite* add_sprites();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite >*
+      mutable_sprites();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite >&
+      sprites() const;
+
+  // repeated .buffers.resources.Background backgrounds = 2;
   int backgrounds_size() const;
   void clear_backgrounds();
-  static const int kBackgroundsFieldNumber = 1;
+  static const int kBackgroundsFieldNumber = 2;
   const ::buffers::resources::Background& backgrounds(int index) const;
   ::buffers::resources::Background* mutable_backgrounds(int index);
   ::buffers::resources::Background* add_backgrounds();
@@ -160,10 +173,10 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background >&
       backgrounds() const;
 
-  // repeated .buffers.resources.Object objects = 2;
+  // repeated .buffers.resources.Object objects = 3;
   int objects_size() const;
   void clear_objects();
-  static const int kObjectsFieldNumber = 2;
+  static const int kObjectsFieldNumber = 3;
   const ::buffers::resources::Object& objects(int index) const;
   ::buffers::resources::Object* mutable_objects(int index);
   ::buffers::resources::Object* add_objects();
@@ -178,6 +191,7 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite > sprites_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background > backgrounds_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object > objects_;
   friend struct ::protobuf_game_2eproto::TableStruct;
@@ -194,7 +208,34 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 #endif  // __GNUC__
 // Project
 
-// repeated .buffers.resources.Background backgrounds = 1;
+// repeated .buffers.resources.Sprite sprites = 1;
+inline int Project::sprites_size() const {
+  return sprites_.size();
+}
+inline const ::buffers::resources::Sprite& Project::sprites(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.sprites)
+  return sprites_.Get(index);
+}
+inline ::buffers::resources::Sprite* Project::mutable_sprites(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.sprites)
+  return sprites_.Mutable(index);
+}
+inline ::buffers::resources::Sprite* Project::add_sprites() {
+  // @@protoc_insertion_point(field_add:buffers.Project.sprites)
+  return sprites_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite >*
+Project::mutable_sprites() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.sprites)
+  return &sprites_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite >&
+Project::sprites() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.sprites)
+  return sprites_;
+}
+
+// repeated .buffers.resources.Background backgrounds = 2;
 inline int Project::backgrounds_size() const {
   return backgrounds_.size();
 }
@@ -221,7 +262,7 @@ Project::backgrounds() const {
   return backgrounds_;
 }
 
-// repeated .buffers.resources.Object objects = 2;
+// repeated .buffers.resources.Object objects = 3;
 inline int Project::objects_size() const {
   return objects_.size();
 }
