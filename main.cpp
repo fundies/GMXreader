@@ -1,6 +1,6 @@
 #include "codegen/game.pb.h"
 
-#include <pugixml-1.8/pugixml.hpp>
+#include <pugixml.hpp>
 
 #include <iostream>
 #include <map>
