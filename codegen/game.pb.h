@@ -33,6 +33,11 @@
 #include "resources/Sound.pb.h"
 #include "resources/Background.pb.h"
 #include "resources/Object.pb.h"
+#include "resources/Script.pb.h"
+#include "resources/Shader.pb.h"
+#include "resources/Path.pb.h"
+#include "resources/Font.pb.h"
+#include "resources/Timeline.pb.h"
 // @@protoc_insertion_point(includes)
 namespace buffers {
 class Project;
@@ -159,6 +164,18 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite >&
       sprites() const;
 
+  // repeated .buffers.resources.Sound sounds = 2;
+  int sounds_size() const;
+  void clear_sounds();
+  static const int kSoundsFieldNumber = 2;
+  const ::buffers::resources::Sound& sounds(int index) const;
+  ::buffers::resources::Sound* mutable_sounds(int index);
+  ::buffers::resources::Sound* add_sounds();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sound >*
+      mutable_sounds();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sound >&
+      sounds() const;
+
   // repeated .buffers.resources.Background backgrounds = 3;
   int backgrounds_size() const;
   void clear_backgrounds();
@@ -170,6 +187,66 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
       mutable_backgrounds();
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background >&
       backgrounds() const;
+
+  // repeated .buffers.resources.Path paths = 4;
+  int paths_size() const;
+  void clear_paths();
+  static const int kPathsFieldNumber = 4;
+  const ::buffers::resources::Path& paths(int index) const;
+  ::buffers::resources::Path* mutable_paths(int index);
+  ::buffers::resources::Path* add_paths();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Path >*
+      mutable_paths();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Path >&
+      paths() const;
+
+  // repeated .buffers.resources.Script scripts = 5;
+  int scripts_size() const;
+  void clear_scripts();
+  static const int kScriptsFieldNumber = 5;
+  const ::buffers::resources::Script& scripts(int index) const;
+  ::buffers::resources::Script* mutable_scripts(int index);
+  ::buffers::resources::Script* add_scripts();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Script >*
+      mutable_scripts();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Script >&
+      scripts() const;
+
+  // repeated .buffers.resources.Shader shaders = 6;
+  int shaders_size() const;
+  void clear_shaders();
+  static const int kShadersFieldNumber = 6;
+  const ::buffers::resources::Shader& shaders(int index) const;
+  ::buffers::resources::Shader* mutable_shaders(int index);
+  ::buffers::resources::Shader* add_shaders();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Shader >*
+      mutable_shaders();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Shader >&
+      shaders() const;
+
+  // repeated .buffers.resources.Font fonts = 7;
+  int fonts_size() const;
+  void clear_fonts();
+  static const int kFontsFieldNumber = 7;
+  const ::buffers::resources::Font& fonts(int index) const;
+  ::buffers::resources::Font* mutable_fonts(int index);
+  ::buffers::resources::Font* add_fonts();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font >*
+      mutable_fonts();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font >&
+      fonts() const;
+
+  // repeated .buffers.resources.Timeline timelines = 8;
+  int timelines_size() const;
+  void clear_timelines();
+  static const int kTimelinesFieldNumber = 8;
+  const ::buffers::resources::Timeline& timelines(int index) const;
+  ::buffers::resources::Timeline* mutable_timelines(int index);
+  ::buffers::resources::Timeline* add_timelines();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline >*
+      mutable_timelines();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline >&
+      timelines() const;
 
   // repeated .buffers.resources.Object objects = 9;
   int objects_size() const;
@@ -190,7 +267,13 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sprite > sprites_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sound > sounds_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background > backgrounds_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Path > paths_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Script > scripts_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Shader > shaders_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font > fonts_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline > timelines_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object > objects_;
   friend struct protobuf_game_2eproto::TableStruct;
 };
@@ -236,6 +319,36 @@ Project::sprites() const {
   return sprites_;
 }
 
+// repeated .buffers.resources.Sound sounds = 2;
+inline int Project::sounds_size() const {
+  return sounds_.size();
+}
+inline void Project::clear_sounds() {
+  sounds_.Clear();
+}
+inline const ::buffers::resources::Sound& Project::sounds(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.sounds)
+  return sounds_.Get(index);
+}
+inline ::buffers::resources::Sound* Project::mutable_sounds(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.sounds)
+  return sounds_.Mutable(index);
+}
+inline ::buffers::resources::Sound* Project::add_sounds() {
+  // @@protoc_insertion_point(field_add:buffers.Project.sounds)
+  return sounds_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sound >*
+Project::mutable_sounds() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.sounds)
+  return &sounds_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sound >&
+Project::sounds() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.sounds)
+  return sounds_;
+}
+
 // repeated .buffers.resources.Background backgrounds = 3;
 inline int Project::backgrounds_size() const {
   return backgrounds_.size();
@@ -264,6 +377,156 @@ inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Backgro
 Project::backgrounds() const {
   // @@protoc_insertion_point(field_list:buffers.Project.backgrounds)
   return backgrounds_;
+}
+
+// repeated .buffers.resources.Path paths = 4;
+inline int Project::paths_size() const {
+  return paths_.size();
+}
+inline void Project::clear_paths() {
+  paths_.Clear();
+}
+inline const ::buffers::resources::Path& Project::paths(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.paths)
+  return paths_.Get(index);
+}
+inline ::buffers::resources::Path* Project::mutable_paths(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.paths)
+  return paths_.Mutable(index);
+}
+inline ::buffers::resources::Path* Project::add_paths() {
+  // @@protoc_insertion_point(field_add:buffers.Project.paths)
+  return paths_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Path >*
+Project::mutable_paths() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.paths)
+  return &paths_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Path >&
+Project::paths() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.paths)
+  return paths_;
+}
+
+// repeated .buffers.resources.Script scripts = 5;
+inline int Project::scripts_size() const {
+  return scripts_.size();
+}
+inline void Project::clear_scripts() {
+  scripts_.Clear();
+}
+inline const ::buffers::resources::Script& Project::scripts(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.scripts)
+  return scripts_.Get(index);
+}
+inline ::buffers::resources::Script* Project::mutable_scripts(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.scripts)
+  return scripts_.Mutable(index);
+}
+inline ::buffers::resources::Script* Project::add_scripts() {
+  // @@protoc_insertion_point(field_add:buffers.Project.scripts)
+  return scripts_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Script >*
+Project::mutable_scripts() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.scripts)
+  return &scripts_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Script >&
+Project::scripts() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.scripts)
+  return scripts_;
+}
+
+// repeated .buffers.resources.Shader shaders = 6;
+inline int Project::shaders_size() const {
+  return shaders_.size();
+}
+inline void Project::clear_shaders() {
+  shaders_.Clear();
+}
+inline const ::buffers::resources::Shader& Project::shaders(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.shaders)
+  return shaders_.Get(index);
+}
+inline ::buffers::resources::Shader* Project::mutable_shaders(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.shaders)
+  return shaders_.Mutable(index);
+}
+inline ::buffers::resources::Shader* Project::add_shaders() {
+  // @@protoc_insertion_point(field_add:buffers.Project.shaders)
+  return shaders_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Shader >*
+Project::mutable_shaders() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.shaders)
+  return &shaders_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Shader >&
+Project::shaders() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.shaders)
+  return shaders_;
+}
+
+// repeated .buffers.resources.Font fonts = 7;
+inline int Project::fonts_size() const {
+  return fonts_.size();
+}
+inline void Project::clear_fonts() {
+  fonts_.Clear();
+}
+inline const ::buffers::resources::Font& Project::fonts(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.fonts)
+  return fonts_.Get(index);
+}
+inline ::buffers::resources::Font* Project::mutable_fonts(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.fonts)
+  return fonts_.Mutable(index);
+}
+inline ::buffers::resources::Font* Project::add_fonts() {
+  // @@protoc_insertion_point(field_add:buffers.Project.fonts)
+  return fonts_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font >*
+Project::mutable_fonts() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.fonts)
+  return &fonts_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font >&
+Project::fonts() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.fonts)
+  return fonts_;
+}
+
+// repeated .buffers.resources.Timeline timelines = 8;
+inline int Project::timelines_size() const {
+  return timelines_.size();
+}
+inline void Project::clear_timelines() {
+  timelines_.Clear();
+}
+inline const ::buffers::resources::Timeline& Project::timelines(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.timelines)
+  return timelines_.Get(index);
+}
+inline ::buffers::resources::Timeline* Project::mutable_timelines(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.timelines)
+  return timelines_.Mutable(index);
+}
+inline ::buffers::resources::Timeline* Project::add_timelines() {
+  // @@protoc_insertion_point(field_add:buffers.Project.timelines)
+  return timelines_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline >*
+Project::mutable_timelines() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.timelines)
+  return &timelines_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline >&
+Project::timelines() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.timelines)
+  return timelines_;
 }
 
 // repeated .buffers.resources.Object objects = 9;

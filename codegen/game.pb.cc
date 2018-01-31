@@ -54,14 +54,26 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, sprites_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, sounds_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, backgrounds_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, paths_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, scripts_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, shaders_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, fonts_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, timelines_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, objects_),
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
   ~0u,
   ~0u,
   ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, sizeof(Project)},
+  { 0, 14, sizeof(Project)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -98,6 +110,11 @@ void TableStruct::InitDefaultsImpl() {
   ::buffers::resources::protobuf_resources_2fSound_2eproto::InitDefaults();
   ::buffers::resources::protobuf_resources_2fBackground_2eproto::InitDefaults();
   ::buffers::resources::protobuf_resources_2fObject_2eproto::InitDefaults();
+  ::buffers::resources::protobuf_resources_2fScript_2eproto::InitDefaults();
+  ::buffers::resources::protobuf_resources_2fShader_2eproto::InitDefaults();
+  ::buffers::resources::protobuf_resources_2fPath_2eproto::InitDefaults();
+  ::buffers::resources::protobuf_resources_2fFont_2eproto::InitDefaults();
+  ::buffers::resources::protobuf_resources_2fTimeline_2eproto::InitDefaults();
   _Project_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_Project_default_instance_);}
@@ -113,19 +130,34 @@ void AddDescriptorsImpl() {
       "\n\ngame.proto\022\007buffers\032\026resources/Sprite."
       "proto\032\025resources/Sound.proto\032\032resources/"
       "Background.proto\032\026resources/Object.proto"
-      "\"\225\001\n\007Project\022*\n\007sprites\030\001 \003(\0132\031.buffers."
-      "resources.Sprite\0222\n\013backgrounds\030\003 \003(\0132\035."
-      "buffers.resources.Background\022*\n\007objects\030"
-      "\t \003(\0132\031.buffers.resources.Object"
+      "\032\026resources/Script.proto\032\026resources/Shad"
+      "er.proto\032\024resources/Path.proto\032\024resource"
+      "s/Font.proto\032\030resources/Timeline.proto\"\227"
+      "\003\n\007Project\022*\n\007sprites\030\001 \003(\0132\031.buffers.re"
+      "sources.Sprite\022(\n\006sounds\030\002 \003(\0132\030.buffers"
+      ".resources.Sound\0222\n\013backgrounds\030\003 \003(\0132\035."
+      "buffers.resources.Background\022&\n\005paths\030\004 "
+      "\003(\0132\027.buffers.resources.Path\022*\n\007scripts\030"
+      "\005 \003(\0132\031.buffers.resources.Script\022*\n\007shad"
+      "ers\030\006 \003(\0132\031.buffers.resources.Shader\022&\n\005"
+      "fonts\030\007 \003(\0132\027.buffers.resources.Font\022.\n\t"
+      "timelines\030\010 \003(\0132\033.buffers.resources.Time"
+      "line\022*\n\007objects\030\t \003(\0132\031.buffers.resource"
+      "s.Object"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 272);
+      descriptor, 648);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game.proto", &protobuf_RegisterTypes);
   ::buffers::resources::protobuf_resources_2fSprite_2eproto::AddDescriptors();
   ::buffers::resources::protobuf_resources_2fSound_2eproto::AddDescriptors();
   ::buffers::resources::protobuf_resources_2fBackground_2eproto::AddDescriptors();
   ::buffers::resources::protobuf_resources_2fObject_2eproto::AddDescriptors();
+  ::buffers::resources::protobuf_resources_2fScript_2eproto::AddDescriptors();
+  ::buffers::resources::protobuf_resources_2fShader_2eproto::AddDescriptors();
+  ::buffers::resources::protobuf_resources_2fPath_2eproto::AddDescriptors();
+  ::buffers::resources::protobuf_resources_2fFont_2eproto::AddDescriptors();
+  ::buffers::resources::protobuf_resources_2fTimeline_2eproto::AddDescriptors();
 }
 } // anonymous namespace
 
@@ -147,7 +179,13 @@ struct StaticDescriptorInitializer {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Project::kSpritesFieldNumber;
+const int Project::kSoundsFieldNumber;
 const int Project::kBackgroundsFieldNumber;
+const int Project::kPathsFieldNumber;
+const int Project::kScriptsFieldNumber;
+const int Project::kShadersFieldNumber;
+const int Project::kFontsFieldNumber;
+const int Project::kTimelinesFieldNumber;
 const int Project::kObjectsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -165,7 +203,13 @@ Project::Project(const Project& from)
       _has_bits_(from._has_bits_),
       _cached_size_(0),
       sprites_(from.sprites_),
+      sounds_(from.sounds_),
       backgrounds_(from.backgrounds_),
+      paths_(from.paths_),
+      scripts_(from.scripts_),
+      shaders_(from.shaders_),
+      fonts_(from.fonts_),
+      timelines_(from.timelines_),
       objects_(from.objects_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:buffers.Project)
@@ -213,7 +257,13 @@ void Project::Clear() {
   (void) cached_has_bits;
 
   sprites_.Clear();
+  sounds_.Clear();
   backgrounds_.Clear();
+  paths_.Clear();
+  scripts_.Clear();
+  shaders_.Clear();
+  fonts_.Clear();
+  timelines_.Clear();
   objects_.Clear();
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -241,12 +291,84 @@ bool Project::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated .buffers.resources.Sound sounds = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_sounds()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // repeated .buffers.resources.Background backgrounds = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_backgrounds()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Path paths = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_paths()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Script scripts = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_scripts()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Shader shaders = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_shaders()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Font fonts = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_fonts()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Timeline timelines = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_timelines()));
         } else {
           goto handle_unusual;
         }
@@ -298,11 +420,53 @@ void Project::SerializeWithCachedSizes(
       1, this->sprites(static_cast<int>(i)), output);
   }
 
+  // repeated .buffers.resources.Sound sounds = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->sounds_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->sounds(static_cast<int>(i)), output);
+  }
+
   // repeated .buffers.resources.Background backgrounds = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->backgrounds(static_cast<int>(i)), output);
+  }
+
+  // repeated .buffers.resources.Path paths = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->paths_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->paths(static_cast<int>(i)), output);
+  }
+
+  // repeated .buffers.resources.Script scripts = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->scripts_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->scripts(static_cast<int>(i)), output);
+  }
+
+  // repeated .buffers.resources.Shader shaders = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->shaders_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->shaders(static_cast<int>(i)), output);
+  }
+
+  // repeated .buffers.resources.Font fonts = 7;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->fonts_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, this->fonts(static_cast<int>(i)), output);
+  }
+
+  // repeated .buffers.resources.Timeline timelines = 8;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->timelines_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->timelines(static_cast<int>(i)), output);
   }
 
   // repeated .buffers.resources.Object objects = 9;
@@ -334,12 +498,60 @@ void Project::SerializeWithCachedSizes(
         1, this->sprites(static_cast<int>(i)), deterministic, target);
   }
 
+  // repeated .buffers.resources.Sound sounds = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->sounds_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, this->sounds(static_cast<int>(i)), deterministic, target);
+  }
+
   // repeated .buffers.resources.Background backgrounds = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
         3, this->backgrounds(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Path paths = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->paths_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        4, this->paths(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Script scripts = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->scripts_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        5, this->scripts(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Shader shaders = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->shaders_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        6, this->shaders(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Font fonts = 7;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->fonts_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        7, this->fonts(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Timeline timelines = 8;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->timelines_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        8, this->timelines(static_cast<int>(i)), deterministic, target);
   }
 
   // repeated .buffers.resources.Object objects = 9;
@@ -378,6 +590,17 @@ size_t Project::ByteSizeLong() const {
     }
   }
 
+  // repeated .buffers.resources.Sound sounds = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->sounds_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->sounds(static_cast<int>(i)));
+    }
+  }
+
   // repeated .buffers.resources.Background backgrounds = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->backgrounds_size());
@@ -386,6 +609,61 @@ size_t Project::ByteSizeLong() const {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->backgrounds(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Path paths = 4;
+  {
+    unsigned int count = static_cast<unsigned int>(this->paths_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->paths(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Script scripts = 5;
+  {
+    unsigned int count = static_cast<unsigned int>(this->scripts_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->scripts(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Shader shaders = 6;
+  {
+    unsigned int count = static_cast<unsigned int>(this->shaders_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->shaders(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Font fonts = 7;
+  {
+    unsigned int count = static_cast<unsigned int>(this->fonts_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->fonts(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Timeline timelines = 8;
+  {
+    unsigned int count = static_cast<unsigned int>(this->timelines_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->timelines(static_cast<int>(i)));
     }
   }
 
@@ -430,7 +708,13 @@ void Project::MergeFrom(const Project& from) {
   (void) cached_has_bits;
 
   sprites_.MergeFrom(from.sprites_);
+  sounds_.MergeFrom(from.sounds_);
   backgrounds_.MergeFrom(from.backgrounds_);
+  paths_.MergeFrom(from.paths_);
+  scripts_.MergeFrom(from.scripts_);
+  shaders_.MergeFrom(from.shaders_);
+  fonts_.MergeFrom(from.fonts_);
+  timelines_.MergeFrom(from.timelines_);
   objects_.MergeFrom(from.objects_);
 }
 
@@ -459,7 +743,13 @@ void Project::Swap(Project* other) {
 void Project::InternalSwap(Project* other) {
   using std::swap;
   sprites_.InternalSwap(&other->sprites_);
+  sounds_.InternalSwap(&other->sounds_);
   backgrounds_.InternalSwap(&other->backgrounds_);
+  paths_.InternalSwap(&other->paths_);
+  scripts_.InternalSwap(&other->scripts_);
+  shaders_.InternalSwap(&other->shaders_);
+  fonts_.InternalSwap(&other->fonts_);
+  timelines_.InternalSwap(&other->timelines_);
   objects_.InternalSwap(&other->objects_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -504,6 +794,36 @@ Project::sprites() const {
   return sprites_;
 }
 
+// repeated .buffers.resources.Sound sounds = 2;
+int Project::sounds_size() const {
+  return sounds_.size();
+}
+void Project::clear_sounds() {
+  sounds_.Clear();
+}
+const ::buffers::resources::Sound& Project::sounds(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.sounds)
+  return sounds_.Get(index);
+}
+::buffers::resources::Sound* Project::mutable_sounds(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.sounds)
+  return sounds_.Mutable(index);
+}
+::buffers::resources::Sound* Project::add_sounds() {
+  // @@protoc_insertion_point(field_add:buffers.Project.sounds)
+  return sounds_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Sound >*
+Project::mutable_sounds() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.sounds)
+  return &sounds_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Sound >&
+Project::sounds() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.sounds)
+  return sounds_;
+}
+
 // repeated .buffers.resources.Background backgrounds = 3;
 int Project::backgrounds_size() const {
   return backgrounds_.size();
@@ -532,6 +852,156 @@ const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Background >&
 Project::backgrounds() const {
   // @@protoc_insertion_point(field_list:buffers.Project.backgrounds)
   return backgrounds_;
+}
+
+// repeated .buffers.resources.Path paths = 4;
+int Project::paths_size() const {
+  return paths_.size();
+}
+void Project::clear_paths() {
+  paths_.Clear();
+}
+const ::buffers::resources::Path& Project::paths(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.paths)
+  return paths_.Get(index);
+}
+::buffers::resources::Path* Project::mutable_paths(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.paths)
+  return paths_.Mutable(index);
+}
+::buffers::resources::Path* Project::add_paths() {
+  // @@protoc_insertion_point(field_add:buffers.Project.paths)
+  return paths_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Path >*
+Project::mutable_paths() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.paths)
+  return &paths_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Path >&
+Project::paths() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.paths)
+  return paths_;
+}
+
+// repeated .buffers.resources.Script scripts = 5;
+int Project::scripts_size() const {
+  return scripts_.size();
+}
+void Project::clear_scripts() {
+  scripts_.Clear();
+}
+const ::buffers::resources::Script& Project::scripts(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.scripts)
+  return scripts_.Get(index);
+}
+::buffers::resources::Script* Project::mutable_scripts(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.scripts)
+  return scripts_.Mutable(index);
+}
+::buffers::resources::Script* Project::add_scripts() {
+  // @@protoc_insertion_point(field_add:buffers.Project.scripts)
+  return scripts_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Script >*
+Project::mutable_scripts() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.scripts)
+  return &scripts_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Script >&
+Project::scripts() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.scripts)
+  return scripts_;
+}
+
+// repeated .buffers.resources.Shader shaders = 6;
+int Project::shaders_size() const {
+  return shaders_.size();
+}
+void Project::clear_shaders() {
+  shaders_.Clear();
+}
+const ::buffers::resources::Shader& Project::shaders(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.shaders)
+  return shaders_.Get(index);
+}
+::buffers::resources::Shader* Project::mutable_shaders(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.shaders)
+  return shaders_.Mutable(index);
+}
+::buffers::resources::Shader* Project::add_shaders() {
+  // @@protoc_insertion_point(field_add:buffers.Project.shaders)
+  return shaders_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Shader >*
+Project::mutable_shaders() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.shaders)
+  return &shaders_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Shader >&
+Project::shaders() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.shaders)
+  return shaders_;
+}
+
+// repeated .buffers.resources.Font fonts = 7;
+int Project::fonts_size() const {
+  return fonts_.size();
+}
+void Project::clear_fonts() {
+  fonts_.Clear();
+}
+const ::buffers::resources::Font& Project::fonts(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.fonts)
+  return fonts_.Get(index);
+}
+::buffers::resources::Font* Project::mutable_fonts(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.fonts)
+  return fonts_.Mutable(index);
+}
+::buffers::resources::Font* Project::add_fonts() {
+  // @@protoc_insertion_point(field_add:buffers.Project.fonts)
+  return fonts_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Font >*
+Project::mutable_fonts() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.fonts)
+  return &fonts_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font >&
+Project::fonts() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.fonts)
+  return fonts_;
+}
+
+// repeated .buffers.resources.Timeline timelines = 8;
+int Project::timelines_size() const {
+  return timelines_.size();
+}
+void Project::clear_timelines() {
+  timelines_.Clear();
+}
+const ::buffers::resources::Timeline& Project::timelines(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.timelines)
+  return timelines_.Get(index);
+}
+::buffers::resources::Timeline* Project::mutable_timelines(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.timelines)
+  return timelines_.Mutable(index);
+}
+::buffers::resources::Timeline* Project::add_timelines() {
+  // @@protoc_insertion_point(field_add:buffers.Project.timelines)
+  return timelines_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline >*
+Project::mutable_timelines() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.timelines)
+  return &timelines_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline >&
+Project::timelines() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.timelines)
+  return timelines_;
 }
 
 // repeated .buffers.resources.Object objects = 9;
