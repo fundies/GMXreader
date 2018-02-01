@@ -247,6 +247,28 @@ class Sprite : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 
   // accessors -------------------------------------------------------
 
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  int subimages_size() const;
+  void clear_subimages();
+  static const int kSubimagesFieldNumber = 3;
+  const ::std::string& subimages(int index) const;
+  ::std::string* mutable_subimages(int index);
+  void set_subimages(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_subimages(int index, ::std::string&& value);
+  #endif
+  void set_subimages(int index, const char* value);
+  void set_subimages(int index, const char* value, size_t size);
+  ::std::string* add_subimages();
+  void add_subimages(const ::std::string& value);
+  #if LANG_CXX11
+  void add_subimages(::std::string&& value);
+  #endif
+  void add_subimages(const char* value);
+  void add_subimages(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& subimages() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_subimages();
+
   // optional string name = 1;
   bool has_name() const;
   void clear_name();
@@ -262,28 +284,28 @@ class Sprite : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
   ::google::protobuf::int32 id() const;
   void set_id(::google::protobuf::int32 value);
 
-  // optional bool preload = 4;
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_preload() const;
   void clear_preload();
   static const int kPreloadFieldNumber = 4;
   bool preload() const;
   void set_preload(bool value);
 
-  // optional bool transparent = 5;
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_transparent() const;
   void clear_transparent();
   static const int kTransparentFieldNumber = 5;
   bool transparent() const;
   void set_transparent(bool value);
 
-  // optional bool smooth_edges = 6;
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_smooth_edges() const;
   void clear_smooth_edges();
   static const int kSmoothEdgesFieldNumber = 6;
@@ -360,6 +382,55 @@ class Sprite : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::int32 bbox_bottom() const;
   void set_bbox_bottom(::google::protobuf::int32 value);
 
+  // optional int32 type = 17;
+  bool has_type() const;
+  void clear_type();
+  static const int kTypeFieldNumber = 17;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
+
+  // optional int32 h_tile = 18 [(.buffers.gmx) = "HTile"];
+  bool has_h_tile() const;
+  void clear_h_tile();
+  static const int kHTileFieldNumber = 18;
+  ::google::protobuf::int32 h_tile() const;
+  void set_h_tile(::google::protobuf::int32 value);
+
+  // optional int32 v_tile = 19 [(.buffers.gmx) = "VTile"];
+  bool has_v_tile() const;
+  void clear_v_tile();
+  static const int kVTileFieldNumber = 19;
+  ::google::protobuf::int32 v_tile() const;
+  void set_v_tile(::google::protobuf::int32 value);
+
+  // optional int32 texture_group = 20 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+  bool has_texture_group() const;
+  void clear_texture_group();
+  static const int kTextureGroupFieldNumber = 20;
+  ::google::protobuf::int32 texture_group() const;
+  void set_texture_group(::google::protobuf::int32 value);
+
+  // optional bool for3D = 21 [(.buffers.gmx) = "For3D"];
+  bool has_for3d() const;
+  void clear_for3d();
+  static const int kFor3DFieldNumber = 21;
+  bool for3d() const;
+  void set_for3d(bool value);
+
+  // optional uint32 width = 22;
+  bool has_width() const;
+  void clear_width();
+  static const int kWidthFieldNumber = 22;
+  ::google::protobuf::uint32 width() const;
+  void set_width(::google::protobuf::uint32 value);
+
+  // optional uint32 height = 23;
+  bool has_height() const;
+  void clear_height();
+  static const int kHeightFieldNumber = 23;
+  ::google::protobuf::uint32 height() const;
+  void set_height(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:buffers.resources.Sprite)
  private:
   void set_has_name();
@@ -392,10 +463,25 @@ class Sprite : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   void clear_has_bbox_top();
   void set_has_bbox_bottom();
   void clear_has_bbox_bottom();
+  void set_has_type();
+  void clear_has_type();
+  void set_has_h_tile();
+  void clear_has_h_tile();
+  void set_has_v_tile();
+  void clear_has_v_tile();
+  void set_has_texture_group();
+  void clear_has_texture_group();
+  void set_has_for3d();
+  void clear_has_for3d();
+  void set_has_width();
+  void clear_has_width();
+  void set_has_height();
+  void clear_has_height();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> subimages_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::int32 id_;
   bool preload_;
@@ -411,6 +497,13 @@ class Sprite : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::int32 bbox_right_;
   ::google::protobuf::int32 bbox_top_;
   ::google::protobuf::int32 bbox_bottom_;
+  ::google::protobuf::int32 type_;
+  ::google::protobuf::int32 h_tile_;
+  ::google::protobuf::int32 v_tile_;
+  ::google::protobuf::int32 texture_group_;
+  bool for3d_;
+  ::google::protobuf::uint32 width_;
+  ::google::protobuf::uint32 height_;
   friend struct protobuf_resources_2fSprite_2eproto::TableStruct;
 };
 // ===================================================================
@@ -488,7 +581,7 @@ inline void Sprite::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sprite.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Sprite::has_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -512,7 +605,7 @@ inline void Sprite::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.id)
 }
 
-// optional bool preload = 4;
+// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Sprite::has_preload() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -536,7 +629,7 @@ inline void Sprite::set_preload(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.preload)
 }
 
-// optional bool transparent = 5;
+// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Sprite::has_transparent() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -560,7 +653,7 @@ inline void Sprite::set_transparent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.transparent)
 }
 
-// optional bool smooth_edges = 6;
+// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Sprite::has_smooth_edges() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -824,6 +917,243 @@ inline void Sprite::set_bbox_bottom(::google::protobuf::int32 value) {
   set_has_bbox_bottom();
   bbox_bottom_ = value;
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.bbox_bottom)
+}
+
+// optional int32 type = 17;
+inline bool Sprite::has_type() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void Sprite::set_has_type() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void Sprite::clear_has_type() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void Sprite::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+inline ::google::protobuf::int32 Sprite::type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.type)
+  return type_;
+}
+inline void Sprite::set_type(::google::protobuf::int32 value) {
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.type)
+}
+
+// optional int32 h_tile = 18 [(.buffers.gmx) = "HTile"];
+inline bool Sprite::has_h_tile() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void Sprite::set_has_h_tile() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void Sprite::clear_has_h_tile() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void Sprite::clear_h_tile() {
+  h_tile_ = 0;
+  clear_has_h_tile();
+}
+inline ::google::protobuf::int32 Sprite::h_tile() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.h_tile)
+  return h_tile_;
+}
+inline void Sprite::set_h_tile(::google::protobuf::int32 value) {
+  set_has_h_tile();
+  h_tile_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.h_tile)
+}
+
+// optional int32 v_tile = 19 [(.buffers.gmx) = "VTile"];
+inline bool Sprite::has_v_tile() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void Sprite::set_has_v_tile() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void Sprite::clear_has_v_tile() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void Sprite::clear_v_tile() {
+  v_tile_ = 0;
+  clear_has_v_tile();
+}
+inline ::google::protobuf::int32 Sprite::v_tile() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.v_tile)
+  return v_tile_;
+}
+inline void Sprite::set_v_tile(::google::protobuf::int32 value) {
+  set_has_v_tile();
+  v_tile_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.v_tile)
+}
+
+// optional int32 texture_group = 20 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+inline bool Sprite::has_texture_group() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void Sprite::set_has_texture_group() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void Sprite::clear_has_texture_group() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void Sprite::clear_texture_group() {
+  texture_group_ = 0;
+  clear_has_texture_group();
+}
+inline ::google::protobuf::int32 Sprite::texture_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.texture_group)
+  return texture_group_;
+}
+inline void Sprite::set_texture_group(::google::protobuf::int32 value) {
+  set_has_texture_group();
+  texture_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.texture_group)
+}
+
+// optional bool for3D = 21 [(.buffers.gmx) = "For3D"];
+inline bool Sprite::has_for3d() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+inline void Sprite::set_has_for3d() {
+  _has_bits_[0] |= 0x00080000u;
+}
+inline void Sprite::clear_has_for3d() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+inline void Sprite::clear_for3d() {
+  for3d_ = false;
+  clear_has_for3d();
+}
+inline bool Sprite::for3d() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.for3D)
+  return for3d_;
+}
+inline void Sprite::set_for3d(bool value) {
+  set_has_for3d();
+  for3d_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.for3D)
+}
+
+// optional uint32 width = 22;
+inline bool Sprite::has_width() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void Sprite::set_has_width() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void Sprite::clear_has_width() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void Sprite::clear_width() {
+  width_ = 0u;
+  clear_has_width();
+}
+inline ::google::protobuf::uint32 Sprite::width() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.width)
+  return width_;
+}
+inline void Sprite::set_width(::google::protobuf::uint32 value) {
+  set_has_width();
+  width_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.width)
+}
+
+// optional uint32 height = 23;
+inline bool Sprite::has_height() const {
+  return (_has_bits_[0] & 0x00200000u) != 0;
+}
+inline void Sprite::set_has_height() {
+  _has_bits_[0] |= 0x00200000u;
+}
+inline void Sprite::clear_has_height() {
+  _has_bits_[0] &= ~0x00200000u;
+}
+inline void Sprite::clear_height() {
+  height_ = 0u;
+  clear_has_height();
+}
+inline ::google::protobuf::uint32 Sprite::height() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.height)
+  return height_;
+}
+inline void Sprite::set_height(::google::protobuf::uint32 value) {
+  set_has_height();
+  height_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.height)
+}
+
+// repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+inline int Sprite::subimages_size() const {
+  return subimages_.size();
+}
+inline void Sprite::clear_subimages() {
+  subimages_.Clear();
+}
+inline const ::std::string& Sprite::subimages(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.subimages)
+  return subimages_.Get(index);
+}
+inline ::std::string* Sprite::mutable_subimages(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Sprite.subimages)
+  return subimages_.Mutable(index);
+}
+inline void Sprite::set_subimages(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.subimages)
+  subimages_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Sprite::set_subimages(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.subimages)
+  subimages_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Sprite::set_subimages(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  subimages_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Sprite.subimages)
+}
+inline void Sprite::set_subimages(int index, const char* value, size_t size) {
+  subimages_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Sprite.subimages)
+}
+inline ::std::string* Sprite::add_subimages() {
+  // @@protoc_insertion_point(field_add_mutable:buffers.resources.Sprite.subimages)
+  return subimages_.Add();
+}
+inline void Sprite::add_subimages(const ::std::string& value) {
+  subimages_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:buffers.resources.Sprite.subimages)
+}
+#if LANG_CXX11
+inline void Sprite::add_subimages(::std::string&& value) {
+  subimages_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:buffers.resources.Sprite.subimages)
+}
+#endif
+inline void Sprite::add_subimages(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  subimages_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:buffers.resources.Sprite.subimages)
+}
+inline void Sprite::add_subimages(const char* value, size_t size) {
+  subimages_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:buffers.resources.Sprite.subimages)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Sprite::subimages() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Sprite.subimages)
+  return subimages_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Sprite::mutable_subimages() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Sprite.subimages)
+  return &subimages_;
 }
 
 #ifdef __GNUC__

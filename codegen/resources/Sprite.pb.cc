@@ -70,6 +70,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, bbox_right_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, bbox_top_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, bbox_bottom_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, h_tile_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, v_tile_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, texture_group_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, for3d_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, width_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, height_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sprite, subimages_),
   0,
   1,
   2,
@@ -85,9 +93,17 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   12,
   13,
   14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 20, sizeof(Sprite)},
+  { 0, 28, sizeof(Sprite)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -134,24 +150,31 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\026resources/Sprite.proto\022\021buffers.resour"
-      "ces\032\roptions.proto\"\263\004\n\006Sprite\022\014\n\004name\030\001 "
-      "\001(\t\022\n\n\002id\030\002 \001(\005\022\017\n\007preload\030\004 \001(\010\022\023\n\013tran"
-      "sparent\030\005 \001(\010\022\024\n\014smooth_edges\030\006 \001(\010\022)\n\017a"
-      "lpha_tolerance\030\007 \001(\005B\020\202\265\030\014coltolerance\022#"
-      "\n\rseparate_mask\030\010 \001(\010B\014\202\265\030\010sepmasks\022\033\n\010o"
-      "rigin_x\030\t \001(\005B\t\202\265\030\005xorig\022\035\n\010origin_y\030\n \001"
-      "(\005B\013\202\265\030\007yorigin\022;\n\005shape\030\013 \001(\0162\037.buffers"
-      ".resources.Sprite.ShapeB\013\202\265\030\007colkind\022F\n\t"
-      "bbox_mode\030\014 \001(\0162%.buffers.resources.Spri"
-      "te.BoundingBoxB\014\202\265\030\010bboxmode\022\021\n\tbbox_lef"
-      "t\030\r \001(\005\022\022\n\nbbox_right\030\016 \001(\005\022\020\n\010bbox_top\030"
-      "\017 \001(\005\022\023\n\013bbox_bottom\030\020 \001(\005\":\n\005Shape\022\013\n\007P"
-      "RECISE\020\000\022\r\n\tRECTANGLE\020\001\022\010\n\004DISK\020\002\022\013\n\007DIA"
-      "MOND\020\003\"8\n\013BoundingBox\022\r\n\tAUTOMATIC\020\000\022\016\n\n"
-      "FULL_IMAGE\020\001\022\n\n\006MANUAL\020\002"
+      "ces\032\roptions.proto\"\333\006\n\006Sprite\022\014\n\004name\030\001 "
+      "\001(\t\022\037\n\002id\030\002 \001(\005B\023\202\265\030\017GMX_DEPRECIATED\022$\n\007"
+      "preload\030\004 \001(\010B\023\202\265\030\017GMX_DEPRECIATED\022(\n\013tr"
+      "ansparent\030\005 \001(\010B\023\202\265\030\017GMX_DEPRECIATED\022)\n\014"
+      "smooth_edges\030\006 \001(\010B\023\202\265\030\017GMX_DEPRECIATED\022"
+      ")\n\017alpha_tolerance\030\007 \001(\005B\020\202\265\030\014coltoleran"
+      "ce\022#\n\rseparate_mask\030\010 \001(\010B\014\202\265\030\010sepmasks\022"
+      "\033\n\010origin_x\030\t \001(\005B\t\202\265\030\005xorig\022\035\n\010origin_y"
+      "\030\n \001(\005B\013\202\265\030\007yorigin\022;\n\005shape\030\013 \001(\0162\037.buf"
+      "fers.resources.Sprite.ShapeB\013\202\265\030\007colkind"
+      "\022F\n\tbbox_mode\030\014 \001(\0162%.buffers.resources."
+      "Sprite.BoundingBoxB\014\202\265\030\010bboxmode\022\021\n\tbbox"
+      "_left\030\r \001(\005\022\022\n\nbbox_right\030\016 \001(\005\022\020\n\010bbox_"
+      "top\030\017 \001(\005\022\023\n\013bbox_bottom\030\020 \001(\005\022\014\n\004type\030\021"
+      " \001(\005\022\031\n\006h_tile\030\022 \001(\005B\t\202\265\030\005HTile\022\031\n\006v_til"
+      "e\030\023 \001(\005B\t\202\265\030\005VTile\0226\n\rtexture_group\030\024 \001("
+      "\005B\037\202\265\030\033TextureGroups/TextureGroup0\022\030\n\005fo"
+      "r3D\030\025 \001(\010B\t\202\265\030\005For3D\022\r\n\005width\030\026 \001(\r\022\016\n\006h"
+      "eight\030\027 \001(\r\022\035\n\tsubimages\030\003 \003(\tB\n\202\265\030\006fram"
+      "es\":\n\005Shape\022\013\n\007PRECISE\020\000\022\r\n\tRECTANGLE\020\001\022"
+      "\010\n\004DISK\020\002\022\013\n\007DIAMOND\020\003\"8\n\013BoundingBox\022\r\n"
+      "\tAUTOMATIC\020\000\022\016\n\nFULL_IMAGE\020\001\022\n\n\006MANUAL\020\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 624);
+      descriptor, 920);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Sprite.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -238,6 +261,14 @@ const int Sprite::kBboxLeftFieldNumber;
 const int Sprite::kBboxRightFieldNumber;
 const int Sprite::kBboxTopFieldNumber;
 const int Sprite::kBboxBottomFieldNumber;
+const int Sprite::kTypeFieldNumber;
+const int Sprite::kHTileFieldNumber;
+const int Sprite::kVTileFieldNumber;
+const int Sprite::kTextureGroupFieldNumber;
+const int Sprite::kFor3DFieldNumber;
+const int Sprite::kWidthFieldNumber;
+const int Sprite::kHeightFieldNumber;
+const int Sprite::kSubimagesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Sprite::Sprite()
@@ -252,15 +283,16 @@ Sprite::Sprite(const Sprite& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0) {
+      _cached_size_(0),
+      subimages_(from.subimages_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_name()) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&bbox_bottom_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(bbox_bottom_));
+    static_cast<size_t>(reinterpret_cast<char*>(&height_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(height_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Sprite)
 }
 
@@ -268,8 +300,8 @@ void Sprite::SharedCtor() {
   _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&bbox_bottom_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(bbox_bottom_));
+      reinterpret_cast<char*>(&height_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(height_));
 }
 
 Sprite::~Sprite() {
@@ -310,6 +342,7 @@ void Sprite::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  subimages_.Clear();
   if (has_name()) {
     GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
     (*name_.UnsafeRawStringPointer())->clear();
@@ -320,10 +353,15 @@ void Sprite::Clear() {
         reinterpret_cast<char*>(&origin_x_) -
         reinterpret_cast<char*>(&id_)) + sizeof(origin_x_));
   }
-  if (cached_has_bits & 32512u) {
+  if (cached_has_bits & 65280u) {
     ::memset(&origin_y_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&bbox_bottom_) -
-        reinterpret_cast<char*>(&origin_y_)) + sizeof(bbox_bottom_));
+        reinterpret_cast<char*>(&type_) -
+        reinterpret_cast<char*>(&origin_y_)) + sizeof(type_));
+  }
+  if (cached_has_bits & 4128768u) {
+    ::memset(&h_tile_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&height_) -
+        reinterpret_cast<char*>(&h_tile_)) + sizeof(height_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -355,7 +393,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2;
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -369,7 +407,24 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool preload = 4;
+      // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_subimages()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->subimages(this->subimages_size() - 1).data(),
+            static_cast<int>(this->subimages(this->subimages_size() - 1).length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Sprite.subimages");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
@@ -383,7 +438,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool transparent = 5;
+      // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
@@ -397,7 +452,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool smooth_edges = 6;
+      // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
@@ -563,6 +618,104 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
+      // optional int32 type = 17;
+      case 17: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(136u /* 136 & 0xFF */)) {
+          set_has_type();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 h_tile = 18 [(.buffers.gmx) = "HTile"];
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(144u /* 144 & 0xFF */)) {
+          set_has_h_tile();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &h_tile_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 v_tile = 19 [(.buffers.gmx) = "VTile"];
+      case 19: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(152u /* 152 & 0xFF */)) {
+          set_has_v_tile();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &v_tile_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 texture_group = 20 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+      case 20: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(160u /* 160 & 0xFF */)) {
+          set_has_texture_group();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &texture_group_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool for3D = 21 [(.buffers.gmx) = "For3D"];
+      case 21: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(168u /* 168 & 0xFF */)) {
+          set_has_for3d();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &for3d_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional uint32 width = 22;
+      case 22: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(176u /* 176 & 0xFF */)) {
+          set_has_width();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &width_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional uint32 height = 23;
+      case 23: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(184u /* 184 & 0xFF */)) {
+          set_has_height();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &height_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -600,22 +753,32 @@ void Sprite::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000002u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
 
-  // optional bool preload = 4;
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  for (int i = 0, n = this->subimages_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->subimages(i).data(), static_cast<int>(this->subimages(i).length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Sprite.subimages");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      3, this->subimages(i), output);
+  }
+
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->preload(), output);
   }
 
-  // optional bool transparent = 5;
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000008u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->transparent(), output);
   }
 
-  // optional bool smooth_edges = 6;
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000010u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->smooth_edges(), output);
   }
@@ -672,6 +835,41 @@ void Sprite::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(16, this->bbox_bottom(), output);
   }
 
+  // optional int32 type = 17;
+  if (cached_has_bits & 0x00008000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(17, this->type(), output);
+  }
+
+  // optional int32 h_tile = 18 [(.buffers.gmx) = "HTile"];
+  if (cached_has_bits & 0x00010000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(18, this->h_tile(), output);
+  }
+
+  // optional int32 v_tile = 19 [(.buffers.gmx) = "VTile"];
+  if (cached_has_bits & 0x00020000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(19, this->v_tile(), output);
+  }
+
+  // optional int32 texture_group = 20 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+  if (cached_has_bits & 0x00040000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(20, this->texture_group(), output);
+  }
+
+  // optional bool for3D = 21 [(.buffers.gmx) = "For3D"];
+  if (cached_has_bits & 0x00080000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(21, this->for3d(), output);
+  }
+
+  // optional uint32 width = 22;
+  if (cached_has_bits & 0x00100000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(22, this->width(), output);
+  }
+
+  // optional uint32 height = 23;
+  if (cached_has_bits & 0x00200000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(23, this->height(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -698,22 +896,32 @@ void Sprite::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
 
-  // optional bool preload = 4;
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  for (int i = 0, n = this->subimages_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->subimages(i).data(), static_cast<int>(this->subimages(i).length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Sprite.subimages");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(3, this->subimages(i), target);
+  }
+
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->preload(), target);
   }
 
-  // optional bool transparent = 5;
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000008u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->transparent(), target);
   }
 
-  // optional bool smooth_edges = 6;
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000010u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->smooth_edges(), target);
   }
@@ -770,6 +978,41 @@ void Sprite::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(16, this->bbox_bottom(), target);
   }
 
+  // optional int32 type = 17;
+  if (cached_has_bits & 0x00008000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(17, this->type(), target);
+  }
+
+  // optional int32 h_tile = 18 [(.buffers.gmx) = "HTile"];
+  if (cached_has_bits & 0x00010000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(18, this->h_tile(), target);
+  }
+
+  // optional int32 v_tile = 19 [(.buffers.gmx) = "VTile"];
+  if (cached_has_bits & 0x00020000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(19, this->v_tile(), target);
+  }
+
+  // optional int32 texture_group = 20 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+  if (cached_has_bits & 0x00040000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(20, this->texture_group(), target);
+  }
+
+  // optional bool for3D = 21 [(.buffers.gmx) = "For3D"];
+  if (cached_has_bits & 0x00080000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(21, this->for3d(), target);
+  }
+
+  // optional uint32 width = 22;
+  if (cached_has_bits & 0x00100000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(22, this->width(), target);
+  }
+
+  // optional uint32 height = 23;
+  if (cached_has_bits & 0x00200000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(23, this->height(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -787,6 +1030,14 @@ size_t Sprite::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->subimages_size());
+  for (int i = 0, n = this->subimages_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->subimages(i));
+  }
+
   if (_has_bits_[0 / 32] & 255u) {
     // optional string name = 1;
     if (has_name()) {
@@ -795,24 +1046,24 @@ size_t Sprite::ByteSizeLong() const {
           this->name());
     }
 
-    // optional int32 id = 2;
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->id());
     }
 
-    // optional bool preload = 4;
+    // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
     if (has_preload()) {
       total_size += 1 + 1;
     }
 
-    // optional bool transparent = 5;
+    // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
     if (has_transparent()) {
       total_size += 1 + 1;
     }
 
-    // optional bool smooth_edges = 6;
+    // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
     if (has_smooth_edges()) {
       total_size += 1 + 1;
     }
@@ -837,7 +1088,7 @@ size_t Sprite::ByteSizeLong() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & 32512u) {
+  if (_has_bits_[8 / 32] & 65280u) {
     // optional int32 origin_y = 10 [(.buffers.gmx) = "yorigin"];
     if (has_origin_y()) {
       total_size += 1 +
@@ -885,6 +1136,55 @@ size_t Sprite::ByteSizeLong() const {
           this->bbox_bottom());
     }
 
+    // optional int32 type = 17;
+    if (has_type()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->type());
+    }
+
+  }
+  if (_has_bits_[16 / 32] & 4128768u) {
+    // optional int32 h_tile = 18 [(.buffers.gmx) = "HTile"];
+    if (has_h_tile()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->h_tile());
+    }
+
+    // optional int32 v_tile = 19 [(.buffers.gmx) = "VTile"];
+    if (has_v_tile()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->v_tile());
+    }
+
+    // optional int32 texture_group = 20 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+    if (has_texture_group()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->texture_group());
+    }
+
+    // optional bool for3D = 21 [(.buffers.gmx) = "For3D"];
+    if (has_for3d()) {
+      total_size += 2 + 1;
+    }
+
+    // optional uint32 width = 22;
+    if (has_width()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->width());
+    }
+
+    // optional uint32 height = 23;
+    if (has_height()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->height());
+    }
+
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -915,6 +1215,7 @@ void Sprite::MergeFrom(const Sprite& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  subimages_.MergeFrom(from.subimages_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
@@ -944,7 +1245,7 @@ void Sprite::MergeFrom(const Sprite& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 32512u) {
+  if (cached_has_bits & 65280u) {
     if (cached_has_bits & 0x00000100u) {
       origin_y_ = from.origin_y_;
     }
@@ -965,6 +1266,30 @@ void Sprite::MergeFrom(const Sprite& from) {
     }
     if (cached_has_bits & 0x00004000u) {
       bbox_bottom_ = from.bbox_bottom_;
+    }
+    if (cached_has_bits & 0x00008000u) {
+      type_ = from.type_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 4128768u) {
+    if (cached_has_bits & 0x00010000u) {
+      h_tile_ = from.h_tile_;
+    }
+    if (cached_has_bits & 0x00020000u) {
+      v_tile_ = from.v_tile_;
+    }
+    if (cached_has_bits & 0x00040000u) {
+      texture_group_ = from.texture_group_;
+    }
+    if (cached_has_bits & 0x00080000u) {
+      for3d_ = from.for3d_;
+    }
+    if (cached_has_bits & 0x00100000u) {
+      width_ = from.width_;
+    }
+    if (cached_has_bits & 0x00200000u) {
+      height_ = from.height_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -994,6 +1319,7 @@ void Sprite::Swap(Sprite* other) {
 }
 void Sprite::InternalSwap(Sprite* other) {
   using std::swap;
+  subimages_.InternalSwap(&other->subimages_);
   name_.Swap(&other->name_);
   swap(id_, other->id_);
   swap(preload_, other->preload_);
@@ -1009,6 +1335,13 @@ void Sprite::InternalSwap(Sprite* other) {
   swap(bbox_right_, other->bbox_right_);
   swap(bbox_top_, other->bbox_top_);
   swap(bbox_bottom_, other->bbox_bottom_);
+  swap(type_, other->type_);
+  swap(h_tile_, other->h_tile_);
+  swap(v_tile_, other->v_tile_);
+  swap(texture_group_, other->texture_group_);
+  swap(for3d_, other->for3d_);
+  swap(width_, other->width_);
+  swap(height_, other->height_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -1085,7 +1418,7 @@ void Sprite::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sprite.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 bool Sprite::has_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -1109,7 +1442,7 @@ void Sprite::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.id)
 }
 
-// optional bool preload = 4;
+// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 bool Sprite::has_preload() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1133,7 +1466,7 @@ void Sprite::set_preload(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.preload)
 }
 
-// optional bool transparent = 5;
+// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 bool Sprite::has_transparent() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -1157,7 +1490,7 @@ void Sprite::set_transparent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.transparent)
 }
 
-// optional bool smooth_edges = 6;
+// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 bool Sprite::has_smooth_edges() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -1421,6 +1754,243 @@ void Sprite::set_bbox_bottom(::google::protobuf::int32 value) {
   set_has_bbox_bottom();
   bbox_bottom_ = value;
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.bbox_bottom)
+}
+
+// optional int32 type = 17;
+bool Sprite::has_type() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+void Sprite::set_has_type() {
+  _has_bits_[0] |= 0x00008000u;
+}
+void Sprite::clear_has_type() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+void Sprite::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+::google::protobuf::int32 Sprite::type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.type)
+  return type_;
+}
+void Sprite::set_type(::google::protobuf::int32 value) {
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.type)
+}
+
+// optional int32 h_tile = 18 [(.buffers.gmx) = "HTile"];
+bool Sprite::has_h_tile() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+void Sprite::set_has_h_tile() {
+  _has_bits_[0] |= 0x00010000u;
+}
+void Sprite::clear_has_h_tile() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+void Sprite::clear_h_tile() {
+  h_tile_ = 0;
+  clear_has_h_tile();
+}
+::google::protobuf::int32 Sprite::h_tile() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.h_tile)
+  return h_tile_;
+}
+void Sprite::set_h_tile(::google::protobuf::int32 value) {
+  set_has_h_tile();
+  h_tile_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.h_tile)
+}
+
+// optional int32 v_tile = 19 [(.buffers.gmx) = "VTile"];
+bool Sprite::has_v_tile() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+void Sprite::set_has_v_tile() {
+  _has_bits_[0] |= 0x00020000u;
+}
+void Sprite::clear_has_v_tile() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+void Sprite::clear_v_tile() {
+  v_tile_ = 0;
+  clear_has_v_tile();
+}
+::google::protobuf::int32 Sprite::v_tile() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.v_tile)
+  return v_tile_;
+}
+void Sprite::set_v_tile(::google::protobuf::int32 value) {
+  set_has_v_tile();
+  v_tile_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.v_tile)
+}
+
+// optional int32 texture_group = 20 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+bool Sprite::has_texture_group() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+void Sprite::set_has_texture_group() {
+  _has_bits_[0] |= 0x00040000u;
+}
+void Sprite::clear_has_texture_group() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+void Sprite::clear_texture_group() {
+  texture_group_ = 0;
+  clear_has_texture_group();
+}
+::google::protobuf::int32 Sprite::texture_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.texture_group)
+  return texture_group_;
+}
+void Sprite::set_texture_group(::google::protobuf::int32 value) {
+  set_has_texture_group();
+  texture_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.texture_group)
+}
+
+// optional bool for3D = 21 [(.buffers.gmx) = "For3D"];
+bool Sprite::has_for3d() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+void Sprite::set_has_for3d() {
+  _has_bits_[0] |= 0x00080000u;
+}
+void Sprite::clear_has_for3d() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+void Sprite::clear_for3d() {
+  for3d_ = false;
+  clear_has_for3d();
+}
+bool Sprite::for3d() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.for3D)
+  return for3d_;
+}
+void Sprite::set_for3d(bool value) {
+  set_has_for3d();
+  for3d_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.for3D)
+}
+
+// optional uint32 width = 22;
+bool Sprite::has_width() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+void Sprite::set_has_width() {
+  _has_bits_[0] |= 0x00100000u;
+}
+void Sprite::clear_has_width() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+void Sprite::clear_width() {
+  width_ = 0u;
+  clear_has_width();
+}
+::google::protobuf::uint32 Sprite::width() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.width)
+  return width_;
+}
+void Sprite::set_width(::google::protobuf::uint32 value) {
+  set_has_width();
+  width_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.width)
+}
+
+// optional uint32 height = 23;
+bool Sprite::has_height() const {
+  return (_has_bits_[0] & 0x00200000u) != 0;
+}
+void Sprite::set_has_height() {
+  _has_bits_[0] |= 0x00200000u;
+}
+void Sprite::clear_has_height() {
+  _has_bits_[0] &= ~0x00200000u;
+}
+void Sprite::clear_height() {
+  height_ = 0u;
+  clear_has_height();
+}
+::google::protobuf::uint32 Sprite::height() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.height)
+  return height_;
+}
+void Sprite::set_height(::google::protobuf::uint32 value) {
+  set_has_height();
+  height_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.height)
+}
+
+// repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+int Sprite::subimages_size() const {
+  return subimages_.size();
+}
+void Sprite::clear_subimages() {
+  subimages_.Clear();
+}
+const ::std::string& Sprite::subimages(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sprite.subimages)
+  return subimages_.Get(index);
+}
+::std::string* Sprite::mutable_subimages(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Sprite.subimages)
+  return subimages_.Mutable(index);
+}
+void Sprite::set_subimages(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.subimages)
+  subimages_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+void Sprite::set_subimages(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:buffers.resources.Sprite.subimages)
+  subimages_.Mutable(index)->assign(std::move(value));
+}
+#endif
+void Sprite::set_subimages(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  subimages_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Sprite.subimages)
+}
+void Sprite::set_subimages(int index, const char* value, size_t size) {
+  subimages_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Sprite.subimages)
+}
+::std::string* Sprite::add_subimages() {
+  // @@protoc_insertion_point(field_add_mutable:buffers.resources.Sprite.subimages)
+  return subimages_.Add();
+}
+void Sprite::add_subimages(const ::std::string& value) {
+  subimages_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:buffers.resources.Sprite.subimages)
+}
+#if LANG_CXX11
+void Sprite::add_subimages(::std::string&& value) {
+  subimages_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:buffers.resources.Sprite.subimages)
+}
+#endif
+void Sprite::add_subimages(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  subimages_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:buffers.resources.Sprite.subimages)
+}
+void Sprite::add_subimages(const char* value, size_t size) {
+  subimages_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:buffers.resources.Sprite.subimages)
+}
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Sprite::subimages() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Sprite.subimages)
+  return subimages_;
+}
+::google::protobuf::RepeatedPtrField< ::std::string>*
+Sprite::mutable_subimages() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Sprite.subimages)
+  return &subimages_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

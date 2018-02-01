@@ -5,11 +5,11 @@ import "options.proto";
 
 message Sprite {
   optional string name = 1;
-  optional int32 id = 2;
+  optional int32 id = 2 [(gmx) = "GMX_DEPRECIATED"];
 
-  optional bool preload = 4;
-  optional bool transparent = 5;
-  optional bool smooth_edges = 6;
+  optional bool preload = 4 [(gmx) = "GMX_DEPRECIATED"];
+  optional bool transparent = 5 [(gmx) = "GMX_DEPRECIATED"];
+  optional bool smooth_edges = 6 [(gmx) = "GMX_DEPRECIATED"];
 
   optional int32 alpha_tolerance = 7 [(gmx) = "coltolerance"];
   optional bool separate_mask = 8 [(gmx) = "sepmasks"];
@@ -28,6 +28,14 @@ message Sprite {
   optional int32 bbox_right = 14;
   optional int32 bbox_top = 15;
   optional int32 bbox_bottom = 16;
+  
+  optional int32 type = 17;
+  optional int32 h_tile = 18 [(gmx) = "HTile"];
+  optional int32 v_tile = 19 [(gmx) = "VTile"];
+  optional int32 texture_group = 20 [(gmx) = "TextureGroups/TextureGroup0"];
+  optional bool for3D = 21 [(gmx) = "For3D"];
+  optional uint32 width = 22;
+  optional uint32 height = 23;
 
-  //repeated Image subimages = 3;
+  repeated string subimages = 3 [(gmx) = "frames"];
 }
