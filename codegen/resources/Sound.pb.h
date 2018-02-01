@@ -307,20 +307,6 @@ class Sound : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::std::string* release_data();
   void set_allocated_data(::std::string* data);
 
-  // optional int32 id = 2;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 2;
-  ::google::protobuf::int32 id() const;
-  void set_id(::google::protobuf::int32 value);
-
-  // optional bool preload = 3;
-  bool has_preload() const;
-  void clear_preload();
-  static const int kPreloadFieldNumber = 3;
-  bool preload() const;
-  void set_preload(bool value);
-
   // optional double pan = 4;
   bool has_pan() const;
   void clear_pan();
@@ -335,6 +321,13 @@ class Sound : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   double volume() const;
   void set_volume(double value);
 
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 2;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
   // optional .buffers.resources.Sound.Kind kind = 8;
   bool has_kind() const;
   void clear_kind();
@@ -348,6 +341,69 @@ class Sound : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   static const int kTypeFieldNumber = 9;
   ::buffers::resources::Sound_Type type() const;
   void set_type(::buffers::resources::Sound_Type value);
+
+  // optional int32 effects = 11;
+  bool has_effects() const;
+  void clear_effects();
+  static const int kEffectsFieldNumber = 11;
+  ::google::protobuf::int32 effects() const;
+  void set_effects(::google::protobuf::int32 value);
+
+  // optional uint32 bit_rate = 12 [(.buffers.gmx) = "bitRates/bitRate"];
+  bool has_bit_rate() const;
+  void clear_bit_rate();
+  static const int kBitRateFieldNumber = 12;
+  ::google::protobuf::uint32 bit_rate() const;
+  void set_bit_rate(::google::protobuf::uint32 value);
+
+  // optional bool preload = 3;
+  bool has_preload() const;
+  void clear_preload();
+  static const int kPreloadFieldNumber = 3;
+  bool preload() const;
+  void set_preload(bool value);
+
+  // optional bool compressed = 15;
+  bool has_compressed() const;
+  void clear_compressed();
+  static const int kCompressedFieldNumber = 15;
+  bool compressed() const;
+  void set_compressed(bool value);
+
+  // optional bool streamed = 16;
+  bool has_streamed() const;
+  void clear_streamed();
+  static const int kStreamedFieldNumber = 16;
+  bool streamed() const;
+  void set_streamed(bool value);
+
+  // optional bool uncompress_on_load = 17 [(.buffers.gmx) = "uncompressOnLoad"];
+  bool has_uncompress_on_load() const;
+  void clear_uncompress_on_load();
+  static const int kUncompressOnLoadFieldNumber = 17;
+  bool uncompress_on_load() const;
+  void set_uncompress_on_load(bool value);
+
+  // optional uint32 sample_rate = 13 [(.buffers.gmx) = "sampleRates/sampleRate"];
+  bool has_sample_rate() const;
+  void clear_sample_rate();
+  static const int kSampleRateFieldNumber = 13;
+  ::google::protobuf::uint32 sample_rate() const;
+  void set_sample_rate(::google::protobuf::uint32 value);
+
+  // optional uint32 bit_depth = 14 [(.buffers.gmx) = "bitDepths/bitDepth"];
+  bool has_bit_depth() const;
+  void clear_bit_depth();
+  static const int kBitDepthFieldNumber = 14;
+  ::google::protobuf::uint32 bit_depth() const;
+  void set_bit_depth(::google::protobuf::uint32 value);
+
+  // optional int32 audio_group = 18 [(.buffers.gmx) = "audioGroup"];
+  bool has_audio_group() const;
+  void clear_audio_group();
+  static const int kAudioGroupFieldNumber = 18;
+  ::google::protobuf::int32 audio_group() const;
+  void set_audio_group(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:buffers.resources.Sound)
  private:
@@ -371,6 +427,22 @@ class Sound : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   void clear_has_type();
   void set_has_data();
   void clear_has_data();
+  void set_has_effects();
+  void clear_has_effects();
+  void set_has_bit_rate();
+  void clear_has_bit_rate();
+  void set_has_sample_rate();
+  void clear_has_sample_rate();
+  void set_has_bit_depth();
+  void clear_has_bit_depth();
+  void set_has_compressed();
+  void clear_has_compressed();
+  void set_has_streamed();
+  void clear_has_streamed();
+  void set_has_uncompress_on_load();
+  void clear_has_uncompress_on_load();
+  void set_has_audio_group();
+  void clear_has_audio_group();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
@@ -379,12 +451,20 @@ class Sound : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::internal::ArenaStringPtr file_name_;
   ::google::protobuf::internal::ArenaStringPtr file_extension_;
   ::google::protobuf::internal::ArenaStringPtr data_;
-  ::google::protobuf::int32 id_;
-  bool preload_;
   double pan_;
   double volume_;
+  ::google::protobuf::int32 id_;
   int kind_;
   int type_;
+  ::google::protobuf::int32 effects_;
+  ::google::protobuf::uint32 bit_rate_;
+  bool preload_;
+  bool compressed_;
+  bool streamed_;
+  bool uncompress_on_load_;
+  ::google::protobuf::uint32 sample_rate_;
+  ::google::protobuf::uint32 bit_depth_;
+  ::google::protobuf::int32 audio_group_;
   friend struct protobuf_resources_2fSound_2eproto::TableStruct;
 };
 // ===================================================================
@@ -462,15 +542,15 @@ inline void Sound::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sound.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Sound::has_id() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void Sound::set_has_id() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void Sound::clear_has_id() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void Sound::clear_id() {
   id_ = 0;
@@ -488,13 +568,13 @@ inline void Sound::set_id(::google::protobuf::int32 value) {
 
 // optional bool preload = 3;
 inline bool Sound::has_preload() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void Sound::set_has_preload() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void Sound::clear_has_preload() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void Sound::clear_preload() {
   preload_ = false;
@@ -512,13 +592,13 @@ inline void Sound::set_preload(bool value) {
 
 // optional double pan = 4;
 inline bool Sound::has_pan() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void Sound::set_has_pan() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void Sound::clear_has_pan() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void Sound::clear_pan() {
   pan_ = 0;
@@ -536,13 +616,13 @@ inline void Sound::set_pan(double value) {
 
 // optional double volume = 5 [(.buffers.gmx) = "volume/volume"];
 inline bool Sound::has_volume() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void Sound::set_has_volume() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void Sound::clear_has_volume() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void Sound::clear_volume() {
   volume_ = 0;
@@ -686,13 +766,13 @@ inline void Sound::set_allocated_file_extension(::std::string* file_extension) {
 
 // optional .buffers.resources.Sound.Kind kind = 8;
 inline bool Sound::has_kind() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void Sound::set_has_kind() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void Sound::clear_has_kind() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void Sound::clear_kind() {
   kind_ = 0;
@@ -711,13 +791,13 @@ inline void Sound::set_kind(::buffers::resources::Sound_Kind value) {
 
 // optional .buffers.resources.Sound.Type type = 9 [(.buffers.gmx) = "types/type"];
 inline bool Sound::has_type() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void Sound::set_has_type() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void Sound::clear_has_type() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void Sound::clear_type() {
   type_ = 0;
@@ -795,6 +875,198 @@ inline void Sound::set_allocated_data(::std::string* data) {
   }
   data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sound.data)
+}
+
+// optional int32 effects = 11;
+inline bool Sound::has_effects() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void Sound::set_has_effects() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void Sound::clear_has_effects() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void Sound::clear_effects() {
+  effects_ = 0;
+  clear_has_effects();
+}
+inline ::google::protobuf::int32 Sound::effects() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.effects)
+  return effects_;
+}
+inline void Sound::set_effects(::google::protobuf::int32 value) {
+  set_has_effects();
+  effects_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.effects)
+}
+
+// optional uint32 bit_rate = 12 [(.buffers.gmx) = "bitRates/bitRate"];
+inline bool Sound::has_bit_rate() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void Sound::set_has_bit_rate() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void Sound::clear_has_bit_rate() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void Sound::clear_bit_rate() {
+  bit_rate_ = 0u;
+  clear_has_bit_rate();
+}
+inline ::google::protobuf::uint32 Sound::bit_rate() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.bit_rate)
+  return bit_rate_;
+}
+inline void Sound::set_bit_rate(::google::protobuf::uint32 value) {
+  set_has_bit_rate();
+  bit_rate_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.bit_rate)
+}
+
+// optional uint32 sample_rate = 13 [(.buffers.gmx) = "sampleRates/sampleRate"];
+inline bool Sound::has_sample_rate() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void Sound::set_has_sample_rate() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void Sound::clear_has_sample_rate() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void Sound::clear_sample_rate() {
+  sample_rate_ = 0u;
+  clear_has_sample_rate();
+}
+inline ::google::protobuf::uint32 Sound::sample_rate() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.sample_rate)
+  return sample_rate_;
+}
+inline void Sound::set_sample_rate(::google::protobuf::uint32 value) {
+  set_has_sample_rate();
+  sample_rate_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.sample_rate)
+}
+
+// optional uint32 bit_depth = 14 [(.buffers.gmx) = "bitDepths/bitDepth"];
+inline bool Sound::has_bit_depth() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void Sound::set_has_bit_depth() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void Sound::clear_has_bit_depth() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void Sound::clear_bit_depth() {
+  bit_depth_ = 0u;
+  clear_has_bit_depth();
+}
+inline ::google::protobuf::uint32 Sound::bit_depth() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.bit_depth)
+  return bit_depth_;
+}
+inline void Sound::set_bit_depth(::google::protobuf::uint32 value) {
+  set_has_bit_depth();
+  bit_depth_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.bit_depth)
+}
+
+// optional bool compressed = 15;
+inline bool Sound::has_compressed() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void Sound::set_has_compressed() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void Sound::clear_has_compressed() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void Sound::clear_compressed() {
+  compressed_ = false;
+  clear_has_compressed();
+}
+inline bool Sound::compressed() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.compressed)
+  return compressed_;
+}
+inline void Sound::set_compressed(bool value) {
+  set_has_compressed();
+  compressed_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.compressed)
+}
+
+// optional bool streamed = 16;
+inline bool Sound::has_streamed() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void Sound::set_has_streamed() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void Sound::clear_has_streamed() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void Sound::clear_streamed() {
+  streamed_ = false;
+  clear_has_streamed();
+}
+inline bool Sound::streamed() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.streamed)
+  return streamed_;
+}
+inline void Sound::set_streamed(bool value) {
+  set_has_streamed();
+  streamed_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.streamed)
+}
+
+// optional bool uncompress_on_load = 17 [(.buffers.gmx) = "uncompressOnLoad"];
+inline bool Sound::has_uncompress_on_load() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void Sound::set_has_uncompress_on_load() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void Sound::clear_has_uncompress_on_load() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void Sound::clear_uncompress_on_load() {
+  uncompress_on_load_ = false;
+  clear_has_uncompress_on_load();
+}
+inline bool Sound::uncompress_on_load() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.uncompress_on_load)
+  return uncompress_on_load_;
+}
+inline void Sound::set_uncompress_on_load(bool value) {
+  set_has_uncompress_on_load();
+  uncompress_on_load_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.uncompress_on_load)
+}
+
+// optional int32 audio_group = 18 [(.buffers.gmx) = "audioGroup"];
+inline bool Sound::has_audio_group() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void Sound::set_has_audio_group() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void Sound::clear_has_audio_group() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void Sound::clear_audio_group() {
+  audio_group_ = 0;
+  clear_has_audio_group();
+}
+inline ::google::protobuf::int32 Sound::audio_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.audio_group)
+  return audio_group_;
+}
+inline void Sound::set_audio_group(::google::protobuf::int32 value) {
+  set_has_audio_group();
+  audio_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.audio_group)
 }
 
 #ifdef __GNUC__

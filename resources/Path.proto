@@ -5,25 +5,22 @@ import "options.proto";
 
 message Path {
   message Point {
-    optional int32 x = 1;
-    optional int32 y = 2;
-    optional int32 speed = 3;
-  }
-
-  message EditorMetadata {
-    optional string background_room_name = 1;
-    optional int32 snap_x = 2;
-    optional int32 snap_y = 3;
+    optional int32 x = 1 [(gmx) = "GMX_SPLIT/0"];
+    optional int32 y = 2 [(gmx) = "GMX_SPLIT/1"];
+    optional int32 speed = 3 [(gmx) = "GMX_SPLIT/2"];
   }
 
   optional string name = 1;
-  optional int32 id = 2;
+  optional int32 id = 2 [(gmx) = "GMX_DEPRECIATED"];
 
-  optional EditorMetadata editor_metadata = 3;
+  optional string background_room_name = 3 [(gmx) = "backroom"];
+  optional int32 snap_x = 4 [(gmx) = "hsnap"];
+  optional int32 snap_y = 5 [(gmx) = "vsnap"];
 
-  optional bool smooth = 4;
-  optional bool closed = 5;
-  optional int32 precision = 6;
+  optional bool smooth = 6 [(gmx) = "GMX_DEPRECIATED"];
+  optional bool closed = 7;
+  optional int32 precision = 8;
+  optional int32 kind = 9;
 
-  repeated Point points = 7;
+  repeated Point points = 10;
 }

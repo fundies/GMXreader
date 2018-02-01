@@ -24,11 +24,6 @@ public:
  ::google::protobuf::internal::ExplicitlyConstructed<Path_Point>
      _instance;
 } _Path_Point_default_instance_;
-class Path_EditorMetadataDefaultTypeInternal {
-public:
- ::google::protobuf::internal::ExplicitlyConstructed<Path_EditorMetadata>
-     _instance;
-} _Path_EditorMetadata_default_instance_;
 class PathDefaultTypeInternal {
 public:
  ::google::protobuf::internal::ExplicitlyConstructed<Path>
@@ -40,7 +35,7 @@ namespace protobuf_resources_2fPath_2eproto {
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[3];
+::google::protobuf::Metadata file_level_metadata[2];
 
 }  // namespace
 
@@ -57,7 +52,6 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
-  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
 };
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -72,17 +66,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   0,
   1,
   2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path_EditorMetadata, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path_EditorMetadata, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path_EditorMetadata, background_room_name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path_EditorMetadata, snap_x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path_EditorMetadata, snap_y_),
-  0,
-  1,
-  2,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -90,10 +73,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, editor_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, background_room_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, snap_x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, snap_y_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, smooth_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, closed_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, precision_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, kind_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Path, points_),
   0,
   2,
@@ -101,17 +87,18 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   3,
   4,
   5,
+  6,
+  7,
+  8,
   ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 8, sizeof(Path_Point)},
-  { 11, 19, sizeof(Path_EditorMetadata)},
-  { 22, 34, sizeof(Path)},
+  { 11, 26, sizeof(Path)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_Path_Point_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_Path_EditorMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Path_default_instance_),
 };
 
@@ -133,7 +120,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 3);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
 }
 
 }  // namespace
@@ -144,13 +131,9 @@ void TableStruct::InitDefaultsImpl() {
   ::buffers::protobuf_options_2eproto::InitDefaults();
   _Path_Point_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_Path_Point_default_instance_);_Path_EditorMetadata_default_instance_._instance.DefaultConstruct();
+      &_Path_Point_default_instance_);_Path_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_Path_EditorMetadata_default_instance_);_Path_default_instance_._instance.DefaultConstruct();
-  ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_Path_default_instance_);_Path_default_instance_._instance.get_mutable()->editor_metadata_ = const_cast< ::buffers::resources::Path_EditorMetadata*>(
-      ::buffers::resources::Path_EditorMetadata::internal_default_instance());
-}
+      &_Path_default_instance_);}
 
 void InitDefaults() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
@@ -161,18 +144,19 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\024resources/Path.proto\022\021buffers.resource"
-      "s\032\roptions.proto\"\301\002\n\004Path\022\014\n\004name\030\001 \001(\t\022"
-      "\n\n\002id\030\002 \001(\005\022\?\n\017editor_metadata\030\003 \001(\0132&.b"
-      "uffers.resources.Path.EditorMetadata\022\016\n\006"
-      "smooth\030\004 \001(\010\022\016\n\006closed\030\005 \001(\010\022\021\n\tprecisio"
-      "n\030\006 \001(\005\022-\n\006points\030\007 \003(\0132\035.buffers.resour"
-      "ces.Path.Point\032,\n\005Point\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030"
-      "\002 \001(\005\022\r\n\005speed\030\003 \001(\005\032N\n\016EditorMetadata\022\034"
-      "\n\024background_room_name\030\001 \001(\t\022\016\n\006snap_x\030\002"
-      " \001(\005\022\016\n\006snap_y\030\003 \001(\005"
+      "s\032\roptions.proto\"\375\002\n\004Path\022\014\n\004name\030\001 \001(\t\022"
+      "\037\n\002id\030\002 \001(\005B\023\202\265\030\017GMX_DEPRECIATED\022*\n\024back"
+      "ground_room_name\030\003 \001(\tB\014\202\265\030\010backroom\022\031\n\006"
+      "snap_x\030\004 \001(\005B\t\202\265\030\005hsnap\022\031\n\006snap_y\030\005 \001(\005B"
+      "\t\202\265\030\005vsnap\022#\n\006smooth\030\006 \001(\010B\023\202\265\030\017GMX_DEPR"
+      "ECIATED\022\016\n\006closed\030\007 \001(\010\022\021\n\tprecision\030\010 \001"
+      "(\005\022\014\n\004kind\030\t \001(\005\022-\n\006points\030\n \003(\0132\035.buffe"
+      "rs.resources.Path.Point\032_\n\005Point\022\032\n\001x\030\001 "
+      "\001(\005B\017\202\265\030\013GMX_SPLIT/0\022\032\n\001y\030\002 \001(\005B\017\202\265\030\013GMX"
+      "_SPLIT/1\022\036\n\005speed\030\003 \001(\005B\017\202\265\030\013GMX_SPLIT/2"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 380);
+      descriptor, 440);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Path.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -285,7 +269,7 @@ bool Path_Point::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 x = 1;
+      // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
@@ -299,7 +283,7 @@ bool Path_Point::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 y = 2;
+      // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -313,7 +297,7 @@ bool Path_Point::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 speed = 3;
+      // optional int32 speed = 3 [(.buffers.gmx) = "GMX_SPLIT/2"];
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
@@ -354,17 +338,17 @@ void Path_Point::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 x = 1;
+  // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
   if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->x(), output);
   }
 
-  // optional int32 y = 2;
+  // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
   if (cached_has_bits & 0x00000002u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->y(), output);
   }
 
-  // optional int32 speed = 3;
+  // optional int32 speed = 3 [(.buffers.gmx) = "GMX_SPLIT/2"];
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->speed(), output);
   }
@@ -384,17 +368,17 @@ void Path_Point::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 x = 1;
+  // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
   if (cached_has_bits & 0x00000001u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->x(), target);
   }
 
-  // optional int32 y = 2;
+  // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->y(), target);
   }
 
-  // optional int32 speed = 3;
+  // optional int32 speed = 3 [(.buffers.gmx) = "GMX_SPLIT/2"];
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->speed(), target);
   }
@@ -417,21 +401,21 @@ size_t Path_Point::ByteSizeLong() const {
         _internal_metadata_.unknown_fields());
   }
   if (_has_bits_[0 / 32] & 7u) {
-    // optional int32 x = 1;
+    // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
     if (has_x()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->x());
     }
 
-    // optional int32 y = 2;
+    // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
     if (has_y()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->y());
     }
 
-    // optional int32 speed = 3;
+    // optional int32 speed = 3 [(.buffers.gmx) = "GMX_SPLIT/2"];
     if (has_speed()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -523,7 +507,7 @@ void Path_Point::InternalSwap(Path_Point* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Path_Point
 
-// optional int32 x = 1;
+// optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
 bool Path_Point::has_x() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -547,7 +531,7 @@ void Path_Point::set_x(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.Point.x)
 }
 
-// optional int32 y = 2;
+// optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
 bool Path_Point::has_y() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -571,7 +555,7 @@ void Path_Point::set_y(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.Point.y)
 }
 
-// optional int32 speed = 3;
+// optional int32 speed = 3 [(.buffers.gmx) = "GMX_SPLIT/2"];
 bool Path_Point::has_speed() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -600,479 +584,15 @@ void Path_Point::set_speed(::google::protobuf::int32 value) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Path_EditorMetadata::kBackgroundRoomNameFieldNumber;
-const int Path_EditorMetadata::kSnapXFieldNumber;
-const int Path_EditorMetadata::kSnapYFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Path_EditorMetadata::Path_EditorMetadata()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    protobuf_resources_2fPath_2eproto::InitDefaults();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:buffers.resources.Path.EditorMetadata)
-}
-Path_EditorMetadata::Path_EditorMetadata(const Path_EditorMetadata& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  background_room_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_background_room_name()) {
-    background_room_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.background_room_name_);
-  }
-  ::memcpy(&snap_x_, &from.snap_x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&snap_y_) -
-    reinterpret_cast<char*>(&snap_x_)) + sizeof(snap_y_));
-  // @@protoc_insertion_point(copy_constructor:buffers.resources.Path.EditorMetadata)
-}
-
-void Path_EditorMetadata::SharedCtor() {
-  _cached_size_ = 0;
-  background_room_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&snap_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&snap_y_) -
-      reinterpret_cast<char*>(&snap_x_)) + sizeof(snap_y_));
-}
-
-Path_EditorMetadata::~Path_EditorMetadata() {
-  // @@protoc_insertion_point(destructor:buffers.resources.Path.EditorMetadata)
-  SharedDtor();
-}
-
-void Path_EditorMetadata::SharedDtor() {
-  background_room_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void Path_EditorMetadata::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* Path_EditorMetadata::descriptor() {
-  protobuf_resources_2fPath_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_resources_2fPath_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const Path_EditorMetadata& Path_EditorMetadata::default_instance() {
-  protobuf_resources_2fPath_2eproto::InitDefaults();
-  return *internal_default_instance();
-}
-
-Path_EditorMetadata* Path_EditorMetadata::New(::google::protobuf::Arena* arena) const {
-  Path_EditorMetadata* n = new Path_EditorMetadata;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void Path_EditorMetadata::Clear() {
-// @@protoc_insertion_point(message_clear_start:buffers.resources.Path.EditorMetadata)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (has_background_room_name()) {
-    GOOGLE_DCHECK(!background_room_name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-    (*background_room_name_.UnsafeRawStringPointer())->clear();
-  }
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 6u) {
-    ::memset(&snap_x_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&snap_y_) -
-        reinterpret_cast<char*>(&snap_x_)) + sizeof(snap_y_));
-  }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
-}
-
-bool Path_EditorMetadata::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:buffers.resources.Path.EditorMetadata)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string background_room_name = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_background_room_name()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->background_room_name().data(), static_cast<int>(this->background_room_name().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "buffers.resources.Path.EditorMetadata.background_room_name");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional int32 snap_x = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          set_has_snap_x();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &snap_x_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional int32 snap_y = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-          set_has_snap_y();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &snap_y_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:buffers.resources.Path.EditorMetadata)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:buffers.resources.Path.EditorMetadata)
-  return false;
-#undef DO_
-}
-
-void Path_EditorMetadata::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:buffers.resources.Path.EditorMetadata)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // optional string background_room_name = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->background_room_name().data(), static_cast<int>(this->background_room_name().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "buffers.resources.Path.EditorMetadata.background_room_name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->background_room_name(), output);
-  }
-
-  // optional int32 snap_x = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->snap_x(), output);
-  }
-
-  // optional int32 snap_y = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->snap_y(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:buffers.resources.Path.EditorMetadata)
-}
-
-::google::protobuf::uint8* Path_EditorMetadata::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:buffers.resources.Path.EditorMetadata)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // optional string background_room_name = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->background_room_name().data(), static_cast<int>(this->background_room_name().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "buffers.resources.Path.EditorMetadata.background_room_name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->background_room_name(), target);
-  }
-
-  // optional int32 snap_x = 2;
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->snap_x(), target);
-  }
-
-  // optional int32 snap_y = 3;
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->snap_y(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:buffers.resources.Path.EditorMetadata)
-  return target;
-}
-
-size_t Path_EditorMetadata::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:buffers.resources.Path.EditorMetadata)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (_has_bits_[0 / 32] & 7u) {
-    // optional string background_room_name = 1;
-    if (has_background_room_name()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->background_room_name());
-    }
-
-    // optional int32 snap_x = 2;
-    if (has_snap_x()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->snap_x());
-    }
-
-    // optional int32 snap_y = 3;
-    if (has_snap_y()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->snap_y());
-    }
-
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void Path_EditorMetadata::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:buffers.resources.Path.EditorMetadata)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Path_EditorMetadata* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Path_EditorMetadata>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:buffers.resources.Path.EditorMetadata)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:buffers.resources.Path.EditorMetadata)
-    MergeFrom(*source);
-  }
-}
-
-void Path_EditorMetadata::MergeFrom(const Path_EditorMetadata& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:buffers.resources.Path.EditorMetadata)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
-    if (cached_has_bits & 0x00000001u) {
-      set_has_background_room_name();
-      background_room_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.background_room_name_);
-    }
-    if (cached_has_bits & 0x00000002u) {
-      snap_x_ = from.snap_x_;
-    }
-    if (cached_has_bits & 0x00000004u) {
-      snap_y_ = from.snap_y_;
-    }
-    _has_bits_[0] |= cached_has_bits;
-  }
-}
-
-void Path_EditorMetadata::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:buffers.resources.Path.EditorMetadata)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Path_EditorMetadata::CopyFrom(const Path_EditorMetadata& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:buffers.resources.Path.EditorMetadata)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Path_EditorMetadata::IsInitialized() const {
-  return true;
-}
-
-void Path_EditorMetadata::Swap(Path_EditorMetadata* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void Path_EditorMetadata::InternalSwap(Path_EditorMetadata* other) {
-  using std::swap;
-  background_room_name_.Swap(&other->background_room_name_);
-  swap(snap_x_, other->snap_x_);
-  swap(snap_y_, other->snap_y_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata Path_EditorMetadata::GetMetadata() const {
-  protobuf_resources_2fPath_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_resources_2fPath_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// Path_EditorMetadata
-
-// optional string background_room_name = 1;
-bool Path_EditorMetadata::has_background_room_name() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void Path_EditorMetadata::set_has_background_room_name() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void Path_EditorMetadata::clear_has_background_room_name() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void Path_EditorMetadata::clear_background_room_name() {
-  background_room_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_background_room_name();
-}
-const ::std::string& Path_EditorMetadata::background_room_name() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.EditorMetadata.background_room_name)
-  return background_room_name_.GetNoArena();
-}
-void Path_EditorMetadata::set_background_room_name(const ::std::string& value) {
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-#if LANG_CXX11
-void Path_EditorMetadata::set_background_room_name(::std::string&& value) {
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-#endif
-void Path_EditorMetadata::set_background_room_name(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-void Path_EditorMetadata::set_background_room_name(const char* value, size_t size) {
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-::std::string* Path_EditorMetadata::mutable_background_room_name() {
-  set_has_background_room_name();
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Path.EditorMetadata.background_room_name)
-  return background_room_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-::std::string* Path_EditorMetadata::release_background_room_name() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Path.EditorMetadata.background_room_name)
-  clear_has_background_room_name();
-  return background_room_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-void Path_EditorMetadata::set_allocated_background_room_name(::std::string* background_room_name) {
-  if (background_room_name != NULL) {
-    set_has_background_room_name();
-  } else {
-    clear_has_background_room_name();
-  }
-  background_room_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), background_room_name);
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-
-// optional int32 snap_x = 2;
-bool Path_EditorMetadata::has_snap_x() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void Path_EditorMetadata::set_has_snap_x() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void Path_EditorMetadata::clear_has_snap_x() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void Path_EditorMetadata::clear_snap_x() {
-  snap_x_ = 0;
-  clear_has_snap_x();
-}
-::google::protobuf::int32 Path_EditorMetadata::snap_x() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.EditorMetadata.snap_x)
-  return snap_x_;
-}
-void Path_EditorMetadata::set_snap_x(::google::protobuf::int32 value) {
-  set_has_snap_x();
-  snap_x_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Path.EditorMetadata.snap_x)
-}
-
-// optional int32 snap_y = 3;
-bool Path_EditorMetadata::has_snap_y() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void Path_EditorMetadata::set_has_snap_y() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void Path_EditorMetadata::clear_has_snap_y() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void Path_EditorMetadata::clear_snap_y() {
-  snap_y_ = 0;
-  clear_has_snap_y();
-}
-::google::protobuf::int32 Path_EditorMetadata::snap_y() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.EditorMetadata.snap_y)
-  return snap_y_;
-}
-void Path_EditorMetadata::set_snap_y(::google::protobuf::int32 value) {
-  set_has_snap_y();
-  snap_y_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Path.EditorMetadata.snap_y)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Path::kNameFieldNumber;
 const int Path::kIdFieldNumber;
-const int Path::kEditorMetadataFieldNumber;
+const int Path::kBackgroundRoomNameFieldNumber;
+const int Path::kSnapXFieldNumber;
+const int Path::kSnapYFieldNumber;
 const int Path::kSmoothFieldNumber;
 const int Path::kClosedFieldNumber;
 const int Path::kPrecisionFieldNumber;
+const int Path::kKindFieldNumber;
 const int Path::kPointsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -1095,23 +615,23 @@ Path::Path(const Path& from)
   if (from.has_name()) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  if (from.has_editor_metadata()) {
-    editor_metadata_ = new ::buffers::resources::Path_EditorMetadata(*from.editor_metadata_);
-  } else {
-    editor_metadata_ = NULL;
+  background_room_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_background_room_name()) {
+    background_room_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.background_room_name_);
   }
   ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&precision_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(precision_));
+    static_cast<size_t>(reinterpret_cast<char*>(&kind_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(kind_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Path)
 }
 
 void Path::SharedCtor() {
   _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&editor_metadata_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&precision_) -
-      reinterpret_cast<char*>(&editor_metadata_)) + sizeof(precision_));
+  background_room_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&kind_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(kind_));
 }
 
 Path::~Path() {
@@ -1121,7 +641,7 @@ Path::~Path() {
 
 void Path::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete editor_metadata_;
+  background_room_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Path::SetCachedSize(int size) const {
@@ -1161,15 +681,16 @@ void Path::Clear() {
       (*name_.UnsafeRawStringPointer())->clear();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(editor_metadata_ != NULL);
-      editor_metadata_->::buffers::resources::Path_EditorMetadata::Clear();
+      GOOGLE_DCHECK(!background_room_name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*background_room_name_.UnsafeRawStringPointer())->clear();
     }
   }
-  if (cached_has_bits & 60u) {
+  if (cached_has_bits & 252u) {
     ::memset(&id_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&precision_) -
         reinterpret_cast<char*>(&id_)) + sizeof(precision_));
   }
+  kind_ = 0;
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -1200,7 +721,7 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2;
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -1214,22 +735,54 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .buffers.resources.Path.EditorMetadata editor_metadata = 3;
+      // optional string background_room_name = 3 [(.buffers.gmx) = "backroom"];
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_editor_metadata()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_background_room_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->background_room_name().data(), static_cast<int>(this->background_room_name().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Path.background_room_name");
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // optional bool smooth = 4;
+      // optional int32 snap_x = 4 [(.buffers.gmx) = "hsnap"];
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+          set_has_snap_x();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &snap_x_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 snap_y = 5 [(.buffers.gmx) = "vsnap"];
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+          set_has_snap_y();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &snap_y_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
           set_has_smooth();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
@@ -1240,10 +793,10 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool closed = 5;
-      case 5: {
+      // optional bool closed = 7;
+      case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
           set_has_closed();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
@@ -1254,10 +807,10 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 precision = 6;
-      case 6: {
+      // optional int32 precision = 8;
+      case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
           set_has_precision();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -1268,10 +821,24 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Path.Point points = 7;
-      case 7: {
+      // optional int32 kind = 9;
+      case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(72u /* 72 & 0xFF */)) {
+          set_has_kind();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &kind_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Path.Point points = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_points()));
         } else {
@@ -1317,37 +884,56 @@ void Path::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
 
-  // optional .buffers.resources.Path.EditorMetadata editor_metadata = 3;
+  // optional string background_room_name = 3 [(.buffers.gmx) = "backroom"];
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->editor_metadata_, output);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->background_room_name().data(), static_cast<int>(this->background_room_name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Path.background_room_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->background_room_name(), output);
   }
 
-  // optional bool smooth = 4;
+  // optional int32 snap_x = 4 [(.buffers.gmx) = "hsnap"];
   if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->smooth(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->snap_x(), output);
   }
 
-  // optional bool closed = 5;
+  // optional int32 snap_y = 5 [(.buffers.gmx) = "vsnap"];
   if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->closed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->snap_y(), output);
   }
 
-  // optional int32 precision = 6;
+  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000020u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->precision(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->smooth(), output);
   }
 
-  // repeated .buffers.resources.Path.Point points = 7;
+  // optional bool closed = 7;
+  if (cached_has_bits & 0x00000040u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->closed(), output);
+  }
+
+  // optional int32 precision = 8;
+  if (cached_has_bits & 0x00000080u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->precision(), output);
+  }
+
+  // optional int32 kind = 9;
+  if (cached_has_bits & 0x00000100u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->kind(), output);
+  }
+
+  // repeated .buffers.resources.Path.Point points = 10;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->points_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->points(static_cast<int>(i)), output);
+      10, this->points(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1376,39 +962,58 @@ void Path::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
 
-  // optional .buffers.resources.Path.EditorMetadata editor_metadata = 3;
+  // optional string background_room_name = 3 [(.buffers.gmx) = "backroom"];
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        3, *this->editor_metadata_, deterministic, target);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->background_room_name().data(), static_cast<int>(this->background_room_name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Path.background_room_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->background_room_name(), target);
   }
 
-  // optional bool smooth = 4;
+  // optional int32 snap_x = 4 [(.buffers.gmx) = "hsnap"];
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->smooth(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->snap_x(), target);
   }
 
-  // optional bool closed = 5;
+  // optional int32 snap_y = 5 [(.buffers.gmx) = "vsnap"];
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->closed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->snap_y(), target);
   }
 
-  // optional int32 precision = 6;
+  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   if (cached_has_bits & 0x00000020u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->precision(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->smooth(), target);
   }
 
-  // repeated .buffers.resources.Path.Point points = 7;
+  // optional bool closed = 7;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->closed(), target);
+  }
+
+  // optional int32 precision = 8;
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->precision(), target);
+  }
+
+  // optional int32 kind = 9;
+  if (cached_has_bits & 0x00000100u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->kind(), target);
+  }
+
+  // repeated .buffers.resources.Path.Point points = 10;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->points_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        7, this->points(static_cast<int>(i)), deterministic, target);
+        10, this->points(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1428,7 +1033,7 @@ size_t Path::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Path.Point points = 7;
+  // repeated .buffers.resources.Path.Point points = 10;
   {
     unsigned int count = static_cast<unsigned int>(this->points_size());
     total_size += 1UL * count;
@@ -1439,7 +1044,7 @@ size_t Path::ByteSizeLong() const {
     }
   }
 
-  if (_has_bits_[0 / 32] & 63u) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional string name = 1;
     if (has_name()) {
       total_size += 1 +
@@ -1447,31 +1052,45 @@ size_t Path::ByteSizeLong() const {
           this->name());
     }
 
-    // optional .buffers.resources.Path.EditorMetadata editor_metadata = 3;
-    if (has_editor_metadata()) {
+    // optional string background_room_name = 3 [(.buffers.gmx) = "backroom"];
+    if (has_background_room_name()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->editor_metadata_);
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->background_room_name());
     }
 
-    // optional int32 id = 2;
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->id());
     }
 
-    // optional bool smooth = 4;
+    // optional int32 snap_x = 4 [(.buffers.gmx) = "hsnap"];
+    if (has_snap_x()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->snap_x());
+    }
+
+    // optional int32 snap_y = 5 [(.buffers.gmx) = "vsnap"];
+    if (has_snap_y()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->snap_y());
+    }
+
+    // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
     if (has_smooth()) {
       total_size += 1 + 1;
     }
 
-    // optional bool closed = 5;
+    // optional bool closed = 7;
     if (has_closed()) {
       total_size += 1 + 1;
     }
 
-    // optional int32 precision = 6;
+    // optional int32 precision = 8;
     if (has_precision()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -1479,6 +1098,13 @@ size_t Path::ByteSizeLong() const {
     }
 
   }
+  // optional int32 kind = 9;
+  if (has_kind()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->kind());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -1510,27 +1136,37 @@ void Path::MergeFrom(const Path& from) {
 
   points_.MergeFrom(from.points_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 63u) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
       set_has_name();
       name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
     }
     if (cached_has_bits & 0x00000002u) {
-      mutable_editor_metadata()->::buffers::resources::Path_EditorMetadata::MergeFrom(from.editor_metadata());
+      set_has_background_room_name();
+      background_room_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.background_room_name_);
     }
     if (cached_has_bits & 0x00000004u) {
       id_ = from.id_;
     }
     if (cached_has_bits & 0x00000008u) {
-      smooth_ = from.smooth_;
+      snap_x_ = from.snap_x_;
     }
     if (cached_has_bits & 0x00000010u) {
-      closed_ = from.closed_;
+      snap_y_ = from.snap_y_;
     }
     if (cached_has_bits & 0x00000020u) {
+      smooth_ = from.smooth_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      closed_ = from.closed_;
+    }
+    if (cached_has_bits & 0x00000080u) {
       precision_ = from.precision_;
     }
     _has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 0x00000100u) {
+    set_kind(from.kind());
   }
 }
 
@@ -1560,11 +1196,14 @@ void Path::InternalSwap(Path* other) {
   using std::swap;
   points_.InternalSwap(&other->points_);
   name_.Swap(&other->name_);
-  swap(editor_metadata_, other->editor_metadata_);
+  background_room_name_.Swap(&other->background_room_name_);
   swap(id_, other->id_);
+  swap(snap_x_, other->snap_x_);
+  swap(snap_y_, other->snap_y_);
   swap(smooth_, other->smooth_);
   swap(closed_, other->closed_);
   swap(precision_, other->precision_);
+  swap(kind_, other->kind_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -1641,7 +1280,7 @@ void Path::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 bool Path::has_id() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1665,61 +1304,126 @@ void Path::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.id)
 }
 
-// optional .buffers.resources.Path.EditorMetadata editor_metadata = 3;
-bool Path::has_editor_metadata() const {
+// optional string background_room_name = 3 [(.buffers.gmx) = "backroom"];
+bool Path::has_background_room_name() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-void Path::set_has_editor_metadata() {
+void Path::set_has_background_room_name() {
   _has_bits_[0] |= 0x00000002u;
 }
-void Path::clear_has_editor_metadata() {
+void Path::clear_has_background_room_name() {
   _has_bits_[0] &= ~0x00000002u;
 }
-void Path::clear_editor_metadata() {
-  if (editor_metadata_ != NULL) editor_metadata_->::buffers::resources::Path_EditorMetadata::Clear();
-  clear_has_editor_metadata();
+void Path::clear_background_room_name() {
+  background_room_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_background_room_name();
 }
-const ::buffers::resources::Path_EditorMetadata& Path::editor_metadata() const {
-  const ::buffers::resources::Path_EditorMetadata* p = editor_metadata_;
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.editor_metadata)
-  return p != NULL ? *p : *reinterpret_cast<const ::buffers::resources::Path_EditorMetadata*>(
-      &::buffers::resources::_Path_EditorMetadata_default_instance_);
+const ::std::string& Path::background_room_name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.background_room_name)
+  return background_room_name_.GetNoArena();
 }
-::buffers::resources::Path_EditorMetadata* Path::mutable_editor_metadata() {
-  set_has_editor_metadata();
-  if (editor_metadata_ == NULL) {
-    editor_metadata_ = new ::buffers::resources::Path_EditorMetadata;
-  }
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Path.editor_metadata)
-  return editor_metadata_;
+void Path::set_background_room_name(const ::std::string& value) {
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.background_room_name)
 }
-::buffers::resources::Path_EditorMetadata* Path::release_editor_metadata() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Path.editor_metadata)
-  clear_has_editor_metadata();
-  ::buffers::resources::Path_EditorMetadata* temp = editor_metadata_;
-  editor_metadata_ = NULL;
-  return temp;
+#if LANG_CXX11
+void Path::set_background_room_name(::std::string&& value) {
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Path.background_room_name)
 }
-void Path::set_allocated_editor_metadata(::buffers::resources::Path_EditorMetadata* editor_metadata) {
-  delete editor_metadata_;
-  editor_metadata_ = editor_metadata;
-  if (editor_metadata) {
-    set_has_editor_metadata();
+#endif
+void Path::set_background_room_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Path.background_room_name)
+}
+void Path::set_background_room_name(const char* value, size_t size) {
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Path.background_room_name)
+}
+::std::string* Path::mutable_background_room_name() {
+  set_has_background_room_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Path.background_room_name)
+  return background_room_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Path::release_background_room_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Path.background_room_name)
+  clear_has_background_room_name();
+  return background_room_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Path::set_allocated_background_room_name(::std::string* background_room_name) {
+  if (background_room_name != NULL) {
+    set_has_background_room_name();
   } else {
-    clear_has_editor_metadata();
+    clear_has_background_room_name();
   }
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.editor_metadata)
+  background_room_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), background_room_name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.background_room_name)
 }
 
-// optional bool smooth = 4;
-bool Path::has_smooth() const {
+// optional int32 snap_x = 4 [(.buffers.gmx) = "hsnap"];
+bool Path::has_snap_x() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-void Path::set_has_smooth() {
+void Path::set_has_snap_x() {
   _has_bits_[0] |= 0x00000008u;
 }
-void Path::clear_has_smooth() {
+void Path::clear_has_snap_x() {
   _has_bits_[0] &= ~0x00000008u;
+}
+void Path::clear_snap_x() {
+  snap_x_ = 0;
+  clear_has_snap_x();
+}
+::google::protobuf::int32 Path::snap_x() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.snap_x)
+  return snap_x_;
+}
+void Path::set_snap_x(::google::protobuf::int32 value) {
+  set_has_snap_x();
+  snap_x_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.snap_x)
+}
+
+// optional int32 snap_y = 5 [(.buffers.gmx) = "vsnap"];
+bool Path::has_snap_y() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Path::set_has_snap_y() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Path::clear_has_snap_y() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Path::clear_snap_y() {
+  snap_y_ = 0;
+  clear_has_snap_y();
+}
+::google::protobuf::int32 Path::snap_y() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.snap_y)
+  return snap_y_;
+}
+void Path::set_snap_y(::google::protobuf::int32 value) {
+  set_has_snap_y();
+  snap_y_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.snap_y)
+}
+
+// optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+bool Path::has_smooth() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Path::set_has_smooth() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Path::clear_has_smooth() {
+  _has_bits_[0] &= ~0x00000020u;
 }
 void Path::clear_smooth() {
   smooth_ = false;
@@ -1735,15 +1439,15 @@ void Path::set_smooth(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.smooth)
 }
 
-// optional bool closed = 5;
+// optional bool closed = 7;
 bool Path::has_closed() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 void Path::set_has_closed() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 void Path::clear_has_closed() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 void Path::clear_closed() {
   closed_ = false;
@@ -1759,15 +1463,15 @@ void Path::set_closed(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.closed)
 }
 
-// optional int32 precision = 6;
+// optional int32 precision = 8;
 bool Path::has_precision() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 void Path::set_has_precision() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000080u;
 }
 void Path::clear_has_precision() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 void Path::clear_precision() {
   precision_ = 0;
@@ -1783,7 +1487,31 @@ void Path::set_precision(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.precision)
 }
 
-// repeated .buffers.resources.Path.Point points = 7;
+// optional int32 kind = 9;
+bool Path::has_kind() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+void Path::set_has_kind() {
+  _has_bits_[0] |= 0x00000100u;
+}
+void Path::clear_has_kind() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+void Path::clear_kind() {
+  kind_ = 0;
+  clear_has_kind();
+}
+::google::protobuf::int32 Path::kind() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.kind)
+  return kind_;
+}
+void Path::set_kind(::google::protobuf::int32 value) {
+  set_has_kind();
+  kind_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.kind)
+}
+
+// repeated .buffers.resources.Path.Point points = 10;
 int Path::points_size() const {
   return points_.size();
 }

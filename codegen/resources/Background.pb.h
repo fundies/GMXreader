@@ -162,28 +162,43 @@ class Background : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // optional int32 id = 2;
+  // optional string image = 3 [(.buffers.gmx) = "data"];
+  bool has_image() const;
+  void clear_image();
+  static const int kImageFieldNumber = 3;
+  const ::std::string& image() const;
+  void set_image(const ::std::string& value);
+  #if LANG_CXX11
+  void set_image(::std::string&& value);
+  #endif
+  void set_image(const char* value);
+  void set_image(const char* value, size_t size);
+  ::std::string* mutable_image();
+  ::std::string* release_image();
+  void set_allocated_image(::std::string* image);
+
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
   ::google::protobuf::int32 id() const;
   void set_id(::google::protobuf::int32 value);
 
-  // optional bool preload = 4;
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_preload() const;
   void clear_preload();
   static const int kPreloadFieldNumber = 4;
   bool preload() const;
   void set_preload(bool value);
 
-  // optional bool transparent = 5;
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_transparent() const;
   void clear_transparent();
   static const int kTransparentFieldNumber = 5;
   bool transparent() const;
   void set_transparent(bool value);
 
-  // optional bool smooth_edges = 6;
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_smooth_edges() const;
   void clear_smooth_edges();
   static const int kSmoothEdgesFieldNumber = 6;
@@ -239,6 +254,48 @@ class Background : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int32 vertical_spacing() const;
   void set_vertical_spacing(::google::protobuf::int32 value);
 
+  // optional int32 h_tile = 17 [(.buffers.gmx) = "HTile"];
+  bool has_h_tile() const;
+  void clear_h_tile();
+  static const int kHTileFieldNumber = 17;
+  ::google::protobuf::int32 h_tile() const;
+  void set_h_tile(::google::protobuf::int32 value);
+
+  // optional int32 v_tile = 18 [(.buffers.gmx) = "VTile"];
+  bool has_v_tile() const;
+  void clear_v_tile();
+  static const int kVTileFieldNumber = 18;
+  ::google::protobuf::int32 v_tile() const;
+  void set_v_tile(::google::protobuf::int32 value);
+
+  // optional int32 texture_group = 19 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+  bool has_texture_group() const;
+  void clear_texture_group();
+  static const int kTextureGroupFieldNumber = 19;
+  ::google::protobuf::int32 texture_group() const;
+  void set_texture_group(::google::protobuf::int32 value);
+
+  // optional bool for3D = 20 [(.buffers.gmx) = "For3D"];
+  bool has_for3d() const;
+  void clear_for3d();
+  static const int kFor3DFieldNumber = 20;
+  bool for3d() const;
+  void set_for3d(bool value);
+
+  // optional uint32 width = 21;
+  bool has_width() const;
+  void clear_width();
+  static const int kWidthFieldNumber = 21;
+  ::google::protobuf::uint32 width() const;
+  void set_width(::google::protobuf::uint32 value);
+
+  // optional uint32 height = 22;
+  bool has_height() const;
+  void clear_height();
+  static const int kHeightFieldNumber = 22;
+  ::google::protobuf::uint32 height() const;
+  void set_height(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:buffers.resources.Background)
  private:
   void set_has_name();
@@ -265,11 +322,26 @@ class Background : public ::google::protobuf::Message /* @@protoc_insertion_poin
   void clear_has_horizontal_spacing();
   void set_has_vertical_spacing();
   void clear_has_vertical_spacing();
+  void set_has_h_tile();
+  void clear_has_h_tile();
+  void set_has_v_tile();
+  void clear_has_v_tile();
+  void set_has_texture_group();
+  void clear_has_texture_group();
+  void set_has_for3d();
+  void clear_has_for3d();
+  void set_has_width();
+  void clear_has_width();
+  void set_has_height();
+  void clear_has_height();
+  void set_has_image();
+  void clear_has_image();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr image_;
   ::google::protobuf::int32 id_;
   bool preload_;
   bool transparent_;
@@ -281,6 +353,12 @@ class Background : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int32 vertical_offset_;
   ::google::protobuf::int32 horizontal_spacing_;
   ::google::protobuf::int32 vertical_spacing_;
+  ::google::protobuf::int32 h_tile_;
+  ::google::protobuf::int32 v_tile_;
+  ::google::protobuf::int32 texture_group_;
+  bool for3d_;
+  ::google::protobuf::uint32 width_;
+  ::google::protobuf::uint32 height_;
   friend struct protobuf_resources_2fBackground_2eproto::TableStruct;
 };
 // ===================================================================
@@ -358,15 +436,15 @@ inline void Background::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Background.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Background::has_id() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void Background::set_has_id() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void Background::clear_has_id() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void Background::clear_id() {
   id_ = 0;
@@ -382,15 +460,15 @@ inline void Background::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.id)
 }
 
-// optional bool preload = 4;
+// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Background::has_preload() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void Background::set_has_preload() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void Background::clear_has_preload() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void Background::clear_preload() {
   preload_ = false;
@@ -406,15 +484,15 @@ inline void Background::set_preload(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.preload)
 }
 
-// optional bool transparent = 5;
+// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Background::has_transparent() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void Background::set_has_transparent() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void Background::clear_has_transparent() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void Background::clear_transparent() {
   transparent_ = false;
@@ -430,15 +508,15 @@ inline void Background::set_transparent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.transparent)
 }
 
-// optional bool smooth_edges = 6;
+// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Background::has_smooth_edges() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void Background::set_has_smooth_edges() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void Background::clear_has_smooth_edges() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void Background::clear_smooth_edges() {
   smooth_edges_ = false;
@@ -456,13 +534,13 @@ inline void Background::set_smooth_edges(bool value) {
 
 // optional bool use_as_tileset = 7 [(.buffers.gmx) = "istileset"];
 inline bool Background::has_use_as_tileset() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void Background::set_has_use_as_tileset() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void Background::clear_has_use_as_tileset() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void Background::clear_use_as_tileset() {
   use_as_tileset_ = false;
@@ -480,13 +558,13 @@ inline void Background::set_use_as_tileset(bool value) {
 
 // optional int32 tile_width = 11 [(.buffers.gmx) = "tilewidth"];
 inline bool Background::has_tile_width() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void Background::set_has_tile_width() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void Background::clear_has_tile_width() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void Background::clear_tile_width() {
   tile_width_ = 0;
@@ -504,13 +582,13 @@ inline void Background::set_tile_width(::google::protobuf::int32 value) {
 
 // optional int32 tile_height = 12 [(.buffers.gmx) = "tileheight"];
 inline bool Background::has_tile_height() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void Background::set_has_tile_height() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void Background::clear_has_tile_height() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void Background::clear_tile_height() {
   tile_height_ = 0;
@@ -528,13 +606,13 @@ inline void Background::set_tile_height(::google::protobuf::int32 value) {
 
 // optional int32 horizontal_offset = 13 [(.buffers.gmx) = "tilexoff"];
 inline bool Background::has_horizontal_offset() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void Background::set_has_horizontal_offset() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void Background::clear_has_horizontal_offset() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void Background::clear_horizontal_offset() {
   horizontal_offset_ = 0;
@@ -552,13 +630,13 @@ inline void Background::set_horizontal_offset(::google::protobuf::int32 value) {
 
 // optional int32 vertical_offset = 14 [(.buffers.gmx) = "tileyoff"];
 inline bool Background::has_vertical_offset() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 inline void Background::set_has_vertical_offset() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000400u;
 }
 inline void Background::clear_has_vertical_offset() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline void Background::clear_vertical_offset() {
   vertical_offset_ = 0;
@@ -576,13 +654,13 @@ inline void Background::set_vertical_offset(::google::protobuf::int32 value) {
 
 // optional int32 horizontal_spacing = 15 [(.buffers.gmx) = "tilehsep"];
 inline bool Background::has_horizontal_spacing() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void Background::set_has_horizontal_spacing() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void Background::clear_has_horizontal_spacing() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void Background::clear_horizontal_spacing() {
   horizontal_spacing_ = 0;
@@ -600,13 +678,13 @@ inline void Background::set_horizontal_spacing(::google::protobuf::int32 value) 
 
 // optional int32 vertical_spacing = 16 [(.buffers.gmx) = "tilevsep"];
 inline bool Background::has_vertical_spacing() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
+  return (_has_bits_[0] & 0x00001000u) != 0;
 }
 inline void Background::set_has_vertical_spacing() {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00001000u;
 }
 inline void Background::clear_has_vertical_spacing() {
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline void Background::clear_vertical_spacing() {
   vertical_spacing_ = 0;
@@ -620,6 +698,213 @@ inline void Background::set_vertical_spacing(::google::protobuf::int32 value) {
   set_has_vertical_spacing();
   vertical_spacing_ = value;
   // @@protoc_insertion_point(field_set:buffers.resources.Background.vertical_spacing)
+}
+
+// optional int32 h_tile = 17 [(.buffers.gmx) = "HTile"];
+inline bool Background::has_h_tile() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void Background::set_has_h_tile() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void Background::clear_has_h_tile() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void Background::clear_h_tile() {
+  h_tile_ = 0;
+  clear_has_h_tile();
+}
+inline ::google::protobuf::int32 Background::h_tile() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Background.h_tile)
+  return h_tile_;
+}
+inline void Background::set_h_tile(::google::protobuf::int32 value) {
+  set_has_h_tile();
+  h_tile_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Background.h_tile)
+}
+
+// optional int32 v_tile = 18 [(.buffers.gmx) = "VTile"];
+inline bool Background::has_v_tile() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void Background::set_has_v_tile() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void Background::clear_has_v_tile() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void Background::clear_v_tile() {
+  v_tile_ = 0;
+  clear_has_v_tile();
+}
+inline ::google::protobuf::int32 Background::v_tile() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Background.v_tile)
+  return v_tile_;
+}
+inline void Background::set_v_tile(::google::protobuf::int32 value) {
+  set_has_v_tile();
+  v_tile_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Background.v_tile)
+}
+
+// optional int32 texture_group = 19 [(.buffers.gmx) = "TextureGroups/TextureGroup0"];
+inline bool Background::has_texture_group() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void Background::set_has_texture_group() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void Background::clear_has_texture_group() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void Background::clear_texture_group() {
+  texture_group_ = 0;
+  clear_has_texture_group();
+}
+inline ::google::protobuf::int32 Background::texture_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Background.texture_group)
+  return texture_group_;
+}
+inline void Background::set_texture_group(::google::protobuf::int32 value) {
+  set_has_texture_group();
+  texture_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Background.texture_group)
+}
+
+// optional bool for3D = 20 [(.buffers.gmx) = "For3D"];
+inline bool Background::has_for3d() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void Background::set_has_for3d() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void Background::clear_has_for3d() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void Background::clear_for3d() {
+  for3d_ = false;
+  clear_has_for3d();
+}
+inline bool Background::for3d() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Background.for3D)
+  return for3d_;
+}
+inline void Background::set_for3d(bool value) {
+  set_has_for3d();
+  for3d_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Background.for3D)
+}
+
+// optional uint32 width = 21;
+inline bool Background::has_width() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void Background::set_has_width() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void Background::clear_has_width() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void Background::clear_width() {
+  width_ = 0u;
+  clear_has_width();
+}
+inline ::google::protobuf::uint32 Background::width() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Background.width)
+  return width_;
+}
+inline void Background::set_width(::google::protobuf::uint32 value) {
+  set_has_width();
+  width_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Background.width)
+}
+
+// optional uint32 height = 22;
+inline bool Background::has_height() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void Background::set_has_height() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void Background::clear_has_height() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void Background::clear_height() {
+  height_ = 0u;
+  clear_has_height();
+}
+inline ::google::protobuf::uint32 Background::height() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Background.height)
+  return height_;
+}
+inline void Background::set_height(::google::protobuf::uint32 value) {
+  set_has_height();
+  height_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Background.height)
+}
+
+// optional string image = 3 [(.buffers.gmx) = "data"];
+inline bool Background::has_image() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Background::set_has_image() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Background::clear_has_image() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Background::clear_image() {
+  image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_image();
+}
+inline const ::std::string& Background::image() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Background.image)
+  return image_.GetNoArena();
+}
+inline void Background::set_image(const ::std::string& value) {
+  set_has_image();
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Background.image)
+}
+#if LANG_CXX11
+inline void Background::set_image(::std::string&& value) {
+  set_has_image();
+  image_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Background.image)
+}
+#endif
+inline void Background::set_image(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_image();
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Background.image)
+}
+inline void Background::set_image(const char* value, size_t size) {
+  set_has_image();
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Background.image)
+}
+inline ::std::string* Background::mutable_image() {
+  set_has_image();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Background.image)
+  return image_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Background::release_image() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Background.image)
+  clear_has_image();
+  return image_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Background::set_allocated_image(::std::string* image) {
+  if (image != NULL) {
+    set_has_image();
+  } else {
+    clear_has_image();
+  }
+  image_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), image);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Background.image)
 }
 
 #ifdef __GNUC__

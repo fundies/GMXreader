@@ -5,7 +5,7 @@ import "options.proto";
 
 message Sound {
   optional string name = 1;
-  optional int32 id = 2;
+  optional int32 id = 2 [(gmx) = "GMX_DEPRECIATED"];
 
   optional bool preload = 3;
   optional double pan = 4;
@@ -22,4 +22,13 @@ message Sound {
   optional Type type = 9 [(gmx) = "types/type"];
 
   optional string data = 10;
+  
+  optional int32 effects = 11;
+  optional uint32 bit_rate = 12 [(gmx) = "bitRates/bitRate"];
+  optional uint32 sample_rate = 13 [(gmx) = "sampleRates/sampleRate"];
+  optional uint32 bit_depth = 14 [(gmx) = "bitDepths/bitDepth"];
+  optional bool compressed = 15;
+  optional bool streamed = 16;
+  optional bool uncompress_on_load = 17 [(gmx) = "uncompressOnLoad"];
+  optional int32 audio_group = 18 [(gmx) = "audioGroup"];
 }

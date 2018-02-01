@@ -36,9 +36,6 @@ namespace resources {
 class Path;
 class PathDefaultTypeInternal;
 extern PathDefaultTypeInternal _Path_default_instance_;
-class Path_EditorMetadata;
-class Path_EditorMetadataDefaultTypeInternal;
-extern Path_EditorMetadataDefaultTypeInternal _Path_EditorMetadata_default_instance_;
 class Path_Point;
 class Path_PointDefaultTypeInternal;
 extern Path_PointDefaultTypeInternal _Path_Point_default_instance_;
@@ -153,21 +150,21 @@ class Path_Point : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // optional int32 x = 1;
+  // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
   bool has_x() const;
   void clear_x();
   static const int kXFieldNumber = 1;
   ::google::protobuf::int32 x() const;
   void set_x(::google::protobuf::int32 value);
 
-  // optional int32 y = 2;
+  // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
   bool has_y() const;
   void clear_y();
   static const int kYFieldNumber = 2;
   ::google::protobuf::int32 y() const;
   void set_y(::google::protobuf::int32 value);
 
-  // optional int32 speed = 3;
+  // optional int32 speed = 3 [(.buffers.gmx) = "GMX_SPLIT/2"];
   bool has_speed() const;
   void clear_speed();
   static const int kSpeedFieldNumber = 3;
@@ -189,142 +186,6 @@ class Path_Point : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::int32 x_;
   ::google::protobuf::int32 y_;
   ::google::protobuf::int32 speed_;
-  friend struct protobuf_resources_2fPath_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Path_EditorMetadata : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:buffers.resources.Path.EditorMetadata) */ {
- public:
-  Path_EditorMetadata();
-  virtual ~Path_EditorMetadata();
-
-  Path_EditorMetadata(const Path_EditorMetadata& from);
-
-  inline Path_EditorMetadata& operator=(const Path_EditorMetadata& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Path_EditorMetadata(Path_EditorMetadata&& from) noexcept
-    : Path_EditorMetadata() {
-    *this = ::std::move(from);
-  }
-
-  inline Path_EditorMetadata& operator=(Path_EditorMetadata&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields();
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Path_EditorMetadata& default_instance();
-
-  static inline const Path_EditorMetadata* internal_default_instance() {
-    return reinterpret_cast<const Path_EditorMetadata*>(
-               &_Path_EditorMetadata_default_instance_);
-  }
-  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
-
-  void Swap(Path_EditorMetadata* other);
-  friend void swap(Path_EditorMetadata& a, Path_EditorMetadata& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Path_EditorMetadata* New() const PROTOBUF_FINAL { return New(NULL); }
-
-  Path_EditorMetadata* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
-  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const Path_EditorMetadata& from);
-  void MergeFrom(const Path_EditorMetadata& from);
-  void Clear() PROTOBUF_FINAL;
-  bool IsInitialized() const PROTOBUF_FINAL;
-
-  size_t ByteSizeLong() const PROTOBUF_FINAL;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
-  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(Path_EditorMetadata* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional string background_room_name = 1;
-  bool has_background_room_name() const;
-  void clear_background_room_name();
-  static const int kBackgroundRoomNameFieldNumber = 1;
-  const ::std::string& background_room_name() const;
-  void set_background_room_name(const ::std::string& value);
-  #if LANG_CXX11
-  void set_background_room_name(::std::string&& value);
-  #endif
-  void set_background_room_name(const char* value);
-  void set_background_room_name(const char* value, size_t size);
-  ::std::string* mutable_background_room_name();
-  ::std::string* release_background_room_name();
-  void set_allocated_background_room_name(::std::string* background_room_name);
-
-  // optional int32 snap_x = 2;
-  bool has_snap_x() const;
-  void clear_snap_x();
-  static const int kSnapXFieldNumber = 2;
-  ::google::protobuf::int32 snap_x() const;
-  void set_snap_x(::google::protobuf::int32 value);
-
-  // optional int32 snap_y = 3;
-  bool has_snap_y() const;
-  void clear_snap_y();
-  static const int kSnapYFieldNumber = 3;
-  ::google::protobuf::int32 snap_y() const;
-  void set_snap_y(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:buffers.resources.Path.EditorMetadata)
- private:
-  void set_has_background_room_name();
-  void clear_has_background_room_name();
-  void set_has_snap_x();
-  void clear_has_snap_x();
-  void set_has_snap_y();
-  void clear_has_snap_y();
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::HasBits<1> _has_bits_;
-  mutable int _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr background_room_name_;
-  ::google::protobuf::int32 snap_x_;
-  ::google::protobuf::int32 snap_y_;
   friend struct protobuf_resources_2fPath_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -370,7 +231,7 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Path_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    2;
+    1;
 
   void Swap(Path* other);
   friend void swap(Path& a, Path& b) {
@@ -416,14 +277,13 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   // nested types ----------------------------------------------------
 
   typedef Path_Point Point;
-  typedef Path_EditorMetadata EditorMetadata;
 
   // accessors -------------------------------------------------------
 
-  // repeated .buffers.resources.Path.Point points = 7;
+  // repeated .buffers.resources.Path.Point points = 10;
   int points_size() const;
   void clear_points();
-  static const int kPointsFieldNumber = 7;
+  static const int kPointsFieldNumber = 10;
   const ::buffers::resources::Path_Point& points(int index) const;
   ::buffers::resources::Path_Point* mutable_points(int index);
   ::buffers::resources::Path_Point* add_points();
@@ -447,42 +307,69 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // optional .buffers.resources.Path.EditorMetadata editor_metadata = 3;
-  bool has_editor_metadata() const;
-  void clear_editor_metadata();
-  static const int kEditorMetadataFieldNumber = 3;
-  const ::buffers::resources::Path_EditorMetadata& editor_metadata() const;
-  ::buffers::resources::Path_EditorMetadata* mutable_editor_metadata();
-  ::buffers::resources::Path_EditorMetadata* release_editor_metadata();
-  void set_allocated_editor_metadata(::buffers::resources::Path_EditorMetadata* editor_metadata);
+  // optional string background_room_name = 3 [(.buffers.gmx) = "backroom"];
+  bool has_background_room_name() const;
+  void clear_background_room_name();
+  static const int kBackgroundRoomNameFieldNumber = 3;
+  const ::std::string& background_room_name() const;
+  void set_background_room_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_background_room_name(::std::string&& value);
+  #endif
+  void set_background_room_name(const char* value);
+  void set_background_room_name(const char* value, size_t size);
+  ::std::string* mutable_background_room_name();
+  ::std::string* release_background_room_name();
+  void set_allocated_background_room_name(::std::string* background_room_name);
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
   ::google::protobuf::int32 id() const;
   void set_id(::google::protobuf::int32 value);
 
-  // optional bool smooth = 4;
+  // optional int32 snap_x = 4 [(.buffers.gmx) = "hsnap"];
+  bool has_snap_x() const;
+  void clear_snap_x();
+  static const int kSnapXFieldNumber = 4;
+  ::google::protobuf::int32 snap_x() const;
+  void set_snap_x(::google::protobuf::int32 value);
+
+  // optional int32 snap_y = 5 [(.buffers.gmx) = "vsnap"];
+  bool has_snap_y() const;
+  void clear_snap_y();
+  static const int kSnapYFieldNumber = 5;
+  ::google::protobuf::int32 snap_y() const;
+  void set_snap_y(::google::protobuf::int32 value);
+
+  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
   bool has_smooth() const;
   void clear_smooth();
-  static const int kSmoothFieldNumber = 4;
+  static const int kSmoothFieldNumber = 6;
   bool smooth() const;
   void set_smooth(bool value);
 
-  // optional bool closed = 5;
+  // optional bool closed = 7;
   bool has_closed() const;
   void clear_closed();
-  static const int kClosedFieldNumber = 5;
+  static const int kClosedFieldNumber = 7;
   bool closed() const;
   void set_closed(bool value);
 
-  // optional int32 precision = 6;
+  // optional int32 precision = 8;
   bool has_precision() const;
   void clear_precision();
-  static const int kPrecisionFieldNumber = 6;
+  static const int kPrecisionFieldNumber = 8;
   ::google::protobuf::int32 precision() const;
   void set_precision(::google::protobuf::int32 value);
+
+  // optional int32 kind = 9;
+  bool has_kind() const;
+  void clear_kind();
+  static const int kKindFieldNumber = 9;
+  ::google::protobuf::int32 kind() const;
+  void set_kind(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:buffers.resources.Path)
  private:
@@ -490,25 +377,34 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   void clear_has_name();
   void set_has_id();
   void clear_has_id();
-  void set_has_editor_metadata();
-  void clear_has_editor_metadata();
+  void set_has_background_room_name();
+  void clear_has_background_room_name();
+  void set_has_snap_x();
+  void clear_has_snap_x();
+  void set_has_snap_y();
+  void clear_has_snap_y();
   void set_has_smooth();
   void clear_has_smooth();
   void set_has_closed();
   void clear_has_closed();
   void set_has_precision();
   void clear_has_precision();
+  void set_has_kind();
+  void clear_has_kind();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Path_Point > points_;
   ::google::protobuf::internal::ArenaStringPtr name_;
-  ::buffers::resources::Path_EditorMetadata* editor_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr background_room_name_;
   ::google::protobuf::int32 id_;
+  ::google::protobuf::int32 snap_x_;
+  ::google::protobuf::int32 snap_y_;
   bool smooth_;
   bool closed_;
   ::google::protobuf::int32 precision_;
+  ::google::protobuf::int32 kind_;
   friend struct protobuf_resources_2fPath_2eproto::TableStruct;
 };
 // ===================================================================
@@ -523,7 +419,7 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 #endif  // __GNUC__
 // Path_Point
 
-// optional int32 x = 1;
+// optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
 inline bool Path_Point::has_x() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -547,7 +443,7 @@ inline void Path_Point::set_x(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.Point.x)
 }
 
-// optional int32 y = 2;
+// optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
 inline bool Path_Point::has_y() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -571,7 +467,7 @@ inline void Path_Point::set_y(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.Point.y)
 }
 
-// optional int32 speed = 3;
+// optional int32 speed = 3 [(.buffers.gmx) = "GMX_SPLIT/2"];
 inline bool Path_Point::has_speed() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -593,121 +489,6 @@ inline void Path_Point::set_speed(::google::protobuf::int32 value) {
   set_has_speed();
   speed_ = value;
   // @@protoc_insertion_point(field_set:buffers.resources.Path.Point.speed)
-}
-
-// -------------------------------------------------------------------
-
-// Path_EditorMetadata
-
-// optional string background_room_name = 1;
-inline bool Path_EditorMetadata::has_background_room_name() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void Path_EditorMetadata::set_has_background_room_name() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void Path_EditorMetadata::clear_has_background_room_name() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void Path_EditorMetadata::clear_background_room_name() {
-  background_room_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_background_room_name();
-}
-inline const ::std::string& Path_EditorMetadata::background_room_name() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.EditorMetadata.background_room_name)
-  return background_room_name_.GetNoArena();
-}
-inline void Path_EditorMetadata::set_background_room_name(const ::std::string& value) {
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-#if LANG_CXX11
-inline void Path_EditorMetadata::set_background_room_name(::std::string&& value) {
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-#endif
-inline void Path_EditorMetadata::set_background_room_name(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-inline void Path_EditorMetadata::set_background_room_name(const char* value, size_t size) {
-  set_has_background_room_name();
-  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-inline ::std::string* Path_EditorMetadata::mutable_background_room_name() {
-  set_has_background_room_name();
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Path.EditorMetadata.background_room_name)
-  return background_room_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Path_EditorMetadata::release_background_room_name() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Path.EditorMetadata.background_room_name)
-  clear_has_background_room_name();
-  return background_room_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Path_EditorMetadata::set_allocated_background_room_name(::std::string* background_room_name) {
-  if (background_room_name != NULL) {
-    set_has_background_room_name();
-  } else {
-    clear_has_background_room_name();
-  }
-  background_room_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), background_room_name);
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.EditorMetadata.background_room_name)
-}
-
-// optional int32 snap_x = 2;
-inline bool Path_EditorMetadata::has_snap_x() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void Path_EditorMetadata::set_has_snap_x() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void Path_EditorMetadata::clear_has_snap_x() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void Path_EditorMetadata::clear_snap_x() {
-  snap_x_ = 0;
-  clear_has_snap_x();
-}
-inline ::google::protobuf::int32 Path_EditorMetadata::snap_x() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.EditorMetadata.snap_x)
-  return snap_x_;
-}
-inline void Path_EditorMetadata::set_snap_x(::google::protobuf::int32 value) {
-  set_has_snap_x();
-  snap_x_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Path.EditorMetadata.snap_x)
-}
-
-// optional int32 snap_y = 3;
-inline bool Path_EditorMetadata::has_snap_y() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void Path_EditorMetadata::set_has_snap_y() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void Path_EditorMetadata::clear_has_snap_y() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void Path_EditorMetadata::clear_snap_y() {
-  snap_y_ = 0;
-  clear_has_snap_y();
-}
-inline ::google::protobuf::int32 Path_EditorMetadata::snap_y() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.EditorMetadata.snap_y)
-  return snap_y_;
-}
-inline void Path_EditorMetadata::set_snap_y(::google::protobuf::int32 value) {
-  set_has_snap_y();
-  snap_y_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Path.EditorMetadata.snap_y)
 }
 
 // -------------------------------------------------------------------
@@ -777,7 +558,7 @@ inline void Path::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 inline bool Path::has_id() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -801,61 +582,126 @@ inline void Path::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.id)
 }
 
-// optional .buffers.resources.Path.EditorMetadata editor_metadata = 3;
-inline bool Path::has_editor_metadata() const {
+// optional string background_room_name = 3 [(.buffers.gmx) = "backroom"];
+inline bool Path::has_background_room_name() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Path::set_has_editor_metadata() {
+inline void Path::set_has_background_room_name() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Path::clear_has_editor_metadata() {
+inline void Path::clear_has_background_room_name() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void Path::clear_editor_metadata() {
-  if (editor_metadata_ != NULL) editor_metadata_->::buffers::resources::Path_EditorMetadata::Clear();
-  clear_has_editor_metadata();
+inline void Path::clear_background_room_name() {
+  background_room_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_background_room_name();
 }
-inline const ::buffers::resources::Path_EditorMetadata& Path::editor_metadata() const {
-  const ::buffers::resources::Path_EditorMetadata* p = editor_metadata_;
-  // @@protoc_insertion_point(field_get:buffers.resources.Path.editor_metadata)
-  return p != NULL ? *p : *reinterpret_cast<const ::buffers::resources::Path_EditorMetadata*>(
-      &::buffers::resources::_Path_EditorMetadata_default_instance_);
+inline const ::std::string& Path::background_room_name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.background_room_name)
+  return background_room_name_.GetNoArena();
 }
-inline ::buffers::resources::Path_EditorMetadata* Path::mutable_editor_metadata() {
-  set_has_editor_metadata();
-  if (editor_metadata_ == NULL) {
-    editor_metadata_ = new ::buffers::resources::Path_EditorMetadata;
-  }
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Path.editor_metadata)
-  return editor_metadata_;
+inline void Path::set_background_room_name(const ::std::string& value) {
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.background_room_name)
 }
-inline ::buffers::resources::Path_EditorMetadata* Path::release_editor_metadata() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Path.editor_metadata)
-  clear_has_editor_metadata();
-  ::buffers::resources::Path_EditorMetadata* temp = editor_metadata_;
-  editor_metadata_ = NULL;
-  return temp;
+#if LANG_CXX11
+inline void Path::set_background_room_name(::std::string&& value) {
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Path.background_room_name)
 }
-inline void Path::set_allocated_editor_metadata(::buffers::resources::Path_EditorMetadata* editor_metadata) {
-  delete editor_metadata_;
-  editor_metadata_ = editor_metadata;
-  if (editor_metadata) {
-    set_has_editor_metadata();
+#endif
+inline void Path::set_background_room_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Path.background_room_name)
+}
+inline void Path::set_background_room_name(const char* value, size_t size) {
+  set_has_background_room_name();
+  background_room_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Path.background_room_name)
+}
+inline ::std::string* Path::mutable_background_room_name() {
+  set_has_background_room_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Path.background_room_name)
+  return background_room_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Path::release_background_room_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Path.background_room_name)
+  clear_has_background_room_name();
+  return background_room_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Path::set_allocated_background_room_name(::std::string* background_room_name) {
+  if (background_room_name != NULL) {
+    set_has_background_room_name();
   } else {
-    clear_has_editor_metadata();
+    clear_has_background_room_name();
   }
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.editor_metadata)
+  background_room_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), background_room_name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.background_room_name)
 }
 
-// optional bool smooth = 4;
-inline bool Path::has_smooth() const {
+// optional int32 snap_x = 4 [(.buffers.gmx) = "hsnap"];
+inline bool Path::has_snap_x() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void Path::set_has_smooth() {
+inline void Path::set_has_snap_x() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void Path::clear_has_smooth() {
+inline void Path::clear_has_snap_x() {
   _has_bits_[0] &= ~0x00000008u;
+}
+inline void Path::clear_snap_x() {
+  snap_x_ = 0;
+  clear_has_snap_x();
+}
+inline ::google::protobuf::int32 Path::snap_x() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.snap_x)
+  return snap_x_;
+}
+inline void Path::set_snap_x(::google::protobuf::int32 value) {
+  set_has_snap_x();
+  snap_x_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.snap_x)
+}
+
+// optional int32 snap_y = 5 [(.buffers.gmx) = "vsnap"];
+inline bool Path::has_snap_y() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Path::set_has_snap_y() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Path::clear_has_snap_y() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Path::clear_snap_y() {
+  snap_y_ = 0;
+  clear_has_snap_y();
+}
+inline ::google::protobuf::int32 Path::snap_y() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.snap_y)
+  return snap_y_;
+}
+inline void Path::set_snap_y(::google::protobuf::int32 value) {
+  set_has_snap_y();
+  snap_y_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.snap_y)
+}
+
+// optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+inline bool Path::has_smooth() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void Path::set_has_smooth() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void Path::clear_has_smooth() {
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void Path::clear_smooth() {
   smooth_ = false;
@@ -871,15 +717,15 @@ inline void Path::set_smooth(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.smooth)
 }
 
-// optional bool closed = 5;
+// optional bool closed = 7;
 inline bool Path::has_closed() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void Path::set_has_closed() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void Path::clear_has_closed() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void Path::clear_closed() {
   closed_ = false;
@@ -895,15 +741,15 @@ inline void Path::set_closed(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.closed)
 }
 
-// optional int32 precision = 6;
+// optional int32 precision = 8;
 inline bool Path::has_precision() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void Path::set_has_precision() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void Path::clear_has_precision() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void Path::clear_precision() {
   precision_ = 0;
@@ -919,7 +765,31 @@ inline void Path::set_precision(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.precision)
 }
 
-// repeated .buffers.resources.Path.Point points = 7;
+// optional int32 kind = 9;
+inline bool Path::has_kind() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void Path::set_has_kind() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void Path::clear_has_kind() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void Path::clear_kind() {
+  kind_ = 0;
+  clear_has_kind();
+}
+inline ::google::protobuf::int32 Path::kind() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Path.kind)
+  return kind_;
+}
+inline void Path::set_kind(::google::protobuf::int32 value) {
+  set_has_kind();
+  kind_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Path.kind)
+}
+
+// repeated .buffers.resources.Path.Point points = 10;
 inline int Path::points_size() const {
   return points_.size();
 }
@@ -953,8 +823,6 @@ Path::points() const {
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 

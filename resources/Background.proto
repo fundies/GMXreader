@@ -5,11 +5,11 @@ import "options.proto";
 
 message Background {
   optional string name = 1;
-  optional int32 id = 2;
+  optional int32 id = 2 [(gmx) = "GMX_DEPRECIATED"];
 
-  optional bool preload = 4;
-  optional bool transparent = 5;
-  optional bool smooth_edges = 6;
+  optional bool preload = 4 [(gmx) = "GMX_DEPRECIATED"];
+  optional bool transparent = 5 [(gmx) = "GMX_DEPRECIATED"];
+  optional bool smooth_edges = 6 [(gmx) = "GMX_DEPRECIATED"];
 
   optional bool use_as_tileset = 7 [(gmx) = "istileset"];
 
@@ -19,6 +19,13 @@ message Background {
   optional int32 vertical_offset    = 14 [(gmx) = "tileyoff"];
   optional int32 horizontal_spacing = 15 [(gmx) = "tilehsep"];
   optional int32 vertical_spacing   = 16 [(gmx) = "tilevsep"];
+  
+  optional int32 h_tile = 17 [(gmx) = "HTile"];
+  optional int32 v_tile = 18 [(gmx) = "VTile"];
+  optional int32 texture_group = 19 [(gmx) = "TextureGroups/TextureGroup0"];
+  optional bool for3D = 20 [(gmx) = "For3D"];
+  optional uint32 width = 21;
+  optional uint32 height = 22;
 
-  //optional Image image = 3;
+  optional string image = 3 [(gmx) = "data"];
 }

@@ -65,19 +65,35 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, kind_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, data_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, effects_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, bit_rate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, sample_rate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, bit_depth_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, compressed_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, streamed_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, uncompress_on_load_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Sound, audio_group_),
   0,
+  6,
+  11,
   4,
   5,
-  6,
-  7,
   1,
   2,
+  7,
   8,
-  9,
   3,
+  9,
+  10,
+  15,
+  16,
+  12,
+  13,
+  14,
+  17,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 15, sizeof(Sound)},
+  { 0, 23, sizeof(Sound)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -124,21 +140,28 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\025resources/Sound.proto\022\021buffers.resourc"
-      "es\032\roptions.proto\"\250\003\n\005Sound\022\014\n\004name\030\001 \001("
-      "\t\022\n\n\002id\030\002 \001(\005\022\017\n\007preload\030\003 \001(\010\022\013\n\003pan\030\004 "
-      "\001(\001\022!\n\006volume\030\005 \001(\001B\021\202\265\030\rvolume/volume\022\037"
-      "\n\tfile_name\030\006 \001(\tB\014\202\265\030\010origname\022%\n\016file_"
-      "extension\030\007 \001(\tB\r\202\265\030\textension\022+\n\004kind\030\010"
-      " \001(\0162\035.buffers.resources.Sound.Kind\022;\n\004t"
-      "ype\030\t \001(\0162\035.buffers.resources.Sound.Type"
-      "B\016\202\265\030\ntypes/type\022\014\n\004data\030\n \001(\t\"V\n\004Kind\022\n"
-      "\n\006NORMAL\020\000\022\024\n\020BACKGROUND_MUSIC\020\001\022\025\n\021THRE"
-      "E_DIMENSIONAL\020\002\022\025\n\021MULTIMEDIA_PLAYER\020\003\","
-      "\n\004Type\022\010\n\004MONO\020\000\022\n\n\006STEREO\020\001\022\016\n\nPOSITION"
-      "AL\020\002"
+      "es\032\roptions.proto\"\317\005\n\005Sound\022\014\n\004name\030\001 \001("
+      "\t\022\037\n\002id\030\002 \001(\005B\023\202\265\030\017GMX_DEPRECIATED\022\017\n\007pr"
+      "eload\030\003 \001(\010\022\013\n\003pan\030\004 \001(\001\022!\n\006volume\030\005 \001(\001"
+      "B\021\202\265\030\rvolume/volume\022\037\n\tfile_name\030\006 \001(\tB\014"
+      "\202\265\030\010origname\022%\n\016file_extension\030\007 \001(\tB\r\202\265"
+      "\030\textension\022+\n\004kind\030\010 \001(\0162\035.buffers.reso"
+      "urces.Sound.Kind\022;\n\004type\030\t \001(\0162\035.buffers"
+      ".resources.Sound.TypeB\016\202\265\030\ntypes/type\022\014\n"
+      "\004data\030\n \001(\t\022\017\n\007effects\030\013 \001(\005\022&\n\010bit_rate"
+      "\030\014 \001(\rB\024\202\265\030\020bitRates/bitRate\022/\n\013sample_r"
+      "ate\030\r \001(\rB\032\202\265\030\026sampleRates/sampleRate\022)\n"
+      "\tbit_depth\030\016 \001(\rB\026\202\265\030\022bitDepths/bitDepth"
+      "\022\022\n\ncompressed\030\017 \001(\010\022\020\n\010streamed\030\020 \001(\010\0220"
+      "\n\022uncompress_on_load\030\021 \001(\010B\024\202\265\030\020uncompre"
+      "ssOnLoad\022#\n\013audio_group\030\022 \001(\005B\016\202\265\030\naudio"
+      "Group\"V\n\004Kind\022\n\n\006NORMAL\020\000\022\024\n\020BACKGROUND_"
+      "MUSIC\020\001\022\025\n\021THREE_DIMENSIONAL\020\002\022\025\n\021MULTIM"
+      "EDIA_PLAYER\020\003\",\n\004Type\022\010\n\004MONO\020\000\022\n\n\006STERE"
+      "O\020\001\022\016\n\nPOSITIONAL\020\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 484);
+      descriptor, 779);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Sound.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -220,6 +243,14 @@ const int Sound::kFileExtensionFieldNumber;
 const int Sound::kKindFieldNumber;
 const int Sound::kTypeFieldNumber;
 const int Sound::kDataFieldNumber;
+const int Sound::kEffectsFieldNumber;
+const int Sound::kBitRateFieldNumber;
+const int Sound::kSampleRateFieldNumber;
+const int Sound::kBitDepthFieldNumber;
+const int Sound::kCompressedFieldNumber;
+const int Sound::kStreamedFieldNumber;
+const int Sound::kUncompressOnLoadFieldNumber;
+const int Sound::kAudioGroupFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Sound::Sound()
@@ -252,9 +283,9 @@ Sound::Sound(const Sound& from)
   if (from.has_data()) {
     data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
   }
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&type_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(type_));
+  ::memcpy(&pan_, &from.pan_,
+    static_cast<size_t>(reinterpret_cast<char*>(&audio_group_) -
+    reinterpret_cast<char*>(&pan_)) + sizeof(audio_group_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Sound)
 }
 
@@ -264,9 +295,9 @@ void Sound::SharedCtor() {
   file_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   file_extension_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&type_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(type_));
+  ::memset(&pan_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&audio_group_) -
+      reinterpret_cast<char*>(&pan_)) + sizeof(audio_group_));
 }
 
 Sound::~Sound() {
@@ -330,14 +361,19 @@ void Sound::Clear() {
     }
   }
   if (cached_has_bits & 240u) {
-    ::memset(&id_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&volume_) -
-        reinterpret_cast<char*>(&id_)) + sizeof(volume_));
+    ::memset(&pan_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&kind_) -
+        reinterpret_cast<char*>(&pan_)) + sizeof(kind_));
   }
-  if (cached_has_bits & 768u) {
-    ::memset(&kind_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&type_) -
-        reinterpret_cast<char*>(&kind_)) + sizeof(type_));
+  if (cached_has_bits & 65280u) {
+    ::memset(&type_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&sample_rate_) -
+        reinterpret_cast<char*>(&type_)) + sizeof(sample_rate_));
+  }
+  if (cached_has_bits & 196608u) {
+    ::memset(&bit_depth_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&audio_group_) -
+        reinterpret_cast<char*>(&bit_depth_)) + sizeof(audio_group_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -349,7 +385,7 @@ bool Sound::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:buffers.resources.Sound)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -369,7 +405,7 @@ bool Sound::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2;
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -513,6 +549,118 @@ bool Sound::MergePartialFromCodedStream(
         break;
       }
 
+      // optional int32 effects = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(88u /* 88 & 0xFF */)) {
+          set_has_effects();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &effects_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional uint32 bit_rate = 12 [(.buffers.gmx) = "bitRates/bitRate"];
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(96u /* 96 & 0xFF */)) {
+          set_has_bit_rate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &bit_rate_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional uint32 sample_rate = 13 [(.buffers.gmx) = "sampleRates/sampleRate"];
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(104u /* 104 & 0xFF */)) {
+          set_has_sample_rate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &sample_rate_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional uint32 bit_depth = 14 [(.buffers.gmx) = "bitDepths/bitDepth"];
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(112u /* 112 & 0xFF */)) {
+          set_has_bit_depth();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &bit_depth_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool compressed = 15;
+      case 15: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(120u /* 120 & 0xFF */)) {
+          set_has_compressed();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &compressed_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool streamed = 16;
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(128u /* 128 & 0xFF */)) {
+          set_has_streamed();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &streamed_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool uncompress_on_load = 17 [(.buffers.gmx) = "uncompressOnLoad"];
+      case 17: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(136u /* 136 & 0xFF */)) {
+          set_has_uncompress_on_load();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &uncompress_on_load_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 audio_group = 18 [(.buffers.gmx) = "audioGroup"];
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(144u /* 144 & 0xFF */)) {
+          set_has_audio_group();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &audio_group_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -550,23 +698,23 @@ void Sound::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2;
-  if (cached_has_bits & 0x00000010u) {
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  if (cached_has_bits & 0x00000040u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
 
   // optional bool preload = 3;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000800u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->preload(), output);
   }
 
   // optional double pan = 4;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000010u) {
     ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->pan(), output);
   }
 
   // optional double volume = 5 [(.buffers.gmx) = "volume/volume"];
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000020u) {
     ::google::protobuf::internal::WireFormatLite::WriteDouble(5, this->volume(), output);
   }
 
@@ -591,13 +739,13 @@ void Sound::SerializeWithCachedSizes(
   }
 
   // optional .buffers.resources.Sound.Kind kind = 8;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000080u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       8, this->kind(), output);
   }
 
   // optional .buffers.resources.Sound.Type type = 9 [(.buffers.gmx) = "types/type"];
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000100u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       9, this->type(), output);
   }
@@ -610,6 +758,46 @@ void Sound::SerializeWithCachedSizes(
       "buffers.resources.Sound.data");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       10, this->data(), output);
+  }
+
+  // optional int32 effects = 11;
+  if (cached_has_bits & 0x00000200u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(11, this->effects(), output);
+  }
+
+  // optional uint32 bit_rate = 12 [(.buffers.gmx) = "bitRates/bitRate"];
+  if (cached_has_bits & 0x00000400u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(12, this->bit_rate(), output);
+  }
+
+  // optional uint32 sample_rate = 13 [(.buffers.gmx) = "sampleRates/sampleRate"];
+  if (cached_has_bits & 0x00008000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(13, this->sample_rate(), output);
+  }
+
+  // optional uint32 bit_depth = 14 [(.buffers.gmx) = "bitDepths/bitDepth"];
+  if (cached_has_bits & 0x00010000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(14, this->bit_depth(), output);
+  }
+
+  // optional bool compressed = 15;
+  if (cached_has_bits & 0x00001000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(15, this->compressed(), output);
+  }
+
+  // optional bool streamed = 16;
+  if (cached_has_bits & 0x00002000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(16, this->streamed(), output);
+  }
+
+  // optional bool uncompress_on_load = 17 [(.buffers.gmx) = "uncompressOnLoad"];
+  if (cached_has_bits & 0x00004000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(17, this->uncompress_on_load(), output);
+  }
+
+  // optional int32 audio_group = 18 [(.buffers.gmx) = "audioGroup"];
+  if (cached_has_bits & 0x00020000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(18, this->audio_group(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -638,23 +826,23 @@ void Sound::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2;
-  if (cached_has_bits & 0x00000010u) {
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  if (cached_has_bits & 0x00000040u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
 
   // optional bool preload = 3;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000800u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->preload(), target);
   }
 
   // optional double pan = 4;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000010u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->pan(), target);
   }
 
   // optional double volume = 5 [(.buffers.gmx) = "volume/volume"];
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000020u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(5, this->volume(), target);
   }
 
@@ -681,13 +869,13 @@ void Sound::SerializeWithCachedSizes(
   }
 
   // optional .buffers.resources.Sound.Kind kind = 8;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000080u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       8, this->kind(), target);
   }
 
   // optional .buffers.resources.Sound.Type type = 9 [(.buffers.gmx) = "types/type"];
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000100u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       9, this->type(), target);
   }
@@ -701,6 +889,46 @@ void Sound::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         10, this->data(), target);
+  }
+
+  // optional int32 effects = 11;
+  if (cached_has_bits & 0x00000200u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(11, this->effects(), target);
+  }
+
+  // optional uint32 bit_rate = 12 [(.buffers.gmx) = "bitRates/bitRate"];
+  if (cached_has_bits & 0x00000400u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(12, this->bit_rate(), target);
+  }
+
+  // optional uint32 sample_rate = 13 [(.buffers.gmx) = "sampleRates/sampleRate"];
+  if (cached_has_bits & 0x00008000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(13, this->sample_rate(), target);
+  }
+
+  // optional uint32 bit_depth = 14 [(.buffers.gmx) = "bitDepths/bitDepth"];
+  if (cached_has_bits & 0x00010000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(14, this->bit_depth(), target);
+  }
+
+  // optional bool compressed = 15;
+  if (cached_has_bits & 0x00001000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(15, this->compressed(), target);
+  }
+
+  // optional bool streamed = 16;
+  if (cached_has_bits & 0x00002000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(16, this->streamed(), target);
+  }
+
+  // optional bool uncompress_on_load = 17 [(.buffers.gmx) = "uncompressOnLoad"];
+  if (cached_has_bits & 0x00004000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(17, this->uncompress_on_load(), target);
+  }
+
+  // optional int32 audio_group = 18 [(.buffers.gmx) = "audioGroup"];
+  if (cached_has_bits & 0x00020000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(18, this->audio_group(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -749,18 +977,6 @@ size_t Sound::ByteSizeLong() const {
           this->data());
     }
 
-    // optional int32 id = 2;
-    if (has_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->id());
-    }
-
-    // optional bool preload = 3;
-    if (has_preload()) {
-      total_size += 1 + 1;
-    }
-
     // optional double pan = 4;
     if (has_pan()) {
       total_size += 1 + 8;
@@ -771,18 +987,82 @@ size_t Sound::ByteSizeLong() const {
       total_size += 1 + 8;
     }
 
-  }
-  if (_has_bits_[8 / 32] & 768u) {
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    if (has_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->id());
+    }
+
     // optional .buffers.resources.Sound.Kind kind = 8;
     if (has_kind()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->kind());
     }
 
+  }
+  if (_has_bits_[8 / 32] & 65280u) {
     // optional .buffers.resources.Sound.Type type = 9 [(.buffers.gmx) = "types/type"];
     if (has_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+    }
+
+    // optional int32 effects = 11;
+    if (has_effects()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->effects());
+    }
+
+    // optional uint32 bit_rate = 12 [(.buffers.gmx) = "bitRates/bitRate"];
+    if (has_bit_rate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->bit_rate());
+    }
+
+    // optional bool preload = 3;
+    if (has_preload()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool compressed = 15;
+    if (has_compressed()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool streamed = 16;
+    if (has_streamed()) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool uncompress_on_load = 17 [(.buffers.gmx) = "uncompressOnLoad"];
+    if (has_uncompress_on_load()) {
+      total_size += 2 + 1;
+    }
+
+    // optional uint32 sample_rate = 13 [(.buffers.gmx) = "sampleRates/sampleRate"];
+    if (has_sample_rate()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->sample_rate());
+    }
+
+  }
+  if (_has_bits_[16 / 32] & 196608u) {
+    // optional uint32 bit_depth = 14 [(.buffers.gmx) = "bitDepths/bitDepth"];
+    if (has_bit_depth()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->bit_depth());
+    }
+
+    // optional int32 audio_group = 18 [(.buffers.gmx) = "audioGroup"];
+    if (has_audio_group()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->audio_group());
     }
 
   }
@@ -834,25 +1114,52 @@ void Sound::MergeFrom(const Sound& from) {
       data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
     }
     if (cached_has_bits & 0x00000010u) {
-      id_ = from.id_;
-    }
-    if (cached_has_bits & 0x00000020u) {
-      preload_ = from.preload_;
-    }
-    if (cached_has_bits & 0x00000040u) {
       pan_ = from.pan_;
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000020u) {
       volume_ = from.volume_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      id_ = from.id_;
+    }
+    if (cached_has_bits & 0x00000080u) {
+      kind_ = from.kind_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 768u) {
+  if (cached_has_bits & 65280u) {
     if (cached_has_bits & 0x00000100u) {
-      kind_ = from.kind_;
+      type_ = from.type_;
     }
     if (cached_has_bits & 0x00000200u) {
-      type_ = from.type_;
+      effects_ = from.effects_;
+    }
+    if (cached_has_bits & 0x00000400u) {
+      bit_rate_ = from.bit_rate_;
+    }
+    if (cached_has_bits & 0x00000800u) {
+      preload_ = from.preload_;
+    }
+    if (cached_has_bits & 0x00001000u) {
+      compressed_ = from.compressed_;
+    }
+    if (cached_has_bits & 0x00002000u) {
+      streamed_ = from.streamed_;
+    }
+    if (cached_has_bits & 0x00004000u) {
+      uncompress_on_load_ = from.uncompress_on_load_;
+    }
+    if (cached_has_bits & 0x00008000u) {
+      sample_rate_ = from.sample_rate_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 196608u) {
+    if (cached_has_bits & 0x00010000u) {
+      bit_depth_ = from.bit_depth_;
+    }
+    if (cached_has_bits & 0x00020000u) {
+      audio_group_ = from.audio_group_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -886,12 +1193,20 @@ void Sound::InternalSwap(Sound* other) {
   file_name_.Swap(&other->file_name_);
   file_extension_.Swap(&other->file_extension_);
   data_.Swap(&other->data_);
-  swap(id_, other->id_);
-  swap(preload_, other->preload_);
   swap(pan_, other->pan_);
   swap(volume_, other->volume_);
+  swap(id_, other->id_);
   swap(kind_, other->kind_);
   swap(type_, other->type_);
+  swap(effects_, other->effects_);
+  swap(bit_rate_, other->bit_rate_);
+  swap(preload_, other->preload_);
+  swap(compressed_, other->compressed_);
+  swap(streamed_, other->streamed_);
+  swap(uncompress_on_load_, other->uncompress_on_load_);
+  swap(sample_rate_, other->sample_rate_);
+  swap(bit_depth_, other->bit_depth_);
+  swap(audio_group_, other->audio_group_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -968,15 +1283,15 @@ void Sound::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sound.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
 bool Sound::has_id() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 void Sound::set_has_id() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 void Sound::clear_has_id() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 void Sound::clear_id() {
   id_ = 0;
@@ -994,13 +1309,13 @@ void Sound::set_id(::google::protobuf::int32 value) {
 
 // optional bool preload = 3;
 bool Sound::has_preload() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 void Sound::set_has_preload() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000800u;
 }
 void Sound::clear_has_preload() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 void Sound::clear_preload() {
   preload_ = false;
@@ -1018,13 +1333,13 @@ void Sound::set_preload(bool value) {
 
 // optional double pan = 4;
 bool Sound::has_pan() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 void Sound::set_has_pan() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000010u;
 }
 void Sound::clear_has_pan() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 void Sound::clear_pan() {
   pan_ = 0;
@@ -1042,13 +1357,13 @@ void Sound::set_pan(double value) {
 
 // optional double volume = 5 [(.buffers.gmx) = "volume/volume"];
 bool Sound::has_volume() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 void Sound::set_has_volume() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000020u;
 }
 void Sound::clear_has_volume() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 void Sound::clear_volume() {
   volume_ = 0;
@@ -1192,13 +1507,13 @@ void Sound::set_allocated_file_extension(::std::string* file_extension) {
 
 // optional .buffers.resources.Sound.Kind kind = 8;
 bool Sound::has_kind() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 void Sound::set_has_kind() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
 }
 void Sound::clear_has_kind() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 void Sound::clear_kind() {
   kind_ = 0;
@@ -1217,13 +1532,13 @@ void Sound::set_kind(::buffers::resources::Sound_Kind value) {
 
 // optional .buffers.resources.Sound.Type type = 9 [(.buffers.gmx) = "types/type"];
 bool Sound::has_type() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 void Sound::set_has_type() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000100u;
 }
 void Sound::clear_has_type() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 void Sound::clear_type() {
   type_ = 0;
@@ -1301,6 +1616,198 @@ void Sound::set_allocated_data(::std::string* data) {
   }
   data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sound.data)
+}
+
+// optional int32 effects = 11;
+bool Sound::has_effects() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void Sound::set_has_effects() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void Sound::clear_has_effects() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void Sound::clear_effects() {
+  effects_ = 0;
+  clear_has_effects();
+}
+::google::protobuf::int32 Sound::effects() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.effects)
+  return effects_;
+}
+void Sound::set_effects(::google::protobuf::int32 value) {
+  set_has_effects();
+  effects_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.effects)
+}
+
+// optional uint32 bit_rate = 12 [(.buffers.gmx) = "bitRates/bitRate"];
+bool Sound::has_bit_rate() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+void Sound::set_has_bit_rate() {
+  _has_bits_[0] |= 0x00000400u;
+}
+void Sound::clear_has_bit_rate() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+void Sound::clear_bit_rate() {
+  bit_rate_ = 0u;
+  clear_has_bit_rate();
+}
+::google::protobuf::uint32 Sound::bit_rate() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.bit_rate)
+  return bit_rate_;
+}
+void Sound::set_bit_rate(::google::protobuf::uint32 value) {
+  set_has_bit_rate();
+  bit_rate_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.bit_rate)
+}
+
+// optional uint32 sample_rate = 13 [(.buffers.gmx) = "sampleRates/sampleRate"];
+bool Sound::has_sample_rate() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+void Sound::set_has_sample_rate() {
+  _has_bits_[0] |= 0x00008000u;
+}
+void Sound::clear_has_sample_rate() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+void Sound::clear_sample_rate() {
+  sample_rate_ = 0u;
+  clear_has_sample_rate();
+}
+::google::protobuf::uint32 Sound::sample_rate() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.sample_rate)
+  return sample_rate_;
+}
+void Sound::set_sample_rate(::google::protobuf::uint32 value) {
+  set_has_sample_rate();
+  sample_rate_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.sample_rate)
+}
+
+// optional uint32 bit_depth = 14 [(.buffers.gmx) = "bitDepths/bitDepth"];
+bool Sound::has_bit_depth() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+void Sound::set_has_bit_depth() {
+  _has_bits_[0] |= 0x00010000u;
+}
+void Sound::clear_has_bit_depth() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+void Sound::clear_bit_depth() {
+  bit_depth_ = 0u;
+  clear_has_bit_depth();
+}
+::google::protobuf::uint32 Sound::bit_depth() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.bit_depth)
+  return bit_depth_;
+}
+void Sound::set_bit_depth(::google::protobuf::uint32 value) {
+  set_has_bit_depth();
+  bit_depth_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.bit_depth)
+}
+
+// optional bool compressed = 15;
+bool Sound::has_compressed() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+void Sound::set_has_compressed() {
+  _has_bits_[0] |= 0x00001000u;
+}
+void Sound::clear_has_compressed() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+void Sound::clear_compressed() {
+  compressed_ = false;
+  clear_has_compressed();
+}
+bool Sound::compressed() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.compressed)
+  return compressed_;
+}
+void Sound::set_compressed(bool value) {
+  set_has_compressed();
+  compressed_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.compressed)
+}
+
+// optional bool streamed = 16;
+bool Sound::has_streamed() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+void Sound::set_has_streamed() {
+  _has_bits_[0] |= 0x00002000u;
+}
+void Sound::clear_has_streamed() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+void Sound::clear_streamed() {
+  streamed_ = false;
+  clear_has_streamed();
+}
+bool Sound::streamed() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.streamed)
+  return streamed_;
+}
+void Sound::set_streamed(bool value) {
+  set_has_streamed();
+  streamed_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.streamed)
+}
+
+// optional bool uncompress_on_load = 17 [(.buffers.gmx) = "uncompressOnLoad"];
+bool Sound::has_uncompress_on_load() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+void Sound::set_has_uncompress_on_load() {
+  _has_bits_[0] |= 0x00004000u;
+}
+void Sound::clear_has_uncompress_on_load() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+void Sound::clear_uncompress_on_load() {
+  uncompress_on_load_ = false;
+  clear_has_uncompress_on_load();
+}
+bool Sound::uncompress_on_load() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.uncompress_on_load)
+  return uncompress_on_load_;
+}
+void Sound::set_uncompress_on_load(bool value) {
+  set_has_uncompress_on_load();
+  uncompress_on_load_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.uncompress_on_load)
+}
+
+// optional int32 audio_group = 18 [(.buffers.gmx) = "audioGroup"];
+bool Sound::has_audio_group() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+void Sound::set_has_audio_group() {
+  _has_bits_[0] |= 0x00020000u;
+}
+void Sound::clear_has_audio_group() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+void Sound::clear_audio_group() {
+  audio_group_ = 0;
+  clear_has_audio_group();
+}
+::google::protobuf::int32 Sound::audio_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Sound.audio_group)
+  return audio_group_;
+}
+void Sound::set_audio_group(::google::protobuf::int32 value) {
+  set_has_audio_group();
+  audio_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Sound.audio_group)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
