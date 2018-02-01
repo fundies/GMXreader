@@ -19,16 +19,26 @@
 
 namespace buffers {
 namespace resources {
+class Object_ArgumentDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Object_Argument>
+     _instance;
+} _Object_Argument_default_instance_;
+class Object_ActionDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<Object_Action>
+     _instance;
+} _Object_Action_default_instance_;
 class Object_EventDefaultTypeInternal {
 public:
  ::google::protobuf::internal::ExplicitlyConstructed<Object_Event>
      _instance;
 } _Object_Event_default_instance_;
-class Object_MainEventDefaultTypeInternal {
+class Object_PhysicsShapePointDefaultTypeInternal {
 public:
- ::google::protobuf::internal::ExplicitlyConstructed<Object_MainEvent>
+ ::google::protobuf::internal::ExplicitlyConstructed<Object_PhysicsShapePoint>
      _instance;
-} _Object_MainEvent_default_instance_;
+} _Object_PhysicsShapePoint_default_instance_;
 class ObjectDefaultTypeInternal {
 public:
  ::google::protobuf::internal::ExplicitlyConstructed<Object>
@@ -40,7 +50,8 @@ namespace protobuf_resources_2fObject_2eproto {
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[3];
+::google::protobuf::Metadata file_level_metadata[5];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 }  // namespace
 
@@ -58,27 +69,73 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
 };
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Argument, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Argument, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Argument, kind_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Argument, string_),
+  1,
+  0,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, libid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, kind_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, use_relative_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, is_question_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, use_apply_to_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, exe_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, function_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, code_string_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, who_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, relative_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, is_not_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Action, argument_),
+  4,
+  5,
+  6,
+  9,
+  10,
+  7,
+  8,
+  0,
+  1,
+  2,
+  11,
+  12,
+  3,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, code_),
-  1,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, number_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_Event, action_),
+  2,
+  3,
   0,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_MainEvent, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_MainEvent, _internal_metadata_),
+  1,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_PhysicsShapePoint, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_PhysicsShapePoint, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_MainEvent, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_MainEvent, events_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_PhysicsShapePoint, x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object_PhysicsShapePoint, y_),
   0,
-  ~0u,
+  1,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -93,7 +150,19 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, solid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, visible_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, persistent_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, main_events_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, events_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, use_physics_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_sensor_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_shape_type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_density_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_restitution_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_group_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_linear_damping_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_angular_damping_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_friction_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_awake_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_kinematic_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Object, phy_shape_),
   0,
   4,
   1,
@@ -104,16 +173,32 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   7,
   8,
   ~0u,
+  9,
+  15,
+  10,
+  11,
+  12,
+  14,
+  13,
+  18,
+  19,
+  16,
+  17,
+  ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 7, sizeof(Object_Event)},
-  { 9, 16, sizeof(Object_MainEvent)},
-  { 18, 33, sizeof(Object)},
+  { 0, 7, sizeof(Object_Argument)},
+  { 9, 27, sizeof(Object_Action)},
+  { 40, 49, sizeof(Object_Event)},
+  { 53, 60, sizeof(Object_PhysicsShapePoint)},
+  { 62, 89, sizeof(Object)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Object_Argument_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Object_Action_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Object_Event_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&_Object_MainEvent_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_Object_PhysicsShapePoint_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_Object_default_instance_),
 };
 
@@ -124,7 +209,7 @@ void protobuf_AssignDescriptors() {
   ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
       "resources/Object.proto", schemas, file_default_instances, TableStruct::offsets, factory,
-      file_level_metadata, NULL, NULL);
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
@@ -135,7 +220,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 3);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 5);
 }
 
 }  // namespace
@@ -144,13 +229,21 @@ void TableStruct::InitDefaultsImpl() {
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::buffers::protobuf_options_2eproto::InitDefaults();
-  _Object_Event_default_instance_._instance.DefaultConstruct();
+  _Object_Argument_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_Object_Event_default_instance_);_Object_MainEvent_default_instance_._instance.DefaultConstruct();
+      &_Object_Argument_default_instance_);_Object_Action_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_Object_MainEvent_default_instance_);_Object_default_instance_._instance.DefaultConstruct();
+      &_Object_Action_default_instance_);_Object_Event_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_Object_default_instance_);}
+      &_Object_Event_default_instance_);_Object_PhysicsShapePoint_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Object_PhysicsShapePoint_default_instance_);_Object_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_Object_default_instance_);_Object_Action_default_instance_._instance.get_mutable()->argument_ = const_cast< ::buffers::resources::Object_Argument*>(
+      ::buffers::resources::Object_Argument::internal_default_instance());
+  _Object_Event_default_instance_._instance.get_mutable()->action_ = const_cast< ::buffers::resources::Object_Action*>(
+      ::buffers::resources::Object_Action::internal_default_instance());
+}
 
 void InitDefaults() {
   static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
@@ -161,19 +254,52 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\026resources/Object.proto\022\021buffers.resour"
-      "ces\032\roptions.proto\"\367\002\n\006Object\022\014\n\004name\030\001 "
+      "ces\032\roptions.proto\"\201\r\n\006Object\022\014\n\004name\030\001 "
       "\001(\t\022\n\n\002id\030\002 \001(\005\022#\n\013parent_name\030\003 \001(\tB\016\202\265"
       "\030\nparentName\022#\n\013sprite_name\030\004 \001(\tB\016\202\265\030\ns"
       "priteName\022\037\n\tmask_name\030\005 \001(\tB\014\202\265\030\010maskNa"
       "me\022\r\n\005depth\030\006 \001(\005\022\r\n\005solid\030\007 \001(\010\022\017\n\007visi"
-      "ble\030\010 \001(\010\022\022\n\npersistent\030\t \001(\010\0228\n\013main_ev"
-      "ents\030\n \003(\0132#.buffers.resources.Object.Ma"
-      "inEvent\032!\n\005Event\022\n\n\002id\030\001 \001(\005\022\014\n\004code\030\002 \001"
-      "(\t\032H\n\tMainEvent\022\n\n\002id\030\001 \001(\005\022/\n\006events\030\002 "
-      "\003(\0132\037.buffers.resources.Object.Event"
+      "ble\030\010 \001(\010\022\022\n\npersistent\030\t \001(\010\022/\n\006events\030"
+      "\n \003(\0132\037.buffers.resources.Object.Event\022&"
+      "\n\013use_physics\030\013 \001(\010B\021\202\265\030\rPhysicsObject\022+"
+      "\n\nphy_sensor\030\014 \001(\010B\027\202\265\030\023PhysicsObjectSen"
+      "sor\022V\n\016phy_shape_type\030\r \001(\0162&.buffers.re"
+      "sources.Object.PhysicsShapeB\026\202\265\030\022Physics"
+      "ObjectShape\022-\n\013phy_density\030\016 \001(\001B\030\202\265\030\024Ph"
+      "ysicsObjectDensity\0225\n\017phy_restitution\030\017 "
+      "\001(\001B\034\202\265\030\030PhysicsObjectRestitution\022)\n\tphy"
+      "_group\030\020 \001(\005B\026\202\265\030\022PhysicsObjectGroup\022:\n\022"
+      "phy_linear_damping\030\021 \001(\001B\036\202\265\030\032PhysicsObj"
+      "ectLinearDamping\022<\n\023phy_angular_damping\030"
+      "\022 \001(\001B\037\202\265\030\033PhysicsObjectAngularDamping\022/"
+      "\n\014phy_friction\030\023 \001(\001B\031\202\265\030\025PhysicsObjectF"
+      "riction\022)\n\tphy_awake\030\024 \001(\010B\026\202\265\030\022PhysicsO"
+      "bjectAwake\0221\n\rphy_kinematic\030\025 \001(\010B\032\202\265\030\026P"
+      "hysicsObjectKinematic\022V\n\tphy_shape\030\026 \003(\013"
+      "2+.buffers.resources.Object.PhysicsShape"
+      "PointB\026\202\265\030\022PhysicsShapePoints\032(\n\010Argumen"
+      "t\022\014\n\004kind\030\001 \001(\005\022\016\n\006string\030\002 \001(\t\032\252\003\n\006Acti"
+      "on\022\r\n\005libid\030\001 \001(\005\022\n\n\002id\030\002 \001(\005\022\014\n\004kind\030\003 "
+      "\001(\005\022%\n\014use_relative\030\004 \001(\010B\017\202\265\030\013userelati"
+      "ve\022#\n\013is_question\030\005 \001(\010B\016\202\265\030\nisquestion\022"
+      "$\n\014use_apply_to\030\006 \001(\005B\016\202\265\030\nuseapplyto\022\035\n"
+      "\010exe_type\030\007 \001(\005B\013\202\265\030\007exetype\022\'\n\rfunction"
+      "_name\030\010 \001(\tB\020\202\265\030\014functionname\022#\n\013code_st"
+      "ring\030\t \001(\tB\016\202\265\030\ncodestring\022\035\n\010who_name\030\n"
+      " \001(\tB\013\202\265\030\007whoName\022\020\n\010relative\030\013 \001(\010\022\031\n\006i"
+      "s_not\030\014 \001(\010B\t\202\265\030\005isnot\022L\n\010argument\030\r \001(\013"
+      "2\".buffers.resources.Object.ArgumentB\026\202\265"
+      "\030\022arguments/argument\032\212\001\n\005Event\022\033\n\004type\030\001"
+      " \001(\005B\r\202\265\030\teventtype\022\031\n\006number\030\002 \001(\005B\t\202\265\030"
+      "\005enumb\022\027\n\004name\030\003 \001(\tB\t\202\265\030\005ename\0220\n\006actio"
+      "n\030\004 \001(\0132 .buffers.resources.Object.Actio"
+      "n\032K\n\021PhysicsShapePoint\022\032\n\001x\030\001 \001(\005B\017\202\265\030\013G"
+      "MX_SPLIT/0\022\032\n\001y\030\002 \001(\005B\017\202\265\030\013GMX_SPLIT/1\"."
+      "\n\014PhysicsShape\022\n\n\006CIRCLE\020\000\022\007\n\003BOX\020\001\022\t\n\005S"
+      "HAPE\020\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 436);
+      descriptor, 1726);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Object.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -193,12 +319,1665 @@ struct StaticDescriptorInitializer {
 
 }  // namespace protobuf_resources_2fObject_2eproto
 
+const ::google::protobuf::EnumDescriptor* Object_PhysicsShape_descriptor() {
+  protobuf_resources_2fObject_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_resources_2fObject_2eproto::file_level_enum_descriptors[0];
+}
+bool Object_PhysicsShape_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const Object_PhysicsShape Object::CIRCLE;
+const Object_PhysicsShape Object::BOX;
+const Object_PhysicsShape Object::SHAPE;
+const Object_PhysicsShape Object::PhysicsShape_MIN;
+const Object_PhysicsShape Object::PhysicsShape_MAX;
+const int Object::PhysicsShape_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Object_Event::kIdFieldNumber;
-const int Object_Event::kCodeFieldNumber;
+const int Object_Argument::kKindFieldNumber;
+const int Object_Argument::kStringFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Object_Argument::Object_Argument()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_resources_2fObject_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:buffers.resources.Object.Argument)
+}
+Object_Argument::Object_Argument(const Object_Argument& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_string()) {
+    string_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.string_);
+  }
+  kind_ = from.kind_;
+  // @@protoc_insertion_point(copy_constructor:buffers.resources.Object.Argument)
+}
+
+void Object_Argument::SharedCtor() {
+  _cached_size_ = 0;
+  string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  kind_ = 0;
+}
+
+Object_Argument::~Object_Argument() {
+  // @@protoc_insertion_point(destructor:buffers.resources.Object.Argument)
+  SharedDtor();
+}
+
+void Object_Argument::SharedDtor() {
+  string_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Object_Argument::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Object_Argument::descriptor() {
+  protobuf_resources_2fObject_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_resources_2fObject_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Object_Argument& Object_Argument::default_instance() {
+  protobuf_resources_2fObject_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+Object_Argument* Object_Argument::New(::google::protobuf::Arena* arena) const {
+  Object_Argument* n = new Object_Argument;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Object_Argument::Clear() {
+// @@protoc_insertion_point(message_clear_start:buffers.resources.Object.Argument)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (has_string()) {
+    GOOGLE_DCHECK(!string_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+    (*string_.UnsafeRawStringPointer())->clear();
+  }
+  kind_ = 0;
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool Object_Argument::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:buffers.resources.Object.Argument)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 kind = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_kind();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &kind_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional string string = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_string()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->string().data(), static_cast<int>(this->string().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Object.Argument.string");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:buffers.resources.Object.Argument)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:buffers.resources.Object.Argument)
+  return false;
+#undef DO_
+}
+
+void Object_Argument::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:buffers.resources.Object.Argument)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional int32 kind = 1;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->kind(), output);
+  }
+
+  // optional string string = 2;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->string().data(), static_cast<int>(this->string().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Argument.string");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->string(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:buffers.resources.Object.Argument)
+}
+
+::google::protobuf::uint8* Object_Argument::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:buffers.resources.Object.Argument)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional int32 kind = 1;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->kind(), target);
+  }
+
+  // optional string string = 2;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->string().data(), static_cast<int>(this->string().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Argument.string");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->string(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:buffers.resources.Object.Argument)
+  return target;
+}
+
+size_t Object_Argument::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:buffers.resources.Object.Argument)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 3u) {
+    // optional string string = 2;
+    if (has_string()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->string());
+    }
+
+    // optional int32 kind = 1;
+    if (has_kind()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->kind());
+    }
+
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Object_Argument::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:buffers.resources.Object.Argument)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Object_Argument* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Object_Argument>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:buffers.resources.Object.Argument)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:buffers.resources.Object.Argument)
+    MergeFrom(*source);
+  }
+}
+
+void Object_Argument::MergeFrom(const Object_Argument& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:buffers.resources.Object.Argument)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      set_has_string();
+      string_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.string_);
+    }
+    if (cached_has_bits & 0x00000002u) {
+      kind_ = from.kind_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+}
+
+void Object_Argument::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:buffers.resources.Object.Argument)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Object_Argument::CopyFrom(const Object_Argument& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:buffers.resources.Object.Argument)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Object_Argument::IsInitialized() const {
+  return true;
+}
+
+void Object_Argument::Swap(Object_Argument* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Object_Argument::InternalSwap(Object_Argument* other) {
+  using std::swap;
+  string_.Swap(&other->string_);
+  swap(kind_, other->kind_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Object_Argument::GetMetadata() const {
+  protobuf_resources_2fObject_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_resources_2fObject_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Object_Argument
+
+// optional int32 kind = 1;
+bool Object_Argument::has_kind() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Object_Argument::set_has_kind() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Object_Argument::clear_has_kind() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Object_Argument::clear_kind() {
+  kind_ = 0;
+  clear_has_kind();
+}
+::google::protobuf::int32 Object_Argument::kind() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Argument.kind)
+  return kind_;
+}
+void Object_Argument::set_kind(::google::protobuf::int32 value) {
+  set_has_kind();
+  kind_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Argument.kind)
+}
+
+// optional string string = 2;
+bool Object_Argument::has_string() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Object_Argument::set_has_string() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Object_Argument::clear_has_string() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Object_Argument::clear_string() {
+  string_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_string();
+}
+const ::std::string& Object_Argument::string() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Argument.string)
+  return string_.GetNoArena();
+}
+void Object_Argument::set_string(const ::std::string& value) {
+  set_has_string();
+  string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Argument.string)
+}
+#if LANG_CXX11
+void Object_Argument::set_string(::std::string&& value) {
+  set_has_string();
+  string_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Argument.string)
+}
+#endif
+void Object_Argument::set_string(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_string();
+  string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Argument.string)
+}
+void Object_Argument::set_string(const char* value, size_t size) {
+  set_has_string();
+  string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Argument.string)
+}
+::std::string* Object_Argument::mutable_string() {
+  set_has_string();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Argument.string)
+  return string_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Object_Argument::release_string() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Argument.string)
+  clear_has_string();
+  return string_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Object_Argument::set_allocated_string(::std::string* string) {
+  if (string != NULL) {
+    set_has_string();
+  } else {
+    clear_has_string();
+  }
+  string_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), string);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Argument.string)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Object_Action::kLibidFieldNumber;
+const int Object_Action::kIdFieldNumber;
+const int Object_Action::kKindFieldNumber;
+const int Object_Action::kUseRelativeFieldNumber;
+const int Object_Action::kIsQuestionFieldNumber;
+const int Object_Action::kUseApplyToFieldNumber;
+const int Object_Action::kExeTypeFieldNumber;
+const int Object_Action::kFunctionNameFieldNumber;
+const int Object_Action::kCodeStringFieldNumber;
+const int Object_Action::kWhoNameFieldNumber;
+const int Object_Action::kRelativeFieldNumber;
+const int Object_Action::kIsNotFieldNumber;
+const int Object_Action::kArgumentFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Object_Action::Object_Action()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_resources_2fObject_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:buffers.resources.Object.Action)
+}
+Object_Action::Object_Action(const Object_Action& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  function_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_function_name()) {
+    function_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.function_name_);
+  }
+  code_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_code_string()) {
+    code_string_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_string_);
+  }
+  who_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_who_name()) {
+    who_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.who_name_);
+  }
+  if (from.has_argument()) {
+    argument_ = new ::buffers::resources::Object_Argument(*from.argument_);
+  } else {
+    argument_ = NULL;
+  }
+  ::memcpy(&libid_, &from.libid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&is_not_) -
+    reinterpret_cast<char*>(&libid_)) + sizeof(is_not_));
+  // @@protoc_insertion_point(copy_constructor:buffers.resources.Object.Action)
+}
+
+void Object_Action::SharedCtor() {
+  _cached_size_ = 0;
+  function_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  code_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  who_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&argument_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&is_not_) -
+      reinterpret_cast<char*>(&argument_)) + sizeof(is_not_));
+}
+
+Object_Action::~Object_Action() {
+  // @@protoc_insertion_point(destructor:buffers.resources.Object.Action)
+  SharedDtor();
+}
+
+void Object_Action::SharedDtor() {
+  function_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  code_string_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  who_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete argument_;
+}
+
+void Object_Action::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Object_Action::descriptor() {
+  protobuf_resources_2fObject_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_resources_2fObject_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Object_Action& Object_Action::default_instance() {
+  protobuf_resources_2fObject_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+Object_Action* Object_Action::New(::google::protobuf::Arena* arena) const {
+  Object_Action* n = new Object_Action;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Object_Action::Clear() {
+// @@protoc_insertion_point(message_clear_start:buffers.resources.Object.Action)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 15u) {
+    if (cached_has_bits & 0x00000001u) {
+      GOOGLE_DCHECK(!function_name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*function_name_.UnsafeRawStringPointer())->clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(!code_string_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*code_string_.UnsafeRawStringPointer())->clear();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      GOOGLE_DCHECK(!who_name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*who_name_.UnsafeRawStringPointer())->clear();
+    }
+    if (cached_has_bits & 0x00000008u) {
+      GOOGLE_DCHECK(argument_ != NULL);
+      argument_->::buffers::resources::Object_Argument::Clear();
+    }
+  }
+  if (cached_has_bits & 240u) {
+    ::memset(&libid_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&use_apply_to_) -
+        reinterpret_cast<char*>(&libid_)) + sizeof(use_apply_to_));
+  }
+  if (cached_has_bits & 7936u) {
+    ::memset(&exe_type_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&is_not_) -
+        reinterpret_cast<char*>(&exe_type_)) + sizeof(is_not_));
+  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool Object_Action::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:buffers.resources.Object.Action)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 libid = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_libid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &libid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 id = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          set_has_id();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 kind = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          set_has_kind();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &kind_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool use_relative = 4 [(.buffers.gmx) = "userelative"];
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+          set_has_use_relative();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &use_relative_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool is_question = 5 [(.buffers.gmx) = "isquestion"];
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+          set_has_is_question();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_question_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 use_apply_to = 6 [(.buffers.gmx) = "useapplyto"];
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+          set_has_use_apply_to();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &use_apply_to_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 exe_type = 7 [(.buffers.gmx) = "exetype"];
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+          set_has_exe_type();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &exe_type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional string function_name = 8 [(.buffers.gmx) = "functionname"];
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_function_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->function_name().data(), static_cast<int>(this->function_name().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Object.Action.function_name");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional string code_string = 9 [(.buffers.gmx) = "codestring"];
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_code_string()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->code_string().data(), static_cast<int>(this->code_string().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Object.Action.code_string");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional string who_name = 10 [(.buffers.gmx) = "whoName"];
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_who_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->who_name().data(), static_cast<int>(this->who_name().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Object.Action.who_name");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool relative = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(88u /* 88 & 0xFF */)) {
+          set_has_relative();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &relative_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool is_not = 12 [(.buffers.gmx) = "isnot"];
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(96u /* 96 & 0xFF */)) {
+          set_has_is_not();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_not_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional .buffers.resources.Object.Argument argument = 13 [(.buffers.gmx) = "arguments/argument"];
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_argument()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:buffers.resources.Object.Action)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:buffers.resources.Object.Action)
+  return false;
+#undef DO_
+}
+
+void Object_Action::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:buffers.resources.Object.Action)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional int32 libid = 1;
+  if (cached_has_bits & 0x00000010u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->libid(), output);
+  }
+
+  // optional int32 id = 2;
+  if (cached_has_bits & 0x00000020u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
+  }
+
+  // optional int32 kind = 3;
+  if (cached_has_bits & 0x00000040u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->kind(), output);
+  }
+
+  // optional bool use_relative = 4 [(.buffers.gmx) = "userelative"];
+  if (cached_has_bits & 0x00000200u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->use_relative(), output);
+  }
+
+  // optional bool is_question = 5 [(.buffers.gmx) = "isquestion"];
+  if (cached_has_bits & 0x00000400u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->is_question(), output);
+  }
+
+  // optional int32 use_apply_to = 6 [(.buffers.gmx) = "useapplyto"];
+  if (cached_has_bits & 0x00000080u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->use_apply_to(), output);
+  }
+
+  // optional int32 exe_type = 7 [(.buffers.gmx) = "exetype"];
+  if (cached_has_bits & 0x00000100u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->exe_type(), output);
+  }
+
+  // optional string function_name = 8 [(.buffers.gmx) = "functionname"];
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->function_name().data(), static_cast<int>(this->function_name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Action.function_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      8, this->function_name(), output);
+  }
+
+  // optional string code_string = 9 [(.buffers.gmx) = "codestring"];
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->code_string().data(), static_cast<int>(this->code_string().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Action.code_string");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      9, this->code_string(), output);
+  }
+
+  // optional string who_name = 10 [(.buffers.gmx) = "whoName"];
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->who_name().data(), static_cast<int>(this->who_name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Action.who_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      10, this->who_name(), output);
+  }
+
+  // optional bool relative = 11;
+  if (cached_has_bits & 0x00000800u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(11, this->relative(), output);
+  }
+
+  // optional bool is_not = 12 [(.buffers.gmx) = "isnot"];
+  if (cached_has_bits & 0x00001000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(12, this->is_not(), output);
+  }
+
+  // optional .buffers.resources.Object.Argument argument = 13 [(.buffers.gmx) = "arguments/argument"];
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      13, *this->argument_, output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:buffers.resources.Object.Action)
+}
+
+::google::protobuf::uint8* Object_Action::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:buffers.resources.Object.Action)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional int32 libid = 1;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->libid(), target);
+  }
+
+  // optional int32 id = 2;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
+  }
+
+  // optional int32 kind = 3;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->kind(), target);
+  }
+
+  // optional bool use_relative = 4 [(.buffers.gmx) = "userelative"];
+  if (cached_has_bits & 0x00000200u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->use_relative(), target);
+  }
+
+  // optional bool is_question = 5 [(.buffers.gmx) = "isquestion"];
+  if (cached_has_bits & 0x00000400u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->is_question(), target);
+  }
+
+  // optional int32 use_apply_to = 6 [(.buffers.gmx) = "useapplyto"];
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->use_apply_to(), target);
+  }
+
+  // optional int32 exe_type = 7 [(.buffers.gmx) = "exetype"];
+  if (cached_has_bits & 0x00000100u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->exe_type(), target);
+  }
+
+  // optional string function_name = 8 [(.buffers.gmx) = "functionname"];
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->function_name().data(), static_cast<int>(this->function_name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Action.function_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        8, this->function_name(), target);
+  }
+
+  // optional string code_string = 9 [(.buffers.gmx) = "codestring"];
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->code_string().data(), static_cast<int>(this->code_string().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Action.code_string");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        9, this->code_string(), target);
+  }
+
+  // optional string who_name = 10 [(.buffers.gmx) = "whoName"];
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->who_name().data(), static_cast<int>(this->who_name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Object.Action.who_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        10, this->who_name(), target);
+  }
+
+  // optional bool relative = 11;
+  if (cached_has_bits & 0x00000800u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(11, this->relative(), target);
+  }
+
+  // optional bool is_not = 12 [(.buffers.gmx) = "isnot"];
+  if (cached_has_bits & 0x00001000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(12, this->is_not(), target);
+  }
+
+  // optional .buffers.resources.Object.Argument argument = 13 [(.buffers.gmx) = "arguments/argument"];
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        13, *this->argument_, deterministic, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:buffers.resources.Object.Action)
+  return target;
+}
+
+size_t Object_Action::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:buffers.resources.Object.Action)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 255u) {
+    // optional string function_name = 8 [(.buffers.gmx) = "functionname"];
+    if (has_function_name()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->function_name());
+    }
+
+    // optional string code_string = 9 [(.buffers.gmx) = "codestring"];
+    if (has_code_string()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->code_string());
+    }
+
+    // optional string who_name = 10 [(.buffers.gmx) = "whoName"];
+    if (has_who_name()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->who_name());
+    }
+
+    // optional .buffers.resources.Object.Argument argument = 13 [(.buffers.gmx) = "arguments/argument"];
+    if (has_argument()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *this->argument_);
+    }
+
+    // optional int32 libid = 1;
+    if (has_libid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->libid());
+    }
+
+    // optional int32 id = 2;
+    if (has_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->id());
+    }
+
+    // optional int32 kind = 3;
+    if (has_kind()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->kind());
+    }
+
+    // optional int32 use_apply_to = 6 [(.buffers.gmx) = "useapplyto"];
+    if (has_use_apply_to()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->use_apply_to());
+    }
+
+  }
+  if (_has_bits_[8 / 32] & 7936u) {
+    // optional int32 exe_type = 7 [(.buffers.gmx) = "exetype"];
+    if (has_exe_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->exe_type());
+    }
+
+    // optional bool use_relative = 4 [(.buffers.gmx) = "userelative"];
+    if (has_use_relative()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool is_question = 5 [(.buffers.gmx) = "isquestion"];
+    if (has_is_question()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool relative = 11;
+    if (has_relative()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool is_not = 12 [(.buffers.gmx) = "isnot"];
+    if (has_is_not()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Object_Action::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:buffers.resources.Object.Action)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Object_Action* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Object_Action>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:buffers.resources.Object.Action)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:buffers.resources.Object.Action)
+    MergeFrom(*source);
+  }
+}
+
+void Object_Action::MergeFrom(const Object_Action& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:buffers.resources.Object.Action)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 255u) {
+    if (cached_has_bits & 0x00000001u) {
+      set_has_function_name();
+      function_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.function_name_);
+    }
+    if (cached_has_bits & 0x00000002u) {
+      set_has_code_string();
+      code_string_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_string_);
+    }
+    if (cached_has_bits & 0x00000004u) {
+      set_has_who_name();
+      who_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.who_name_);
+    }
+    if (cached_has_bits & 0x00000008u) {
+      mutable_argument()->::buffers::resources::Object_Argument::MergeFrom(from.argument());
+    }
+    if (cached_has_bits & 0x00000010u) {
+      libid_ = from.libid_;
+    }
+    if (cached_has_bits & 0x00000020u) {
+      id_ = from.id_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      kind_ = from.kind_;
+    }
+    if (cached_has_bits & 0x00000080u) {
+      use_apply_to_ = from.use_apply_to_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 7936u) {
+    if (cached_has_bits & 0x00000100u) {
+      exe_type_ = from.exe_type_;
+    }
+    if (cached_has_bits & 0x00000200u) {
+      use_relative_ = from.use_relative_;
+    }
+    if (cached_has_bits & 0x00000400u) {
+      is_question_ = from.is_question_;
+    }
+    if (cached_has_bits & 0x00000800u) {
+      relative_ = from.relative_;
+    }
+    if (cached_has_bits & 0x00001000u) {
+      is_not_ = from.is_not_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+}
+
+void Object_Action::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:buffers.resources.Object.Action)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Object_Action::CopyFrom(const Object_Action& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:buffers.resources.Object.Action)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Object_Action::IsInitialized() const {
+  return true;
+}
+
+void Object_Action::Swap(Object_Action* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Object_Action::InternalSwap(Object_Action* other) {
+  using std::swap;
+  function_name_.Swap(&other->function_name_);
+  code_string_.Swap(&other->code_string_);
+  who_name_.Swap(&other->who_name_);
+  swap(argument_, other->argument_);
+  swap(libid_, other->libid_);
+  swap(id_, other->id_);
+  swap(kind_, other->kind_);
+  swap(use_apply_to_, other->use_apply_to_);
+  swap(exe_type_, other->exe_type_);
+  swap(use_relative_, other->use_relative_);
+  swap(is_question_, other->is_question_);
+  swap(relative_, other->relative_);
+  swap(is_not_, other->is_not_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Object_Action::GetMetadata() const {
+  protobuf_resources_2fObject_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_resources_2fObject_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Object_Action
+
+// optional int32 libid = 1;
+bool Object_Action::has_libid() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Object_Action::set_has_libid() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Object_Action::clear_has_libid() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Object_Action::clear_libid() {
+  libid_ = 0;
+  clear_has_libid();
+}
+::google::protobuf::int32 Object_Action::libid() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.libid)
+  return libid_;
+}
+void Object_Action::set_libid(::google::protobuf::int32 value) {
+  set_has_libid();
+  libid_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.libid)
+}
+
+// optional int32 id = 2;
+bool Object_Action::has_id() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Object_Action::set_has_id() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Object_Action::clear_has_id() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void Object_Action::clear_id() {
+  id_ = 0;
+  clear_has_id();
+}
+::google::protobuf::int32 Object_Action::id() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.id)
+  return id_;
+}
+void Object_Action::set_id(::google::protobuf::int32 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.id)
+}
+
+// optional int32 kind = 3;
+bool Object_Action::has_kind() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void Object_Action::set_has_kind() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void Object_Action::clear_has_kind() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void Object_Action::clear_kind() {
+  kind_ = 0;
+  clear_has_kind();
+}
+::google::protobuf::int32 Object_Action::kind() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.kind)
+  return kind_;
+}
+void Object_Action::set_kind(::google::protobuf::int32 value) {
+  set_has_kind();
+  kind_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.kind)
+}
+
+// optional bool use_relative = 4 [(.buffers.gmx) = "userelative"];
+bool Object_Action::has_use_relative() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void Object_Action::set_has_use_relative() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void Object_Action::clear_has_use_relative() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void Object_Action::clear_use_relative() {
+  use_relative_ = false;
+  clear_has_use_relative();
+}
+bool Object_Action::use_relative() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.use_relative)
+  return use_relative_;
+}
+void Object_Action::set_use_relative(bool value) {
+  set_has_use_relative();
+  use_relative_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.use_relative)
+}
+
+// optional bool is_question = 5 [(.buffers.gmx) = "isquestion"];
+bool Object_Action::has_is_question() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+void Object_Action::set_has_is_question() {
+  _has_bits_[0] |= 0x00000400u;
+}
+void Object_Action::clear_has_is_question() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+void Object_Action::clear_is_question() {
+  is_question_ = false;
+  clear_has_is_question();
+}
+bool Object_Action::is_question() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.is_question)
+  return is_question_;
+}
+void Object_Action::set_is_question(bool value) {
+  set_has_is_question();
+  is_question_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.is_question)
+}
+
+// optional int32 use_apply_to = 6 [(.buffers.gmx) = "useapplyto"];
+bool Object_Action::has_use_apply_to() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void Object_Action::set_has_use_apply_to() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void Object_Action::clear_has_use_apply_to() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void Object_Action::clear_use_apply_to() {
+  use_apply_to_ = 0;
+  clear_has_use_apply_to();
+}
+::google::protobuf::int32 Object_Action::use_apply_to() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.use_apply_to)
+  return use_apply_to_;
+}
+void Object_Action::set_use_apply_to(::google::protobuf::int32 value) {
+  set_has_use_apply_to();
+  use_apply_to_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.use_apply_to)
+}
+
+// optional int32 exe_type = 7 [(.buffers.gmx) = "exetype"];
+bool Object_Action::has_exe_type() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+void Object_Action::set_has_exe_type() {
+  _has_bits_[0] |= 0x00000100u;
+}
+void Object_Action::clear_has_exe_type() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+void Object_Action::clear_exe_type() {
+  exe_type_ = 0;
+  clear_has_exe_type();
+}
+::google::protobuf::int32 Object_Action::exe_type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.exe_type)
+  return exe_type_;
+}
+void Object_Action::set_exe_type(::google::protobuf::int32 value) {
+  set_has_exe_type();
+  exe_type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.exe_type)
+}
+
+// optional string function_name = 8 [(.buffers.gmx) = "functionname"];
+bool Object_Action::has_function_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Object_Action::set_has_function_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Object_Action::clear_has_function_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Object_Action::clear_function_name() {
+  function_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_function_name();
+}
+const ::std::string& Object_Action::function_name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.function_name)
+  return function_name_.GetNoArena();
+}
+void Object_Action::set_function_name(const ::std::string& value) {
+  set_has_function_name();
+  function_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.function_name)
+}
+#if LANG_CXX11
+void Object_Action::set_function_name(::std::string&& value) {
+  set_has_function_name();
+  function_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Action.function_name)
+}
+#endif
+void Object_Action::set_function_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_function_name();
+  function_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Action.function_name)
+}
+void Object_Action::set_function_name(const char* value, size_t size) {
+  set_has_function_name();
+  function_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Action.function_name)
+}
+::std::string* Object_Action::mutable_function_name() {
+  set_has_function_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.function_name)
+  return function_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Object_Action::release_function_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.function_name)
+  clear_has_function_name();
+  return function_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Object_Action::set_allocated_function_name(::std::string* function_name) {
+  if (function_name != NULL) {
+    set_has_function_name();
+  } else {
+    clear_has_function_name();
+  }
+  function_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), function_name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.function_name)
+}
+
+// optional string code_string = 9 [(.buffers.gmx) = "codestring"];
+bool Object_Action::has_code_string() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Object_Action::set_has_code_string() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Object_Action::clear_has_code_string() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Object_Action::clear_code_string() {
+  code_string_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_code_string();
+}
+const ::std::string& Object_Action::code_string() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.code_string)
+  return code_string_.GetNoArena();
+}
+void Object_Action::set_code_string(const ::std::string& value) {
+  set_has_code_string();
+  code_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.code_string)
+}
+#if LANG_CXX11
+void Object_Action::set_code_string(::std::string&& value) {
+  set_has_code_string();
+  code_string_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Action.code_string)
+}
+#endif
+void Object_Action::set_code_string(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_code_string();
+  code_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Action.code_string)
+}
+void Object_Action::set_code_string(const char* value, size_t size) {
+  set_has_code_string();
+  code_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Action.code_string)
+}
+::std::string* Object_Action::mutable_code_string() {
+  set_has_code_string();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.code_string)
+  return code_string_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Object_Action::release_code_string() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.code_string)
+  clear_has_code_string();
+  return code_string_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Object_Action::set_allocated_code_string(::std::string* code_string) {
+  if (code_string != NULL) {
+    set_has_code_string();
+  } else {
+    clear_has_code_string();
+  }
+  code_string_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code_string);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.code_string)
+}
+
+// optional string who_name = 10 [(.buffers.gmx) = "whoName"];
+bool Object_Action::has_who_name() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Object_Action::set_has_who_name() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Object_Action::clear_has_who_name() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Object_Action::clear_who_name() {
+  who_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_who_name();
+}
+const ::std::string& Object_Action::who_name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.who_name)
+  return who_name_.GetNoArena();
+}
+void Object_Action::set_who_name(const ::std::string& value) {
+  set_has_who_name();
+  who_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.who_name)
+}
+#if LANG_CXX11
+void Object_Action::set_who_name(::std::string&& value) {
+  set_has_who_name();
+  who_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Action.who_name)
+}
+#endif
+void Object_Action::set_who_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_who_name();
+  who_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Action.who_name)
+}
+void Object_Action::set_who_name(const char* value, size_t size) {
+  set_has_who_name();
+  who_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Action.who_name)
+}
+::std::string* Object_Action::mutable_who_name() {
+  set_has_who_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.who_name)
+  return who_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Object_Action::release_who_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.who_name)
+  clear_has_who_name();
+  return who_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Object_Action::set_allocated_who_name(::std::string* who_name) {
+  if (who_name != NULL) {
+    set_has_who_name();
+  } else {
+    clear_has_who_name();
+  }
+  who_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), who_name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.who_name)
+}
+
+// optional bool relative = 11;
+bool Object_Action::has_relative() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+void Object_Action::set_has_relative() {
+  _has_bits_[0] |= 0x00000800u;
+}
+void Object_Action::clear_has_relative() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+void Object_Action::clear_relative() {
+  relative_ = false;
+  clear_has_relative();
+}
+bool Object_Action::relative() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.relative)
+  return relative_;
+}
+void Object_Action::set_relative(bool value) {
+  set_has_relative();
+  relative_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.relative)
+}
+
+// optional bool is_not = 12 [(.buffers.gmx) = "isnot"];
+bool Object_Action::has_is_not() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+void Object_Action::set_has_is_not() {
+  _has_bits_[0] |= 0x00001000u;
+}
+void Object_Action::clear_has_is_not() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+void Object_Action::clear_is_not() {
+  is_not_ = false;
+  clear_has_is_not();
+}
+bool Object_Action::is_not() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.is_not)
+  return is_not_;
+}
+void Object_Action::set_is_not(bool value) {
+  set_has_is_not();
+  is_not_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.is_not)
+}
+
+// optional .buffers.resources.Object.Argument argument = 13 [(.buffers.gmx) = "arguments/argument"];
+bool Object_Action::has_argument() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Object_Action::set_has_argument() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Object_Action::clear_has_argument() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Object_Action::clear_argument() {
+  if (argument_ != NULL) argument_->::buffers::resources::Object_Argument::Clear();
+  clear_has_argument();
+}
+const ::buffers::resources::Object_Argument& Object_Action::argument() const {
+  const ::buffers::resources::Object_Argument* p = argument_;
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.argument)
+  return p != NULL ? *p : *reinterpret_cast<const ::buffers::resources::Object_Argument*>(
+      &::buffers::resources::_Object_Argument_default_instance_);
+}
+::buffers::resources::Object_Argument* Object_Action::mutable_argument() {
+  set_has_argument();
+  if (argument_ == NULL) {
+    argument_ = new ::buffers::resources::Object_Argument;
+  }
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.argument)
+  return argument_;
+}
+::buffers::resources::Object_Argument* Object_Action::release_argument() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.argument)
+  clear_has_argument();
+  ::buffers::resources::Object_Argument* temp = argument_;
+  argument_ = NULL;
+  return temp;
+}
+void Object_Action::set_allocated_argument(::buffers::resources::Object_Argument* argument) {
+  delete argument_;
+  argument_ = argument;
+  if (argument) {
+    set_has_argument();
+  } else {
+    clear_has_argument();
+  }
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.argument)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Object_Event::kTypeFieldNumber;
+const int Object_Event::kNumberFieldNumber;
+const int Object_Event::kNameFieldNumber;
+const int Object_Event::kActionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Object_Event::Object_Event()
@@ -215,18 +1994,27 @@ Object_Event::Object_Event(const Object_Event& from)
       _has_bits_(from._has_bits_),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_code()) {
-    code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_name()) {
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  id_ = from.id_;
+  if (from.has_action()) {
+    action_ = new ::buffers::resources::Object_Action(*from.action_);
+  } else {
+    action_ = NULL;
+  }
+  ::memcpy(&type_, &from.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&number_) -
+    reinterpret_cast<char*>(&type_)) + sizeof(number_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Object.Event)
 }
 
 void Object_Event::SharedCtor() {
   _cached_size_ = 0;
-  code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  id_ = 0;
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&action_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&number_) -
+      reinterpret_cast<char*>(&action_)) + sizeof(number_));
 }
 
 Object_Event::~Object_Event() {
@@ -235,7 +2023,8 @@ Object_Event::~Object_Event() {
 }
 
 void Object_Event::SharedDtor() {
-  code_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete action_;
 }
 
 void Object_Event::SetCachedSize(int size) const {
@@ -267,11 +2056,22 @@ void Object_Event::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (has_code()) {
-    GOOGLE_DCHECK(!code_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-    (*code_.UnsafeRawStringPointer())->clear();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*name_.UnsafeRawStringPointer())->clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(action_ != NULL);
+      action_->::buffers::resources::Object_Action::Clear();
+    }
   }
-  id_ = 0;
+  if (cached_has_bits & 12u) {
+    ::memset(&type_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&number_) -
+        reinterpret_cast<char*>(&type_)) + sizeof(number_));
+  }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -286,30 +2086,56 @@ bool Object_Event::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 id = 1;
+      // optional int32 type = 1 [(.buffers.gmx) = "eventtype"];
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          set_has_id();
+          set_has_type();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &id_)));
+                 input, &type_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // optional string code = 2;
+      // optional int32 number = 2 [(.buffers.gmx) = "enumb"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          set_has_number();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &number_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional string name = 3 [(.buffers.gmx) = "ename"];
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_code()));
+                input, this->mutable_name()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->code().data(), static_cast<int>(this->code().length()),
+            this->name().data(), static_cast<int>(this->name().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "buffers.resources.Object.Event.code");
+            "buffers.resources.Object.Event.name");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional .buffers.resources.Object.Action action = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_action()));
         } else {
           goto handle_unusual;
         }
@@ -343,19 +2169,30 @@ void Object_Event::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 id = 1;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
+  // optional int32 type = 1 [(.buffers.gmx) = "eventtype"];
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->type(), output);
   }
 
-  // optional string code = 2;
+  // optional int32 number = 2 [(.buffers.gmx) = "enumb"];
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->number(), output);
+  }
+
+  // optional string name = 3 [(.buffers.gmx) = "ename"];
   if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->code().data(), static_cast<int>(this->code().length()),
+      this->name().data(), static_cast<int>(this->name().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "buffers.resources.Object.Event.code");
+      "buffers.resources.Object.Event.name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->code(), output);
+      3, this->name(), output);
+  }
+
+  // optional .buffers.resources.Object.Action action = 4;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, *this->action_, output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -373,20 +2210,32 @@ void Object_Event::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 id = 1;
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+  // optional int32 type = 1 [(.buffers.gmx) = "eventtype"];
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->type(), target);
   }
 
-  // optional string code = 2;
+  // optional int32 number = 2 [(.buffers.gmx) = "enumb"];
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->number(), target);
+  }
+
+  // optional string name = 3 [(.buffers.gmx) = "ename"];
   if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->code().data(), static_cast<int>(this->code().length()),
+      this->name().data(), static_cast<int>(this->name().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "buffers.resources.Object.Event.code");
+      "buffers.resources.Object.Event.name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->code(), target);
+        3, this->name(), target);
+  }
+
+  // optional .buffers.resources.Object.Action action = 4;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->action_, deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -406,19 +2255,33 @@ size_t Object_Event::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  if (_has_bits_[0 / 32] & 3u) {
-    // optional string code = 2;
-    if (has_code()) {
+  if (_has_bits_[0 / 32] & 15u) {
+    // optional string name = 3 [(.buffers.gmx) = "ename"];
+    if (has_name()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->code());
+          this->name());
     }
 
-    // optional int32 id = 1;
-    if (has_id()) {
+    // optional .buffers.resources.Object.Action action = 4;
+    if (has_action()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          *this->action_);
+    }
+
+    // optional int32 type = 1 [(.buffers.gmx) = "eventtype"];
+    if (has_type()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->id());
+          this->type());
+    }
+
+    // optional int32 number = 2 [(.buffers.gmx) = "enumb"];
+    if (has_number()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->number());
     }
 
   }
@@ -452,13 +2315,19 @@ void Object_Event::MergeFrom(const Object_Event& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
-      set_has_code();
-      code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
+      set_has_name();
+      name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
     }
     if (cached_has_bits & 0x00000002u) {
-      id_ = from.id_;
+      mutable_action()->::buffers::resources::Object_Action::MergeFrom(from.action());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      type_ = from.type_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      number_ = from.number_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -488,8 +2357,10 @@ void Object_Event::Swap(Object_Event* other) {
 }
 void Object_Event::InternalSwap(Object_Event* other) {
   using std::swap;
-  code_.Swap(&other->code_);
-  swap(id_, other->id_);
+  name_.Swap(&other->name_);
+  swap(action_, other->action_);
+  swap(type_, other->type_);
+  swap(number_, other->number_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -503,91 +2374,161 @@ void Object_Event::InternalSwap(Object_Event* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Object_Event
 
-// optional int32 id = 1;
-bool Object_Event::has_id() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+// optional int32 type = 1 [(.buffers.gmx) = "eventtype"];
+bool Object_Event::has_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
-void Object_Event::set_has_id() {
-  _has_bits_[0] |= 0x00000002u;
+void Object_Event::set_has_type() {
+  _has_bits_[0] |= 0x00000004u;
 }
-void Object_Event::clear_has_id() {
-  _has_bits_[0] &= ~0x00000002u;
+void Object_Event::clear_has_type() {
+  _has_bits_[0] &= ~0x00000004u;
 }
-void Object_Event::clear_id() {
-  id_ = 0;
-  clear_has_id();
+void Object_Event::clear_type() {
+  type_ = 0;
+  clear_has_type();
 }
-::google::protobuf::int32 Object_Event::id() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.id)
-  return id_;
+::google::protobuf::int32 Object_Event::type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.type)
+  return type_;
 }
-void Object_Event::set_id(::google::protobuf::int32 value) {
-  set_has_id();
-  id_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.id)
+void Object_Event::set_type(::google::protobuf::int32 value) {
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.type)
 }
 
-// optional string code = 2;
-bool Object_Event::has_code() const {
+// optional int32 number = 2 [(.buffers.gmx) = "enumb"];
+bool Object_Event::has_number() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Object_Event::set_has_number() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Object_Event::clear_has_number() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Object_Event::clear_number() {
+  number_ = 0;
+  clear_has_number();
+}
+::google::protobuf::int32 Object_Event::number() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.number)
+  return number_;
+}
+void Object_Event::set_number(::google::protobuf::int32 value) {
+  set_has_number();
+  number_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.number)
+}
+
+// optional string name = 3 [(.buffers.gmx) = "ename"];
+bool Object_Event::has_name() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-void Object_Event::set_has_code() {
+void Object_Event::set_has_name() {
   _has_bits_[0] |= 0x00000001u;
 }
-void Object_Event::clear_has_code() {
+void Object_Event::clear_has_name() {
   _has_bits_[0] &= ~0x00000001u;
 }
-void Object_Event::clear_code() {
-  code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_code();
+void Object_Event::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_name();
 }
-const ::std::string& Object_Event::code() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.code)
-  return code_.GetNoArena();
+const ::std::string& Object_Event::name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.name)
+  return name_.GetNoArena();
 }
-void Object_Event::set_code(const ::std::string& value) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.code)
+void Object_Event::set_name(const ::std::string& value) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.name)
 }
 #if LANG_CXX11
-void Object_Event::set_code(::std::string&& value) {
-  set_has_code();
-  code_.SetNoArena(
+void Object_Event::set_name(::std::string&& value) {
+  set_has_name();
+  name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Event.code)
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Event.name)
 }
 #endif
-void Object_Event::set_code(const char* value) {
+void Object_Event::set_name(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Event.code)
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Event.name)
 }
-void Object_Event::set_code(const char* value, size_t size) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+void Object_Event::set_name(const char* value, size_t size) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Event.code)
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Event.name)
 }
-::std::string* Object_Event::mutable_code() {
-  set_has_code();
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Event.code)
-  return code_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+::std::string* Object_Event::mutable_name() {
+  set_has_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Event.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-::std::string* Object_Event::release_code() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Object.Event.code)
-  clear_has_code();
-  return code_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+::std::string* Object_Event::release_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Event.name)
+  clear_has_name();
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-void Object_Event::set_allocated_code(::std::string* code) {
-  if (code != NULL) {
-    set_has_code();
+void Object_Event::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    set_has_name();
   } else {
-    clear_has_code();
+    clear_has_name();
   }
-  code_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code);
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Event.code)
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Event.name)
+}
+
+// optional .buffers.resources.Object.Action action = 4;
+bool Object_Event::has_action() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Object_Event::set_has_action() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Object_Event::clear_has_action() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Object_Event::clear_action() {
+  if (action_ != NULL) action_->::buffers::resources::Object_Action::Clear();
+  clear_has_action();
+}
+const ::buffers::resources::Object_Action& Object_Event::action() const {
+  const ::buffers::resources::Object_Action* p = action_;
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.action)
+  return p != NULL ? *p : *reinterpret_cast<const ::buffers::resources::Object_Action*>(
+      &::buffers::resources::_Object_Action_default_instance_);
+}
+::buffers::resources::Object_Action* Object_Event::mutable_action() {
+  set_has_action();
+  if (action_ == NULL) {
+    action_ = new ::buffers::resources::Object_Action;
+  }
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Event.action)
+  return action_;
+}
+::buffers::resources::Object_Action* Object_Event::release_action() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Event.action)
+  clear_has_action();
+  ::buffers::resources::Object_Action* temp = action_;
+  action_ = NULL;
+  return temp;
+}
+void Object_Event::set_allocated_action(::buffers::resources::Object_Action* action) {
+  delete action_;
+  action_ = action;
+  if (action) {
+    set_has_action();
+  } else {
+    clear_has_action();
+  }
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Event.action)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -595,107 +2536,116 @@ void Object_Event::set_allocated_code(::std::string* code) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Object_MainEvent::kIdFieldNumber;
-const int Object_MainEvent::kEventsFieldNumber;
+const int Object_PhysicsShapePoint::kXFieldNumber;
+const int Object_PhysicsShapePoint::kYFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Object_MainEvent::Object_MainEvent()
+Object_PhysicsShapePoint::Object_PhysicsShapePoint()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
     protobuf_resources_2fObject_2eproto::InitDefaults();
   }
   SharedCtor();
-  // @@protoc_insertion_point(constructor:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(constructor:buffers.resources.Object.PhysicsShapePoint)
 }
-Object_MainEvent::Object_MainEvent(const Object_MainEvent& from)
+Object_PhysicsShapePoint::Object_PhysicsShapePoint(const Object_PhysicsShapePoint& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0),
-      events_(from.events_) {
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:buffers.resources.Object.MainEvent)
+  ::memcpy(&x_, &from.x_,
+    static_cast<size_t>(reinterpret_cast<char*>(&y_) -
+    reinterpret_cast<char*>(&x_)) + sizeof(y_));
+  // @@protoc_insertion_point(copy_constructor:buffers.resources.Object.PhysicsShapePoint)
 }
 
-void Object_MainEvent::SharedCtor() {
+void Object_PhysicsShapePoint::SharedCtor() {
   _cached_size_ = 0;
-  id_ = 0;
+  ::memset(&x_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&y_) -
+      reinterpret_cast<char*>(&x_)) + sizeof(y_));
 }
 
-Object_MainEvent::~Object_MainEvent() {
-  // @@protoc_insertion_point(destructor:buffers.resources.Object.MainEvent)
+Object_PhysicsShapePoint::~Object_PhysicsShapePoint() {
+  // @@protoc_insertion_point(destructor:buffers.resources.Object.PhysicsShapePoint)
   SharedDtor();
 }
 
-void Object_MainEvent::SharedDtor() {
+void Object_PhysicsShapePoint::SharedDtor() {
 }
 
-void Object_MainEvent::SetCachedSize(int size) const {
+void Object_PhysicsShapePoint::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* Object_MainEvent::descriptor() {
+const ::google::protobuf::Descriptor* Object_PhysicsShapePoint::descriptor() {
   protobuf_resources_2fObject_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_resources_2fObject_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const Object_MainEvent& Object_MainEvent::default_instance() {
+const Object_PhysicsShapePoint& Object_PhysicsShapePoint::default_instance() {
   protobuf_resources_2fObject_2eproto::InitDefaults();
   return *internal_default_instance();
 }
 
-Object_MainEvent* Object_MainEvent::New(::google::protobuf::Arena* arena) const {
-  Object_MainEvent* n = new Object_MainEvent;
+Object_PhysicsShapePoint* Object_PhysicsShapePoint::New(::google::protobuf::Arena* arena) const {
+  Object_PhysicsShapePoint* n = new Object_PhysicsShapePoint;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void Object_MainEvent::Clear() {
-// @@protoc_insertion_point(message_clear_start:buffers.resources.Object.MainEvent)
+void Object_PhysicsShapePoint::Clear() {
+// @@protoc_insertion_point(message_clear_start:buffers.resources.Object.PhysicsShapePoint)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  events_.Clear();
-  id_ = 0;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 3u) {
+    ::memset(&x_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&y_) -
+        reinterpret_cast<char*>(&x_)) + sizeof(y_));
+  }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
 
-bool Object_MainEvent::MergePartialFromCodedStream(
+bool Object_PhysicsShapePoint::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(parse_start:buffers.resources.Object.PhysicsShapePoint)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 id = 1;
+      // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          set_has_id();
+          set_has_x();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &id_)));
+                 input, &x_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // repeated .buffers.resources.Object.Event events = 2;
+      // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_events()));
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          set_has_y();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &y_)));
         } else {
           goto handle_unusual;
         }
@@ -714,71 +2664,66 @@ bool Object_MainEvent::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(parse_success:buffers.resources.Object.PhysicsShapePoint)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(parse_failure:buffers.resources.Object.PhysicsShapePoint)
   return false;
 #undef DO_
 }
 
-void Object_MainEvent::SerializeWithCachedSizes(
+void Object_PhysicsShapePoint::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(serialize_start:buffers.resources.Object.PhysicsShapePoint)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 id = 1;
+  // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->x(), output);
   }
 
-  // repeated .buffers.resources.Object.Event events = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->events_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->events(static_cast<int>(i)), output);
+  // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->y(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(serialize_end:buffers.resources.Object.PhysicsShapePoint)
 }
 
-::google::protobuf::uint8* Object_MainEvent::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Object_PhysicsShapePoint::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(serialize_to_array_start:buffers.resources.Object.PhysicsShapePoint)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 id = 1;
+  // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->x(), target);
   }
 
-  // repeated .buffers.resources.Object.Event events = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->events_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        2, this->events(static_cast<int>(i)), deterministic, target);
+  // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->y(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(serialize_to_array_end:buffers.resources.Object.PhysicsShapePoint)
   return target;
 }
 
-size_t Object_MainEvent::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:buffers.resources.Object.MainEvent)
+size_t Object_PhysicsShapePoint::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:buffers.resources.Object.PhysicsShapePoint)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -786,24 +2731,22 @@ size_t Object_MainEvent::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Object.Event events = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->events_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->events(static_cast<int>(i)));
+  if (_has_bits_[0 / 32] & 3u) {
+    // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
+    if (has_x()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->x());
     }
-  }
 
-  // optional int32 id = 1;
-  if (has_id()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id());
-  }
+    // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
+    if (has_y()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->y());
+    }
 
+  }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -811,125 +2754,125 @@ size_t Object_MainEvent::ByteSizeLong() const {
   return total_size;
 }
 
-void Object_MainEvent::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:buffers.resources.Object.MainEvent)
+void Object_PhysicsShapePoint::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:buffers.resources.Object.PhysicsShapePoint)
   GOOGLE_DCHECK_NE(&from, this);
-  const Object_MainEvent* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Object_MainEvent>(
+  const Object_PhysicsShapePoint* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Object_PhysicsShapePoint>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:buffers.resources.Object.PhysicsShapePoint)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:buffers.resources.Object.PhysicsShapePoint)
     MergeFrom(*source);
   }
 }
 
-void Object_MainEvent::MergeFrom(const Object_MainEvent& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:buffers.resources.Object.MainEvent)
+void Object_PhysicsShapePoint::MergeFrom(const Object_PhysicsShapePoint& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:buffers.resources.Object.PhysicsShapePoint)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  events_.MergeFrom(from.events_);
-  if (from.has_id()) {
-    set_id(from.id());
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      x_ = from.x_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      y_ = from.y_;
+    }
+    _has_bits_[0] |= cached_has_bits;
   }
 }
 
-void Object_MainEvent::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:buffers.resources.Object.MainEvent)
+void Object_PhysicsShapePoint::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:buffers.resources.Object.PhysicsShapePoint)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Object_MainEvent::CopyFrom(const Object_MainEvent& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:buffers.resources.Object.MainEvent)
+void Object_PhysicsShapePoint::CopyFrom(const Object_PhysicsShapePoint& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:buffers.resources.Object.PhysicsShapePoint)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Object_MainEvent::IsInitialized() const {
+bool Object_PhysicsShapePoint::IsInitialized() const {
   return true;
 }
 
-void Object_MainEvent::Swap(Object_MainEvent* other) {
+void Object_PhysicsShapePoint::Swap(Object_PhysicsShapePoint* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Object_MainEvent::InternalSwap(Object_MainEvent* other) {
+void Object_PhysicsShapePoint::InternalSwap(Object_PhysicsShapePoint* other) {
   using std::swap;
-  events_.InternalSwap(&other->events_);
-  swap(id_, other->id_);
+  swap(x_, other->x_);
+  swap(y_, other->y_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata Object_MainEvent::GetMetadata() const {
+::google::protobuf::Metadata Object_PhysicsShapePoint::GetMetadata() const {
   protobuf_resources_2fObject_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_resources_2fObject_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
-// Object_MainEvent
+// Object_PhysicsShapePoint
 
-// optional int32 id = 1;
-bool Object_MainEvent::has_id() const {
+// optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
+bool Object_PhysicsShapePoint::has_x() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-void Object_MainEvent::set_has_id() {
+void Object_PhysicsShapePoint::set_has_x() {
   _has_bits_[0] |= 0x00000001u;
 }
-void Object_MainEvent::clear_has_id() {
+void Object_PhysicsShapePoint::clear_has_x() {
   _has_bits_[0] &= ~0x00000001u;
 }
-void Object_MainEvent::clear_id() {
-  id_ = 0;
-  clear_has_id();
+void Object_PhysicsShapePoint::clear_x() {
+  x_ = 0;
+  clear_has_x();
 }
-::google::protobuf::int32 Object_MainEvent::id() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.MainEvent.id)
-  return id_;
+::google::protobuf::int32 Object_PhysicsShapePoint::x() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.PhysicsShapePoint.x)
+  return x_;
 }
-void Object_MainEvent::set_id(::google::protobuf::int32 value) {
-  set_has_id();
-  id_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Object.MainEvent.id)
+void Object_PhysicsShapePoint::set_x(::google::protobuf::int32 value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.PhysicsShapePoint.x)
 }
 
-// repeated .buffers.resources.Object.Event events = 2;
-int Object_MainEvent::events_size() const {
-  return events_.size();
+// optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
+bool Object_PhysicsShapePoint::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-void Object_MainEvent::clear_events() {
-  events_.Clear();
+void Object_PhysicsShapePoint::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
 }
-const ::buffers::resources::Object_Event& Object_MainEvent::events(int index) const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.MainEvent.events)
-  return events_.Get(index);
+void Object_PhysicsShapePoint::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-::buffers::resources::Object_Event* Object_MainEvent::mutable_events(int index) {
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.MainEvent.events)
-  return events_.Mutable(index);
+void Object_PhysicsShapePoint::clear_y() {
+  y_ = 0;
+  clear_has_y();
 }
-::buffers::resources::Object_Event* Object_MainEvent::add_events() {
-  // @@protoc_insertion_point(field_add:buffers.resources.Object.MainEvent.events)
-  return events_.Add();
+::google::protobuf::int32 Object_PhysicsShapePoint::y() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.PhysicsShapePoint.y)
+  return y_;
 }
-::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >*
-Object_MainEvent::mutable_events() {
-  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.MainEvent.events)
-  return &events_;
-}
-const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >&
-Object_MainEvent::events() const {
-  // @@protoc_insertion_point(field_list:buffers.resources.Object.MainEvent.events)
-  return events_;
+void Object_PhysicsShapePoint::set_y(::google::protobuf::int32 value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.PhysicsShapePoint.y)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -946,7 +2889,19 @@ const int Object::kDepthFieldNumber;
 const int Object::kSolidFieldNumber;
 const int Object::kVisibleFieldNumber;
 const int Object::kPersistentFieldNumber;
-const int Object::kMainEventsFieldNumber;
+const int Object::kEventsFieldNumber;
+const int Object::kUsePhysicsFieldNumber;
+const int Object::kPhySensorFieldNumber;
+const int Object::kPhyShapeTypeFieldNumber;
+const int Object::kPhyDensityFieldNumber;
+const int Object::kPhyRestitutionFieldNumber;
+const int Object::kPhyGroupFieldNumber;
+const int Object::kPhyLinearDampingFieldNumber;
+const int Object::kPhyAngularDampingFieldNumber;
+const int Object::kPhyFrictionFieldNumber;
+const int Object::kPhyAwakeFieldNumber;
+const int Object::kPhyKinematicFieldNumber;
+const int Object::kPhyShapeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Object::Object()
@@ -962,7 +2917,8 @@ Object::Object(const Object& from)
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       _cached_size_(0),
-      main_events_(from.main_events_) {
+      events_(from.events_),
+      phy_shape_(from.phy_shape_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_name()) {
@@ -981,8 +2937,8 @@ Object::Object(const Object& from)
     mask_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.mask_name_);
   }
   ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&persistent_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(persistent_));
+    static_cast<size_t>(reinterpret_cast<char*>(&phy_friction_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(phy_friction_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Object)
 }
 
@@ -993,8 +2949,8 @@ void Object::SharedCtor() {
   sprite_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mask_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&persistent_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(persistent_));
+      reinterpret_cast<char*>(&phy_friction_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(phy_friction_));
 }
 
 Object::~Object() {
@@ -1038,7 +2994,8 @@ void Object::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  main_events_.Clear();
+  events_.Clear();
+  phy_shape_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
@@ -1063,7 +3020,16 @@ void Object::Clear() {
         reinterpret_cast<char*>(&visible_) -
         reinterpret_cast<char*>(&id_)) + sizeof(visible_));
   }
-  persistent_ = false;
+  if (cached_has_bits & 65280u) {
+    ::memset(&persistent_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&phy_sensor_) -
+        reinterpret_cast<char*>(&persistent_)) + sizeof(phy_sensor_));
+  }
+  if (cached_has_bits & 983040u) {
+    ::memset(&phy_awake_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&phy_friction_) -
+        reinterpret_cast<char*>(&phy_awake_)) + sizeof(phy_friction_));
+  }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -1074,7 +3040,7 @@ bool Object::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:buffers.resources.Object)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1212,12 +3178,184 @@ bool Object::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Object.MainEvent main_events = 10;
+      // repeated .buffers.resources.Object.Event events = 10;
       case 10: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_main_events()));
+                input, add_events()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool use_physics = 11 [(.buffers.gmx) = "PhysicsObject"];
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(88u /* 88 & 0xFF */)) {
+          set_has_use_physics();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &use_physics_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool phy_sensor = 12 [(.buffers.gmx) = "PhysicsObjectSensor"];
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(96u /* 96 & 0xFF */)) {
+          set_has_phy_sensor();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &phy_sensor_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional .buffers.resources.Object.PhysicsShape phy_shape_type = 13 [(.buffers.gmx) = "PhysicsObjectShape"];
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(104u /* 104 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::buffers::resources::Object_PhysicsShape_IsValid(value)) {
+            set_phy_shape_type(static_cast< ::buffers::resources::Object_PhysicsShape >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(
+                13, static_cast< ::google::protobuf::uint64>(value));
+          }
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional double phy_density = 14 [(.buffers.gmx) = "PhysicsObjectDensity"];
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(113u /* 113 & 0xFF */)) {
+          set_has_phy_density();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &phy_density_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional double phy_restitution = 15 [(.buffers.gmx) = "PhysicsObjectRestitution"];
+      case 15: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(121u /* 121 & 0xFF */)) {
+          set_has_phy_restitution();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &phy_restitution_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 phy_group = 16 [(.buffers.gmx) = "PhysicsObjectGroup"];
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(128u /* 128 & 0xFF */)) {
+          set_has_phy_group();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &phy_group_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional double phy_linear_damping = 17 [(.buffers.gmx) = "PhysicsObjectLinearDamping"];
+      case 17: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(137u /* 137 & 0xFF */)) {
+          set_has_phy_linear_damping();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &phy_linear_damping_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional double phy_angular_damping = 18 [(.buffers.gmx) = "PhysicsObjectAngularDamping"];
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(145u /* 145 & 0xFF */)) {
+          set_has_phy_angular_damping();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &phy_angular_damping_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional double phy_friction = 19 [(.buffers.gmx) = "PhysicsObjectFriction"];
+      case 19: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(153u /* 153 & 0xFF */)) {
+          set_has_phy_friction();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &phy_friction_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool phy_awake = 20 [(.buffers.gmx) = "PhysicsObjectAwake"];
+      case 20: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(160u /* 160 & 0xFF */)) {
+          set_has_phy_awake();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &phy_awake_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool phy_kinematic = 21 [(.buffers.gmx) = "PhysicsObjectKinematic"];
+      case 21: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(168u /* 168 & 0xFF */)) {
+          set_has_phy_kinematic();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &phy_kinematic_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Object.PhysicsShapePoint phy_shape = 22 [(.buffers.gmx) = "PhysicsShapePoints"];
+      case 22: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(178u /* 178 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_phy_shape()));
         } else {
           goto handle_unusual;
         }
@@ -1316,11 +3454,74 @@ void Object::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(9, this->persistent(), output);
   }
 
-  // repeated .buffers.resources.Object.MainEvent main_events = 10;
+  // repeated .buffers.resources.Object.Event events = 10;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->main_events_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->events_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      10, this->main_events(static_cast<int>(i)), output);
+      10, this->events(static_cast<int>(i)), output);
+  }
+
+  // optional bool use_physics = 11 [(.buffers.gmx) = "PhysicsObject"];
+  if (cached_has_bits & 0x00000200u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(11, this->use_physics(), output);
+  }
+
+  // optional bool phy_sensor = 12 [(.buffers.gmx) = "PhysicsObjectSensor"];
+  if (cached_has_bits & 0x00008000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(12, this->phy_sensor(), output);
+  }
+
+  // optional .buffers.resources.Object.PhysicsShape phy_shape_type = 13 [(.buffers.gmx) = "PhysicsObjectShape"];
+  if (cached_has_bits & 0x00000400u) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      13, this->phy_shape_type(), output);
+  }
+
+  // optional double phy_density = 14 [(.buffers.gmx) = "PhysicsObjectDensity"];
+  if (cached_has_bits & 0x00000800u) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(14, this->phy_density(), output);
+  }
+
+  // optional double phy_restitution = 15 [(.buffers.gmx) = "PhysicsObjectRestitution"];
+  if (cached_has_bits & 0x00001000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(15, this->phy_restitution(), output);
+  }
+
+  // optional int32 phy_group = 16 [(.buffers.gmx) = "PhysicsObjectGroup"];
+  if (cached_has_bits & 0x00004000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(16, this->phy_group(), output);
+  }
+
+  // optional double phy_linear_damping = 17 [(.buffers.gmx) = "PhysicsObjectLinearDamping"];
+  if (cached_has_bits & 0x00002000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(17, this->phy_linear_damping(), output);
+  }
+
+  // optional double phy_angular_damping = 18 [(.buffers.gmx) = "PhysicsObjectAngularDamping"];
+  if (cached_has_bits & 0x00040000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(18, this->phy_angular_damping(), output);
+  }
+
+  // optional double phy_friction = 19 [(.buffers.gmx) = "PhysicsObjectFriction"];
+  if (cached_has_bits & 0x00080000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(19, this->phy_friction(), output);
+  }
+
+  // optional bool phy_awake = 20 [(.buffers.gmx) = "PhysicsObjectAwake"];
+  if (cached_has_bits & 0x00010000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(20, this->phy_awake(), output);
+  }
+
+  // optional bool phy_kinematic = 21 [(.buffers.gmx) = "PhysicsObjectKinematic"];
+  if (cached_has_bits & 0x00020000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(21, this->phy_kinematic(), output);
+  }
+
+  // repeated .buffers.resources.Object.PhysicsShapePoint phy_shape = 22 [(.buffers.gmx) = "PhysicsShapePoints"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->phy_shape_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      22, this->phy_shape(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1407,12 +3608,76 @@ void Object::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(9, this->persistent(), target);
   }
 
-  // repeated .buffers.resources.Object.MainEvent main_events = 10;
+  // repeated .buffers.resources.Object.Event events = 10;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->main_events_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->events_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
-        10, this->main_events(static_cast<int>(i)), deterministic, target);
+        10, this->events(static_cast<int>(i)), deterministic, target);
+  }
+
+  // optional bool use_physics = 11 [(.buffers.gmx) = "PhysicsObject"];
+  if (cached_has_bits & 0x00000200u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(11, this->use_physics(), target);
+  }
+
+  // optional bool phy_sensor = 12 [(.buffers.gmx) = "PhysicsObjectSensor"];
+  if (cached_has_bits & 0x00008000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(12, this->phy_sensor(), target);
+  }
+
+  // optional .buffers.resources.Object.PhysicsShape phy_shape_type = 13 [(.buffers.gmx) = "PhysicsObjectShape"];
+  if (cached_has_bits & 0x00000400u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      13, this->phy_shape_type(), target);
+  }
+
+  // optional double phy_density = 14 [(.buffers.gmx) = "PhysicsObjectDensity"];
+  if (cached_has_bits & 0x00000800u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(14, this->phy_density(), target);
+  }
+
+  // optional double phy_restitution = 15 [(.buffers.gmx) = "PhysicsObjectRestitution"];
+  if (cached_has_bits & 0x00001000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(15, this->phy_restitution(), target);
+  }
+
+  // optional int32 phy_group = 16 [(.buffers.gmx) = "PhysicsObjectGroup"];
+  if (cached_has_bits & 0x00004000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(16, this->phy_group(), target);
+  }
+
+  // optional double phy_linear_damping = 17 [(.buffers.gmx) = "PhysicsObjectLinearDamping"];
+  if (cached_has_bits & 0x00002000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(17, this->phy_linear_damping(), target);
+  }
+
+  // optional double phy_angular_damping = 18 [(.buffers.gmx) = "PhysicsObjectAngularDamping"];
+  if (cached_has_bits & 0x00040000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(18, this->phy_angular_damping(), target);
+  }
+
+  // optional double phy_friction = 19 [(.buffers.gmx) = "PhysicsObjectFriction"];
+  if (cached_has_bits & 0x00080000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(19, this->phy_friction(), target);
+  }
+
+  // optional bool phy_awake = 20 [(.buffers.gmx) = "PhysicsObjectAwake"];
+  if (cached_has_bits & 0x00010000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(20, this->phy_awake(), target);
+  }
+
+  // optional bool phy_kinematic = 21 [(.buffers.gmx) = "PhysicsObjectKinematic"];
+  if (cached_has_bits & 0x00020000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(21, this->phy_kinematic(), target);
+  }
+
+  // repeated .buffers.resources.Object.PhysicsShapePoint phy_shape = 22 [(.buffers.gmx) = "PhysicsShapePoints"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->phy_shape_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        22, this->phy_shape(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1432,14 +3697,25 @@ size_t Object::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Object.MainEvent main_events = 10;
+  // repeated .buffers.resources.Object.Event events = 10;
   {
-    unsigned int count = static_cast<unsigned int>(this->main_events_size());
+    unsigned int count = static_cast<unsigned int>(this->events_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->main_events(static_cast<int>(i)));
+          this->events(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .buffers.resources.Object.PhysicsShapePoint phy_shape = 22 [(.buffers.gmx) = "PhysicsShapePoints"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->phy_shape_size());
+    total_size += 2UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->phy_shape(static_cast<int>(i)));
     }
   }
 
@@ -1497,11 +3773,73 @@ size_t Object::ByteSizeLong() const {
     }
 
   }
-  // optional bool persistent = 9;
-  if (has_persistent()) {
-    total_size += 1 + 1;
-  }
+  if (_has_bits_[8 / 32] & 65280u) {
+    // optional bool persistent = 9;
+    if (has_persistent()) {
+      total_size += 1 + 1;
+    }
 
+    // optional bool use_physics = 11 [(.buffers.gmx) = "PhysicsObject"];
+    if (has_use_physics()) {
+      total_size += 1 + 1;
+    }
+
+    // optional .buffers.resources.Object.PhysicsShape phy_shape_type = 13 [(.buffers.gmx) = "PhysicsObjectShape"];
+    if (has_phy_shape_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->phy_shape_type());
+    }
+
+    // optional double phy_density = 14 [(.buffers.gmx) = "PhysicsObjectDensity"];
+    if (has_phy_density()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double phy_restitution = 15 [(.buffers.gmx) = "PhysicsObjectRestitution"];
+    if (has_phy_restitution()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double phy_linear_damping = 17 [(.buffers.gmx) = "PhysicsObjectLinearDamping"];
+    if (has_phy_linear_damping()) {
+      total_size += 2 + 8;
+    }
+
+    // optional int32 phy_group = 16 [(.buffers.gmx) = "PhysicsObjectGroup"];
+    if (has_phy_group()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->phy_group());
+    }
+
+    // optional bool phy_sensor = 12 [(.buffers.gmx) = "PhysicsObjectSensor"];
+    if (has_phy_sensor()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (_has_bits_[16 / 32] & 983040u) {
+    // optional bool phy_awake = 20 [(.buffers.gmx) = "PhysicsObjectAwake"];
+    if (has_phy_awake()) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool phy_kinematic = 21 [(.buffers.gmx) = "PhysicsObjectKinematic"];
+    if (has_phy_kinematic()) {
+      total_size += 2 + 1;
+    }
+
+    // optional double phy_angular_damping = 18 [(.buffers.gmx) = "PhysicsObjectAngularDamping"];
+    if (has_phy_angular_damping()) {
+      total_size += 2 + 8;
+    }
+
+    // optional double phy_friction = 19 [(.buffers.gmx) = "PhysicsObjectFriction"];
+    if (has_phy_friction()) {
+      total_size += 2 + 8;
+    }
+
+  }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -1531,7 +3869,8 @@ void Object::MergeFrom(const Object& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  main_events_.MergeFrom(from.main_events_);
+  events_.MergeFrom(from.events_);
+  phy_shape_.MergeFrom(from.phy_shape_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
@@ -1564,8 +3903,47 @@ void Object::MergeFrom(const Object& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00000100u) {
-    set_persistent(from.persistent());
+  if (cached_has_bits & 65280u) {
+    if (cached_has_bits & 0x00000100u) {
+      persistent_ = from.persistent_;
+    }
+    if (cached_has_bits & 0x00000200u) {
+      use_physics_ = from.use_physics_;
+    }
+    if (cached_has_bits & 0x00000400u) {
+      phy_shape_type_ = from.phy_shape_type_;
+    }
+    if (cached_has_bits & 0x00000800u) {
+      phy_density_ = from.phy_density_;
+    }
+    if (cached_has_bits & 0x00001000u) {
+      phy_restitution_ = from.phy_restitution_;
+    }
+    if (cached_has_bits & 0x00002000u) {
+      phy_linear_damping_ = from.phy_linear_damping_;
+    }
+    if (cached_has_bits & 0x00004000u) {
+      phy_group_ = from.phy_group_;
+    }
+    if (cached_has_bits & 0x00008000u) {
+      phy_sensor_ = from.phy_sensor_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 983040u) {
+    if (cached_has_bits & 0x00010000u) {
+      phy_awake_ = from.phy_awake_;
+    }
+    if (cached_has_bits & 0x00020000u) {
+      phy_kinematic_ = from.phy_kinematic_;
+    }
+    if (cached_has_bits & 0x00040000u) {
+      phy_angular_damping_ = from.phy_angular_damping_;
+    }
+    if (cached_has_bits & 0x00080000u) {
+      phy_friction_ = from.phy_friction_;
+    }
+    _has_bits_[0] |= cached_has_bits;
   }
 }
 
@@ -1593,7 +3971,8 @@ void Object::Swap(Object* other) {
 }
 void Object::InternalSwap(Object* other) {
   using std::swap;
-  main_events_.InternalSwap(&other->main_events_);
+  events_.InternalSwap(&other->events_);
+  phy_shape_.InternalSwap(&other->phy_shape_);
   name_.Swap(&other->name_);
   parent_name_.Swap(&other->parent_name_);
   sprite_name_.Swap(&other->sprite_name_);
@@ -1603,6 +3982,17 @@ void Object::InternalSwap(Object* other) {
   swap(solid_, other->solid_);
   swap(visible_, other->visible_);
   swap(persistent_, other->persistent_);
+  swap(use_physics_, other->use_physics_);
+  swap(phy_shape_type_, other->phy_shape_type_);
+  swap(phy_density_, other->phy_density_);
+  swap(phy_restitution_, other->phy_restitution_);
+  swap(phy_linear_damping_, other->phy_linear_damping_);
+  swap(phy_group_, other->phy_group_);
+  swap(phy_sensor_, other->phy_sensor_);
+  swap(phy_awake_, other->phy_awake_);
+  swap(phy_kinematic_, other->phy_kinematic_);
+  swap(phy_angular_damping_, other->phy_angular_damping_);
+  swap(phy_friction_, other->phy_friction_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -1988,34 +4378,329 @@ void Object::set_persistent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Object.persistent)
 }
 
-// repeated .buffers.resources.Object.MainEvent main_events = 10;
-int Object::main_events_size() const {
-  return main_events_.size();
+// repeated .buffers.resources.Object.Event events = 10;
+int Object::events_size() const {
+  return events_.size();
 }
-void Object::clear_main_events() {
-  main_events_.Clear();
+void Object::clear_events() {
+  events_.Clear();
 }
-const ::buffers::resources::Object_MainEvent& Object::main_events(int index) const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.main_events)
-  return main_events_.Get(index);
+const ::buffers::resources::Object_Event& Object::events(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.events)
+  return events_.Get(index);
 }
-::buffers::resources::Object_MainEvent* Object::mutable_main_events(int index) {
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.main_events)
-  return main_events_.Mutable(index);
+::buffers::resources::Object_Event* Object::mutable_events(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.events)
+  return events_.Mutable(index);
 }
-::buffers::resources::Object_MainEvent* Object::add_main_events() {
-  // @@protoc_insertion_point(field_add:buffers.resources.Object.main_events)
-  return main_events_.Add();
+::buffers::resources::Object_Event* Object::add_events() {
+  // @@protoc_insertion_point(field_add:buffers.resources.Object.events)
+  return events_.Add();
 }
-::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_MainEvent >*
-Object::mutable_main_events() {
-  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.main_events)
-  return &main_events_;
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >*
+Object::mutable_events() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.events)
+  return &events_;
 }
-const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_MainEvent >&
-Object::main_events() const {
-  // @@protoc_insertion_point(field_list:buffers.resources.Object.main_events)
-  return main_events_;
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >&
+Object::events() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Object.events)
+  return events_;
+}
+
+// optional bool use_physics = 11 [(.buffers.gmx) = "PhysicsObject"];
+bool Object::has_use_physics() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void Object::set_has_use_physics() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void Object::clear_has_use_physics() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void Object::clear_use_physics() {
+  use_physics_ = false;
+  clear_has_use_physics();
+}
+bool Object::use_physics() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.use_physics)
+  return use_physics_;
+}
+void Object::set_use_physics(bool value) {
+  set_has_use_physics();
+  use_physics_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.use_physics)
+}
+
+// optional bool phy_sensor = 12 [(.buffers.gmx) = "PhysicsObjectSensor"];
+bool Object::has_phy_sensor() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+void Object::set_has_phy_sensor() {
+  _has_bits_[0] |= 0x00008000u;
+}
+void Object::clear_has_phy_sensor() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+void Object::clear_phy_sensor() {
+  phy_sensor_ = false;
+  clear_has_phy_sensor();
+}
+bool Object::phy_sensor() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_sensor)
+  return phy_sensor_;
+}
+void Object::set_phy_sensor(bool value) {
+  set_has_phy_sensor();
+  phy_sensor_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_sensor)
+}
+
+// optional .buffers.resources.Object.PhysicsShape phy_shape_type = 13 [(.buffers.gmx) = "PhysicsObjectShape"];
+bool Object::has_phy_shape_type() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+void Object::set_has_phy_shape_type() {
+  _has_bits_[0] |= 0x00000400u;
+}
+void Object::clear_has_phy_shape_type() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+void Object::clear_phy_shape_type() {
+  phy_shape_type_ = 0;
+  clear_has_phy_shape_type();
+}
+::buffers::resources::Object_PhysicsShape Object::phy_shape_type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_shape_type)
+  return static_cast< ::buffers::resources::Object_PhysicsShape >(phy_shape_type_);
+}
+void Object::set_phy_shape_type(::buffers::resources::Object_PhysicsShape value) {
+  assert(::buffers::resources::Object_PhysicsShape_IsValid(value));
+  set_has_phy_shape_type();
+  phy_shape_type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_shape_type)
+}
+
+// optional double phy_density = 14 [(.buffers.gmx) = "PhysicsObjectDensity"];
+bool Object::has_phy_density() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+void Object::set_has_phy_density() {
+  _has_bits_[0] |= 0x00000800u;
+}
+void Object::clear_has_phy_density() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+void Object::clear_phy_density() {
+  phy_density_ = 0;
+  clear_has_phy_density();
+}
+double Object::phy_density() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_density)
+  return phy_density_;
+}
+void Object::set_phy_density(double value) {
+  set_has_phy_density();
+  phy_density_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_density)
+}
+
+// optional double phy_restitution = 15 [(.buffers.gmx) = "PhysicsObjectRestitution"];
+bool Object::has_phy_restitution() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+void Object::set_has_phy_restitution() {
+  _has_bits_[0] |= 0x00001000u;
+}
+void Object::clear_has_phy_restitution() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+void Object::clear_phy_restitution() {
+  phy_restitution_ = 0;
+  clear_has_phy_restitution();
+}
+double Object::phy_restitution() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_restitution)
+  return phy_restitution_;
+}
+void Object::set_phy_restitution(double value) {
+  set_has_phy_restitution();
+  phy_restitution_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_restitution)
+}
+
+// optional int32 phy_group = 16 [(.buffers.gmx) = "PhysicsObjectGroup"];
+bool Object::has_phy_group() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+void Object::set_has_phy_group() {
+  _has_bits_[0] |= 0x00004000u;
+}
+void Object::clear_has_phy_group() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+void Object::clear_phy_group() {
+  phy_group_ = 0;
+  clear_has_phy_group();
+}
+::google::protobuf::int32 Object::phy_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_group)
+  return phy_group_;
+}
+void Object::set_phy_group(::google::protobuf::int32 value) {
+  set_has_phy_group();
+  phy_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_group)
+}
+
+// optional double phy_linear_damping = 17 [(.buffers.gmx) = "PhysicsObjectLinearDamping"];
+bool Object::has_phy_linear_damping() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+void Object::set_has_phy_linear_damping() {
+  _has_bits_[0] |= 0x00002000u;
+}
+void Object::clear_has_phy_linear_damping() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+void Object::clear_phy_linear_damping() {
+  phy_linear_damping_ = 0;
+  clear_has_phy_linear_damping();
+}
+double Object::phy_linear_damping() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_linear_damping)
+  return phy_linear_damping_;
+}
+void Object::set_phy_linear_damping(double value) {
+  set_has_phy_linear_damping();
+  phy_linear_damping_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_linear_damping)
+}
+
+// optional double phy_angular_damping = 18 [(.buffers.gmx) = "PhysicsObjectAngularDamping"];
+bool Object::has_phy_angular_damping() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+void Object::set_has_phy_angular_damping() {
+  _has_bits_[0] |= 0x00040000u;
+}
+void Object::clear_has_phy_angular_damping() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+void Object::clear_phy_angular_damping() {
+  phy_angular_damping_ = 0;
+  clear_has_phy_angular_damping();
+}
+double Object::phy_angular_damping() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_angular_damping)
+  return phy_angular_damping_;
+}
+void Object::set_phy_angular_damping(double value) {
+  set_has_phy_angular_damping();
+  phy_angular_damping_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_angular_damping)
+}
+
+// optional double phy_friction = 19 [(.buffers.gmx) = "PhysicsObjectFriction"];
+bool Object::has_phy_friction() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+void Object::set_has_phy_friction() {
+  _has_bits_[0] |= 0x00080000u;
+}
+void Object::clear_has_phy_friction() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+void Object::clear_phy_friction() {
+  phy_friction_ = 0;
+  clear_has_phy_friction();
+}
+double Object::phy_friction() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_friction)
+  return phy_friction_;
+}
+void Object::set_phy_friction(double value) {
+  set_has_phy_friction();
+  phy_friction_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_friction)
+}
+
+// optional bool phy_awake = 20 [(.buffers.gmx) = "PhysicsObjectAwake"];
+bool Object::has_phy_awake() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+void Object::set_has_phy_awake() {
+  _has_bits_[0] |= 0x00010000u;
+}
+void Object::clear_has_phy_awake() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+void Object::clear_phy_awake() {
+  phy_awake_ = false;
+  clear_has_phy_awake();
+}
+bool Object::phy_awake() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_awake)
+  return phy_awake_;
+}
+void Object::set_phy_awake(bool value) {
+  set_has_phy_awake();
+  phy_awake_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_awake)
+}
+
+// optional bool phy_kinematic = 21 [(.buffers.gmx) = "PhysicsObjectKinematic"];
+bool Object::has_phy_kinematic() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+void Object::set_has_phy_kinematic() {
+  _has_bits_[0] |= 0x00020000u;
+}
+void Object::clear_has_phy_kinematic() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+void Object::clear_phy_kinematic() {
+  phy_kinematic_ = false;
+  clear_has_phy_kinematic();
+}
+bool Object::phy_kinematic() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_kinematic)
+  return phy_kinematic_;
+}
+void Object::set_phy_kinematic(bool value) {
+  set_has_phy_kinematic();
+  phy_kinematic_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_kinematic)
+}
+
+// repeated .buffers.resources.Object.PhysicsShapePoint phy_shape = 22 [(.buffers.gmx) = "PhysicsShapePoints"];
+int Object::phy_shape_size() const {
+  return phy_shape_.size();
+}
+void Object::clear_phy_shape() {
+  phy_shape_.Clear();
+}
+const ::buffers::resources::Object_PhysicsShapePoint& Object::phy_shape(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_shape)
+  return phy_shape_.Get(index);
+}
+::buffers::resources::Object_PhysicsShapePoint* Object::mutable_phy_shape(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.phy_shape)
+  return phy_shape_.Mutable(index);
+}
+::buffers::resources::Object_PhysicsShapePoint* Object::add_phy_shape() {
+  // @@protoc_insertion_point(field_add:buffers.resources.Object.phy_shape)
+  return phy_shape_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_PhysicsShapePoint >*
+Object::mutable_phy_shape() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.phy_shape)
+  return &phy_shape_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_PhysicsShapePoint >&
+Object::phy_shape() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Object.phy_shape)
+  return phy_shape_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

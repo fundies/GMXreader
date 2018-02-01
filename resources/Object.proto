@@ -4,16 +4,34 @@ package buffers.resources;
 import "options.proto";
 
 message Object {
+  message Argument {
+    optional int32 kind = 1;
+    optional string string = 2;
+  }
+  
+  message Action {
+    optional int32 libid = 1;
+    optional int32 id = 2;
+    optional int32 kind = 3;
+    optional bool use_relative = 4 [(gmx) = "userelative"];
+    optional bool is_question = 5 [(gmx) = "isquestion"];
+    optional int32 use_apply_to = 6 [(gmx) = "useapplyto"];
+    optional int32 exe_type = 7 [(gmx) = "exetype"];
+    optional string function_name = 8 [(gmx) = "functionname"];
+    optional string code_string = 9 [(gmx) = "codestring"];
+    optional string who_name = 10 [(gmx) = "whoName"];
+    optional bool relative = 11;
+    optional bool is_not = 12 [(gmx) = "isnot"];
+    optional Argument argument = 13 [(gmx) = "arguments/argument"];
+  }
+  
   message Event {
-    optional int32 id = 1;
-    optional string code = 2;
+    optional int32 type = 1 [(gmx) = "eventtype"];
+    optional int32 number = 2 [(gmx) = "enumb"];
+    optional string name = 3 [(gmx) = "ename"];
+    optional Action action = 4;
   }
-
-  message MainEvent {
-    optional int32 id = 1;
-    repeated Event events = 2;
-  }
-
+  
   optional string name = 1;
   optional int32 id = 2;
 
@@ -26,5 +44,25 @@ message Object {
   optional bool visible = 8;
   optional bool persistent = 9;
 
-  repeated MainEvent main_events = 10;
+  repeated Event events = 10;
+  
+  enum PhysicsShape { CIRCLE = 0; BOX = 1; SHAPE = 2; }
+  
+  message PhysicsShapePoint {
+    optional int32 x = 1 [(gmx) = "GMX_SPLIT/0"];
+    optional int32 y = 2 [(gmx) = "GMX_SPLIT/1"];
+  }
+    
+  optional bool use_physics = 11 [(gmx) = "PhysicsObject"];
+  optional bool phy_sensor = 12 [(gmx) = "PhysicsObjectSensor"];
+  optional PhysicsShape phy_shape_type = 13 [(gmx) = "PhysicsObjectShape"];
+  optional double phy_density = 14 [(gmx) = "PhysicsObjectDensity"];
+  optional double phy_restitution = 15 [(gmx) = "PhysicsObjectRestitution"];
+  optional int32 phy_group = 16 [(gmx) = "PhysicsObjectGroup"];
+  optional double phy_linear_damping = 17 [(gmx) = "PhysicsObjectLinearDamping"];
+  optional double phy_angular_damping = 18 [(gmx) = "PhysicsObjectAngularDamping"];
+  optional double phy_friction = 19 [(gmx) = "PhysicsObjectFriction"];
+  optional bool phy_awake = 20 [(gmx) = "PhysicsObjectAwake"];
+  optional bool phy_kinematic = 21 [(gmx) = "PhysicsObjectKinematic"];
+  repeated PhysicsShapePoint phy_shape = 22 [(gmx) = "PhysicsShapePoints"];
 }

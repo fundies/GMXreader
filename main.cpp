@@ -182,87 +182,107 @@ class GMXReader : public pugi::xml_tree_walker {
         size_t splitPos = gmxName.find(splitMarker);
         bool isSplit = splitPos != std::string::npos;
 
+        // look in attributes
+        pugi::xml_attribute attr;
+        if (child == nullptr) attr = node.attribute(xmlElement.c_str());
 
-        if (child == nullptr && gmxName != "GMX_DEPRECIATED" && !isSplit)
-          std::cerr << "Error: no such element " << xmlElement << std::endl;
+        bool isAttribute = attr != nullptr;
+
+        if (child == nullptr && gmxName != "GMX_DEPRECIATED" && !isSplit && !isAttribute) {
+          //ename only exists if etype = 4...
+          pugi::xml_attribute a = node.attribute("eventtype");
+          if (xmlElement != "ename" && a != nullptr && a.as_int() != 4)
+            std::cerr << "Error: no such element " << node.path() << xmlElement << std::endl;
+        }
         else if (gmxName != "GMX_DEPRECIATED") {
           if (field->is_repeated()) {
-            for (; child != nullptr; child = child.next_sibling()) {
-              switch (field->cpp_type()) {
-                case google::protobuf::FieldDescriptor::FieldDescriptor::CppType::CPPTYPE_MESSAGE: {
-                  for (pugi::xml_node n = child.first_child(); n != nullptr; n = n.next_sibling()) {
-                    n.append_attribute("visited") = "true";
-                    google::protobuf::Message *msg = refl->AddMessage(m, field);
-                    PackRes(name, n, msg, depth + 1);
-                  }
-                  break;
+            switch (field->cpp_type()) {
+              case google::protobuf::FieldDescriptor::FieldDescriptor::CppType::CPPTYPE_MESSAGE: {
+                for (pugi::xml_node n = child.first_child(); n != nullptr; n = n.next_sibling()) {
+                  n.append_attribute("visited") = "true";
+                  google::protobuf::Message *msg = refl->AddMessage(m, field);
+                  PackRes(name, n, msg, depth + 1);
                 }
+                break;
+              }
 
-                case google::protobuf::FieldDescriptor::CppType::CPPTYPE_STRING: {
-                  for (pugi::xml_node n = child.first_child(); n != nullptr; n = n.next_sibling()) {
-                    n.append_attribute("visited") = "true";
-                    refl->AddString(m, field, n.text().as_string());
-                    fprintf(stderr, "Appending to %s (%s) %s \n", field->name().c_str(), field->type_name(),
-                            n.text().as_string());
-                  }
-                  break;
+              case google::protobuf::FieldDescriptor::CppType::CPPTYPE_STRING: {
+                for (pugi::xml_node n = child.first_child(); n != nullptr; n = n.next_sibling()) {
+                  n.append_attribute("visited") = "true";
+                  refl->AddString(m, field, n.text().as_string());
+                  fprintf(stderr, "Appending to %s (%s) %s \n", field->name().c_str(), field->type_name(),
+                          n.text().as_string());
                 }
+                break;
+              }
 
-                default: {
-                  //fprintf(stderr, "The name of the %zu element is %s and the type is %s \n",i,field->name().c_str(),field->type_name());
-                  // I don't think we repeat anything other than messages
-                  break;
-                }
+              default: {
+                //fprintf(stderr, "The name of the %zu element is %s and the type is %s \n",i,field->name().c_str(),field->type_name());
+                // I don't think we repeat anything other than messages
+                break;
               }
             }
           } else {
             pugi::xml_text xmlValue;
             std::string splitValue;
 
-            if (isSplit) {
-              std::vector<std::string> split = SplitString(node.text().as_string(), ',');
-              splitValue = split[static_cast<int>(gmxName.back()) - '0'];
-            } else
-              xmlValue = child.text();
+            if (!isAttribute) {
+              if (isSplit) {
+                std::vector<std::string> split = SplitString(node.text().as_string(), ',');
+                splitValue = split[static_cast<int>(gmxName.back()) - '0'];
+              } else
+                xmlValue = child.text();
+            }
 
             fprintf(stderr, "Setting %s (%s) as %s \n", field->name().c_str(), field->type_name(),
-                    (isSplit) ? splitValue.c_str() : xmlValue.as_string());
+                    (isAttribute) ? attr.as_string() : (isSplit) ? splitValue.c_str() : xmlValue.as_string());
 
             switch (field->cpp_type()) {
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_MESSAGE: {
-                google::protobuf::Message *msg = refl->AddMessage(m, field);
+                google::protobuf::Message *msg = refl->MutableMessage(m, field);
                 PackRes(name, child, msg, depth + 1);
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_INT32: {
-                refl->SetInt32(m, field, (isSplit) ? std::stoi(splitValue) : xmlValue.as_int());
+                refl->SetInt32(m, field,
+                               (isAttribute) ? attr.as_int() : (isSplit) ? std::stoi(splitValue) : xmlValue.as_int());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_INT64: {
-                refl->SetInt64(m, field, (isSplit) ? std::stoi(splitValue) : xmlValue.as_int());
+                refl->SetInt64(m, field,
+                               (isAttribute) ? attr.as_int() : (isSplit) ? std::stoi(splitValue) : xmlValue.as_int());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_UINT32: {
-                refl->SetUInt32(m, field, (isSplit) ? std::stoi(splitValue) : xmlValue.as_uint());
+                refl->SetUInt32(
+                    m, field, (isAttribute) ? attr.as_uint() : (isSplit) ? std::stoi(splitValue) : xmlValue.as_uint());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_UINT64: {
-                refl->SetUInt64(m, field, (isSplit) ? std::stoi(splitValue) : xmlValue.as_uint());
+                refl->SetUInt64(
+                    m, field, (isAttribute) ? attr.as_uint() : (isSplit) ? std::stoi(splitValue) : xmlValue.as_uint());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_DOUBLE: {
-                refl->SetDouble(m, field, (isSplit) ? std::stod(splitValue) : xmlValue.as_double());
+                refl->SetDouble(
+                    m, field,
+                    (isAttribute) ? attr.as_double() : (isSplit) ? std::stod(splitValue) : xmlValue.as_double());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_FLOAT: {
-                refl->SetFloat(m, field, (isSplit) ? std::stof(splitValue) : xmlValue.as_float());
+                refl->SetFloat(
+                    m, field,
+                    (isAttribute) ? attr.as_float() : (isSplit) ? std::stof(splitValue) : xmlValue.as_float());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_BOOL: {
-                refl->SetBool(m, field, (isSplit) ? (splitValue != "0") : xmlValue.as_bool());
+                refl->SetBool(m, field,
+                              (isAttribute) ? attr.as_bool() : (isSplit) ? (splitValue != "0") : xmlValue.as_bool());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_ENUM: {
+                //refl->SetEnum(m, field,
+                  //             (isAttribute) ? attr.as_int() : (isSplit) ? std::stoi(splitValue) : xmlValue.as_int());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_STRING: {

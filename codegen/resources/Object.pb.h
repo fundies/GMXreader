@@ -28,6 +28,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "options.pb.h"
 // @@protoc_insertion_point(includes)
@@ -36,12 +37,18 @@ namespace resources {
 class Object;
 class ObjectDefaultTypeInternal;
 extern ObjectDefaultTypeInternal _Object_default_instance_;
+class Object_Action;
+class Object_ActionDefaultTypeInternal;
+extern Object_ActionDefaultTypeInternal _Object_Action_default_instance_;
+class Object_Argument;
+class Object_ArgumentDefaultTypeInternal;
+extern Object_ArgumentDefaultTypeInternal _Object_Argument_default_instance_;
 class Object_Event;
 class Object_EventDefaultTypeInternal;
 extern Object_EventDefaultTypeInternal _Object_Event_default_instance_;
-class Object_MainEvent;
-class Object_MainEventDefaultTypeInternal;
-extern Object_MainEventDefaultTypeInternal _Object_MainEvent_default_instance_;
+class Object_PhysicsShapePoint;
+class Object_PhysicsShapePointDefaultTypeInternal;
+extern Object_PhysicsShapePointDefaultTypeInternal _Object_PhysicsShapePoint_default_instance_;
 }  // namespace resources
 }  // namespace buffers
 
@@ -63,7 +70,407 @@ void AddDescriptors();
 void InitDefaults();
 }  // namespace protobuf_resources_2fObject_2eproto
 
+enum Object_PhysicsShape {
+  Object_PhysicsShape_CIRCLE = 0,
+  Object_PhysicsShape_BOX = 1,
+  Object_PhysicsShape_SHAPE = 2
+};
+bool Object_PhysicsShape_IsValid(int value);
+const Object_PhysicsShape Object_PhysicsShape_PhysicsShape_MIN = Object_PhysicsShape_CIRCLE;
+const Object_PhysicsShape Object_PhysicsShape_PhysicsShape_MAX = Object_PhysicsShape_SHAPE;
+const int Object_PhysicsShape_PhysicsShape_ARRAYSIZE = Object_PhysicsShape_PhysicsShape_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Object_PhysicsShape_descriptor();
+inline const ::std::string& Object_PhysicsShape_Name(Object_PhysicsShape value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Object_PhysicsShape_descriptor(), value);
+}
+inline bool Object_PhysicsShape_Parse(
+    const ::std::string& name, Object_PhysicsShape* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Object_PhysicsShape>(
+    Object_PhysicsShape_descriptor(), name, value);
+}
 // ===================================================================
+
+class Object_Argument : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:buffers.resources.Object.Argument) */ {
+ public:
+  Object_Argument();
+  virtual ~Object_Argument();
+
+  Object_Argument(const Object_Argument& from);
+
+  inline Object_Argument& operator=(const Object_Argument& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Object_Argument(Object_Argument&& from) noexcept
+    : Object_Argument() {
+    *this = ::std::move(from);
+  }
+
+  inline Object_Argument& operator=(Object_Argument&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Object_Argument& default_instance();
+
+  static inline const Object_Argument* internal_default_instance() {
+    return reinterpret_cast<const Object_Argument*>(
+               &_Object_Argument_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    0;
+
+  void Swap(Object_Argument* other);
+  friend void swap(Object_Argument& a, Object_Argument& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Object_Argument* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Object_Argument* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Object_Argument& from);
+  void MergeFrom(const Object_Argument& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Object_Argument* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string string = 2;
+  bool has_string() const;
+  void clear_string();
+  static const int kStringFieldNumber = 2;
+  const ::std::string& string() const;
+  void set_string(const ::std::string& value);
+  #if LANG_CXX11
+  void set_string(::std::string&& value);
+  #endif
+  void set_string(const char* value);
+  void set_string(const char* value, size_t size);
+  ::std::string* mutable_string();
+  ::std::string* release_string();
+  void set_allocated_string(::std::string* string);
+
+  // optional int32 kind = 1;
+  bool has_kind() const;
+  void clear_kind();
+  static const int kKindFieldNumber = 1;
+  ::google::protobuf::int32 kind() const;
+  void set_kind(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:buffers.resources.Object.Argument)
+ private:
+  void set_has_kind();
+  void clear_has_kind();
+  void set_has_string();
+  void clear_has_string();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr string_;
+  ::google::protobuf::int32 kind_;
+  friend struct protobuf_resources_2fObject_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Object_Action : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:buffers.resources.Object.Action) */ {
+ public:
+  Object_Action();
+  virtual ~Object_Action();
+
+  Object_Action(const Object_Action& from);
+
+  inline Object_Action& operator=(const Object_Action& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Object_Action(Object_Action&& from) noexcept
+    : Object_Action() {
+    *this = ::std::move(from);
+  }
+
+  inline Object_Action& operator=(Object_Action&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Object_Action& default_instance();
+
+  static inline const Object_Action* internal_default_instance() {
+    return reinterpret_cast<const Object_Action*>(
+               &_Object_Action_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    1;
+
+  void Swap(Object_Action* other);
+  friend void swap(Object_Action& a, Object_Action& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Object_Action* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  Object_Action* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const Object_Action& from);
+  void MergeFrom(const Object_Action& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(Object_Action* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string function_name = 8 [(.buffers.gmx) = "functionname"];
+  bool has_function_name() const;
+  void clear_function_name();
+  static const int kFunctionNameFieldNumber = 8;
+  const ::std::string& function_name() const;
+  void set_function_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_function_name(::std::string&& value);
+  #endif
+  void set_function_name(const char* value);
+  void set_function_name(const char* value, size_t size);
+  ::std::string* mutable_function_name();
+  ::std::string* release_function_name();
+  void set_allocated_function_name(::std::string* function_name);
+
+  // optional string code_string = 9 [(.buffers.gmx) = "codestring"];
+  bool has_code_string() const;
+  void clear_code_string();
+  static const int kCodeStringFieldNumber = 9;
+  const ::std::string& code_string() const;
+  void set_code_string(const ::std::string& value);
+  #if LANG_CXX11
+  void set_code_string(::std::string&& value);
+  #endif
+  void set_code_string(const char* value);
+  void set_code_string(const char* value, size_t size);
+  ::std::string* mutable_code_string();
+  ::std::string* release_code_string();
+  void set_allocated_code_string(::std::string* code_string);
+
+  // optional string who_name = 10 [(.buffers.gmx) = "whoName"];
+  bool has_who_name() const;
+  void clear_who_name();
+  static const int kWhoNameFieldNumber = 10;
+  const ::std::string& who_name() const;
+  void set_who_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_who_name(::std::string&& value);
+  #endif
+  void set_who_name(const char* value);
+  void set_who_name(const char* value, size_t size);
+  ::std::string* mutable_who_name();
+  ::std::string* release_who_name();
+  void set_allocated_who_name(::std::string* who_name);
+
+  // optional .buffers.resources.Object.Argument argument = 13 [(.buffers.gmx) = "arguments/argument"];
+  bool has_argument() const;
+  void clear_argument();
+  static const int kArgumentFieldNumber = 13;
+  const ::buffers::resources::Object_Argument& argument() const;
+  ::buffers::resources::Object_Argument* mutable_argument();
+  ::buffers::resources::Object_Argument* release_argument();
+  void set_allocated_argument(::buffers::resources::Object_Argument* argument);
+
+  // optional int32 libid = 1;
+  bool has_libid() const;
+  void clear_libid();
+  static const int kLibidFieldNumber = 1;
+  ::google::protobuf::int32 libid() const;
+  void set_libid(::google::protobuf::int32 value);
+
+  // optional int32 id = 2;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 2;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
+  // optional int32 kind = 3;
+  bool has_kind() const;
+  void clear_kind();
+  static const int kKindFieldNumber = 3;
+  ::google::protobuf::int32 kind() const;
+  void set_kind(::google::protobuf::int32 value);
+
+  // optional int32 use_apply_to = 6 [(.buffers.gmx) = "useapplyto"];
+  bool has_use_apply_to() const;
+  void clear_use_apply_to();
+  static const int kUseApplyToFieldNumber = 6;
+  ::google::protobuf::int32 use_apply_to() const;
+  void set_use_apply_to(::google::protobuf::int32 value);
+
+  // optional int32 exe_type = 7 [(.buffers.gmx) = "exetype"];
+  bool has_exe_type() const;
+  void clear_exe_type();
+  static const int kExeTypeFieldNumber = 7;
+  ::google::protobuf::int32 exe_type() const;
+  void set_exe_type(::google::protobuf::int32 value);
+
+  // optional bool use_relative = 4 [(.buffers.gmx) = "userelative"];
+  bool has_use_relative() const;
+  void clear_use_relative();
+  static const int kUseRelativeFieldNumber = 4;
+  bool use_relative() const;
+  void set_use_relative(bool value);
+
+  // optional bool is_question = 5 [(.buffers.gmx) = "isquestion"];
+  bool has_is_question() const;
+  void clear_is_question();
+  static const int kIsQuestionFieldNumber = 5;
+  bool is_question() const;
+  void set_is_question(bool value);
+
+  // optional bool relative = 11;
+  bool has_relative() const;
+  void clear_relative();
+  static const int kRelativeFieldNumber = 11;
+  bool relative() const;
+  void set_relative(bool value);
+
+  // optional bool is_not = 12 [(.buffers.gmx) = "isnot"];
+  bool has_is_not() const;
+  void clear_is_not();
+  static const int kIsNotFieldNumber = 12;
+  bool is_not() const;
+  void set_is_not(bool value);
+
+  // @@protoc_insertion_point(class_scope:buffers.resources.Object.Action)
+ private:
+  void set_has_libid();
+  void clear_has_libid();
+  void set_has_id();
+  void clear_has_id();
+  void set_has_kind();
+  void clear_has_kind();
+  void set_has_use_relative();
+  void clear_has_use_relative();
+  void set_has_is_question();
+  void clear_has_is_question();
+  void set_has_use_apply_to();
+  void clear_has_use_apply_to();
+  void set_has_exe_type();
+  void clear_has_exe_type();
+  void set_has_function_name();
+  void clear_has_function_name();
+  void set_has_code_string();
+  void clear_has_code_string();
+  void set_has_who_name();
+  void clear_has_who_name();
+  void set_has_relative();
+  void clear_has_relative();
+  void set_has_is_not();
+  void clear_has_is_not();
+  void set_has_argument();
+  void clear_has_argument();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr function_name_;
+  ::google::protobuf::internal::ArenaStringPtr code_string_;
+  ::google::protobuf::internal::ArenaStringPtr who_name_;
+  ::buffers::resources::Object_Argument* argument_;
+  ::google::protobuf::int32 libid_;
+  ::google::protobuf::int32 id_;
+  ::google::protobuf::int32 kind_;
+  ::google::protobuf::int32 use_apply_to_;
+  ::google::protobuf::int32 exe_type_;
+  bool use_relative_;
+  bool is_question_;
+  bool relative_;
+  bool is_not_;
+  friend struct protobuf_resources_2fObject_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class Object_Event : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:buffers.resources.Object.Event) */ {
  public:
@@ -106,7 +513,7 @@ class Object_Event : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_Object_Event_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(Object_Event* other);
   friend void swap(Object_Event& a, Object_Event& b) {
@@ -153,62 +560,84 @@ class Object_Event : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // optional string code = 2;
-  bool has_code() const;
-  void clear_code();
-  static const int kCodeFieldNumber = 2;
-  const ::std::string& code() const;
-  void set_code(const ::std::string& value);
+  // optional string name = 3 [(.buffers.gmx) = "ename"];
+  bool has_name() const;
+  void clear_name();
+  static const int kNameFieldNumber = 3;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
   #if LANG_CXX11
-  void set_code(::std::string&& value);
+  void set_name(::std::string&& value);
   #endif
-  void set_code(const char* value);
-  void set_code(const char* value, size_t size);
-  ::std::string* mutable_code();
-  ::std::string* release_code();
-  void set_allocated_code(::std::string* code);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
 
-  // optional int32 id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  ::google::protobuf::int32 id() const;
-  void set_id(::google::protobuf::int32 value);
+  // optional .buffers.resources.Object.Action action = 4;
+  bool has_action() const;
+  void clear_action();
+  static const int kActionFieldNumber = 4;
+  const ::buffers::resources::Object_Action& action() const;
+  ::buffers::resources::Object_Action* mutable_action();
+  ::buffers::resources::Object_Action* release_action();
+  void set_allocated_action(::buffers::resources::Object_Action* action);
+
+  // optional int32 type = 1 [(.buffers.gmx) = "eventtype"];
+  bool has_type() const;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
+
+  // optional int32 number = 2 [(.buffers.gmx) = "enumb"];
+  bool has_number() const;
+  void clear_number();
+  static const int kNumberFieldNumber = 2;
+  ::google::protobuf::int32 number() const;
+  void set_number(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:buffers.resources.Object.Event)
  private:
-  void set_has_id();
-  void clear_has_id();
-  void set_has_code();
-  void clear_has_code();
+  void set_has_type();
+  void clear_has_type();
+  void set_has_number();
+  void clear_has_number();
+  void set_has_name();
+  void clear_has_name();
+  void set_has_action();
+  void clear_has_action();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr code_;
-  ::google::protobuf::int32 id_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::buffers::resources::Object_Action* action_;
+  ::google::protobuf::int32 type_;
+  ::google::protobuf::int32 number_;
   friend struct protobuf_resources_2fObject_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
 
-class Object_MainEvent : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:buffers.resources.Object.MainEvent) */ {
+class Object_PhysicsShapePoint : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:buffers.resources.Object.PhysicsShapePoint) */ {
  public:
-  Object_MainEvent();
-  virtual ~Object_MainEvent();
+  Object_PhysicsShapePoint();
+  virtual ~Object_PhysicsShapePoint();
 
-  Object_MainEvent(const Object_MainEvent& from);
+  Object_PhysicsShapePoint(const Object_PhysicsShapePoint& from);
 
-  inline Object_MainEvent& operator=(const Object_MainEvent& from) {
+  inline Object_PhysicsShapePoint& operator=(const Object_PhysicsShapePoint& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Object_MainEvent(Object_MainEvent&& from) noexcept
-    : Object_MainEvent() {
+  Object_PhysicsShapePoint(Object_PhysicsShapePoint&& from) noexcept
+    : Object_PhysicsShapePoint() {
     *this = ::std::move(from);
   }
 
-  inline Object_MainEvent& operator=(Object_MainEvent&& from) noexcept {
+  inline Object_PhysicsShapePoint& operator=(Object_PhysicsShapePoint&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -225,29 +654,29 @@ class Object_MainEvent : public ::google::protobuf::Message /* @@protoc_insertio
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Object_MainEvent& default_instance();
+  static const Object_PhysicsShapePoint& default_instance();
 
-  static inline const Object_MainEvent* internal_default_instance() {
-    return reinterpret_cast<const Object_MainEvent*>(
-               &_Object_MainEvent_default_instance_);
+  static inline const Object_PhysicsShapePoint* internal_default_instance() {
+    return reinterpret_cast<const Object_PhysicsShapePoint*>(
+               &_Object_PhysicsShapePoint_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
+    3;
 
-  void Swap(Object_MainEvent* other);
-  friend void swap(Object_MainEvent& a, Object_MainEvent& b) {
+  void Swap(Object_PhysicsShapePoint* other);
+  friend void swap(Object_PhysicsShapePoint& a, Object_PhysicsShapePoint& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Object_MainEvent* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline Object_PhysicsShapePoint* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  Object_MainEvent* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  Object_PhysicsShapePoint* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const Object_MainEvent& from);
-  void MergeFrom(const Object_MainEvent& from);
+  void CopyFrom(const Object_PhysicsShapePoint& from);
+  void MergeFrom(const Object_PhysicsShapePoint& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -263,7 +692,7 @@ class Object_MainEvent : public ::google::protobuf::Message /* @@protoc_insertio
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(Object_MainEvent* other);
+  void InternalSwap(Object_PhysicsShapePoint* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -279,35 +708,32 @@ class Object_MainEvent : public ::google::protobuf::Message /* @@protoc_insertio
 
   // accessors -------------------------------------------------------
 
-  // repeated .buffers.resources.Object.Event events = 2;
-  int events_size() const;
-  void clear_events();
-  static const int kEventsFieldNumber = 2;
-  const ::buffers::resources::Object_Event& events(int index) const;
-  ::buffers::resources::Object_Event* mutable_events(int index);
-  ::buffers::resources::Object_Event* add_events();
-  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >*
-      mutable_events();
-  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >&
-      events() const;
+  // optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
+  bool has_x() const;
+  void clear_x();
+  static const int kXFieldNumber = 1;
+  ::google::protobuf::int32 x() const;
+  void set_x(::google::protobuf::int32 value);
 
-  // optional int32 id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  ::google::protobuf::int32 id() const;
-  void set_id(::google::protobuf::int32 value);
+  // optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
+  bool has_y() const;
+  void clear_y();
+  static const int kYFieldNumber = 2;
+  ::google::protobuf::int32 y() const;
+  void set_y(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:buffers.resources.Object.MainEvent)
+  // @@protoc_insertion_point(class_scope:buffers.resources.Object.PhysicsShapePoint)
  private:
-  void set_has_id();
-  void clear_has_id();
+  void set_has_x();
+  void clear_has_x();
+  void set_has_y();
+  void clear_has_y();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event > events_;
-  ::google::protobuf::int32 id_;
+  ::google::protobuf::int32 x_;
+  ::google::protobuf::int32 y_;
   friend struct protobuf_resources_2fObject_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -353,7 +779,7 @@ class Object : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_Object_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(Object* other);
   friend void swap(Object& a, Object& b) {
@@ -398,22 +824,64 @@ class Object : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 
   // nested types ----------------------------------------------------
 
+  typedef Object_Argument Argument;
+  typedef Object_Action Action;
   typedef Object_Event Event;
-  typedef Object_MainEvent MainEvent;
+  typedef Object_PhysicsShapePoint PhysicsShapePoint;
+
+  typedef Object_PhysicsShape PhysicsShape;
+  static const PhysicsShape CIRCLE =
+    Object_PhysicsShape_CIRCLE;
+  static const PhysicsShape BOX =
+    Object_PhysicsShape_BOX;
+  static const PhysicsShape SHAPE =
+    Object_PhysicsShape_SHAPE;
+  static inline bool PhysicsShape_IsValid(int value) {
+    return Object_PhysicsShape_IsValid(value);
+  }
+  static const PhysicsShape PhysicsShape_MIN =
+    Object_PhysicsShape_PhysicsShape_MIN;
+  static const PhysicsShape PhysicsShape_MAX =
+    Object_PhysicsShape_PhysicsShape_MAX;
+  static const int PhysicsShape_ARRAYSIZE =
+    Object_PhysicsShape_PhysicsShape_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  PhysicsShape_descriptor() {
+    return Object_PhysicsShape_descriptor();
+  }
+  static inline const ::std::string& PhysicsShape_Name(PhysicsShape value) {
+    return Object_PhysicsShape_Name(value);
+  }
+  static inline bool PhysicsShape_Parse(const ::std::string& name,
+      PhysicsShape* value) {
+    return Object_PhysicsShape_Parse(name, value);
+  }
 
   // accessors -------------------------------------------------------
 
-  // repeated .buffers.resources.Object.MainEvent main_events = 10;
-  int main_events_size() const;
-  void clear_main_events();
-  static const int kMainEventsFieldNumber = 10;
-  const ::buffers::resources::Object_MainEvent& main_events(int index) const;
-  ::buffers::resources::Object_MainEvent* mutable_main_events(int index);
-  ::buffers::resources::Object_MainEvent* add_main_events();
-  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_MainEvent >*
-      mutable_main_events();
-  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_MainEvent >&
-      main_events() const;
+  // repeated .buffers.resources.Object.Event events = 10;
+  int events_size() const;
+  void clear_events();
+  static const int kEventsFieldNumber = 10;
+  const ::buffers::resources::Object_Event& events(int index) const;
+  ::buffers::resources::Object_Event* mutable_events(int index);
+  ::buffers::resources::Object_Event* add_events();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >*
+      mutable_events();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >&
+      events() const;
+
+  // repeated .buffers.resources.Object.PhysicsShapePoint phy_shape = 22 [(.buffers.gmx) = "PhysicsShapePoints"];
+  int phy_shape_size() const;
+  void clear_phy_shape();
+  static const int kPhyShapeFieldNumber = 22;
+  const ::buffers::resources::Object_PhysicsShapePoint& phy_shape(int index) const;
+  ::buffers::resources::Object_PhysicsShapePoint* mutable_phy_shape(int index);
+  ::buffers::resources::Object_PhysicsShapePoint* add_phy_shape();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_PhysicsShapePoint >*
+      mutable_phy_shape();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_PhysicsShapePoint >&
+      phy_shape() const;
 
   // optional string name = 1;
   bool has_name() const;
@@ -510,6 +978,83 @@ class Object : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   bool persistent() const;
   void set_persistent(bool value);
 
+  // optional bool use_physics = 11 [(.buffers.gmx) = "PhysicsObject"];
+  bool has_use_physics() const;
+  void clear_use_physics();
+  static const int kUsePhysicsFieldNumber = 11;
+  bool use_physics() const;
+  void set_use_physics(bool value);
+
+  // optional .buffers.resources.Object.PhysicsShape phy_shape_type = 13 [(.buffers.gmx) = "PhysicsObjectShape"];
+  bool has_phy_shape_type() const;
+  void clear_phy_shape_type();
+  static const int kPhyShapeTypeFieldNumber = 13;
+  ::buffers::resources::Object_PhysicsShape phy_shape_type() const;
+  void set_phy_shape_type(::buffers::resources::Object_PhysicsShape value);
+
+  // optional double phy_density = 14 [(.buffers.gmx) = "PhysicsObjectDensity"];
+  bool has_phy_density() const;
+  void clear_phy_density();
+  static const int kPhyDensityFieldNumber = 14;
+  double phy_density() const;
+  void set_phy_density(double value);
+
+  // optional double phy_restitution = 15 [(.buffers.gmx) = "PhysicsObjectRestitution"];
+  bool has_phy_restitution() const;
+  void clear_phy_restitution();
+  static const int kPhyRestitutionFieldNumber = 15;
+  double phy_restitution() const;
+  void set_phy_restitution(double value);
+
+  // optional double phy_linear_damping = 17 [(.buffers.gmx) = "PhysicsObjectLinearDamping"];
+  bool has_phy_linear_damping() const;
+  void clear_phy_linear_damping();
+  static const int kPhyLinearDampingFieldNumber = 17;
+  double phy_linear_damping() const;
+  void set_phy_linear_damping(double value);
+
+  // optional int32 phy_group = 16 [(.buffers.gmx) = "PhysicsObjectGroup"];
+  bool has_phy_group() const;
+  void clear_phy_group();
+  static const int kPhyGroupFieldNumber = 16;
+  ::google::protobuf::int32 phy_group() const;
+  void set_phy_group(::google::protobuf::int32 value);
+
+  // optional bool phy_sensor = 12 [(.buffers.gmx) = "PhysicsObjectSensor"];
+  bool has_phy_sensor() const;
+  void clear_phy_sensor();
+  static const int kPhySensorFieldNumber = 12;
+  bool phy_sensor() const;
+  void set_phy_sensor(bool value);
+
+  // optional bool phy_awake = 20 [(.buffers.gmx) = "PhysicsObjectAwake"];
+  bool has_phy_awake() const;
+  void clear_phy_awake();
+  static const int kPhyAwakeFieldNumber = 20;
+  bool phy_awake() const;
+  void set_phy_awake(bool value);
+
+  // optional bool phy_kinematic = 21 [(.buffers.gmx) = "PhysicsObjectKinematic"];
+  bool has_phy_kinematic() const;
+  void clear_phy_kinematic();
+  static const int kPhyKinematicFieldNumber = 21;
+  bool phy_kinematic() const;
+  void set_phy_kinematic(bool value);
+
+  // optional double phy_angular_damping = 18 [(.buffers.gmx) = "PhysicsObjectAngularDamping"];
+  bool has_phy_angular_damping() const;
+  void clear_phy_angular_damping();
+  static const int kPhyAngularDampingFieldNumber = 18;
+  double phy_angular_damping() const;
+  void set_phy_angular_damping(double value);
+
+  // optional double phy_friction = 19 [(.buffers.gmx) = "PhysicsObjectFriction"];
+  bool has_phy_friction() const;
+  void clear_phy_friction();
+  static const int kPhyFrictionFieldNumber = 19;
+  double phy_friction() const;
+  void set_phy_friction(double value);
+
   // @@protoc_insertion_point(class_scope:buffers.resources.Object)
  private:
   void set_has_name();
@@ -530,11 +1075,34 @@ class Object : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   void clear_has_visible();
   void set_has_persistent();
   void clear_has_persistent();
+  void set_has_use_physics();
+  void clear_has_use_physics();
+  void set_has_phy_sensor();
+  void clear_has_phy_sensor();
+  void set_has_phy_shape_type();
+  void clear_has_phy_shape_type();
+  void set_has_phy_density();
+  void clear_has_phy_density();
+  void set_has_phy_restitution();
+  void clear_has_phy_restitution();
+  void set_has_phy_group();
+  void clear_has_phy_group();
+  void set_has_phy_linear_damping();
+  void clear_has_phy_linear_damping();
+  void set_has_phy_angular_damping();
+  void clear_has_phy_angular_damping();
+  void set_has_phy_friction();
+  void clear_has_phy_friction();
+  void set_has_phy_awake();
+  void clear_has_phy_awake();
+  void set_has_phy_kinematic();
+  void clear_has_phy_kinematic();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_MainEvent > main_events_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event > events_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_PhysicsShapePoint > phy_shape_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr parent_name_;
   ::google::protobuf::internal::ArenaStringPtr sprite_name_;
@@ -544,6 +1112,17 @@ class Object : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   bool solid_;
   bool visible_;
   bool persistent_;
+  bool use_physics_;
+  int phy_shape_type_;
+  double phy_density_;
+  double phy_restitution_;
+  double phy_linear_damping_;
+  ::google::protobuf::int32 phy_group_;
+  bool phy_sensor_;
+  bool phy_awake_;
+  bool phy_kinematic_;
+  double phy_angular_damping_;
+  double phy_friction_;
   friend struct protobuf_resources_2fObject_2eproto::TableStruct;
 };
 // ===================================================================
@@ -556,151 +1135,761 @@ class Object : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// Object_Event
+// Object_Argument
 
-// optional int32 id = 1;
-inline bool Object_Event::has_id() const {
+// optional int32 kind = 1;
+inline bool Object_Argument::has_kind() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Object_Event::set_has_id() {
+inline void Object_Argument::set_has_kind() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Object_Event::clear_has_id() {
+inline void Object_Argument::clear_has_kind() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void Object_Event::clear_id() {
-  id_ = 0;
-  clear_has_id();
+inline void Object_Argument::clear_kind() {
+  kind_ = 0;
+  clear_has_kind();
 }
-inline ::google::protobuf::int32 Object_Event::id() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.id)
-  return id_;
+inline ::google::protobuf::int32 Object_Argument::kind() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Argument.kind)
+  return kind_;
 }
-inline void Object_Event::set_id(::google::protobuf::int32 value) {
-  set_has_id();
-  id_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.id)
+inline void Object_Argument::set_kind(::google::protobuf::int32 value) {
+  set_has_kind();
+  kind_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Argument.kind)
 }
 
-// optional string code = 2;
-inline bool Object_Event::has_code() const {
+// optional string string = 2;
+inline bool Object_Argument::has_string() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Object_Event::set_has_code() {
+inline void Object_Argument::set_has_string() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Object_Event::clear_has_code() {
+inline void Object_Argument::clear_has_string() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Object_Event::clear_code() {
-  code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_code();
+inline void Object_Argument::clear_string() {
+  string_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_string();
 }
-inline const ::std::string& Object_Event::code() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.code)
-  return code_.GetNoArena();
+inline const ::std::string& Object_Argument::string() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Argument.string)
+  return string_.GetNoArena();
 }
-inline void Object_Event::set_code(const ::std::string& value) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.code)
+inline void Object_Argument::set_string(const ::std::string& value) {
+  set_has_string();
+  string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Argument.string)
 }
 #if LANG_CXX11
-inline void Object_Event::set_code(::std::string&& value) {
-  set_has_code();
-  code_.SetNoArena(
+inline void Object_Argument::set_string(::std::string&& value) {
+  set_has_string();
+  string_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Event.code)
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Argument.string)
 }
 #endif
-inline void Object_Event::set_code(const char* value) {
+inline void Object_Argument::set_string(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Event.code)
+  set_has_string();
+  string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Argument.string)
 }
-inline void Object_Event::set_code(const char* value, size_t size) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+inline void Object_Argument::set_string(const char* value, size_t size) {
+  set_has_string();
+  string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Event.code)
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Argument.string)
 }
-inline ::std::string* Object_Event::mutable_code() {
-  set_has_code();
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Event.code)
-  return code_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* Object_Argument::mutable_string() {
+  set_has_string();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Argument.string)
+  return string_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Object_Event::release_code() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Object.Event.code)
-  clear_has_code();
-  return code_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* Object_Argument::release_string() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Argument.string)
+  clear_has_string();
+  return string_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Object_Event::set_allocated_code(::std::string* code) {
-  if (code != NULL) {
-    set_has_code();
+inline void Object_Argument::set_allocated_string(::std::string* string) {
+  if (string != NULL) {
+    set_has_string();
   } else {
-    clear_has_code();
+    clear_has_string();
   }
-  code_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code);
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Event.code)
+  string_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), string);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Argument.string)
 }
 
 // -------------------------------------------------------------------
 
-// Object_MainEvent
+// Object_Action
 
-// optional int32 id = 1;
-inline bool Object_MainEvent::has_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// optional int32 libid = 1;
+inline bool Object_Action::has_libid() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void Object_MainEvent::set_has_id() {
-  _has_bits_[0] |= 0x00000001u;
+inline void Object_Action::set_has_libid() {
+  _has_bits_[0] |= 0x00000010u;
 }
-inline void Object_MainEvent::clear_has_id() {
-  _has_bits_[0] &= ~0x00000001u;
+inline void Object_Action::clear_has_libid() {
+  _has_bits_[0] &= ~0x00000010u;
 }
-inline void Object_MainEvent::clear_id() {
+inline void Object_Action::clear_libid() {
+  libid_ = 0;
+  clear_has_libid();
+}
+inline ::google::protobuf::int32 Object_Action::libid() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.libid)
+  return libid_;
+}
+inline void Object_Action::set_libid(::google::protobuf::int32 value) {
+  set_has_libid();
+  libid_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.libid)
+}
+
+// optional int32 id = 2;
+inline bool Object_Action::has_id() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void Object_Action::set_has_id() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void Object_Action::clear_has_id() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void Object_Action::clear_id() {
   id_ = 0;
   clear_has_id();
 }
-inline ::google::protobuf::int32 Object_MainEvent::id() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.MainEvent.id)
+inline ::google::protobuf::int32 Object_Action::id() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.id)
   return id_;
 }
-inline void Object_MainEvent::set_id(::google::protobuf::int32 value) {
+inline void Object_Action::set_id(::google::protobuf::int32 value) {
   set_has_id();
   id_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Object.MainEvent.id)
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.id)
 }
 
-// repeated .buffers.resources.Object.Event events = 2;
-inline int Object_MainEvent::events_size() const {
-  return events_.size();
+// optional int32 kind = 3;
+inline bool Object_Action::has_kind() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void Object_MainEvent::clear_events() {
-  events_.Clear();
+inline void Object_Action::set_has_kind() {
+  _has_bits_[0] |= 0x00000040u;
 }
-inline const ::buffers::resources::Object_Event& Object_MainEvent::events(int index) const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.MainEvent.events)
-  return events_.Get(index);
+inline void Object_Action::clear_has_kind() {
+  _has_bits_[0] &= ~0x00000040u;
 }
-inline ::buffers::resources::Object_Event* Object_MainEvent::mutable_events(int index) {
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.MainEvent.events)
-  return events_.Mutable(index);
+inline void Object_Action::clear_kind() {
+  kind_ = 0;
+  clear_has_kind();
 }
-inline ::buffers::resources::Object_Event* Object_MainEvent::add_events() {
-  // @@protoc_insertion_point(field_add:buffers.resources.Object.MainEvent.events)
-  return events_.Add();
+inline ::google::protobuf::int32 Object_Action::kind() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.kind)
+  return kind_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >*
-Object_MainEvent::mutable_events() {
-  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.MainEvent.events)
-  return &events_;
+inline void Object_Action::set_kind(::google::protobuf::int32 value) {
+  set_has_kind();
+  kind_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.kind)
 }
-inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >&
-Object_MainEvent::events() const {
-  // @@protoc_insertion_point(field_list:buffers.resources.Object.MainEvent.events)
-  return events_;
+
+// optional bool use_relative = 4 [(.buffers.gmx) = "userelative"];
+inline bool Object_Action::has_use_relative() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void Object_Action::set_has_use_relative() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void Object_Action::clear_has_use_relative() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void Object_Action::clear_use_relative() {
+  use_relative_ = false;
+  clear_has_use_relative();
+}
+inline bool Object_Action::use_relative() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.use_relative)
+  return use_relative_;
+}
+inline void Object_Action::set_use_relative(bool value) {
+  set_has_use_relative();
+  use_relative_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.use_relative)
+}
+
+// optional bool is_question = 5 [(.buffers.gmx) = "isquestion"];
+inline bool Object_Action::has_is_question() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void Object_Action::set_has_is_question() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void Object_Action::clear_has_is_question() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void Object_Action::clear_is_question() {
+  is_question_ = false;
+  clear_has_is_question();
+}
+inline bool Object_Action::is_question() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.is_question)
+  return is_question_;
+}
+inline void Object_Action::set_is_question(bool value) {
+  set_has_is_question();
+  is_question_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.is_question)
+}
+
+// optional int32 use_apply_to = 6 [(.buffers.gmx) = "useapplyto"];
+inline bool Object_Action::has_use_apply_to() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void Object_Action::set_has_use_apply_to() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void Object_Action::clear_has_use_apply_to() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void Object_Action::clear_use_apply_to() {
+  use_apply_to_ = 0;
+  clear_has_use_apply_to();
+}
+inline ::google::protobuf::int32 Object_Action::use_apply_to() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.use_apply_to)
+  return use_apply_to_;
+}
+inline void Object_Action::set_use_apply_to(::google::protobuf::int32 value) {
+  set_has_use_apply_to();
+  use_apply_to_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.use_apply_to)
+}
+
+// optional int32 exe_type = 7 [(.buffers.gmx) = "exetype"];
+inline bool Object_Action::has_exe_type() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void Object_Action::set_has_exe_type() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void Object_Action::clear_has_exe_type() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void Object_Action::clear_exe_type() {
+  exe_type_ = 0;
+  clear_has_exe_type();
+}
+inline ::google::protobuf::int32 Object_Action::exe_type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.exe_type)
+  return exe_type_;
+}
+inline void Object_Action::set_exe_type(::google::protobuf::int32 value) {
+  set_has_exe_type();
+  exe_type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.exe_type)
+}
+
+// optional string function_name = 8 [(.buffers.gmx) = "functionname"];
+inline bool Object_Action::has_function_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Object_Action::set_has_function_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Object_Action::clear_has_function_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Object_Action::clear_function_name() {
+  function_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_function_name();
+}
+inline const ::std::string& Object_Action::function_name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.function_name)
+  return function_name_.GetNoArena();
+}
+inline void Object_Action::set_function_name(const ::std::string& value) {
+  set_has_function_name();
+  function_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.function_name)
+}
+#if LANG_CXX11
+inline void Object_Action::set_function_name(::std::string&& value) {
+  set_has_function_name();
+  function_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Action.function_name)
+}
+#endif
+inline void Object_Action::set_function_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_function_name();
+  function_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Action.function_name)
+}
+inline void Object_Action::set_function_name(const char* value, size_t size) {
+  set_has_function_name();
+  function_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Action.function_name)
+}
+inline ::std::string* Object_Action::mutable_function_name() {
+  set_has_function_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.function_name)
+  return function_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Object_Action::release_function_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.function_name)
+  clear_has_function_name();
+  return function_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Object_Action::set_allocated_function_name(::std::string* function_name) {
+  if (function_name != NULL) {
+    set_has_function_name();
+  } else {
+    clear_has_function_name();
+  }
+  function_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), function_name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.function_name)
+}
+
+// optional string code_string = 9 [(.buffers.gmx) = "codestring"];
+inline bool Object_Action::has_code_string() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Object_Action::set_has_code_string() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Object_Action::clear_has_code_string() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Object_Action::clear_code_string() {
+  code_string_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_code_string();
+}
+inline const ::std::string& Object_Action::code_string() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.code_string)
+  return code_string_.GetNoArena();
+}
+inline void Object_Action::set_code_string(const ::std::string& value) {
+  set_has_code_string();
+  code_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.code_string)
+}
+#if LANG_CXX11
+inline void Object_Action::set_code_string(::std::string&& value) {
+  set_has_code_string();
+  code_string_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Action.code_string)
+}
+#endif
+inline void Object_Action::set_code_string(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_code_string();
+  code_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Action.code_string)
+}
+inline void Object_Action::set_code_string(const char* value, size_t size) {
+  set_has_code_string();
+  code_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Action.code_string)
+}
+inline ::std::string* Object_Action::mutable_code_string() {
+  set_has_code_string();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.code_string)
+  return code_string_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Object_Action::release_code_string() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.code_string)
+  clear_has_code_string();
+  return code_string_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Object_Action::set_allocated_code_string(::std::string* code_string) {
+  if (code_string != NULL) {
+    set_has_code_string();
+  } else {
+    clear_has_code_string();
+  }
+  code_string_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code_string);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.code_string)
+}
+
+// optional string who_name = 10 [(.buffers.gmx) = "whoName"];
+inline bool Object_Action::has_who_name() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Object_Action::set_has_who_name() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Object_Action::clear_has_who_name() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Object_Action::clear_who_name() {
+  who_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_who_name();
+}
+inline const ::std::string& Object_Action::who_name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.who_name)
+  return who_name_.GetNoArena();
+}
+inline void Object_Action::set_who_name(const ::std::string& value) {
+  set_has_who_name();
+  who_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.who_name)
+}
+#if LANG_CXX11
+inline void Object_Action::set_who_name(::std::string&& value) {
+  set_has_who_name();
+  who_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Action.who_name)
+}
+#endif
+inline void Object_Action::set_who_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_who_name();
+  who_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Action.who_name)
+}
+inline void Object_Action::set_who_name(const char* value, size_t size) {
+  set_has_who_name();
+  who_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Action.who_name)
+}
+inline ::std::string* Object_Action::mutable_who_name() {
+  set_has_who_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.who_name)
+  return who_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Object_Action::release_who_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.who_name)
+  clear_has_who_name();
+  return who_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Object_Action::set_allocated_who_name(::std::string* who_name) {
+  if (who_name != NULL) {
+    set_has_who_name();
+  } else {
+    clear_has_who_name();
+  }
+  who_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), who_name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.who_name)
+}
+
+// optional bool relative = 11;
+inline bool Object_Action::has_relative() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void Object_Action::set_has_relative() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void Object_Action::clear_has_relative() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void Object_Action::clear_relative() {
+  relative_ = false;
+  clear_has_relative();
+}
+inline bool Object_Action::relative() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.relative)
+  return relative_;
+}
+inline void Object_Action::set_relative(bool value) {
+  set_has_relative();
+  relative_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.relative)
+}
+
+// optional bool is_not = 12 [(.buffers.gmx) = "isnot"];
+inline bool Object_Action::has_is_not() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void Object_Action::set_has_is_not() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void Object_Action::clear_has_is_not() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void Object_Action::clear_is_not() {
+  is_not_ = false;
+  clear_has_is_not();
+}
+inline bool Object_Action::is_not() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.is_not)
+  return is_not_;
+}
+inline void Object_Action::set_is_not(bool value) {
+  set_has_is_not();
+  is_not_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Action.is_not)
+}
+
+// optional .buffers.resources.Object.Argument argument = 13 [(.buffers.gmx) = "arguments/argument"];
+inline bool Object_Action::has_argument() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Object_Action::set_has_argument() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Object_Action::clear_has_argument() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Object_Action::clear_argument() {
+  if (argument_ != NULL) argument_->::buffers::resources::Object_Argument::Clear();
+  clear_has_argument();
+}
+inline const ::buffers::resources::Object_Argument& Object_Action::argument() const {
+  const ::buffers::resources::Object_Argument* p = argument_;
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Action.argument)
+  return p != NULL ? *p : *reinterpret_cast<const ::buffers::resources::Object_Argument*>(
+      &::buffers::resources::_Object_Argument_default_instance_);
+}
+inline ::buffers::resources::Object_Argument* Object_Action::mutable_argument() {
+  set_has_argument();
+  if (argument_ == NULL) {
+    argument_ = new ::buffers::resources::Object_Argument;
+  }
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Action.argument)
+  return argument_;
+}
+inline ::buffers::resources::Object_Argument* Object_Action::release_argument() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Action.argument)
+  clear_has_argument();
+  ::buffers::resources::Object_Argument* temp = argument_;
+  argument_ = NULL;
+  return temp;
+}
+inline void Object_Action::set_allocated_argument(::buffers::resources::Object_Argument* argument) {
+  delete argument_;
+  argument_ = argument;
+  if (argument) {
+    set_has_argument();
+  } else {
+    clear_has_argument();
+  }
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Action.argument)
+}
+
+// -------------------------------------------------------------------
+
+// Object_Event
+
+// optional int32 type = 1 [(.buffers.gmx) = "eventtype"];
+inline bool Object_Event::has_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Object_Event::set_has_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Object_Event::clear_has_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Object_Event::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+inline ::google::protobuf::int32 Object_Event::type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.type)
+  return type_;
+}
+inline void Object_Event::set_type(::google::protobuf::int32 value) {
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.type)
+}
+
+// optional int32 number = 2 [(.buffers.gmx) = "enumb"];
+inline bool Object_Event::has_number() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Object_Event::set_has_number() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Object_Event::clear_has_number() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Object_Event::clear_number() {
+  number_ = 0;
+  clear_has_number();
+}
+inline ::google::protobuf::int32 Object_Event::number() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.number)
+  return number_;
+}
+inline void Object_Event::set_number(::google::protobuf::int32 value) {
+  set_has_number();
+  number_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.number)
+}
+
+// optional string name = 3 [(.buffers.gmx) = "ename"];
+inline bool Object_Event::has_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Object_Event::set_has_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Object_Event::clear_has_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Object_Event::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_name();
+}
+inline const ::std::string& Object_Event::name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.name)
+  return name_.GetNoArena();
+}
+inline void Object_Event::set_name(const ::std::string& value) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.Event.name)
+}
+#if LANG_CXX11
+inline void Object_Event::set_name(::std::string&& value) {
+  set_has_name();
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Object.Event.name)
+}
+#endif
+inline void Object_Event::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Object.Event.name)
+}
+inline void Object_Event::set_name(const char* value, size_t size) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Object.Event.name)
+}
+inline ::std::string* Object_Event::mutable_name() {
+  set_has_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Event.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Object_Event::release_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Event.name)
+  clear_has_name();
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Object_Event::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    set_has_name();
+  } else {
+    clear_has_name();
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Event.name)
+}
+
+// optional .buffers.resources.Object.Action action = 4;
+inline bool Object_Event::has_action() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Object_Event::set_has_action() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Object_Event::clear_has_action() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Object_Event::clear_action() {
+  if (action_ != NULL) action_->::buffers::resources::Object_Action::Clear();
+  clear_has_action();
+}
+inline const ::buffers::resources::Object_Action& Object_Event::action() const {
+  const ::buffers::resources::Object_Action* p = action_;
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.Event.action)
+  return p != NULL ? *p : *reinterpret_cast<const ::buffers::resources::Object_Action*>(
+      &::buffers::resources::_Object_Action_default_instance_);
+}
+inline ::buffers::resources::Object_Action* Object_Event::mutable_action() {
+  set_has_action();
+  if (action_ == NULL) {
+    action_ = new ::buffers::resources::Object_Action;
+  }
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.Event.action)
+  return action_;
+}
+inline ::buffers::resources::Object_Action* Object_Event::release_action() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Object.Event.action)
+  clear_has_action();
+  ::buffers::resources::Object_Action* temp = action_;
+  action_ = NULL;
+  return temp;
+}
+inline void Object_Event::set_allocated_action(::buffers::resources::Object_Action* action) {
+  delete action_;
+  action_ = action;
+  if (action) {
+    set_has_action();
+  } else {
+    clear_has_action();
+  }
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.Event.action)
+}
+
+// -------------------------------------------------------------------
+
+// Object_PhysicsShapePoint
+
+// optional int32 x = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
+inline bool Object_PhysicsShapePoint::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Object_PhysicsShapePoint::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Object_PhysicsShapePoint::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Object_PhysicsShapePoint::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+inline ::google::protobuf::int32 Object_PhysicsShapePoint::x() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.PhysicsShapePoint.x)
+  return x_;
+}
+inline void Object_PhysicsShapePoint::set_x(::google::protobuf::int32 value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.PhysicsShapePoint.x)
+}
+
+// optional int32 y = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
+inline bool Object_PhysicsShapePoint::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Object_PhysicsShapePoint::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Object_PhysicsShapePoint::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Object_PhysicsShapePoint::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+inline ::google::protobuf::int32 Object_PhysicsShapePoint::y() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.PhysicsShapePoint.y)
+  return y_;
+}
+inline void Object_PhysicsShapePoint::set_y(::google::protobuf::int32 value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.PhysicsShapePoint.y)
 }
 
 // -------------------------------------------------------------------
@@ -1079,34 +2268,329 @@ inline void Object::set_persistent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Object.persistent)
 }
 
-// repeated .buffers.resources.Object.MainEvent main_events = 10;
-inline int Object::main_events_size() const {
-  return main_events_.size();
+// repeated .buffers.resources.Object.Event events = 10;
+inline int Object::events_size() const {
+  return events_.size();
 }
-inline void Object::clear_main_events() {
-  main_events_.Clear();
+inline void Object::clear_events() {
+  events_.Clear();
 }
-inline const ::buffers::resources::Object_MainEvent& Object::main_events(int index) const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Object.main_events)
-  return main_events_.Get(index);
+inline const ::buffers::resources::Object_Event& Object::events(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.events)
+  return events_.Get(index);
 }
-inline ::buffers::resources::Object_MainEvent* Object::mutable_main_events(int index) {
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.main_events)
-  return main_events_.Mutable(index);
+inline ::buffers::resources::Object_Event* Object::mutable_events(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.events)
+  return events_.Mutable(index);
 }
-inline ::buffers::resources::Object_MainEvent* Object::add_main_events() {
-  // @@protoc_insertion_point(field_add:buffers.resources.Object.main_events)
-  return main_events_.Add();
+inline ::buffers::resources::Object_Event* Object::add_events() {
+  // @@protoc_insertion_point(field_add:buffers.resources.Object.events)
+  return events_.Add();
 }
-inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_MainEvent >*
-Object::mutable_main_events() {
-  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.main_events)
-  return &main_events_;
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >*
+Object::mutable_events() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.events)
+  return &events_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_MainEvent >&
-Object::main_events() const {
-  // @@protoc_insertion_point(field_list:buffers.resources.Object.main_events)
-  return main_events_;
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_Event >&
+Object::events() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Object.events)
+  return events_;
+}
+
+// optional bool use_physics = 11 [(.buffers.gmx) = "PhysicsObject"];
+inline bool Object::has_use_physics() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void Object::set_has_use_physics() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void Object::clear_has_use_physics() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void Object::clear_use_physics() {
+  use_physics_ = false;
+  clear_has_use_physics();
+}
+inline bool Object::use_physics() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.use_physics)
+  return use_physics_;
+}
+inline void Object::set_use_physics(bool value) {
+  set_has_use_physics();
+  use_physics_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.use_physics)
+}
+
+// optional bool phy_sensor = 12 [(.buffers.gmx) = "PhysicsObjectSensor"];
+inline bool Object::has_phy_sensor() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void Object::set_has_phy_sensor() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void Object::clear_has_phy_sensor() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void Object::clear_phy_sensor() {
+  phy_sensor_ = false;
+  clear_has_phy_sensor();
+}
+inline bool Object::phy_sensor() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_sensor)
+  return phy_sensor_;
+}
+inline void Object::set_phy_sensor(bool value) {
+  set_has_phy_sensor();
+  phy_sensor_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_sensor)
+}
+
+// optional .buffers.resources.Object.PhysicsShape phy_shape_type = 13 [(.buffers.gmx) = "PhysicsObjectShape"];
+inline bool Object::has_phy_shape_type() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void Object::set_has_phy_shape_type() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void Object::clear_has_phy_shape_type() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void Object::clear_phy_shape_type() {
+  phy_shape_type_ = 0;
+  clear_has_phy_shape_type();
+}
+inline ::buffers::resources::Object_PhysicsShape Object::phy_shape_type() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_shape_type)
+  return static_cast< ::buffers::resources::Object_PhysicsShape >(phy_shape_type_);
+}
+inline void Object::set_phy_shape_type(::buffers::resources::Object_PhysicsShape value) {
+  assert(::buffers::resources::Object_PhysicsShape_IsValid(value));
+  set_has_phy_shape_type();
+  phy_shape_type_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_shape_type)
+}
+
+// optional double phy_density = 14 [(.buffers.gmx) = "PhysicsObjectDensity"];
+inline bool Object::has_phy_density() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void Object::set_has_phy_density() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void Object::clear_has_phy_density() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void Object::clear_phy_density() {
+  phy_density_ = 0;
+  clear_has_phy_density();
+}
+inline double Object::phy_density() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_density)
+  return phy_density_;
+}
+inline void Object::set_phy_density(double value) {
+  set_has_phy_density();
+  phy_density_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_density)
+}
+
+// optional double phy_restitution = 15 [(.buffers.gmx) = "PhysicsObjectRestitution"];
+inline bool Object::has_phy_restitution() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void Object::set_has_phy_restitution() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void Object::clear_has_phy_restitution() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void Object::clear_phy_restitution() {
+  phy_restitution_ = 0;
+  clear_has_phy_restitution();
+}
+inline double Object::phy_restitution() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_restitution)
+  return phy_restitution_;
+}
+inline void Object::set_phy_restitution(double value) {
+  set_has_phy_restitution();
+  phy_restitution_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_restitution)
+}
+
+// optional int32 phy_group = 16 [(.buffers.gmx) = "PhysicsObjectGroup"];
+inline bool Object::has_phy_group() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void Object::set_has_phy_group() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void Object::clear_has_phy_group() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void Object::clear_phy_group() {
+  phy_group_ = 0;
+  clear_has_phy_group();
+}
+inline ::google::protobuf::int32 Object::phy_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_group)
+  return phy_group_;
+}
+inline void Object::set_phy_group(::google::protobuf::int32 value) {
+  set_has_phy_group();
+  phy_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_group)
+}
+
+// optional double phy_linear_damping = 17 [(.buffers.gmx) = "PhysicsObjectLinearDamping"];
+inline bool Object::has_phy_linear_damping() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void Object::set_has_phy_linear_damping() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void Object::clear_has_phy_linear_damping() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void Object::clear_phy_linear_damping() {
+  phy_linear_damping_ = 0;
+  clear_has_phy_linear_damping();
+}
+inline double Object::phy_linear_damping() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_linear_damping)
+  return phy_linear_damping_;
+}
+inline void Object::set_phy_linear_damping(double value) {
+  set_has_phy_linear_damping();
+  phy_linear_damping_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_linear_damping)
+}
+
+// optional double phy_angular_damping = 18 [(.buffers.gmx) = "PhysicsObjectAngularDamping"];
+inline bool Object::has_phy_angular_damping() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void Object::set_has_phy_angular_damping() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void Object::clear_has_phy_angular_damping() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void Object::clear_phy_angular_damping() {
+  phy_angular_damping_ = 0;
+  clear_has_phy_angular_damping();
+}
+inline double Object::phy_angular_damping() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_angular_damping)
+  return phy_angular_damping_;
+}
+inline void Object::set_phy_angular_damping(double value) {
+  set_has_phy_angular_damping();
+  phy_angular_damping_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_angular_damping)
+}
+
+// optional double phy_friction = 19 [(.buffers.gmx) = "PhysicsObjectFriction"];
+inline bool Object::has_phy_friction() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+inline void Object::set_has_phy_friction() {
+  _has_bits_[0] |= 0x00080000u;
+}
+inline void Object::clear_has_phy_friction() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+inline void Object::clear_phy_friction() {
+  phy_friction_ = 0;
+  clear_has_phy_friction();
+}
+inline double Object::phy_friction() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_friction)
+  return phy_friction_;
+}
+inline void Object::set_phy_friction(double value) {
+  set_has_phy_friction();
+  phy_friction_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_friction)
+}
+
+// optional bool phy_awake = 20 [(.buffers.gmx) = "PhysicsObjectAwake"];
+inline bool Object::has_phy_awake() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void Object::set_has_phy_awake() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void Object::clear_has_phy_awake() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void Object::clear_phy_awake() {
+  phy_awake_ = false;
+  clear_has_phy_awake();
+}
+inline bool Object::phy_awake() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_awake)
+  return phy_awake_;
+}
+inline void Object::set_phy_awake(bool value) {
+  set_has_phy_awake();
+  phy_awake_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_awake)
+}
+
+// optional bool phy_kinematic = 21 [(.buffers.gmx) = "PhysicsObjectKinematic"];
+inline bool Object::has_phy_kinematic() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void Object::set_has_phy_kinematic() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void Object::clear_has_phy_kinematic() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void Object::clear_phy_kinematic() {
+  phy_kinematic_ = false;
+  clear_has_phy_kinematic();
+}
+inline bool Object::phy_kinematic() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_kinematic)
+  return phy_kinematic_;
+}
+inline void Object::set_phy_kinematic(bool value) {
+  set_has_phy_kinematic();
+  phy_kinematic_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Object.phy_kinematic)
+}
+
+// repeated .buffers.resources.Object.PhysicsShapePoint phy_shape = 22 [(.buffers.gmx) = "PhysicsShapePoints"];
+inline int Object::phy_shape_size() const {
+  return phy_shape_.size();
+}
+inline void Object::clear_phy_shape() {
+  phy_shape_.Clear();
+}
+inline const ::buffers::resources::Object_PhysicsShapePoint& Object::phy_shape(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Object.phy_shape)
+  return phy_shape_.Get(index);
+}
+inline ::buffers::resources::Object_PhysicsShapePoint* Object::mutable_phy_shape(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Object.phy_shape)
+  return phy_shape_.Mutable(index);
+}
+inline ::buffers::resources::Object_PhysicsShapePoint* Object::add_phy_shape() {
+  // @@protoc_insertion_point(field_add:buffers.resources.Object.phy_shape)
+  return phy_shape_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_PhysicsShapePoint >*
+Object::mutable_phy_shape() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Object.phy_shape)
+  return &phy_shape_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object_PhysicsShapePoint >&
+Object::phy_shape() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Object.phy_shape)
+  return phy_shape_;
 }
 
 #ifdef __GNUC__
@@ -1117,12 +2601,28 @@ Object::main_events() const {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
 
 }  // namespace resources
 }  // namespace buffers
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::buffers::resources::Object_PhysicsShape> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::buffers::resources::Object_PhysicsShape>() {
+  return ::buffers::resources::Object_PhysicsShape_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 
