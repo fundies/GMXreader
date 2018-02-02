@@ -54,7 +54,7 @@ message Room {
     optional bool stretch = 10;
   }
   
-  repeated RoomBackground backgrounds = 15;
+  repeated RoomBackground backgrounds = 15 [(gmx) = "backgrounds/background"];
   
   message View {
     optional bool visible = 1;
@@ -73,7 +73,7 @@ message Room {
     optional double vspeed = 14;
   }
   
-  repeated View views = 16;
+  repeated View views = 16 [(gmx) = "views/view"];
   
   message Instance {
     optional string object_type = 1 [(gmx) = "objName"];
@@ -88,7 +88,7 @@ message Room {
     optional double rotation = 10;
   }
   
-  repeated Instance instances = 17;
+  repeated Instance instances = 17 [(gmx) = "instances/instance"];
   
   message Tile {
     optional string image = 1 [(gmx) = "bgName"]; 
@@ -107,7 +107,7 @@ message Room {
     optional double yscale = 14 [(gmx) = "scaleY"];
   }
   
-  repeated Tile tiles = 18;
+  repeated Tile tiles = 18 [(gmx) = "tiles/tile"];
   
   optional bool use_physics = 19 [(gmx) = "PhysicsWorld"];
   optional int32 phy_world_top = 20 [(gmx) = "PhysicsWorldTop"];

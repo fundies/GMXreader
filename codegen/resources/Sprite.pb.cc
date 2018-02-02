@@ -150,7 +150,7 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\026resources/Sprite.proto\022\021buffers.resour"
-      "ces\032\roptions.proto\"\327\006\n\006Sprite\022\014\n\004name\030\001 "
+      "ces\032\roptions.proto\"\335\006\n\006Sprite\022\014\n\004name\030\001 "
       "\001(\t\022\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022#\n\007p"
       "reload\030\004 \001(\010B\022\202\265\030\016GMX_DEPRECATED\022\'\n\013tran"
       "sparent\030\005 \001(\010B\022\202\265\030\016GMX_DEPRECATED\022(\n\014smo"
@@ -168,13 +168,14 @@ void AddDescriptorsImpl() {
       "\001(\005B\t\202\265\030\005VTile\0226\n\rtexture_group\030\024 \001(\005B\037\202"
       "\265\030\033TextureGroups/TextureGroup0\022\030\n\005for3D\030"
       "\025 \001(\010B\t\202\265\030\005For3D\022\r\n\005width\030\026 \001(\r\022\016\n\006heigh"
-      "t\030\027 \001(\r\022\035\n\tsubimages\030\003 \003(\tB\n\202\265\030\006frames\":"
-      "\n\005Shape\022\013\n\007PRECISE\020\000\022\r\n\tRECTANGLE\020\001\022\010\n\004D"
-      "ISK\020\002\022\013\n\007DIAMOND\020\003\"8\n\013BoundingBox\022\r\n\tAUT"
-      "OMATIC\020\000\022\016\n\nFULL_IMAGE\020\001\022\n\n\006MANUAL\020\002"
+      "t\030\027 \001(\r\022#\n\tsubimages\030\003 \003(\tB\020\202\265\030\014frames/f"
+      "rame\":\n\005Shape\022\013\n\007PRECISE\020\000\022\r\n\tRECTANGLE\020"
+      "\001\022\010\n\004DISK\020\002\022\013\n\007DIAMOND\020\003\"8\n\013BoundingBox\022"
+      "\r\n\tAUTOMATIC\020\000\022\016\n\nFULL_IMAGE\020\001\022\n\n\006MANUAL"
+      "\020\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 916);
+      descriptor, 922);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Sprite.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -407,7 +408,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+      // repeated string subimages = 3 [(.buffers.gmx) = "frames/frame"];
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
@@ -758,7 +759,7 @@ void Sprite::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
 
-  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames/frame"];
   for (int i = 0, n = this->subimages_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->subimages(i).data(), static_cast<int>(this->subimages(i).length()),
@@ -901,7 +902,7 @@ void Sprite::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
 
-  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames/frame"];
   for (int i = 0, n = this->subimages_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->subimages(i).data(), static_cast<int>(this->subimages(i).length()),
@@ -1030,7 +1031,7 @@ size_t Sprite::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames/frame"];
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->subimages_size());
   for (int i = 0, n = this->subimages_size(); i < n; i++) {
@@ -1924,7 +1925,7 @@ void Sprite::set_height(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.height)
 }
 
-// repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+// repeated string subimages = 3 [(.buffers.gmx) = "frames/frame"];
 int Sprite::subimages_size() const {
   return subimages_.size();
 }

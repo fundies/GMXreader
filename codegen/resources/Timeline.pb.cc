@@ -61,9 +61,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Timeline_Moment, step_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Timeline_Moment, code_),
-  1,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Timeline_Moment, event_),
   0,
+  ~0u,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Timeline, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Timeline, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -113,6 +113,7 @@ void TableStruct::InitDefaultsImpl() {
 
   ::google::protobuf::internal::InitProtobufDefaults();
   ::buffers::protobuf_options_2eproto::InitDefaults();
+  ::buffers::resources::protobuf_resources_2fEvent_2eproto::InitDefaults();
   _Timeline_Moment_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_Timeline_Moment_default_instance_);_Timeline_default_instance_._instance.DefaultConstruct();
@@ -128,16 +129,19 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\030resources/Timeline.proto\022\021buffers.reso"
-      "urces\032\roptions.proto\"\177\n\010Timeline\022\014\n\004name"
-      "\030\001 \001(\t\022\n\n\002id\030\002 \001(\005\0223\n\007moments\030\003 \003(\0132\".bu"
-      "ffers.resources.Timeline.Moment\032$\n\006Momen"
-      "t\022\014\n\004step\030\001 \001(\005\022\014\n\004code\030\002 \001(\t"
+      "urces\032\roptions.proto\032\025resources/Event.pr"
+      "oto\"\271\001\n\010Timeline\022\014\n\004name\030\001 \001(\t\022\036\n\002id\030\002 \001"
+      "(\005B\022\202\265\030\016GMX_DEPRECATED\022>\n\007moments\030\003 \003(\0132"
+      "\".buffers.resources.Timeline.MomentB\t\202\265\030"
+      "\005entry\032\?\n\006Moment\022\014\n\004step\030\001 \001(\005\022\'\n\005event\030"
+      "\002 \003(\0132\030.buffers.resources.Event"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 189);
+      descriptor, 271);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Timeline.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
+  ::buffers::resources::protobuf_resources_2fEvent_2eproto::AddDescriptors();
 }
 } // anonymous namespace
 
@@ -159,7 +163,7 @@ struct StaticDescriptorInitializer {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Timeline_Moment::kStepFieldNumber;
-const int Timeline_Moment::kCodeFieldNumber;
+const int Timeline_Moment::kEventFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Timeline_Moment::Timeline_Moment()
@@ -174,19 +178,15 @@ Timeline_Moment::Timeline_Moment(const Timeline_Moment& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0) {
+      _cached_size_(0),
+      event_(from.event_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_code()) {
-    code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
-  }
   step_ = from.step_;
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Timeline.Moment)
 }
 
 void Timeline_Moment::SharedCtor() {
   _cached_size_ = 0;
-  code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   step_ = 0;
 }
 
@@ -196,7 +196,6 @@ Timeline_Moment::~Timeline_Moment() {
 }
 
 void Timeline_Moment::SharedDtor() {
-  code_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Timeline_Moment::SetCachedSize(int size) const {
@@ -228,10 +227,7 @@ void Timeline_Moment::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (has_code()) {
-    GOOGLE_DCHECK(!code_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-    (*code_.UnsafeRawStringPointer())->clear();
-  }
+  event_.Clear();
   step_ = 0;
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -261,16 +257,12 @@ bool Timeline_Moment::MergePartialFromCodedStream(
         break;
       }
 
-      // optional string code = 2;
+      // repeated .buffers.resources.Event event = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_code()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->code().data(), static_cast<int>(this->code().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "buffers.resources.Timeline.Moment.code");
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_event()));
         } else {
           goto handle_unusual;
         }
@@ -305,18 +297,15 @@ void Timeline_Moment::SerializeWithCachedSizes(
 
   cached_has_bits = _has_bits_[0];
   // optional int32 step = 1;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->step(), output);
   }
 
-  // optional string code = 2;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->code().data(), static_cast<int>(this->code().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "buffers.resources.Timeline.Moment.code");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->code(), output);
+  // repeated .buffers.resources.Event event = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->event_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->event(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -335,19 +324,16 @@ void Timeline_Moment::SerializeWithCachedSizes(
 
   cached_has_bits = _has_bits_[0];
   // optional int32 step = 1;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000001u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->step(), target);
   }
 
-  // optional string code = 2;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->code().data(), static_cast<int>(this->code().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "buffers.resources.Timeline.Moment.code");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->code(), target);
+  // repeated .buffers.resources.Event event = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->event_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, this->event(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -367,22 +353,24 @@ size_t Timeline_Moment::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  if (_has_bits_[0 / 32] & 3u) {
-    // optional string code = 2;
-    if (has_code()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->code());
+  // repeated .buffers.resources.Event event = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->event_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->event(static_cast<int>(i)));
     }
-
-    // optional int32 step = 1;
-    if (has_step()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->step());
-    }
-
   }
+
+  // optional int32 step = 1;
+  if (has_step()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->step());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -412,16 +400,9 @@ void Timeline_Moment::MergeFrom(const Timeline_Moment& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
-    if (cached_has_bits & 0x00000001u) {
-      set_has_code();
-      code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
-    }
-    if (cached_has_bits & 0x00000002u) {
-      step_ = from.step_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  event_.MergeFrom(from.event_);
+  if (from.has_step()) {
+    set_step(from.step());
   }
 }
 
@@ -449,7 +430,7 @@ void Timeline_Moment::Swap(Timeline_Moment* other) {
 }
 void Timeline_Moment::InternalSwap(Timeline_Moment* other) {
   using std::swap;
-  code_.Swap(&other->code_);
+  event_.InternalSwap(&other->event_);
   swap(step_, other->step_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -466,13 +447,13 @@ void Timeline_Moment::InternalSwap(Timeline_Moment* other) {
 
 // optional int32 step = 1;
 bool Timeline_Moment::has_step() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
 void Timeline_Moment::set_has_step() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000001u;
 }
 void Timeline_Moment::clear_has_step() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000001u;
 }
 void Timeline_Moment::clear_step() {
   step_ = 0;
@@ -488,67 +469,34 @@ void Timeline_Moment::set_step(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Timeline.Moment.step)
 }
 
-// optional string code = 2;
-bool Timeline_Moment::has_code() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// repeated .buffers.resources.Event event = 2;
+int Timeline_Moment::event_size() const {
+  return event_.size();
 }
-void Timeline_Moment::set_has_code() {
-  _has_bits_[0] |= 0x00000001u;
+void Timeline_Moment::clear_event() {
+  event_.Clear();
 }
-void Timeline_Moment::clear_has_code() {
-  _has_bits_[0] &= ~0x00000001u;
+const ::buffers::resources::Event& Timeline_Moment::event(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Timeline.Moment.event)
+  return event_.Get(index);
 }
-void Timeline_Moment::clear_code() {
-  code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_code();
+::buffers::resources::Event* Timeline_Moment::mutable_event(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Timeline.Moment.event)
+  return event_.Mutable(index);
 }
-const ::std::string& Timeline_Moment::code() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Timeline.Moment.code)
-  return code_.GetNoArena();
+::buffers::resources::Event* Timeline_Moment::add_event() {
+  // @@protoc_insertion_point(field_add:buffers.resources.Timeline.Moment.event)
+  return event_.Add();
 }
-void Timeline_Moment::set_code(const ::std::string& value) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:buffers.resources.Timeline.Moment.code)
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Event >*
+Timeline_Moment::mutable_event() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Timeline.Moment.event)
+  return &event_;
 }
-#if LANG_CXX11
-void Timeline_Moment::set_code(::std::string&& value) {
-  set_has_code();
-  code_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Timeline.Moment.code)
-}
-#endif
-void Timeline_Moment::set_code(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:buffers.resources.Timeline.Moment.code)
-}
-void Timeline_Moment::set_code(const char* value, size_t size) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Timeline.Moment.code)
-}
-::std::string* Timeline_Moment::mutable_code() {
-  set_has_code();
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Timeline.Moment.code)
-  return code_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-::std::string* Timeline_Moment::release_code() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Timeline.Moment.code)
-  clear_has_code();
-  return code_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-void Timeline_Moment::set_allocated_code(::std::string* code) {
-  if (code != NULL) {
-    set_has_code();
-  } else {
-    clear_has_code();
-  }
-  code_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code);
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Timeline.Moment.code)
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Event >&
+Timeline_Moment::event() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Timeline.Moment.event)
+  return event_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -664,7 +612,7 @@ bool Timeline::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2;
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -678,7 +626,7 @@ bool Timeline::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Timeline.Moment moments = 3;
+      // repeated .buffers.resources.Timeline.Moment moments = 3 [(.buffers.gmx) = "entry"];
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
@@ -727,12 +675,12 @@ void Timeline::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000002u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
 
-  // repeated .buffers.resources.Timeline.Moment moments = 3;
+  // repeated .buffers.resources.Timeline.Moment moments = 3 [(.buffers.gmx) = "entry"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->moments_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -765,12 +713,12 @@ void Timeline::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
 
-  // repeated .buffers.resources.Timeline.Moment moments = 3;
+  // repeated .buffers.resources.Timeline.Moment moments = 3 [(.buffers.gmx) = "entry"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->moments_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -795,7 +743,7 @@ size_t Timeline::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Timeline.Moment moments = 3;
+  // repeated .buffers.resources.Timeline.Moment moments = 3 [(.buffers.gmx) = "entry"];
   {
     unsigned int count = static_cast<unsigned int>(this->moments_size());
     total_size += 1UL * count;
@@ -814,7 +762,7 @@ size_t Timeline::ByteSizeLong() const {
           this->name());
     }
 
-    // optional int32 id = 2;
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -968,7 +916,7 @@ void Timeline::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Timeline.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Timeline::has_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -992,7 +940,7 @@ void Timeline::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Timeline.id)
 }
 
-// repeated .buffers.resources.Timeline.Moment moments = 3;
+// repeated .buffers.resources.Timeline.Moment moments = 3 [(.buffers.gmx) = "entry"];
 int Timeline::moments_size() const {
   return moments_.size();
 }

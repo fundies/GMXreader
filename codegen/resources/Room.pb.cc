@@ -362,7 +362,7 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\024resources/Room.proto\022\021buffers.resource"
-      "s\032\roptions.proto\"\332\023\n\004Room\022\014\n\004name\030\034 \001(\t\022"
+      "s\032\roptions.proto\"\256\024\n\004Room\022\014\n\004name\030\034 \001(\t\022"
       "\036\n\002id\030\035 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022\017\n\007capti"
       "on\030\001 \001(\t\022\r\n\005width\030\002 \001(\r\022\016\n\006height\030\003 \001(\r\022"
       "\r\n\005vsnap\030\004 \001(\r\022\r\n\005hsnap\030\005 \001(\r\022\021\n\tisometr"
@@ -374,61 +374,63 @@ void AddDescriptorsImpl() {
       "rViewBackground\0224\n\024clear_display_buffer\030"
       "\r \001(\010B\026\202\265\030\022clearDisplayBuffer\022P\n\016maker_s"
       "ettings\030\016 \001(\0132%.buffers.resources.Room.M"
-      "akerSettingsB\021\202\265\030\rmakerSettings\022;\n\013backg"
+      "akerSettingsB\021\202\265\030\rmakerSettings\022W\n\013backg"
       "rounds\030\017 \003(\0132&.buffers.resources.Room.Ro"
-      "omBackground\022+\n\005views\030\020 \003(\0132\034.buffers.re"
-      "sources.Room.View\0223\n\tinstances\030\021 \003(\0132 .b"
-      "uffers.resources.Room.Instance\022+\n\005tiles\030"
-      "\022 \003(\0132\034.buffers.resources.Room.Tile\022%\n\013u"
-      "se_physics\030\023 \001(\010B\020\202\265\030\014PhysicsWorld\022*\n\rph"
-      "y_world_top\030\024 \001(\005B\023\202\265\030\017PhysicsWorldTop\022,"
-      "\n\016phy_world_left\030\025 \001(\005B\024\202\265\030\020PhysicsWorld"
-      "Left\022.\n\017phy_world_right\030\026 \001(\005B\025\202\265\030\021Physi"
-      "csWorldRight\0220\n\020phy_world_bottom\030\027 \001(\005B\026"
-      "\202\265\030\022PhysicsWorldBottom\0224\n\022phy_world_xgra"
-      "vity\030\030 \001(\001B\030\202\265\030\024PhysicsWorldGravityX\0224\n\022"
-      "phy_world_ygravity\030\031 \001(\001B\030\202\265\030\024PhysicsWor"
-      "ldGravityY\022;\n\026phy_world_pixel_meters\030\032 \001"
-      "(\001B\033\202\265\030\027PhysicsWorldPixToMeters\032\350\003\n\rMake"
-      "rSettings\022\026\n\003set\030\001 \001(\010B\t\202\265\030\005isSet\022\024\n\005wid"
-      "th\030\002 \001(\010B\005\202\265\030\001w\022\025\n\006height\030\003 \001(\010B\005\202\265\030\001h\022\037"
-      "\n\tshow_grid\030\004 \001(\010B\014\202\265\030\010showGrid\022%\n\014show_"
-      "objects\030\005 \001(\010B\017\202\265\030\013showObjects\022!\n\nshow_t"
-      "iles\030\006 \001(\010B\r\202\265\030\tshowTiles\022-\n\020show_backgr"
-      "ounds\030\007 \001(\010B\023\202\265\030\017showBackgrounds\022-\n\020show"
-      "_foregrounds\030\010 \001(\010B\023\202\265\030\017showForegrounds\022"
-      "!\n\nshow_views\030\t \001(\010B\r\202\265\030\tshowViews\022:\n\031de"
-      "lete_underlying_objects\030\n \001(\010B\027\202\265\030\023delet"
-      "eUnderlyingObj\022:\n\027delete_underlying_tile"
-      "s\030\013 \001(\010B\031\202\265\030\025deleteUnderlyingTiles\022\014\n\004pa"
-      "ge\030\014 \001(\r\022\017\n\007xoffset\030\r \001(\005\022\017\n\007yoffset\030\016 \001"
-      "(\005\032\252\001\n\016RoomBackground\022\017\n\007visible\030\001 \001(\010\022\022"
-      "\n\nforeground\030\002 \001(\010\022\014\n\004name\030\003 \001(\t\022\t\n\001x\030\004 "
-      "\001(\005\022\t\n\001y\030\005 \001(\005\022\016\n\006htiled\030\006 \001(\010\022\016\n\006vtiled"
-      "\030\007 \001(\010\022\016\n\006hspeed\030\010 \001(\001\022\016\n\006vspeed\030\t \001(\001\022\017"
-      "\n\007stretch\030\n \001(\010\032\370\001\n\004View\022\017\n\007visible\030\001 \001("
-      "\010\022%\n\020object_following\030\002 \001(\tB\013\202\265\030\007objName"
-      "\022\r\n\005xview\030\003 \001(\005\022\r\n\005yview\030\004 \001(\005\022\r\n\005wview\030"
-      "\005 \001(\r\022\r\n\005hview\030\006 \001(\r\022\r\n\005xport\030\007 \001(\005\022\r\n\005y"
-      "port\030\010 \001(\005\022\r\n\005wport\030\t \001(\r\022\r\n\005hport\030\n \001(\r"
-      "\022\017\n\007hborder\030\013 \001(\005\022\017\n\007vborder\030\014 \001(\005\022\016\n\006hs"
-      "peed\030\r \001(\001\022\016\n\006vspeed\030\016 \001(\001\032\333\001\n\010Instance\022"
-      " \n\013object_type\030\001 \001(\tB\013\202\265\030\007objName\022\t\n\001x\030\002"
-      " \001(\005\022\t\n\001y\030\003 \001(\005\022\024\n\002id\030\004 \001(\tB\010\202\265\030\004name\022\016\n"
-      "\006locked\030\005 \001(\010\022\014\n\004code\030\006 \001(\t\022\032\n\006xscale\030\007 "
-      "\001(\001B\n\202\265\030\006scaleX\022\032\n\006yscale\030\010 \001(\001B\n\202\265\030\006sca"
-      "leY\022\031\n\005color\030\t \001(\005B\n\202\265\030\006colour\022\020\n\010rotati"
-      "on\030\n \001(\001\032\242\002\n\004Tile\022\031\n\005image\030\001 \001(\tB\n\202\265\030\006bg"
-      "Name\022\t\n\001x\030\002 \001(\005\022\t\n\001y\030\003 \001(\005\022\024\n\005width\030\004 \001("
-      "\rB\005\202\265\030\001w\022\025\n\006height\030\005 \001(\rB\005\202\265\030\001h\022\027\n\007xoffs"
-      "et\030\006 \001(\005B\006\202\265\030\002xo\022\027\n\007yoffset\030\007 \001(\005B\006\202\265\030\002y"
-      "o\022\n\n\002id\030\010 \001(\005\022\014\n\004name\030\t \001(\t\022\r\n\005depth\030\n \001"
-      "(\005\022\016\n\006locked\030\013 \001(\010\022\031\n\005color\030\014 \001(\005B\n\202\265\030\006c"
-      "olour\022\032\n\006xscale\030\r \001(\001B\n\202\265\030\006scaleX\022\032\n\006ysc"
-      "ale\030\016 \001(\001B\n\202\265\030\006scaleY"
+      "omBackgroundB\032\202\265\030\026backgrounds/background"
+      "\022;\n\005views\030\020 \003(\0132\034.buffers.resources.Room"
+      ".ViewB\016\202\265\030\nviews/view\022K\n\tinstances\030\021 \003(\013"
+      "2 .buffers.resources.Room.InstanceB\026\202\265\030\022"
+      "instances/instance\022;\n\005tiles\030\022 \003(\0132\034.buff"
+      "ers.resources.Room.TileB\016\202\265\030\ntiles/tile\022"
+      "%\n\013use_physics\030\023 \001(\010B\020\202\265\030\014PhysicsWorld\022*"
+      "\n\rphy_world_top\030\024 \001(\005B\023\202\265\030\017PhysicsWorldT"
+      "op\022,\n\016phy_world_left\030\025 \001(\005B\024\202\265\030\020PhysicsW"
+      "orldLeft\022.\n\017phy_world_right\030\026 \001(\005B\025\202\265\030\021P"
+      "hysicsWorldRight\0220\n\020phy_world_bottom\030\027 \001"
+      "(\005B\026\202\265\030\022PhysicsWorldBottom\0224\n\022phy_world_"
+      "xgravity\030\030 \001(\001B\030\202\265\030\024PhysicsWorldGravityX"
+      "\0224\n\022phy_world_ygravity\030\031 \001(\001B\030\202\265\030\024Physic"
+      "sWorldGravityY\022;\n\026phy_world_pixel_meters"
+      "\030\032 \001(\001B\033\202\265\030\027PhysicsWorldPixToMeters\032\350\003\n\r"
+      "MakerSettings\022\026\n\003set\030\001 \001(\010B\t\202\265\030\005isSet\022\024\n"
+      "\005width\030\002 \001(\010B\005\202\265\030\001w\022\025\n\006height\030\003 \001(\010B\005\202\265\030"
+      "\001h\022\037\n\tshow_grid\030\004 \001(\010B\014\202\265\030\010showGrid\022%\n\014s"
+      "how_objects\030\005 \001(\010B\017\202\265\030\013showObjects\022!\n\nsh"
+      "ow_tiles\030\006 \001(\010B\r\202\265\030\tshowTiles\022-\n\020show_ba"
+      "ckgrounds\030\007 \001(\010B\023\202\265\030\017showBackgrounds\022-\n\020"
+      "show_foregrounds\030\010 \001(\010B\023\202\265\030\017showForegrou"
+      "nds\022!\n\nshow_views\030\t \001(\010B\r\202\265\030\tshowViews\022:"
+      "\n\031delete_underlying_objects\030\n \001(\010B\027\202\265\030\023d"
+      "eleteUnderlyingObj\022:\n\027delete_underlying_"
+      "tiles\030\013 \001(\010B\031\202\265\030\025deleteUnderlyingTiles\022\014"
+      "\n\004page\030\014 \001(\r\022\017\n\007xoffset\030\r \001(\005\022\017\n\007yoffset"
+      "\030\016 \001(\005\032\252\001\n\016RoomBackground\022\017\n\007visible\030\001 \001"
+      "(\010\022\022\n\nforeground\030\002 \001(\010\022\014\n\004name\030\003 \001(\t\022\t\n\001"
+      "x\030\004 \001(\005\022\t\n\001y\030\005 \001(\005\022\016\n\006htiled\030\006 \001(\010\022\016\n\006vt"
+      "iled\030\007 \001(\010\022\016\n\006hspeed\030\010 \001(\001\022\016\n\006vspeed\030\t \001"
+      "(\001\022\017\n\007stretch\030\n \001(\010\032\370\001\n\004View\022\017\n\007visible\030"
+      "\001 \001(\010\022%\n\020object_following\030\002 \001(\tB\013\202\265\030\007obj"
+      "Name\022\r\n\005xview\030\003 \001(\005\022\r\n\005yview\030\004 \001(\005\022\r\n\005wv"
+      "iew\030\005 \001(\r\022\r\n\005hview\030\006 \001(\r\022\r\n\005xport\030\007 \001(\005\022"
+      "\r\n\005yport\030\010 \001(\005\022\r\n\005wport\030\t \001(\r\022\r\n\005hport\030\n"
+      " \001(\r\022\017\n\007hborder\030\013 \001(\005\022\017\n\007vborder\030\014 \001(\005\022\016"
+      "\n\006hspeed\030\r \001(\001\022\016\n\006vspeed\030\016 \001(\001\032\333\001\n\010Insta"
+      "nce\022 \n\013object_type\030\001 \001(\tB\013\202\265\030\007objName\022\t\n"
+      "\001x\030\002 \001(\005\022\t\n\001y\030\003 \001(\005\022\024\n\002id\030\004 \001(\tB\010\202\265\030\004nam"
+      "e\022\016\n\006locked\030\005 \001(\010\022\014\n\004code\030\006 \001(\t\022\032\n\006xscal"
+      "e\030\007 \001(\001B\n\202\265\030\006scaleX\022\032\n\006yscale\030\010 \001(\001B\n\202\265\030"
+      "\006scaleY\022\031\n\005color\030\t \001(\005B\n\202\265\030\006colour\022\020\n\010ro"
+      "tation\030\n \001(\001\032\242\002\n\004Tile\022\031\n\005image\030\001 \001(\tB\n\202\265"
+      "\030\006bgName\022\t\n\001x\030\002 \001(\005\022\t\n\001y\030\003 \001(\005\022\024\n\005width\030"
+      "\004 \001(\rB\005\202\265\030\001w\022\025\n\006height\030\005 \001(\rB\005\202\265\030\001h\022\027\n\007x"
+      "offset\030\006 \001(\005B\006\202\265\030\002xo\022\027\n\007yoffset\030\007 \001(\005B\006\202"
+      "\265\030\002yo\022\n\n\002id\030\010 \001(\005\022\014\n\004name\030\t \001(\t\022\r\n\005depth"
+      "\030\n \001(\005\022\016\n\006locked\030\013 \001(\010\022\031\n\005color\030\014 \001(\005B\n\202"
+      "\265\030\006colour\022\032\n\006xscale\030\r \001(\001B\n\202\265\030\006scaleX\022\032\n"
+      "\006yscale\030\016 \001(\001B\n\202\265\030\006scaleY"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2581);
+      descriptor, 2665);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Room.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -6105,7 +6107,7 @@ bool Room::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Room.RoomBackground backgrounds = 15;
+      // repeated .buffers.resources.Room.RoomBackground backgrounds = 15 [(.buffers.gmx) = "backgrounds/background"];
       case 15: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(122u /* 122 & 0xFF */)) {
@@ -6117,7 +6119,7 @@ bool Room::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Room.View views = 16;
+      // repeated .buffers.resources.Room.View views = 16 [(.buffers.gmx) = "views/view"];
       case 16: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
@@ -6129,7 +6131,7 @@ bool Room::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Room.Instance instances = 17;
+      // repeated .buffers.resources.Room.Instance instances = 17 [(.buffers.gmx) = "instances/instance"];
       case 17: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(138u /* 138 & 0xFF */)) {
@@ -6141,7 +6143,7 @@ bool Room::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Room.Tile tiles = 18;
+      // repeated .buffers.resources.Room.Tile tiles = 18 [(.buffers.gmx) = "tiles/tile"];
       case 18: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
@@ -6417,28 +6419,28 @@ void Room::SerializeWithCachedSizes(
       14, *this->maker_settings_, output);
   }
 
-  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15;
+  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15 [(.buffers.gmx) = "backgrounds/background"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       15, this->backgrounds(static_cast<int>(i)), output);
   }
 
-  // repeated .buffers.resources.Room.View views = 16;
+  // repeated .buffers.resources.Room.View views = 16 [(.buffers.gmx) = "views/view"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->views_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       16, this->views(static_cast<int>(i)), output);
   }
 
-  // repeated .buffers.resources.Room.Instance instances = 17;
+  // repeated .buffers.resources.Room.Instance instances = 17 [(.buffers.gmx) = "instances/instance"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->instances_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       17, this->instances(static_cast<int>(i)), output);
   }
 
-  // repeated .buffers.resources.Room.Tile tiles = 18;
+  // repeated .buffers.resources.Room.Tile tiles = 18 [(.buffers.gmx) = "tiles/tile"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tiles_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -6604,7 +6606,7 @@ void Room::SerializeWithCachedSizes(
         14, *this->maker_settings_, deterministic, target);
   }
 
-  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15;
+  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15 [(.buffers.gmx) = "backgrounds/background"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->backgrounds_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -6612,7 +6614,7 @@ void Room::SerializeWithCachedSizes(
         15, this->backgrounds(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .buffers.resources.Room.View views = 16;
+  // repeated .buffers.resources.Room.View views = 16 [(.buffers.gmx) = "views/view"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->views_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -6620,7 +6622,7 @@ void Room::SerializeWithCachedSizes(
         16, this->views(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .buffers.resources.Room.Instance instances = 17;
+  // repeated .buffers.resources.Room.Instance instances = 17 [(.buffers.gmx) = "instances/instance"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->instances_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -6628,7 +6630,7 @@ void Room::SerializeWithCachedSizes(
         17, this->instances(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .buffers.resources.Room.Tile tiles = 18;
+  // repeated .buffers.resources.Room.Tile tiles = 18 [(.buffers.gmx) = "tiles/tile"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tiles_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -6714,7 +6716,7 @@ size_t Room::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15;
+  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15 [(.buffers.gmx) = "backgrounds/background"];
   {
     unsigned int count = static_cast<unsigned int>(this->backgrounds_size());
     total_size += 1UL * count;
@@ -6725,7 +6727,7 @@ size_t Room::ByteSizeLong() const {
     }
   }
 
-  // repeated .buffers.resources.Room.View views = 16;
+  // repeated .buffers.resources.Room.View views = 16 [(.buffers.gmx) = "views/view"];
   {
     unsigned int count = static_cast<unsigned int>(this->views_size());
     total_size += 2UL * count;
@@ -6736,7 +6738,7 @@ size_t Room::ByteSizeLong() const {
     }
   }
 
-  // repeated .buffers.resources.Room.Instance instances = 17;
+  // repeated .buffers.resources.Room.Instance instances = 17 [(.buffers.gmx) = "instances/instance"];
   {
     unsigned int count = static_cast<unsigned int>(this->instances_size());
     total_size += 2UL * count;
@@ -6747,7 +6749,7 @@ size_t Room::ByteSizeLong() const {
     }
   }
 
-  // repeated .buffers.resources.Room.Tile tiles = 18;
+  // repeated .buffers.resources.Room.Tile tiles = 18 [(.buffers.gmx) = "tiles/tile"];
   {
     unsigned int count = static_cast<unsigned int>(this->tiles_size());
     total_size += 2UL * count;
@@ -7655,7 +7657,7 @@ void Room::set_allocated_maker_settings(::buffers::resources::Room_MakerSettings
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Room.maker_settings)
 }
 
-// repeated .buffers.resources.Room.RoomBackground backgrounds = 15;
+// repeated .buffers.resources.Room.RoomBackground backgrounds = 15 [(.buffers.gmx) = "backgrounds/background"];
 int Room::backgrounds_size() const {
   return backgrounds_.size();
 }
@@ -7685,7 +7687,7 @@ Room::backgrounds() const {
   return backgrounds_;
 }
 
-// repeated .buffers.resources.Room.View views = 16;
+// repeated .buffers.resources.Room.View views = 16 [(.buffers.gmx) = "views/view"];
 int Room::views_size() const {
   return views_.size();
 }
@@ -7715,7 +7717,7 @@ Room::views() const {
   return views_;
 }
 
-// repeated .buffers.resources.Room.Instance instances = 17;
+// repeated .buffers.resources.Room.Instance instances = 17 [(.buffers.gmx) = "instances/instance"];
 int Room::instances_size() const {
   return instances_.size();
 }
@@ -7745,7 +7747,7 @@ Room::instances() const {
   return instances_;
 }
 
-// repeated .buffers.resources.Room.Tile tiles = 18;
+// repeated .buffers.resources.Room.Tile tiles = 18 [(.buffers.gmx) = "tiles/tile"];
 int Room::tiles_size() const {
   return tiles_.size();
 }

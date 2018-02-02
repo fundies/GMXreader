@@ -247,7 +247,7 @@ class Sprite : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 
   // accessors -------------------------------------------------------
 
-  // repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+  // repeated string subimages = 3 [(.buffers.gmx) = "frames/frame"];
   int subimages_size() const;
   void clear_subimages();
   static const int kSubimagesFieldNumber = 3;
@@ -1087,7 +1087,7 @@ inline void Sprite::set_height(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.height)
 }
 
-// repeated string subimages = 3 [(.buffers.gmx) = "frames"];
+// repeated string subimages = 3 [(.buffers.gmx) = "frames/frame"];
 inline int Sprite::subimages_size() const {
   return subimages_.size();
 }

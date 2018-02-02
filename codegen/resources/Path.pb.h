@@ -280,7 +280,7 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   // accessors -------------------------------------------------------
 
-  // repeated .buffers.resources.Path.Point points = 10;
+  // repeated .buffers.resources.Path.Point points = 10 [(.buffers.gmx) = "points/point"];
   int points_size() const;
   void clear_points();
   static const int kPointsFieldNumber = 10;
@@ -789,7 +789,7 @@ inline void Path::set_kind(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.kind)
 }
 
-// repeated .buffers.resources.Path.Point points = 10;
+// repeated .buffers.resources.Path.Point points = 10 [(.buffers.gmx) = "points/point"];
 inline int Path::points_size() const {
   return points_.size();
 }

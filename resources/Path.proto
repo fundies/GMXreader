@@ -22,5 +22,5 @@ message Path {
   optional int32 precision = 8;
   optional int32 kind = 9;
 
-  repeated Point points = 10;
+  repeated Point points = 10 [(gmx) = "points/point"];
 }

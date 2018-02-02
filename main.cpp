@@ -135,6 +135,7 @@ class GMXReader : public pugi::xml_tree_walker {
 
     if (code.empty()) std::cerr << "Error: " << fName << " empty." << std::endl;
 
+    // I've seen a few different versions of this marker on github n such. I dunno which is correct
     const std::string marker = "//######################_==_YOYO_SHADER_MARKER_==_######################@~/*";
     size_t markerPos = code.find(marker);
 
@@ -162,62 +163,74 @@ class GMXReader : public pugi::xml_tree_walker {
         refl->SetString(m, field, name);
       } else {
         const std::string gmxName = opts.GetExtension(buffers::gmx);
-        std::string xmlElement;
-
-        if (gmxName != "GMX_DEPRECATED") xmlElement = gmxName;
-
-        if (xmlElement.empty()) xmlElement = field->name();
-
+        std::string xmlElement = gmxName;
+        bool isSplit = false;
+        bool isAttribute = false;
         pugi::xml_node child = node;
-        std::vector<std::string> nodes = SplitString(xmlElement, '/');
-        for (auto n : nodes) {
-          child = child.child(n.c_str());
-          if (child == nullptr)
-            break;
-          else
-            child.append_attribute("visited") = "true";
+        pugi::xml_attribute attr;
+
+        // if deprecated we'll just try gmx name anyway and not whine when it fails
+        if (gmxName == "GMX_DEPRECATED")
+          xmlElement = gmxName;
+        else {
+          // use the name the protobuf field uses unless there a (gmx) attr
+          if (xmlElement.empty()) xmlElement = field->name();
+
+          // this is for <point>0,0</point> crap
+          const std::string splitMarker = "GMX_SPLIT/";
+          size_t splitPos = gmxName.find(splitMarker);
+          isSplit = splitPos != std::string::npos;
+
+          // if it's not a split then we deal with yoyo's useless nesting
+          if (!isSplit) {
+            std::vector<std::string> nodes = SplitString(xmlElement, '/');
+            for (auto n : nodes) {
+              child = child.child(n.c_str());
+              child.append_attribute("visited") = "true";
+              xmlElement = n;
+            }
+          }
+
+          // We want the data from the node "child" but if its empty what we seek is likely in the attributes
+          if (child.empty()) attr = node.attribute(xmlElement.c_str());
+          isAttribute = !attr.empty();
         }
 
-        const std::string splitMarker = "GMX_SPLIT/";
-        size_t splitPos = gmxName.find(splitMarker);
-        bool isSplit = splitPos != std::string::npos;
-
-        // look in attributes
-        pugi::xml_attribute attr;
-        if (child.empty()) attr = node.attribute(xmlElement.c_str());
-
-        bool isAttribute = !attr.empty();
-
-        if (child.empty() && gmxName != "GMX_DEPRECATED" && !isSplit && !isAttribute) {
-          //ename only exists if etype = 4...
+        if (child.empty() && gmxName != "GMX_DEPRECATED" && !isAttribute && !field->is_repeated()) {
+          // ename only exists if etype = 4. Also, etype and enumb don't exist in timeline events
           pugi::xml_attribute a = node.attribute("eventtype");
-          if (xmlElement != "ename" && a.as_int() != 4)
+          if (xmlElement != "ename" && a.as_int() != 4 && node.path() != "/timeline/entry/event")
             std::cerr << "Error: no such element " << node.path() << "/" << xmlElement << std::endl;
         } else if (gmxName != "GMX_DEPRECATED") {
           if (field->is_repeated()) {
             switch (field->cpp_type()) {
               case google::protobuf::FieldDescriptor::FieldDescriptor::CppType::CPPTYPE_MESSAGE: {
-                for (pugi::xml_node n = child.first_child(); n != nullptr; n = n.next_sibling()) {
-                  n.append_attribute("visited") = "true";
-                  google::protobuf::Message *msg = refl->AddMessage(m, field);
-                  PackRes(name, n, msg, depth + 1);
+                for (pugi::xml_node n = child; n != nullptr; n = n.next_sibling()) {
+                  // skip over any siblings that aren't twins
+                  if (n.name() == xmlElement) {
+                    n.append_attribute("visited") = "true";
+                    google::protobuf::Message *msg = refl->AddMessage(m, field);
+                    PackRes(name, n, msg, depth + 1);
+                  }
                 }
                 break;
               }
 
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_STRING: {
-                for (pugi::xml_node n = child.first_child(); n != nullptr; n = n.next_sibling()) {
-                  n.append_attribute("visited") = "true";
-                  refl->AddString(m, field, n.text().as_string());
-                  fprintf(stderr, "Appending to %s (%s) %s \n", field->name().c_str(), field->type_name(),
-                          n.text().as_string());
+                for (pugi::xml_node n = child; n != nullptr; n = n.next_sibling()) {
+                  if (n.name() == xmlElement) {
+                    n.append_attribute("visited") = "true";
+                    refl->AddString(m, field, n.text().as_string());
+                    fprintf(stderr, "Appending to %s (%s) %s \n", field->name().c_str(), field->type_name(),
+                            n.text().as_string());
+                  }
                 }
                 break;
               }
 
               default: {
                 //fprintf(stderr, "The name of the %zu element is %s and the type is %s \n",i,field->name().c_str(),field->type_name());
-                // I don't think we repeat anything other than messages
+                // I don't think we repeat anything other than messages and strings
                 break;
               }
             }

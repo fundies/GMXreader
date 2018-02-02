@@ -66,18 +66,20 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, origin_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, baseline_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, advance_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, character_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, y_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, width_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, height_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, data_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, shift_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Glyph, offset_),
+  0,
   1,
   2,
   3,
   4,
   5,
-  0,
+  6,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Range, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Range, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -85,10 +87,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Range, min_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Range, max_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font_Range, glyphs_),
   0,
   1,
-  ~0u,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -101,18 +101,34 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, bold_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, italic_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, ranges_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, glyphs_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, renderhq_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, charset_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, aa_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, include_ttf_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, ttf_file_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, texture_group_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Font, image_),
   0,
-  2,
-  1,
-  3,
   4,
+  1,
   5,
+  6,
+  7,
   ~0u,
+  ~0u,
+  8,
+  10,
+  11,
+  9,
+  2,
+  12,
+  3,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 11, sizeof(Font_Glyph)},
-  { 17, 25, sizeof(Font_Range)},
-  { 28, 40, sizeof(Font)},
+  { 0, 12, sizeof(Font_Glyph)},
+  { 19, 26, sizeof(Font_Range)},
+  { 28, 48, sizeof(Font)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -165,18 +181,26 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\024resources/Font.proto\022\021buffers.resource"
-      "s\032\roptions.proto\"\323\002\n\004Font\022\014\n\004name\030\001 \001(\t\022"
-      "\n\n\002id\030\002 \001(\005\022\033\n\tfont_name\030\003 \001(\tB\010\202\265\030\004name"
-      "\022\014\n\004size\030\004 \001(\005\022\014\n\004bold\030\005 \001(\010\022\016\n\006italic\030\006"
-      " \001(\010\022-\n\006ranges\030\007 \003(\0132\035.buffers.resources"
-      ".Font.Range\032g\n\005Glyph\022\016\n\006origin\030\001 \001(\001\022\020\n\010"
-      "baseline\030\002 \001(\001\022\017\n\007advance\030\003 \001(\001\022\r\n\005width"
-      "\030\004 \001(\005\022\016\n\006height\030\005 \001(\005\022\014\n\004data\030\006 \001(\014\032P\n\005"
-      "Range\022\013\n\003min\030\001 \001(\005\022\013\n\003max\030\002 \001(\005\022-\n\006glyph"
-      "s\030\003 \003(\0132\035.buffers.resources.Font.Glyph"
+      "s\032\roptions.proto\"\365\004\n\004Font\022\014\n\004name\030\001 \001(\t\022"
+      "\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022\033\n\tfont_"
+      "name\030\003 \001(\tB\010\202\265\030\004name\022\014\n\004size\030\004 \001(\005\022\014\n\004bo"
+      "ld\030\005 \001(\010\022\016\n\006italic\030\006 \001(\010\022@\n\006ranges\030\007 \003(\013"
+      "2\035.buffers.resources.Font.RangeB\021\202\265\030\rran"
+      "ges/range0\022\?\n\006glyphs\030\010 \003(\0132\035.buffers.res"
+      "ources.Font.GlyphB\020\202\265\030\014glyphs/glyph\022\020\n\010r"
+      "enderhq\030\n \001(\010\022\017\n\007charset\030\013 \001(\r\022\n\n\002aa\030\014 \001"
+      "(\r\022#\n\013include_ttf\030\r \001(\010B\016\202\265\030\nincludeTTF\022"
+      "\035\n\010ttf_file\030\016 \001(\tB\013\202\265\030\007TTFName\022.\n\rtextur"
+      "e_group\030\017 \001(\005B\027\202\265\030\023texgroups/texgroup0\022\r"
+      "\n\005image\030\020 \001(\t\032|\n\005Glyph\022\021\n\tcharacter\030\001 \001("
+      "\r\022\t\n\001x\030\002 \001(\r\022\t\n\001y\030\003 \001(\r\022\024\n\005width\030\004 \001(\rB\005"
+      "\202\265\030\001w\022\025\n\006height\030\005 \001(\rB\005\202\265\030\001h\022\r\n\005shift\030\006 "
+      "\001(\005\022\016\n\006offset\030\007 \001(\005\032C\n\005Range\022\034\n\003min\030\001 \001("
+      "\005B\017\202\265\030\013GMX_SPLIT/0\022\034\n\003max\030\002 \001(\005B\017\202\265\030\013GMX"
+      "_SPLIT/1"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 398);
+      descriptor, 688);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Font.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -200,12 +224,13 @@ struct StaticDescriptorInitializer {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Font_Glyph::kOriginFieldNumber;
-const int Font_Glyph::kBaselineFieldNumber;
-const int Font_Glyph::kAdvanceFieldNumber;
+const int Font_Glyph::kCharacterFieldNumber;
+const int Font_Glyph::kXFieldNumber;
+const int Font_Glyph::kYFieldNumber;
 const int Font_Glyph::kWidthFieldNumber;
 const int Font_Glyph::kHeightFieldNumber;
-const int Font_Glyph::kDataFieldNumber;
+const int Font_Glyph::kShiftFieldNumber;
+const int Font_Glyph::kOffsetFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Font_Glyph::Font_Glyph()
@@ -222,22 +247,17 @@ Font_Glyph::Font_Glyph(const Font_Glyph& from)
       _has_bits_(from._has_bits_),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_data()) {
-    data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
-  }
-  ::memcpy(&origin_, &from.origin_,
-    static_cast<size_t>(reinterpret_cast<char*>(&height_) -
-    reinterpret_cast<char*>(&origin_)) + sizeof(height_));
+  ::memcpy(&character_, &from.character_,
+    static_cast<size_t>(reinterpret_cast<char*>(&offset_) -
+    reinterpret_cast<char*>(&character_)) + sizeof(offset_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Font.Glyph)
 }
 
 void Font_Glyph::SharedCtor() {
   _cached_size_ = 0;
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&origin_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&origin_)) + sizeof(height_));
+  ::memset(&character_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&offset_) -
+      reinterpret_cast<char*>(&character_)) + sizeof(offset_));
 }
 
 Font_Glyph::~Font_Glyph() {
@@ -246,7 +266,6 @@ Font_Glyph::~Font_Glyph() {
 }
 
 void Font_Glyph::SharedDtor() {
-  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Font_Glyph::SetCachedSize(int size) const {
@@ -278,15 +297,11 @@ void Font_Glyph::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (has_data()) {
-    GOOGLE_DCHECK(!data_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-    (*data_.UnsafeRawStringPointer())->clear();
-  }
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 62u) {
-    ::memset(&origin_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&height_) -
-        reinterpret_cast<char*>(&origin_)) + sizeof(height_));
+  if (cached_has_bits & 127u) {
+    ::memset(&character_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&offset_) -
+        reinterpret_cast<char*>(&character_)) + sizeof(offset_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -302,55 +317,55 @@ bool Font_Glyph::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional double origin = 1;
+      // optional uint32 character = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
-          set_has_origin();
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_character();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &origin_)));
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &character_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // optional double baseline = 2;
+      // optional uint32 x = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(17u /* 17 & 0xFF */)) {
-          set_has_baseline();
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          set_has_x();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &baseline_)));
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &x_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // optional double advance = 3;
+      // optional uint32 y = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(25u /* 25 & 0xFF */)) {
-          set_has_advance();
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          set_has_y();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 input, &advance_)));
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &y_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // optional int32 width = 4;
+      // optional uint32 width = 4 [(.buffers.gmx) = "w"];
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
           set_has_width();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &width_)));
         } else {
           goto handle_unusual;
@@ -358,13 +373,13 @@ bool Font_Glyph::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 height = 5;
+      // optional uint32 height = 5 [(.buffers.gmx) = "h"];
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
           set_has_height();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &height_)));
         } else {
           goto handle_unusual;
@@ -372,12 +387,28 @@ bool Font_Glyph::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bytes data = 6;
+      // optional int32 shift = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_data()));
+            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+          set_has_shift();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &shift_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 offset = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+          set_has_offset();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &offset_)));
         } else {
           goto handle_unusual;
         }
@@ -411,35 +442,39 @@ void Font_Glyph::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional double origin = 1;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->origin(), output);
-  }
-
-  // optional double baseline = 2;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->baseline(), output);
-  }
-
-  // optional double advance = 3;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->advance(), output);
-  }
-
-  // optional int32 width = 4;
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->width(), output);
-  }
-
-  // optional int32 height = 5;
-  if (cached_has_bits & 0x00000020u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->height(), output);
-  }
-
-  // optional bytes data = 6;
+  // optional uint32 character = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      6, this->data(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->character(), output);
+  }
+
+  // optional uint32 x = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->x(), output);
+  }
+
+  // optional uint32 y = 3;
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->y(), output);
+  }
+
+  // optional uint32 width = 4 [(.buffers.gmx) = "w"];
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->width(), output);
+  }
+
+  // optional uint32 height = 5 [(.buffers.gmx) = "h"];
+  if (cached_has_bits & 0x00000010u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->height(), output);
+  }
+
+  // optional int32 shift = 6;
+  if (cached_has_bits & 0x00000020u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->shift(), output);
+  }
+
+  // optional int32 offset = 7;
+  if (cached_has_bits & 0x00000040u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->offset(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -457,36 +492,39 @@ void Font_Glyph::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional double origin = 1;
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->origin(), target);
-  }
-
-  // optional double baseline = 2;
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->baseline(), target);
-  }
-
-  // optional double advance = 3;
-  if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->advance(), target);
-  }
-
-  // optional int32 width = 4;
-  if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->width(), target);
-  }
-
-  // optional int32 height = 5;
-  if (cached_has_bits & 0x00000020u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->height(), target);
-  }
-
-  // optional bytes data = 6;
+  // optional uint32 character = 1;
   if (cached_has_bits & 0x00000001u) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        6, this->data(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->character(), target);
+  }
+
+  // optional uint32 x = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->x(), target);
+  }
+
+  // optional uint32 y = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->y(), target);
+  }
+
+  // optional uint32 width = 4 [(.buffers.gmx) = "w"];
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->width(), target);
+  }
+
+  // optional uint32 height = 5 [(.buffers.gmx) = "h"];
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->height(), target);
+  }
+
+  // optional int32 shift = 6;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->shift(), target);
+  }
+
+  // optional int32 offset = 7;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->offset(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -506,41 +544,54 @@ size_t Font_Glyph::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  if (_has_bits_[0 / 32] & 63u) {
-    // optional bytes data = 6;
-    if (has_data()) {
+  if (_has_bits_[0 / 32] & 127u) {
+    // optional uint32 character = 1;
+    if (has_character()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::BytesSize(
-          this->data());
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->character());
     }
 
-    // optional double origin = 1;
-    if (has_origin()) {
-      total_size += 1 + 8;
+    // optional uint32 x = 2;
+    if (has_x()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->x());
     }
 
-    // optional double baseline = 2;
-    if (has_baseline()) {
-      total_size += 1 + 8;
+    // optional uint32 y = 3;
+    if (has_y()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->y());
     }
 
-    // optional double advance = 3;
-    if (has_advance()) {
-      total_size += 1 + 8;
-    }
-
-    // optional int32 width = 4;
+    // optional uint32 width = 4 [(.buffers.gmx) = "w"];
     if (has_width()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->width());
     }
 
-    // optional int32 height = 5;
+    // optional uint32 height = 5 [(.buffers.gmx) = "h"];
     if (has_height()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->height());
+    }
+
+    // optional int32 shift = 6;
+    if (has_shift()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->shift());
+    }
+
+    // optional int32 offset = 7;
+    if (has_offset()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->offset());
     }
 
   }
@@ -574,25 +625,27 @@ void Font_Glyph::MergeFrom(const Font_Glyph& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 63u) {
+  if (cached_has_bits & 127u) {
     if (cached_has_bits & 0x00000001u) {
-      set_has_data();
-      data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+      character_ = from.character_;
     }
     if (cached_has_bits & 0x00000002u) {
-      origin_ = from.origin_;
+      x_ = from.x_;
     }
     if (cached_has_bits & 0x00000004u) {
-      baseline_ = from.baseline_;
+      y_ = from.y_;
     }
     if (cached_has_bits & 0x00000008u) {
-      advance_ = from.advance_;
-    }
-    if (cached_has_bits & 0x00000010u) {
       width_ = from.width_;
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       height_ = from.height_;
+    }
+    if (cached_has_bits & 0x00000020u) {
+      shift_ = from.shift_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      offset_ = from.offset_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -622,12 +675,13 @@ void Font_Glyph::Swap(Font_Glyph* other) {
 }
 void Font_Glyph::InternalSwap(Font_Glyph* other) {
   using std::swap;
-  data_.Swap(&other->data_);
-  swap(origin_, other->origin_);
-  swap(baseline_, other->baseline_);
-  swap(advance_, other->advance_);
+  swap(character_, other->character_);
+  swap(x_, other->x_);
+  swap(y_, other->y_);
   swap(width_, other->width_);
   swap(height_, other->height_);
+  swap(shift_, other->shift_);
+  swap(offset_, other->offset_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -641,187 +695,172 @@ void Font_Glyph::InternalSwap(Font_Glyph* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Font_Glyph
 
-// optional double origin = 1;
-bool Font_Glyph::has_origin() const {
+// optional uint32 character = 1;
+bool Font_Glyph::has_character() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Font_Glyph::set_has_character() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Font_Glyph::clear_has_character() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Font_Glyph::clear_character() {
+  character_ = 0u;
+  clear_has_character();
+}
+::google::protobuf::uint32 Font_Glyph::character() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.character)
+  return character_;
+}
+void Font_Glyph::set_character(::google::protobuf::uint32 value) {
+  set_has_character();
+  character_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.character)
+}
+
+// optional uint32 x = 2;
+bool Font_Glyph::has_x() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-void Font_Glyph::set_has_origin() {
+void Font_Glyph::set_has_x() {
   _has_bits_[0] |= 0x00000002u;
 }
-void Font_Glyph::clear_has_origin() {
+void Font_Glyph::clear_has_x() {
   _has_bits_[0] &= ~0x00000002u;
 }
-void Font_Glyph::clear_origin() {
-  origin_ = 0;
-  clear_has_origin();
+void Font_Glyph::clear_x() {
+  x_ = 0u;
+  clear_has_x();
 }
-double Font_Glyph::origin() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.origin)
-  return origin_;
+::google::protobuf::uint32 Font_Glyph::x() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.x)
+  return x_;
 }
-void Font_Glyph::set_origin(double value) {
-  set_has_origin();
-  origin_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.origin)
+void Font_Glyph::set_x(::google::protobuf::uint32 value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.x)
 }
 
-// optional double baseline = 2;
-bool Font_Glyph::has_baseline() const {
+// optional uint32 y = 3;
+bool Font_Glyph::has_y() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-void Font_Glyph::set_has_baseline() {
+void Font_Glyph::set_has_y() {
   _has_bits_[0] |= 0x00000004u;
 }
-void Font_Glyph::clear_has_baseline() {
+void Font_Glyph::clear_has_y() {
   _has_bits_[0] &= ~0x00000004u;
 }
-void Font_Glyph::clear_baseline() {
-  baseline_ = 0;
-  clear_has_baseline();
+void Font_Glyph::clear_y() {
+  y_ = 0u;
+  clear_has_y();
 }
-double Font_Glyph::baseline() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.baseline)
-  return baseline_;
+::google::protobuf::uint32 Font_Glyph::y() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.y)
+  return y_;
 }
-void Font_Glyph::set_baseline(double value) {
-  set_has_baseline();
-  baseline_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.baseline)
+void Font_Glyph::set_y(::google::protobuf::uint32 value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.y)
 }
 
-// optional double advance = 3;
-bool Font_Glyph::has_advance() const {
+// optional uint32 width = 4 [(.buffers.gmx) = "w"];
+bool Font_Glyph::has_width() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-void Font_Glyph::set_has_advance() {
+void Font_Glyph::set_has_width() {
   _has_bits_[0] |= 0x00000008u;
 }
-void Font_Glyph::clear_has_advance() {
+void Font_Glyph::clear_has_width() {
   _has_bits_[0] &= ~0x00000008u;
 }
-void Font_Glyph::clear_advance() {
-  advance_ = 0;
-  clear_has_advance();
-}
-double Font_Glyph::advance() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.advance)
-  return advance_;
-}
-void Font_Glyph::set_advance(double value) {
-  set_has_advance();
-  advance_ = value;
-  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.advance)
-}
-
-// optional int32 width = 4;
-bool Font_Glyph::has_width() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void Font_Glyph::set_has_width() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void Font_Glyph::clear_has_width() {
-  _has_bits_[0] &= ~0x00000010u;
-}
 void Font_Glyph::clear_width() {
-  width_ = 0;
+  width_ = 0u;
   clear_has_width();
 }
-::google::protobuf::int32 Font_Glyph::width() const {
+::google::protobuf::uint32 Font_Glyph::width() const {
   // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.width)
   return width_;
 }
-void Font_Glyph::set_width(::google::protobuf::int32 value) {
+void Font_Glyph::set_width(::google::protobuf::uint32 value) {
   set_has_width();
   width_ = value;
   // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.width)
 }
 
-// optional int32 height = 5;
+// optional uint32 height = 5 [(.buffers.gmx) = "h"];
 bool Font_Glyph::has_height() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 void Font_Glyph::set_has_height() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
 }
 void Font_Glyph::clear_has_height() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 void Font_Glyph::clear_height() {
-  height_ = 0;
+  height_ = 0u;
   clear_has_height();
 }
-::google::protobuf::int32 Font_Glyph::height() const {
+::google::protobuf::uint32 Font_Glyph::height() const {
   // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.height)
   return height_;
 }
-void Font_Glyph::set_height(::google::protobuf::int32 value) {
+void Font_Glyph::set_height(::google::protobuf::uint32 value) {
   set_has_height();
   height_ = value;
   // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.height)
 }
 
-// optional bytes data = 6;
-bool Font_Glyph::has_data() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// optional int32 shift = 6;
+bool Font_Glyph::has_shift() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
-void Font_Glyph::set_has_data() {
-  _has_bits_[0] |= 0x00000001u;
+void Font_Glyph::set_has_shift() {
+  _has_bits_[0] |= 0x00000020u;
 }
-void Font_Glyph::clear_has_data() {
-  _has_bits_[0] &= ~0x00000001u;
+void Font_Glyph::clear_has_shift() {
+  _has_bits_[0] &= ~0x00000020u;
 }
-void Font_Glyph::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_data();
+void Font_Glyph::clear_shift() {
+  shift_ = 0;
+  clear_has_shift();
 }
-const ::std::string& Font_Glyph::data() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.data)
-  return data_.GetNoArena();
+::google::protobuf::int32 Font_Glyph::shift() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.shift)
+  return shift_;
 }
-void Font_Glyph::set_data(const ::std::string& value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.data)
+void Font_Glyph::set_shift(::google::protobuf::int32 value) {
+  set_has_shift();
+  shift_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.shift)
 }
-#if LANG_CXX11
-void Font_Glyph::set_data(::std::string&& value) {
-  set_has_data();
-  data_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Font.Glyph.data)
+
+// optional int32 offset = 7;
+bool Font_Glyph::has_offset() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
-#endif
-void Font_Glyph::set_data(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:buffers.resources.Font.Glyph.data)
+void Font_Glyph::set_has_offset() {
+  _has_bits_[0] |= 0x00000040u;
 }
-void Font_Glyph::set_data(const void* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Font.Glyph.data)
+void Font_Glyph::clear_has_offset() {
+  _has_bits_[0] &= ~0x00000040u;
 }
-::std::string* Font_Glyph::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Font.Glyph.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void Font_Glyph::clear_offset() {
+  offset_ = 0;
+  clear_has_offset();
 }
-::std::string* Font_Glyph::release_data() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Font.Glyph.data)
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+::google::protobuf::int32 Font_Glyph::offset() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.Glyph.offset)
+  return offset_;
 }
-void Font_Glyph::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Font.Glyph.data)
+void Font_Glyph::set_offset(::google::protobuf::int32 value) {
+  set_has_offset();
+  offset_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.Glyph.offset)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -831,7 +870,6 @@ void Font_Glyph::set_allocated_data(::std::string* data) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Font_Range::kMinFieldNumber;
 const int Font_Range::kMaxFieldNumber;
-const int Font_Range::kGlyphsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Font_Range::Font_Range()
@@ -846,8 +884,7 @@ Font_Range::Font_Range(const Font_Range& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0),
-      glyphs_(from.glyphs_) {
+      _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&min_, &from.min_,
     static_cast<size_t>(reinterpret_cast<char*>(&max_) -
@@ -899,7 +936,6 @@ void Font_Range::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  glyphs_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
     ::memset(&min_, 0, static_cast<size_t>(
@@ -920,7 +956,7 @@ bool Font_Range::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 min = 1;
+      // optional int32 min = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
@@ -934,7 +970,7 @@ bool Font_Range::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 max = 2;
+      // optional int32 max = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -942,18 +978,6 @@ bool Font_Range::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &max_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .buffers.resources.Font.Glyph glyphs = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_glyphs()));
         } else {
           goto handle_unusual;
         }
@@ -987,21 +1011,14 @@ void Font_Range::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 min = 1;
+  // optional int32 min = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
   if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->min(), output);
   }
 
-  // optional int32 max = 2;
+  // optional int32 max = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
   if (cached_has_bits & 0x00000002u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->max(), output);
-  }
-
-  // repeated .buffers.resources.Font.Glyph glyphs = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->glyphs_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->glyphs(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1019,22 +1036,14 @@ void Font_Range::SerializeWithCachedSizes(
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // optional int32 min = 1;
+  // optional int32 min = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
   if (cached_has_bits & 0x00000001u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->min(), target);
   }
 
-  // optional int32 max = 2;
+  // optional int32 max = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->max(), target);
-  }
-
-  // repeated .buffers.resources.Font.Glyph glyphs = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->glyphs_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        3, this->glyphs(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1054,26 +1063,15 @@ size_t Font_Range::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Font.Glyph glyphs = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->glyphs_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->glyphs(static_cast<int>(i)));
-    }
-  }
-
   if (_has_bits_[0 / 32] & 3u) {
-    // optional int32 min = 1;
+    // optional int32 min = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
     if (has_min()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->min());
     }
 
-    // optional int32 max = 2;
+    // optional int32 max = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
     if (has_max()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -1110,7 +1108,6 @@ void Font_Range::MergeFrom(const Font_Range& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  glyphs_.MergeFrom(from.glyphs_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
@@ -1147,7 +1144,6 @@ void Font_Range::Swap(Font_Range* other) {
 }
 void Font_Range::InternalSwap(Font_Range* other) {
   using std::swap;
-  glyphs_.InternalSwap(&other->glyphs_);
   swap(min_, other->min_);
   swap(max_, other->max_);
   swap(_has_bits_[0], other->_has_bits_[0]);
@@ -1163,7 +1159,7 @@ void Font_Range::InternalSwap(Font_Range* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Font_Range
 
-// optional int32 min = 1;
+// optional int32 min = 1 [(.buffers.gmx) = "GMX_SPLIT/0"];
 bool Font_Range::has_min() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1187,7 +1183,7 @@ void Font_Range::set_min(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Font.Range.min)
 }
 
-// optional int32 max = 2;
+// optional int32 max = 2 [(.buffers.gmx) = "GMX_SPLIT/1"];
 bool Font_Range::has_max() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -1211,36 +1207,6 @@ void Font_Range::set_max(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Font.Range.max)
 }
 
-// repeated .buffers.resources.Font.Glyph glyphs = 3;
-int Font_Range::glyphs_size() const {
-  return glyphs_.size();
-}
-void Font_Range::clear_glyphs() {
-  glyphs_.Clear();
-}
-const ::buffers::resources::Font_Glyph& Font_Range::glyphs(int index) const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Font.Range.glyphs)
-  return glyphs_.Get(index);
-}
-::buffers::resources::Font_Glyph* Font_Range::mutable_glyphs(int index) {
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Font.Range.glyphs)
-  return glyphs_.Mutable(index);
-}
-::buffers::resources::Font_Glyph* Font_Range::add_glyphs() {
-  // @@protoc_insertion_point(field_add:buffers.resources.Font.Range.glyphs)
-  return glyphs_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::buffers::resources::Font_Glyph >*
-Font_Range::mutable_glyphs() {
-  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Font.Range.glyphs)
-  return &glyphs_;
-}
-const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font_Glyph >&
-Font_Range::glyphs() const {
-  // @@protoc_insertion_point(field_list:buffers.resources.Font.Range.glyphs)
-  return glyphs_;
-}
-
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
@@ -1253,6 +1219,14 @@ const int Font::kSizeFieldNumber;
 const int Font::kBoldFieldNumber;
 const int Font::kItalicFieldNumber;
 const int Font::kRangesFieldNumber;
+const int Font::kGlyphsFieldNumber;
+const int Font::kRenderhqFieldNumber;
+const int Font::kCharsetFieldNumber;
+const int Font::kAaFieldNumber;
+const int Font::kIncludeTtfFieldNumber;
+const int Font::kTtfFileFieldNumber;
+const int Font::kTextureGroupFieldNumber;
+const int Font::kImageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Font::Font()
@@ -1268,7 +1242,8 @@ Font::Font(const Font& from)
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       _cached_size_(0),
-      ranges_(from.ranges_) {
+      ranges_(from.ranges_),
+      glyphs_(from.glyphs_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_name()) {
@@ -1278,9 +1253,17 @@ Font::Font(const Font& from)
   if (from.has_font_name()) {
     font_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.font_name_);
   }
+  ttf_file_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_ttf_file()) {
+    ttf_file_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ttf_file_);
+  }
+  image_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_image()) {
+    image_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_);
+  }
   ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&italic_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(italic_));
+    static_cast<size_t>(reinterpret_cast<char*>(&texture_group_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(texture_group_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Font)
 }
 
@@ -1288,9 +1271,11 @@ void Font::SharedCtor() {
   _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   font_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ttf_file_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  image_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&italic_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(italic_));
+      reinterpret_cast<char*>(&texture_group_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(texture_group_));
 }
 
 Font::~Font() {
@@ -1301,6 +1286,8 @@ Font::~Font() {
 void Font::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   font_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ttf_file_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Font::SetCachedSize(int size) const {
@@ -1333,8 +1320,9 @@ void Font::Clear() {
   (void) cached_has_bits;
 
   ranges_.Clear();
+  glyphs_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
       GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
       (*name_.UnsafeRawStringPointer())->clear();
@@ -1343,11 +1331,24 @@ void Font::Clear() {
       GOOGLE_DCHECK(!font_name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
       (*font_name_.UnsafeRawStringPointer())->clear();
     }
+    if (cached_has_bits & 0x00000004u) {
+      GOOGLE_DCHECK(!ttf_file_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*ttf_file_.UnsafeRawStringPointer())->clear();
+    }
+    if (cached_has_bits & 0x00000008u) {
+      GOOGLE_DCHECK(!image_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*image_.UnsafeRawStringPointer())->clear();
+    }
   }
-  if (cached_has_bits & 60u) {
+  if (cached_has_bits & 240u) {
     ::memset(&id_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&italic_) -
         reinterpret_cast<char*>(&id_)) + sizeof(italic_));
+  }
+  if (cached_has_bits & 7936u) {
+    ::memset(&renderhq_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&texture_group_) -
+        reinterpret_cast<char*>(&renderhq_)) + sizeof(texture_group_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -1359,7 +1360,7 @@ bool Font::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:buffers.resources.Font)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1379,7 +1380,7 @@ bool Font::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2;
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -1451,12 +1452,126 @@ bool Font::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Font.Range ranges = 7;
+      // repeated .buffers.resources.Font.Range ranges = 7 [(.buffers.gmx) = "ranges/range0"];
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_ranges()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .buffers.resources.Font.Glyph glyphs = 8 [(.buffers.gmx) = "glyphs/glyph"];
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_glyphs()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool renderhq = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(80u /* 80 & 0xFF */)) {
+          set_has_renderhq();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &renderhq_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional uint32 charset = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(88u /* 88 & 0xFF */)) {
+          set_has_charset();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &charset_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional uint32 aa = 12;
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(96u /* 96 & 0xFF */)) {
+          set_has_aa();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &aa_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional bool include_ttf = 13 [(.buffers.gmx) = "includeTTF"];
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(104u /* 104 & 0xFF */)) {
+          set_has_include_ttf();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &include_ttf_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional string ttf_file = 14 [(.buffers.gmx) = "TTFName"];
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ttf_file()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->ttf_file().data(), static_cast<int>(this->ttf_file().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Font.ttf_file");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 texture_group = 15 [(.buffers.gmx) = "texgroups/texgroup0"];
+      case 15: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(120u /* 120 & 0xFF */)) {
+          set_has_texture_group();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &texture_group_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional string image = 16;
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_image()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->image().data(), static_cast<int>(this->image().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Font.image");
         } else {
           goto handle_unusual;
         }
@@ -1500,8 +1615,8 @@ void Font::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2;
-  if (cached_has_bits & 0x00000004u) {
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
+  if (cached_has_bits & 0x00000010u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
 
@@ -1516,25 +1631,77 @@ void Font::SerializeWithCachedSizes(
   }
 
   // optional int32 size = 4;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000020u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->size(), output);
   }
 
   // optional bool bold = 5;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000040u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->bold(), output);
   }
 
   // optional bool italic = 6;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000080u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->italic(), output);
   }
 
-  // repeated .buffers.resources.Font.Range ranges = 7;
+  // repeated .buffers.resources.Font.Range ranges = 7 [(.buffers.gmx) = "ranges/range0"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ranges_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->ranges(static_cast<int>(i)), output);
+  }
+
+  // repeated .buffers.resources.Font.Glyph glyphs = 8 [(.buffers.gmx) = "glyphs/glyph"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->glyphs_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->glyphs(static_cast<int>(i)), output);
+  }
+
+  // optional bool renderhq = 10;
+  if (cached_has_bits & 0x00000100u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(10, this->renderhq(), output);
+  }
+
+  // optional uint32 charset = 11;
+  if (cached_has_bits & 0x00000400u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(11, this->charset(), output);
+  }
+
+  // optional uint32 aa = 12;
+  if (cached_has_bits & 0x00000800u) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(12, this->aa(), output);
+  }
+
+  // optional bool include_ttf = 13 [(.buffers.gmx) = "includeTTF"];
+  if (cached_has_bits & 0x00000200u) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(13, this->include_ttf(), output);
+  }
+
+  // optional string ttf_file = 14 [(.buffers.gmx) = "TTFName"];
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ttf_file().data(), static_cast<int>(this->ttf_file().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Font.ttf_file");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      14, this->ttf_file(), output);
+  }
+
+  // optional int32 texture_group = 15 [(.buffers.gmx) = "texgroups/texgroup0"];
+  if (cached_has_bits & 0x00001000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(15, this->texture_group(), output);
+  }
+
+  // optional string image = 16;
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->image().data(), static_cast<int>(this->image().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Font.image");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      16, this->image(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1563,8 +1730,8 @@ void Font::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2;
-  if (cached_has_bits & 0x00000004u) {
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
+  if (cached_has_bits & 0x00000010u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
 
@@ -1580,26 +1747,81 @@ void Font::SerializeWithCachedSizes(
   }
 
   // optional int32 size = 4;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000020u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->size(), target);
   }
 
   // optional bool bold = 5;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000040u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->bold(), target);
   }
 
   // optional bool italic = 6;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000080u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->italic(), target);
   }
 
-  // repeated .buffers.resources.Font.Range ranges = 7;
+  // repeated .buffers.resources.Font.Range ranges = 7 [(.buffers.gmx) = "ranges/range0"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ranges_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
         7, this->ranges(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Font.Glyph glyphs = 8 [(.buffers.gmx) = "glyphs/glyph"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->glyphs_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        8, this->glyphs(static_cast<int>(i)), deterministic, target);
+  }
+
+  // optional bool renderhq = 10;
+  if (cached_has_bits & 0x00000100u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(10, this->renderhq(), target);
+  }
+
+  // optional uint32 charset = 11;
+  if (cached_has_bits & 0x00000400u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(11, this->charset(), target);
+  }
+
+  // optional uint32 aa = 12;
+  if (cached_has_bits & 0x00000800u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(12, this->aa(), target);
+  }
+
+  // optional bool include_ttf = 13 [(.buffers.gmx) = "includeTTF"];
+  if (cached_has_bits & 0x00000200u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(13, this->include_ttf(), target);
+  }
+
+  // optional string ttf_file = 14 [(.buffers.gmx) = "TTFName"];
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ttf_file().data(), static_cast<int>(this->ttf_file().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Font.ttf_file");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        14, this->ttf_file(), target);
+  }
+
+  // optional int32 texture_group = 15 [(.buffers.gmx) = "texgroups/texgroup0"];
+  if (cached_has_bits & 0x00001000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(15, this->texture_group(), target);
+  }
+
+  // optional string image = 16;
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->image().data(), static_cast<int>(this->image().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Font.image");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        16, this->image(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1619,7 +1841,7 @@ size_t Font::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Font.Range ranges = 7;
+  // repeated .buffers.resources.Font.Range ranges = 7 [(.buffers.gmx) = "ranges/range0"];
   {
     unsigned int count = static_cast<unsigned int>(this->ranges_size());
     total_size += 1UL * count;
@@ -1630,7 +1852,18 @@ size_t Font::ByteSizeLong() const {
     }
   }
 
-  if (_has_bits_[0 / 32] & 63u) {
+  // repeated .buffers.resources.Font.Glyph glyphs = 8 [(.buffers.gmx) = "glyphs/glyph"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->glyphs_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->glyphs(static_cast<int>(i)));
+    }
+  }
+
+  if (_has_bits_[0 / 32] & 255u) {
     // optional string name = 1;
     if (has_name()) {
       total_size += 1 +
@@ -1645,7 +1878,21 @@ size_t Font::ByteSizeLong() const {
           this->font_name());
     }
 
-    // optional int32 id = 2;
+    // optional string ttf_file = 14 [(.buffers.gmx) = "TTFName"];
+    if (has_ttf_file()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->ttf_file());
+    }
+
+    // optional string image = 16;
+    if (has_image()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->image());
+    }
+
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -1667,6 +1914,39 @@ size_t Font::ByteSizeLong() const {
     // optional bool italic = 6;
     if (has_italic()) {
       total_size += 1 + 1;
+    }
+
+  }
+  if (_has_bits_[8 / 32] & 7936u) {
+    // optional bool renderhq = 10;
+    if (has_renderhq()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool include_ttf = 13 [(.buffers.gmx) = "includeTTF"];
+    if (has_include_ttf()) {
+      total_size += 1 + 1;
+    }
+
+    // optional uint32 charset = 11;
+    if (has_charset()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->charset());
+    }
+
+    // optional uint32 aa = 12;
+    if (has_aa()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->aa());
+    }
+
+    // optional int32 texture_group = 15 [(.buffers.gmx) = "texgroups/texgroup0"];
+    if (has_texture_group()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->texture_group());
     }
 
   }
@@ -1700,8 +1980,9 @@ void Font::MergeFrom(const Font& from) {
   (void) cached_has_bits;
 
   ranges_.MergeFrom(from.ranges_);
+  glyphs_.MergeFrom(from.glyphs_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 63u) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
       set_has_name();
       name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
@@ -1711,16 +1992,42 @@ void Font::MergeFrom(const Font& from) {
       font_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.font_name_);
     }
     if (cached_has_bits & 0x00000004u) {
-      id_ = from.id_;
+      set_has_ttf_file();
+      ttf_file_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ttf_file_);
     }
     if (cached_has_bits & 0x00000008u) {
-      size_ = from.size_;
+      set_has_image();
+      image_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_);
     }
     if (cached_has_bits & 0x00000010u) {
-      bold_ = from.bold_;
+      id_ = from.id_;
     }
     if (cached_has_bits & 0x00000020u) {
+      size_ = from.size_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      bold_ = from.bold_;
+    }
+    if (cached_has_bits & 0x00000080u) {
       italic_ = from.italic_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 7936u) {
+    if (cached_has_bits & 0x00000100u) {
+      renderhq_ = from.renderhq_;
+    }
+    if (cached_has_bits & 0x00000200u) {
+      include_ttf_ = from.include_ttf_;
+    }
+    if (cached_has_bits & 0x00000400u) {
+      charset_ = from.charset_;
+    }
+    if (cached_has_bits & 0x00000800u) {
+      aa_ = from.aa_;
+    }
+    if (cached_has_bits & 0x00001000u) {
+      texture_group_ = from.texture_group_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -1751,12 +2058,20 @@ void Font::Swap(Font* other) {
 void Font::InternalSwap(Font* other) {
   using std::swap;
   ranges_.InternalSwap(&other->ranges_);
+  glyphs_.InternalSwap(&other->glyphs_);
   name_.Swap(&other->name_);
   font_name_.Swap(&other->font_name_);
+  ttf_file_.Swap(&other->ttf_file_);
+  image_.Swap(&other->image_);
   swap(id_, other->id_);
   swap(size_, other->size_);
   swap(bold_, other->bold_);
   swap(italic_, other->italic_);
+  swap(renderhq_, other->renderhq_);
+  swap(include_ttf_, other->include_ttf_);
+  swap(charset_, other->charset_);
+  swap(aa_, other->aa_);
+  swap(texture_group_, other->texture_group_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -1833,15 +2148,15 @@ void Font::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Font.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Font::has_id() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 void Font::set_has_id() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000010u;
 }
 void Font::clear_has_id() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 void Font::clear_id() {
   id_ = 0;
@@ -1922,13 +2237,13 @@ void Font::set_allocated_font_name(::std::string* font_name) {
 
 // optional int32 size = 4;
 bool Font::has_size() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 void Font::set_has_size() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000020u;
 }
 void Font::clear_has_size() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 void Font::clear_size() {
   size_ = 0;
@@ -1946,13 +2261,13 @@ void Font::set_size(::google::protobuf::int32 value) {
 
 // optional bool bold = 5;
 bool Font::has_bold() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 void Font::set_has_bold() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 void Font::clear_has_bold() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 void Font::clear_bold() {
   bold_ = false;
@@ -1970,13 +2285,13 @@ void Font::set_bold(bool value) {
 
 // optional bool italic = 6;
 bool Font::has_italic() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 void Font::set_has_italic() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000080u;
 }
 void Font::clear_has_italic() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 void Font::clear_italic() {
   italic_ = false;
@@ -1992,7 +2307,7 @@ void Font::set_italic(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Font.italic)
 }
 
-// repeated .buffers.resources.Font.Range ranges = 7;
+// repeated .buffers.resources.Font.Range ranges = 7 [(.buffers.gmx) = "ranges/range0"];
 int Font::ranges_size() const {
   return ranges_.size();
 }
@@ -2020,6 +2335,282 @@ const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font_Range >&
 Font::ranges() const {
   // @@protoc_insertion_point(field_list:buffers.resources.Font.ranges)
   return ranges_;
+}
+
+// repeated .buffers.resources.Font.Glyph glyphs = 8 [(.buffers.gmx) = "glyphs/glyph"];
+int Font::glyphs_size() const {
+  return glyphs_.size();
+}
+void Font::clear_glyphs() {
+  glyphs_.Clear();
+}
+const ::buffers::resources::Font_Glyph& Font::glyphs(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.glyphs)
+  return glyphs_.Get(index);
+}
+::buffers::resources::Font_Glyph* Font::mutable_glyphs(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Font.glyphs)
+  return glyphs_.Mutable(index);
+}
+::buffers::resources::Font_Glyph* Font::add_glyphs() {
+  // @@protoc_insertion_point(field_add:buffers.resources.Font.glyphs)
+  return glyphs_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Font_Glyph >*
+Font::mutable_glyphs() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Font.glyphs)
+  return &glyphs_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font_Glyph >&
+Font::glyphs() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Font.glyphs)
+  return glyphs_;
+}
+
+// optional bool renderhq = 10;
+bool Font::has_renderhq() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+void Font::set_has_renderhq() {
+  _has_bits_[0] |= 0x00000100u;
+}
+void Font::clear_has_renderhq() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+void Font::clear_renderhq() {
+  renderhq_ = false;
+  clear_has_renderhq();
+}
+bool Font::renderhq() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.renderhq)
+  return renderhq_;
+}
+void Font::set_renderhq(bool value) {
+  set_has_renderhq();
+  renderhq_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.renderhq)
+}
+
+// optional uint32 charset = 11;
+bool Font::has_charset() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+void Font::set_has_charset() {
+  _has_bits_[0] |= 0x00000400u;
+}
+void Font::clear_has_charset() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+void Font::clear_charset() {
+  charset_ = 0u;
+  clear_has_charset();
+}
+::google::protobuf::uint32 Font::charset() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.charset)
+  return charset_;
+}
+void Font::set_charset(::google::protobuf::uint32 value) {
+  set_has_charset();
+  charset_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.charset)
+}
+
+// optional uint32 aa = 12;
+bool Font::has_aa() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+void Font::set_has_aa() {
+  _has_bits_[0] |= 0x00000800u;
+}
+void Font::clear_has_aa() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+void Font::clear_aa() {
+  aa_ = 0u;
+  clear_has_aa();
+}
+::google::protobuf::uint32 Font::aa() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.aa)
+  return aa_;
+}
+void Font::set_aa(::google::protobuf::uint32 value) {
+  set_has_aa();
+  aa_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.aa)
+}
+
+// optional bool include_ttf = 13 [(.buffers.gmx) = "includeTTF"];
+bool Font::has_include_ttf() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void Font::set_has_include_ttf() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void Font::clear_has_include_ttf() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void Font::clear_include_ttf() {
+  include_ttf_ = false;
+  clear_has_include_ttf();
+}
+bool Font::include_ttf() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.include_ttf)
+  return include_ttf_;
+}
+void Font::set_include_ttf(bool value) {
+  set_has_include_ttf();
+  include_ttf_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.include_ttf)
+}
+
+// optional string ttf_file = 14 [(.buffers.gmx) = "TTFName"];
+bool Font::has_ttf_file() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Font::set_has_ttf_file() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Font::clear_has_ttf_file() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Font::clear_ttf_file() {
+  ttf_file_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_ttf_file();
+}
+const ::std::string& Font::ttf_file() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.ttf_file)
+  return ttf_file_.GetNoArena();
+}
+void Font::set_ttf_file(const ::std::string& value) {
+  set_has_ttf_file();
+  ttf_file_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.ttf_file)
+}
+#if LANG_CXX11
+void Font::set_ttf_file(::std::string&& value) {
+  set_has_ttf_file();
+  ttf_file_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Font.ttf_file)
+}
+#endif
+void Font::set_ttf_file(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_ttf_file();
+  ttf_file_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Font.ttf_file)
+}
+void Font::set_ttf_file(const char* value, size_t size) {
+  set_has_ttf_file();
+  ttf_file_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Font.ttf_file)
+}
+::std::string* Font::mutable_ttf_file() {
+  set_has_ttf_file();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Font.ttf_file)
+  return ttf_file_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Font::release_ttf_file() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Font.ttf_file)
+  clear_has_ttf_file();
+  return ttf_file_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Font::set_allocated_ttf_file(::std::string* ttf_file) {
+  if (ttf_file != NULL) {
+    set_has_ttf_file();
+  } else {
+    clear_has_ttf_file();
+  }
+  ttf_file_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ttf_file);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Font.ttf_file)
+}
+
+// optional int32 texture_group = 15 [(.buffers.gmx) = "texgroups/texgroup0"];
+bool Font::has_texture_group() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+void Font::set_has_texture_group() {
+  _has_bits_[0] |= 0x00001000u;
+}
+void Font::clear_has_texture_group() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+void Font::clear_texture_group() {
+  texture_group_ = 0;
+  clear_has_texture_group();
+}
+::google::protobuf::int32 Font::texture_group() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.texture_group)
+  return texture_group_;
+}
+void Font::set_texture_group(::google::protobuf::int32 value) {
+  set_has_texture_group();
+  texture_group_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.texture_group)
+}
+
+// optional string image = 16;
+bool Font::has_image() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Font::set_has_image() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Font::clear_has_image() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Font::clear_image() {
+  image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_image();
+}
+const ::std::string& Font::image() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Font.image)
+  return image_.GetNoArena();
+}
+void Font::set_image(const ::std::string& value) {
+  set_has_image();
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Font.image)
+}
+#if LANG_CXX11
+void Font::set_image(::std::string&& value) {
+  set_has_image();
+  image_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Font.image)
+}
+#endif
+void Font::set_image(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_image();
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Font.image)
+}
+void Font::set_image(const char* value, size_t size) {
+  set_has_image();
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Font.image)
+}
+::std::string* Font::mutable_image() {
+  set_has_image();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Font.image)
+  return image_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Font::release_image() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Font.image)
+  clear_has_image();
+  return image_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Font::set_allocated_image(::std::string* image) {
+  if (image != NULL) {
+    set_has_image();
+  } else {
+    clear_has_image();
+  }
+  image_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), image);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Font.image)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

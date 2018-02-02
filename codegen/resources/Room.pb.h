@@ -1334,7 +1334,7 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   // accessors -------------------------------------------------------
 
-  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15;
+  // repeated .buffers.resources.Room.RoomBackground backgrounds = 15 [(.buffers.gmx) = "backgrounds/background"];
   int backgrounds_size() const;
   void clear_backgrounds();
   static const int kBackgroundsFieldNumber = 15;
@@ -1346,7 +1346,7 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room_RoomBackground >&
       backgrounds() const;
 
-  // repeated .buffers.resources.Room.View views = 16;
+  // repeated .buffers.resources.Room.View views = 16 [(.buffers.gmx) = "views/view"];
   int views_size() const;
   void clear_views();
   static const int kViewsFieldNumber = 16;
@@ -1358,7 +1358,7 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room_View >&
       views() const;
 
-  // repeated .buffers.resources.Room.Instance instances = 17;
+  // repeated .buffers.resources.Room.Instance instances = 17 [(.buffers.gmx) = "instances/instance"];
   int instances_size() const;
   void clear_instances();
   static const int kInstancesFieldNumber = 17;
@@ -1370,7 +1370,7 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room_Instance >&
       instances() const;
 
-  // repeated .buffers.resources.Room.Tile tiles = 18;
+  // repeated .buffers.resources.Room.Tile tiles = 18 [(.buffers.gmx) = "tiles/tile"];
   int tiles_size() const;
   void clear_tiles();
   static const int kTilesFieldNumber = 18;
@@ -4010,7 +4010,7 @@ inline void Room::set_allocated_maker_settings(::buffers::resources::Room_MakerS
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Room.maker_settings)
 }
 
-// repeated .buffers.resources.Room.RoomBackground backgrounds = 15;
+// repeated .buffers.resources.Room.RoomBackground backgrounds = 15 [(.buffers.gmx) = "backgrounds/background"];
 inline int Room::backgrounds_size() const {
   return backgrounds_.size();
 }
@@ -4040,7 +4040,7 @@ Room::backgrounds() const {
   return backgrounds_;
 }
 
-// repeated .buffers.resources.Room.View views = 16;
+// repeated .buffers.resources.Room.View views = 16 [(.buffers.gmx) = "views/view"];
 inline int Room::views_size() const {
   return views_.size();
 }
@@ -4070,7 +4070,7 @@ Room::views() const {
   return views_;
 }
 
-// repeated .buffers.resources.Room.Instance instances = 17;
+// repeated .buffers.resources.Room.Instance instances = 17 [(.buffers.gmx) = "instances/instance"];
 inline int Room::instances_size() const {
   return instances_.size();
 }
@@ -4100,7 +4100,7 @@ Room::instances() const {
   return instances_;
 }
 
-// repeated .buffers.resources.Room.Tile tiles = 18;
+// repeated .buffers.resources.Room.Tile tiles = 18 [(.buffers.gmx) = "tiles/tile"];
 inline int Room::tiles_size() const {
   return tiles_.size();
 }

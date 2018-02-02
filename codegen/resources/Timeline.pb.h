@@ -30,6 +30,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "options.pb.h"
+#include "resources/Event.pb.h"
 // @@protoc_insertion_point(includes)
 namespace buffers {
 namespace resources {
@@ -150,20 +151,17 @@ class Timeline_Moment : public ::google::protobuf::Message /* @@protoc_insertion
 
   // accessors -------------------------------------------------------
 
-  // optional string code = 2;
-  bool has_code() const;
-  void clear_code();
-  static const int kCodeFieldNumber = 2;
-  const ::std::string& code() const;
-  void set_code(const ::std::string& value);
-  #if LANG_CXX11
-  void set_code(::std::string&& value);
-  #endif
-  void set_code(const char* value);
-  void set_code(const char* value, size_t size);
-  ::std::string* mutable_code();
-  ::std::string* release_code();
-  void set_allocated_code(::std::string* code);
+  // repeated .buffers.resources.Event event = 2;
+  int event_size() const;
+  void clear_event();
+  static const int kEventFieldNumber = 2;
+  const ::buffers::resources::Event& event(int index) const;
+  ::buffers::resources::Event* mutable_event(int index);
+  ::buffers::resources::Event* add_event();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Event >*
+      mutable_event();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Event >&
+      event() const;
 
   // optional int32 step = 1;
   bool has_step() const;
@@ -176,13 +174,11 @@ class Timeline_Moment : public ::google::protobuf::Message /* @@protoc_insertion
  private:
   void set_has_step();
   void clear_has_step();
-  void set_has_code();
-  void clear_has_code();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr code_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Event > event_;
   ::google::protobuf::int32 step_;
   friend struct protobuf_resources_2fTimeline_2eproto::TableStruct;
 };
@@ -278,7 +274,7 @@ class Timeline : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   // accessors -------------------------------------------------------
 
-  // repeated .buffers.resources.Timeline.Moment moments = 3;
+  // repeated .buffers.resources.Timeline.Moment moments = 3 [(.buffers.gmx) = "entry"];
   int moments_size() const;
   void clear_moments();
   static const int kMomentsFieldNumber = 3;
@@ -305,7 +301,7 @@ class Timeline : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
@@ -341,13 +337,13 @@ class Timeline : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
 // optional int32 step = 1;
 inline bool Timeline_Moment::has_step() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
 inline void Timeline_Moment::set_has_step() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000001u;
 }
 inline void Timeline_Moment::clear_has_step() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000001u;
 }
 inline void Timeline_Moment::clear_step() {
   step_ = 0;
@@ -363,67 +359,34 @@ inline void Timeline_Moment::set_step(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Timeline.Moment.step)
 }
 
-// optional string code = 2;
-inline bool Timeline_Moment::has_code() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// repeated .buffers.resources.Event event = 2;
+inline int Timeline_Moment::event_size() const {
+  return event_.size();
 }
-inline void Timeline_Moment::set_has_code() {
-  _has_bits_[0] |= 0x00000001u;
+inline void Timeline_Moment::clear_event() {
+  event_.Clear();
 }
-inline void Timeline_Moment::clear_has_code() {
-  _has_bits_[0] &= ~0x00000001u;
+inline const ::buffers::resources::Event& Timeline_Moment::event(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Timeline.Moment.event)
+  return event_.Get(index);
 }
-inline void Timeline_Moment::clear_code() {
-  code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_code();
+inline ::buffers::resources::Event* Timeline_Moment::mutable_event(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Timeline.Moment.event)
+  return event_.Mutable(index);
 }
-inline const ::std::string& Timeline_Moment::code() const {
-  // @@protoc_insertion_point(field_get:buffers.resources.Timeline.Moment.code)
-  return code_.GetNoArena();
+inline ::buffers::resources::Event* Timeline_Moment::add_event() {
+  // @@protoc_insertion_point(field_add:buffers.resources.Timeline.Moment.event)
+  return event_.Add();
 }
-inline void Timeline_Moment::set_code(const ::std::string& value) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:buffers.resources.Timeline.Moment.code)
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Event >*
+Timeline_Moment::mutable_event() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.resources.Timeline.Moment.event)
+  return &event_;
 }
-#if LANG_CXX11
-inline void Timeline_Moment::set_code(::std::string&& value) {
-  set_has_code();
-  code_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Timeline.Moment.code)
-}
-#endif
-inline void Timeline_Moment::set_code(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:buffers.resources.Timeline.Moment.code)
-}
-inline void Timeline_Moment::set_code(const char* value, size_t size) {
-  set_has_code();
-  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Timeline.Moment.code)
-}
-inline ::std::string* Timeline_Moment::mutable_code() {
-  set_has_code();
-  // @@protoc_insertion_point(field_mutable:buffers.resources.Timeline.Moment.code)
-  return code_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Timeline_Moment::release_code() {
-  // @@protoc_insertion_point(field_release:buffers.resources.Timeline.Moment.code)
-  clear_has_code();
-  return code_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Timeline_Moment::set_allocated_code(::std::string* code) {
-  if (code != NULL) {
-    set_has_code();
-  } else {
-    clear_has_code();
-  }
-  code_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code);
-  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Timeline.Moment.code)
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Event >&
+Timeline_Moment::event() const {
+  // @@protoc_insertion_point(field_list:buffers.resources.Timeline.Moment.event)
+  return event_;
 }
 
 // -------------------------------------------------------------------
@@ -493,7 +456,7 @@ inline void Timeline::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Timeline.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Timeline::has_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -517,7 +480,7 @@ inline void Timeline::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Timeline.id)
 }
 
-// repeated .buffers.resources.Timeline.Moment moments = 3;
+// repeated .buffers.resources.Timeline.Moment moments = 3 [(.buffers.gmx) = "entry"];
 inline int Timeline::moments_size() const {
   return moments_.size();
 }

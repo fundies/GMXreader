@@ -144,19 +144,20 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\024resources/Path.proto\022\021buffers.resource"
-      "s\032\roptions.proto\"\373\002\n\004Path\022\014\n\004name\030\001 \001(\t\022"
+      "s\032\roptions.proto\"\215\003\n\004Path\022\014\n\004name\030\001 \001(\t\022"
       "\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022*\n\024backg"
       "round_room_name\030\003 \001(\tB\014\202\265\030\010backroom\022\031\n\006s"
       "nap_x\030\004 \001(\005B\t\202\265\030\005hsnap\022\031\n\006snap_y\030\005 \001(\005B\t"
       "\202\265\030\005vsnap\022\"\n\006smooth\030\006 \001(\010B\022\202\265\030\016GMX_DEPRE"
       "CATED\022\016\n\006closed\030\007 \001(\010\022\021\n\tprecision\030\010 \001(\005"
-      "\022\014\n\004kind\030\t \001(\005\022-\n\006points\030\n \003(\0132\035.buffers"
-      ".resources.Path.Point\032_\n\005Point\022\032\n\001x\030\001 \001("
-      "\005B\017\202\265\030\013GMX_SPLIT/0\022\032\n\001y\030\002 \001(\005B\017\202\265\030\013GMX_S"
-      "PLIT/1\022\036\n\005speed\030\003 \001(\005B\017\202\265\030\013GMX_SPLIT/2"
+      "\022\014\n\004kind\030\t \001(\005\022\?\n\006points\030\n \003(\0132\035.buffers"
+      ".resources.Path.PointB\020\202\265\030\014points/point\032"
+      "_\n\005Point\022\032\n\001x\030\001 \001(\005B\017\202\265\030\013GMX_SPLIT/0\022\032\n\001"
+      "y\030\002 \001(\005B\017\202\265\030\013GMX_SPLIT/1\022\036\n\005speed\030\003 \001(\005B"
+      "\017\202\265\030\013GMX_SPLIT/2"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 438);
+      descriptor, 456);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Path.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -835,7 +836,7 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .buffers.resources.Path.Point points = 10;
+      // repeated .buffers.resources.Path.Point points = 10 [(.buffers.gmx) = "points/point"];
       case 10: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
@@ -929,7 +930,7 @@ void Path::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->kind(), output);
   }
 
-  // repeated .buffers.resources.Path.Point points = 10;
+  // repeated .buffers.resources.Path.Point points = 10 [(.buffers.gmx) = "points/point"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->points_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1008,7 +1009,7 @@ void Path::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->kind(), target);
   }
 
-  // repeated .buffers.resources.Path.Point points = 10;
+  // repeated .buffers.resources.Path.Point points = 10 [(.buffers.gmx) = "points/point"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->points_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1033,7 +1034,7 @@ size_t Path::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .buffers.resources.Path.Point points = 10;
+  // repeated .buffers.resources.Path.Point points = 10 [(.buffers.gmx) = "points/point"];
   {
     unsigned int count = static_cast<unsigned int>(this->points_size());
     total_size += 1UL * count;
@@ -1511,7 +1512,7 @@ void Path::set_kind(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.kind)
 }
 
-// repeated .buffers.resources.Path.Point points = 10;
+// repeated .buffers.resources.Path.Point points = 10 [(.buffers.gmx) = "points/point"];
 int Path::points_size() const {
   return points_.size();
 }
