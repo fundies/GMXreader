@@ -144,19 +144,19 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\024resources/Path.proto\022\021buffers.resource"
-      "s\032\roptions.proto\"\375\002\n\004Path\022\014\n\004name\030\001 \001(\t\022"
-      "\037\n\002id\030\002 \001(\005B\023\202\265\030\017GMX_DEPRECIATED\022*\n\024back"
-      "ground_room_name\030\003 \001(\tB\014\202\265\030\010backroom\022\031\n\006"
-      "snap_x\030\004 \001(\005B\t\202\265\030\005hsnap\022\031\n\006snap_y\030\005 \001(\005B"
-      "\t\202\265\030\005vsnap\022#\n\006smooth\030\006 \001(\010B\023\202\265\030\017GMX_DEPR"
-      "ECIATED\022\016\n\006closed\030\007 \001(\010\022\021\n\tprecision\030\010 \001"
-      "(\005\022\014\n\004kind\030\t \001(\005\022-\n\006points\030\n \003(\0132\035.buffe"
-      "rs.resources.Path.Point\032_\n\005Point\022\032\n\001x\030\001 "
-      "\001(\005B\017\202\265\030\013GMX_SPLIT/0\022\032\n\001y\030\002 \001(\005B\017\202\265\030\013GMX"
-      "_SPLIT/1\022\036\n\005speed\030\003 \001(\005B\017\202\265\030\013GMX_SPLIT/2"
+      "s\032\roptions.proto\"\373\002\n\004Path\022\014\n\004name\030\001 \001(\t\022"
+      "\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022*\n\024backg"
+      "round_room_name\030\003 \001(\tB\014\202\265\030\010backroom\022\031\n\006s"
+      "nap_x\030\004 \001(\005B\t\202\265\030\005hsnap\022\031\n\006snap_y\030\005 \001(\005B\t"
+      "\202\265\030\005vsnap\022\"\n\006smooth\030\006 \001(\010B\022\202\265\030\016GMX_DEPRE"
+      "CATED\022\016\n\006closed\030\007 \001(\010\022\021\n\tprecision\030\010 \001(\005"
+      "\022\014\n\004kind\030\t \001(\005\022-\n\006points\030\n \003(\0132\035.buffers"
+      ".resources.Path.Point\032_\n\005Point\022\032\n\001x\030\001 \001("
+      "\005B\017\202\265\030\013GMX_SPLIT/0\022\032\n\001y\030\002 \001(\005B\017\202\265\030\013GMX_S"
+      "PLIT/1\022\036\n\005speed\030\003 \001(\005B\017\202\265\030\013GMX_SPLIT/2"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 440);
+      descriptor, 438);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Path.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -721,7 +721,7 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -779,7 +779,7 @@ bool Path::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
@@ -884,7 +884,7 @@ void Path::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
@@ -909,7 +909,7 @@ void Path::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->snap_y(), output);
   }
 
-  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000020u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->smooth(), output);
   }
@@ -962,7 +962,7 @@ void Path::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
@@ -988,7 +988,7 @@ void Path::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->snap_y(), target);
   }
 
-  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000020u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->smooth(), target);
   }
@@ -1059,7 +1059,7 @@ size_t Path::ByteSizeLong() const {
           this->background_room_name());
     }
 
-    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -1080,7 +1080,7 @@ size_t Path::ByteSizeLong() const {
           this->snap_y());
     }
 
-    // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_smooth()) {
       total_size += 1 + 1;
     }
@@ -1280,7 +1280,7 @@ void Path::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.name)
 }
 
-// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Path::has_id() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1415,7 +1415,7 @@ void Path::set_snap_y(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.snap_y)
 }
 
-// optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Path::has_smooth() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }

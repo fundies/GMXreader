@@ -164,7 +164,7 @@ class GMXReader : public pugi::xml_tree_walker {
         const std::string gmxName = opts.GetExtension(buffers::gmx);
         std::string xmlElement;
 
-        if (gmxName != "GMX_DEPRECIATED") xmlElement = gmxName;
+        if (gmxName != "GMX_DEPRECATED") xmlElement = gmxName;
 
         if (xmlElement.empty()) xmlElement = field->name();
 
@@ -184,17 +184,16 @@ class GMXReader : public pugi::xml_tree_walker {
 
         // look in attributes
         pugi::xml_attribute attr;
-        if (child == nullptr) attr = node.attribute(xmlElement.c_str());
+        if (child.empty()) attr = node.attribute(xmlElement.c_str());
 
-        bool isAttribute = attr != nullptr;
+        bool isAttribute = !attr.empty();
 
-        if (child == nullptr && gmxName != "GMX_DEPRECIATED" && !isSplit && !isAttribute) {
+        if (child.empty() && gmxName != "GMX_DEPRECATED" && !isSplit && !isAttribute) {
           //ename only exists if etype = 4...
           pugi::xml_attribute a = node.attribute("eventtype");
-          if (xmlElement != "ename" && a != nullptr && a.as_int() != 4)
-            std::cerr << "Error: no such element " << node.path() << xmlElement << std::endl;
-        }
-        else if (gmxName != "GMX_DEPRECIATED") {
+          if (xmlElement != "ename" && a.as_int() != 4)
+            std::cerr << "Error: no such element " << node.path() << "/" << xmlElement << std::endl;
+        } else if (gmxName != "GMX_DEPRECATED") {
           if (field->is_repeated()) {
             switch (field->cpp_type()) {
               case google::protobuf::FieldDescriptor::FieldDescriptor::CppType::CPPTYPE_MESSAGE: {
@@ -282,7 +281,7 @@ class GMXReader : public pugi::xml_tree_walker {
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_ENUM: {
                 //refl->SetEnum(m, field,
-                  //             (isAttribute) ? attr.as_int() : (isSplit) ? std::stoi(splitValue) : xmlValue.as_int());
+                //             (isAttribute) ? attr.as_int() : (isSplit) ? std::stoi(splitValue) : xmlValue.as_int());
                 break;
               }
               case google::protobuf::FieldDescriptor::CppType::CPPTYPE_STRING: {

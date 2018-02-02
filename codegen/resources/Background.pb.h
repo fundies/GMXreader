@@ -177,28 +177,28 @@ class Background : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::std::string* release_image();
   void set_allocated_image(::std::string* image);
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
   ::google::protobuf::int32 id() const;
   void set_id(::google::protobuf::int32 value);
 
-  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_preload() const;
   void clear_preload();
   static const int kPreloadFieldNumber = 4;
   bool preload() const;
   void set_preload(bool value);
 
-  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_transparent() const;
   void clear_transparent();
   static const int kTransparentFieldNumber = 5;
   bool transparent() const;
   void set_transparent(bool value);
 
-  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_smooth_edges() const;
   void clear_smooth_edges();
   static const int kSmoothEdgesFieldNumber = 6;
@@ -436,7 +436,7 @@ inline void Background::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Background.name)
 }
 
-// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Background::has_id() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -460,7 +460,7 @@ inline void Background::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.id)
 }
 
-// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Background::has_preload() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -484,7 +484,7 @@ inline void Background::set_preload(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.preload)
 }
 
-// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Background::has_transparent() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -508,7 +508,7 @@ inline void Background::set_transparent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.transparent)
 }
 
-// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Background::has_smooth_edges() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }

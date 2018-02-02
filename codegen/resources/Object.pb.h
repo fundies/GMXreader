@@ -943,7 +943,7 @@ class Object : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_mask_name();
   void set_allocated_mask_name(::std::string* mask_name);
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
@@ -1959,7 +1959,7 @@ inline void Object::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Object::has_id() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }

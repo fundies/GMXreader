@@ -1412,6 +1412,21 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_code();
   void set_allocated_code(::std::string* code);
 
+  // optional string name = 28;
+  bool has_name() const;
+  void clear_name();
+  static const int kNameFieldNumber = 28;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
   // optional .buffers.resources.Room.MakerSettings maker_settings = 14 [(.buffers.gmx) = "makerSettings"];
   bool has_maker_settings() const;
   void clear_maker_settings();
@@ -1561,8 +1576,19 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   double phy_world_pixel_meters() const;
   void set_phy_world_pixel_meters(double value);
 
+  // optional int32 id = 29 [(.buffers.gmx) = "GMX_DEPRECATED"];
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 29;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:buffers.resources.Room)
  private:
+  void set_has_name();
+  void clear_has_name();
+  void set_has_id();
+  void clear_has_id();
   void set_has_caption();
   void clear_has_caption();
   void set_has_width();
@@ -1619,6 +1645,7 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room_Tile > tiles_;
   ::google::protobuf::internal::ArenaStringPtr caption_;
   ::google::protobuf::internal::ArenaStringPtr code_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
   ::buffers::resources::Room_MakerSettings* maker_settings_;
   ::google::protobuf::uint32 width_;
   ::google::protobuf::uint32 height_;
@@ -1640,6 +1667,7 @@ class Room : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::int32 phy_world_bottom_;
   ::google::protobuf::uint32 speed_;
   double phy_world_pixel_meters_;
+  ::google::protobuf::int32 id_;
   friend struct protobuf_resources_2fRoom_2eproto::TableStruct;
 };
 // ===================================================================
@@ -3435,6 +3463,93 @@ inline void Room_Tile::set_yscale(double value) {
 
 // Room
 
+// optional string name = 28;
+inline bool Room::has_name() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Room::set_has_name() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Room::clear_has_name() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Room::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_name();
+}
+inline const ::std::string& Room::name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Room.name)
+  return name_.GetNoArena();
+}
+inline void Room::set_name(const ::std::string& value) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Room.name)
+}
+#if LANG_CXX11
+inline void Room::set_name(::std::string&& value) {
+  set_has_name();
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Room.name)
+}
+#endif
+inline void Room::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Room.name)
+}
+inline void Room::set_name(const char* value, size_t size) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Room.name)
+}
+inline ::std::string* Room::mutable_name() {
+  set_has_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Room.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Room::release_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Room.name)
+  clear_has_name();
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Room::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    set_has_name();
+  } else {
+    clear_has_name();
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Room.name)
+}
+
+// optional int32 id = 29 [(.buffers.gmx) = "GMX_DEPRECATED"];
+inline bool Room::has_id() const {
+  return (_has_bits_[0] & 0x01000000u) != 0;
+}
+inline void Room::set_has_id() {
+  _has_bits_[0] |= 0x01000000u;
+}
+inline void Room::clear_has_id() {
+  _has_bits_[0] &= ~0x01000000u;
+}
+inline void Room::clear_id() {
+  id_ = 0;
+  clear_has_id();
+}
+inline ::google::protobuf::int32 Room::id() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Room.id)
+  return id_;
+}
+inline void Room::set_id(::google::protobuf::int32 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Room.id)
+}
+
 // optional string caption = 1;
 inline bool Room::has_caption() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
@@ -3500,13 +3615,13 @@ inline void Room::set_allocated_caption(::std::string* caption) {
 
 // optional uint32 width = 2;
 inline bool Room::has_width() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void Room::set_has_width() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void Room::clear_has_width() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void Room::clear_width() {
   width_ = 0u;
@@ -3524,13 +3639,13 @@ inline void Room::set_width(::google::protobuf::uint32 value) {
 
 // optional uint32 height = 3;
 inline bool Room::has_height() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void Room::set_has_height() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void Room::clear_has_height() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void Room::clear_height() {
   height_ = 0u;
@@ -3548,13 +3663,13 @@ inline void Room::set_height(::google::protobuf::uint32 value) {
 
 // optional uint32 vsnap = 4;
 inline bool Room::has_vsnap() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void Room::set_has_vsnap() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void Room::clear_has_vsnap() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void Room::clear_vsnap() {
   vsnap_ = 0u;
@@ -3572,13 +3687,13 @@ inline void Room::set_vsnap(::google::protobuf::uint32 value) {
 
 // optional uint32 hsnap = 5;
 inline bool Room::has_hsnap() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void Room::set_has_hsnap() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void Room::clear_has_hsnap() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void Room::clear_hsnap() {
   hsnap_ = 0u;
@@ -3596,13 +3711,13 @@ inline void Room::set_hsnap(::google::protobuf::uint32 value) {
 
 // optional bool isometric = 6;
 inline bool Room::has_isometric() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void Room::set_has_isometric() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void Room::clear_has_isometric() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void Room::clear_isometric() {
   isometric_ = false;
@@ -3620,13 +3735,13 @@ inline void Room::set_isometric(bool value) {
 
 // optional uint32 speed = 27;
 inline bool Room::has_speed() const {
-  return (_has_bits_[0] & 0x00200000u) != 0;
+  return (_has_bits_[0] & 0x00400000u) != 0;
 }
 inline void Room::set_has_speed() {
-  _has_bits_[0] |= 0x00200000u;
+  _has_bits_[0] |= 0x00400000u;
 }
 inline void Room::clear_has_speed() {
-  _has_bits_[0] &= ~0x00200000u;
+  _has_bits_[0] &= ~0x00400000u;
 }
 inline void Room::clear_speed() {
   speed_ = 0u;
@@ -3644,13 +3759,13 @@ inline void Room::set_speed(::google::protobuf::uint32 value) {
 
 // optional bool persistent = 7;
 inline bool Room::has_persistent() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 inline void Room::set_has_persistent() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000400u;
 }
 inline void Room::clear_has_persistent() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline void Room::clear_persistent() {
   persistent_ = false;
@@ -3668,13 +3783,13 @@ inline void Room::set_persistent(bool value) {
 
 // optional int32 color = 8 [(.buffers.gmx) = "colour"];
 inline bool Room::has_color() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void Room::set_has_color() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void Room::clear_has_color() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void Room::clear_color() {
   color_ = 0;
@@ -3692,13 +3807,13 @@ inline void Room::set_color(::google::protobuf::int32 value) {
 
 // optional bool show_color = 9 [(.buffers.gmx) = "showcolour"];
 inline bool Room::has_show_color() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void Room::set_has_show_color() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void Room::clear_has_show_color() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void Room::clear_show_color() {
   show_color_ = false;
@@ -3779,13 +3894,13 @@ inline void Room::set_allocated_code(::std::string* code) {
 
 // optional bool enable_views = 11 [(.buffers.gmx) = "enableViews"];
 inline bool Room::has_enable_views() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
+  return (_has_bits_[0] & 0x00001000u) != 0;
 }
 inline void Room::set_has_enable_views() {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00001000u;
 }
 inline void Room::clear_has_enable_views() {
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline void Room::clear_enable_views() {
   enable_views_ = false;
@@ -3803,13 +3918,13 @@ inline void Room::set_enable_views(bool value) {
 
 // optional bool clear_view_background = 12 [(.buffers.gmx) = "clearViewBackground"];
 inline bool Room::has_clear_view_background() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
+  return (_has_bits_[0] & 0x00002000u) != 0;
 }
 inline void Room::set_has_clear_view_background() {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00002000u;
 }
 inline void Room::clear_has_clear_view_background() {
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00002000u;
 }
 inline void Room::clear_clear_view_background() {
   clear_view_background_ = false;
@@ -3827,13 +3942,13 @@ inline void Room::set_clear_view_background(bool value) {
 
 // optional bool clear_display_buffer = 13 [(.buffers.gmx) = "clearDisplayBuffer"];
 inline bool Room::has_clear_display_buffer() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
+  return (_has_bits_[0] & 0x00004000u) != 0;
 }
 inline void Room::set_has_clear_display_buffer() {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00004000u;
 }
 inline void Room::clear_has_clear_display_buffer() {
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00004000u;
 }
 inline void Room::clear_clear_display_buffer() {
   clear_display_buffer_ = false;
@@ -3851,13 +3966,13 @@ inline void Room::set_clear_display_buffer(bool value) {
 
 // optional .buffers.resources.Room.MakerSettings maker_settings = 14 [(.buffers.gmx) = "makerSettings"];
 inline bool Room::has_maker_settings() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void Room::set_has_maker_settings() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void Room::clear_has_maker_settings() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void Room::clear_maker_settings() {
   if (maker_settings_ != NULL) maker_settings_->::buffers::resources::Room_MakerSettings::Clear();
@@ -4017,13 +4132,13 @@ Room::tiles() const {
 
 // optional bool use_physics = 19 [(.buffers.gmx) = "PhysicsWorld"];
 inline bool Room::has_use_physics() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
+  return (_has_bits_[0] & 0x00008000u) != 0;
 }
 inline void Room::set_has_use_physics() {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00008000u;
 }
 inline void Room::clear_has_use_physics() {
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00008000u;
 }
 inline void Room::clear_use_physics() {
   use_physics_ = false;
@@ -4041,13 +4156,13 @@ inline void Room::set_use_physics(bool value) {
 
 // optional int32 phy_world_top = 20 [(.buffers.gmx) = "PhysicsWorldTop"];
 inline bool Room::has_phy_world_top() const {
-  return (_has_bits_[0] & 0x00008000u) != 0;
+  return (_has_bits_[0] & 0x00010000u) != 0;
 }
 inline void Room::set_has_phy_world_top() {
-  _has_bits_[0] |= 0x00008000u;
+  _has_bits_[0] |= 0x00010000u;
 }
 inline void Room::clear_has_phy_world_top() {
-  _has_bits_[0] &= ~0x00008000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 inline void Room::clear_phy_world_top() {
   phy_world_top_ = 0;
@@ -4065,13 +4180,13 @@ inline void Room::set_phy_world_top(::google::protobuf::int32 value) {
 
 // optional int32 phy_world_left = 21 [(.buffers.gmx) = "PhysicsWorldLeft"];
 inline bool Room::has_phy_world_left() const {
-  return (_has_bits_[0] & 0x00010000u) != 0;
+  return (_has_bits_[0] & 0x00020000u) != 0;
 }
 inline void Room::set_has_phy_world_left() {
-  _has_bits_[0] |= 0x00010000u;
+  _has_bits_[0] |= 0x00020000u;
 }
 inline void Room::clear_has_phy_world_left() {
-  _has_bits_[0] &= ~0x00010000u;
+  _has_bits_[0] &= ~0x00020000u;
 }
 inline void Room::clear_phy_world_left() {
   phy_world_left_ = 0;
@@ -4089,13 +4204,13 @@ inline void Room::set_phy_world_left(::google::protobuf::int32 value) {
 
 // optional int32 phy_world_right = 22 [(.buffers.gmx) = "PhysicsWorldRight"];
 inline bool Room::has_phy_world_right() const {
-  return (_has_bits_[0] & 0x00020000u) != 0;
+  return (_has_bits_[0] & 0x00040000u) != 0;
 }
 inline void Room::set_has_phy_world_right() {
-  _has_bits_[0] |= 0x00020000u;
+  _has_bits_[0] |= 0x00040000u;
 }
 inline void Room::clear_has_phy_world_right() {
-  _has_bits_[0] &= ~0x00020000u;
+  _has_bits_[0] &= ~0x00040000u;
 }
 inline void Room::clear_phy_world_right() {
   phy_world_right_ = 0;
@@ -4113,13 +4228,13 @@ inline void Room::set_phy_world_right(::google::protobuf::int32 value) {
 
 // optional int32 phy_world_bottom = 23 [(.buffers.gmx) = "PhysicsWorldBottom"];
 inline bool Room::has_phy_world_bottom() const {
-  return (_has_bits_[0] & 0x00100000u) != 0;
+  return (_has_bits_[0] & 0x00200000u) != 0;
 }
 inline void Room::set_has_phy_world_bottom() {
-  _has_bits_[0] |= 0x00100000u;
+  _has_bits_[0] |= 0x00200000u;
 }
 inline void Room::clear_has_phy_world_bottom() {
-  _has_bits_[0] &= ~0x00100000u;
+  _has_bits_[0] &= ~0x00200000u;
 }
 inline void Room::clear_phy_world_bottom() {
   phy_world_bottom_ = 0;
@@ -4137,13 +4252,13 @@ inline void Room::set_phy_world_bottom(::google::protobuf::int32 value) {
 
 // optional double phy_world_xgravity = 24 [(.buffers.gmx) = "PhysicsWorldGravityX"];
 inline bool Room::has_phy_world_xgravity() const {
-  return (_has_bits_[0] & 0x00040000u) != 0;
+  return (_has_bits_[0] & 0x00080000u) != 0;
 }
 inline void Room::set_has_phy_world_xgravity() {
-  _has_bits_[0] |= 0x00040000u;
+  _has_bits_[0] |= 0x00080000u;
 }
 inline void Room::clear_has_phy_world_xgravity() {
-  _has_bits_[0] &= ~0x00040000u;
+  _has_bits_[0] &= ~0x00080000u;
 }
 inline void Room::clear_phy_world_xgravity() {
   phy_world_xgravity_ = 0;
@@ -4161,13 +4276,13 @@ inline void Room::set_phy_world_xgravity(double value) {
 
 // optional double phy_world_ygravity = 25 [(.buffers.gmx) = "PhysicsWorldGravityY"];
 inline bool Room::has_phy_world_ygravity() const {
-  return (_has_bits_[0] & 0x00080000u) != 0;
+  return (_has_bits_[0] & 0x00100000u) != 0;
 }
 inline void Room::set_has_phy_world_ygravity() {
-  _has_bits_[0] |= 0x00080000u;
+  _has_bits_[0] |= 0x00100000u;
 }
 inline void Room::clear_has_phy_world_ygravity() {
-  _has_bits_[0] &= ~0x00080000u;
+  _has_bits_[0] &= ~0x00100000u;
 }
 inline void Room::clear_phy_world_ygravity() {
   phy_world_ygravity_ = 0;
@@ -4185,13 +4300,13 @@ inline void Room::set_phy_world_ygravity(double value) {
 
 // optional double phy_world_pixel_meters = 26 [(.buffers.gmx) = "PhysicsWorldPixToMeters"];
 inline bool Room::has_phy_world_pixel_meters() const {
-  return (_has_bits_[0] & 0x00400000u) != 0;
+  return (_has_bits_[0] & 0x00800000u) != 0;
 }
 inline void Room::set_has_phy_world_pixel_meters() {
-  _has_bits_[0] |= 0x00400000u;
+  _has_bits_[0] |= 0x00800000u;
 }
 inline void Room::clear_has_phy_world_pixel_meters() {
-  _has_bits_[0] &= ~0x00400000u;
+  _has_bits_[0] &= ~0x00800000u;
 }
 inline void Room::clear_phy_world_pixel_meters() {
   phy_world_pixel_meters_ = 0;

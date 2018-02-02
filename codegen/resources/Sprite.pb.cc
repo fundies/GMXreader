@@ -150,31 +150,31 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\026resources/Sprite.proto\022\021buffers.resour"
-      "ces\032\roptions.proto\"\333\006\n\006Sprite\022\014\n\004name\030\001 "
-      "\001(\t\022\037\n\002id\030\002 \001(\005B\023\202\265\030\017GMX_DEPRECIATED\022$\n\007"
-      "preload\030\004 \001(\010B\023\202\265\030\017GMX_DEPRECIATED\022(\n\013tr"
-      "ansparent\030\005 \001(\010B\023\202\265\030\017GMX_DEPRECIATED\022)\n\014"
-      "smooth_edges\030\006 \001(\010B\023\202\265\030\017GMX_DEPRECIATED\022"
-      ")\n\017alpha_tolerance\030\007 \001(\005B\020\202\265\030\014coltoleran"
-      "ce\022#\n\rseparate_mask\030\010 \001(\010B\014\202\265\030\010sepmasks\022"
-      "\033\n\010origin_x\030\t \001(\005B\t\202\265\030\005xorig\022\035\n\010origin_y"
-      "\030\n \001(\005B\013\202\265\030\007yorigin\022;\n\005shape\030\013 \001(\0162\037.buf"
-      "fers.resources.Sprite.ShapeB\013\202\265\030\007colkind"
-      "\022F\n\tbbox_mode\030\014 \001(\0162%.buffers.resources."
-      "Sprite.BoundingBoxB\014\202\265\030\010bboxmode\022\021\n\tbbox"
-      "_left\030\r \001(\005\022\022\n\nbbox_right\030\016 \001(\005\022\020\n\010bbox_"
-      "top\030\017 \001(\005\022\023\n\013bbox_bottom\030\020 \001(\005\022\014\n\004type\030\021"
-      " \001(\005\022\031\n\006h_tile\030\022 \001(\005B\t\202\265\030\005HTile\022\031\n\006v_til"
-      "e\030\023 \001(\005B\t\202\265\030\005VTile\0226\n\rtexture_group\030\024 \001("
-      "\005B\037\202\265\030\033TextureGroups/TextureGroup0\022\030\n\005fo"
-      "r3D\030\025 \001(\010B\t\202\265\030\005For3D\022\r\n\005width\030\026 \001(\r\022\016\n\006h"
-      "eight\030\027 \001(\r\022\035\n\tsubimages\030\003 \003(\tB\n\202\265\030\006fram"
-      "es\":\n\005Shape\022\013\n\007PRECISE\020\000\022\r\n\tRECTANGLE\020\001\022"
-      "\010\n\004DISK\020\002\022\013\n\007DIAMOND\020\003\"8\n\013BoundingBox\022\r\n"
-      "\tAUTOMATIC\020\000\022\016\n\nFULL_IMAGE\020\001\022\n\n\006MANUAL\020\002"
+      "ces\032\roptions.proto\"\327\006\n\006Sprite\022\014\n\004name\030\001 "
+      "\001(\t\022\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022#\n\007p"
+      "reload\030\004 \001(\010B\022\202\265\030\016GMX_DEPRECATED\022\'\n\013tran"
+      "sparent\030\005 \001(\010B\022\202\265\030\016GMX_DEPRECATED\022(\n\014smo"
+      "oth_edges\030\006 \001(\010B\022\202\265\030\016GMX_DEPRECATED\022)\n\017a"
+      "lpha_tolerance\030\007 \001(\005B\020\202\265\030\014coltolerance\022#"
+      "\n\rseparate_mask\030\010 \001(\010B\014\202\265\030\010sepmasks\022\033\n\010o"
+      "rigin_x\030\t \001(\005B\t\202\265\030\005xorig\022\035\n\010origin_y\030\n \001"
+      "(\005B\013\202\265\030\007yorigin\022;\n\005shape\030\013 \001(\0162\037.buffers"
+      ".resources.Sprite.ShapeB\013\202\265\030\007colkind\022F\n\t"
+      "bbox_mode\030\014 \001(\0162%.buffers.resources.Spri"
+      "te.BoundingBoxB\014\202\265\030\010bboxmode\022\021\n\tbbox_lef"
+      "t\030\r \001(\005\022\022\n\nbbox_right\030\016 \001(\005\022\020\n\010bbox_top\030"
+      "\017 \001(\005\022\023\n\013bbox_bottom\030\020 \001(\005\022\014\n\004type\030\021 \001(\005"
+      "\022\031\n\006h_tile\030\022 \001(\005B\t\202\265\030\005HTile\022\031\n\006v_tile\030\023 "
+      "\001(\005B\t\202\265\030\005VTile\0226\n\rtexture_group\030\024 \001(\005B\037\202"
+      "\265\030\033TextureGroups/TextureGroup0\022\030\n\005for3D\030"
+      "\025 \001(\010B\t\202\265\030\005For3D\022\r\n\005width\030\026 \001(\r\022\016\n\006heigh"
+      "t\030\027 \001(\r\022\035\n\tsubimages\030\003 \003(\tB\n\202\265\030\006frames\":"
+      "\n\005Shape\022\013\n\007PRECISE\020\000\022\r\n\tRECTANGLE\020\001\022\010\n\004D"
+      "ISK\020\002\022\013\n\007DIAMOND\020\003\"8\n\013BoundingBox\022\r\n\tAUT"
+      "OMATIC\020\000\022\016\n\nFULL_IMAGE\020\001\022\n\n\006MANUAL\020\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 920);
+      descriptor, 916);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Sprite.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -393,7 +393,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -424,7 +424,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
@@ -438,7 +438,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
@@ -452,7 +452,7 @@ bool Sprite::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
@@ -753,7 +753,7 @@ void Sprite::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000002u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
@@ -768,17 +768,17 @@ void Sprite::SerializeWithCachedSizes(
       3, this->subimages(i), output);
   }
 
-  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->preload(), output);
   }
 
-  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000008u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->transparent(), output);
   }
 
-  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000010u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->smooth_edges(), output);
   }
@@ -896,7 +896,7 @@ void Sprite::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
@@ -911,17 +911,17 @@ void Sprite::SerializeWithCachedSizes(
       WriteStringToArray(3, this->subimages(i), target);
   }
 
-  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->preload(), target);
   }
 
-  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000008u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->transparent(), target);
   }
 
-  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000010u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->smooth_edges(), target);
   }
@@ -1046,24 +1046,24 @@ size_t Sprite::ByteSizeLong() const {
           this->name());
     }
 
-    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->id());
     }
 
-    // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_preload()) {
       total_size += 1 + 1;
     }
 
-    // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_transparent()) {
       total_size += 1 + 1;
     }
 
-    // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_smooth_edges()) {
       total_size += 1 + 1;
     }
@@ -1418,7 +1418,7 @@ void Sprite::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sprite.name)
 }
 
-// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Sprite::has_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -1442,7 +1442,7 @@ void Sprite::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.id)
 }
 
-// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Sprite::has_preload() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1466,7 +1466,7 @@ void Sprite::set_preload(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.preload)
 }
 
-// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Sprite::has_transparent() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -1490,7 +1490,7 @@ void Sprite::set_transparent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Sprite.transparent)
 }
 
-// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Sprite::has_smooth_edges() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }

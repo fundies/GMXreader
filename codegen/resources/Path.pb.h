@@ -322,7 +322,7 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_background_room_name();
   void set_allocated_background_room_name(::std::string* background_room_name);
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
@@ -343,7 +343,7 @@ class Path : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::int32 snap_y() const;
   void set_snap_y(::google::protobuf::int32 value);
 
-  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_smooth() const;
   void clear_smooth();
   static const int kSmoothFieldNumber = 6;
@@ -558,7 +558,7 @@ inline void Path::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Path.name)
 }
 
-// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Path::has_id() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -693,7 +693,7 @@ inline void Path::set_snap_y(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Path.snap_y)
 }
 
-// optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool smooth = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Path::has_smooth() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }

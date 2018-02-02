@@ -5,7 +5,7 @@ import "options.proto";
 
 message Sound {
   optional string name = 1;
-  optional int32 id = 2 [(gmx) = "GMX_DEPRECIATED"];
+  optional int32 id = 2 [(gmx) = "GMX_DEPRECATED"];
 
   optional bool preload = 3;
   optional double pan = 4;

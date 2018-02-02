@@ -254,52 +254,52 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\026resources/Object.proto\022\021buffers.resour"
-      "ces\032\roptions.proto\"\201\r\n\006Object\022\014\n\004name\030\001 "
-      "\001(\t\022\n\n\002id\030\002 \001(\005\022#\n\013parent_name\030\003 \001(\tB\016\202\265"
-      "\030\nparentName\022#\n\013sprite_name\030\004 \001(\tB\016\202\265\030\ns"
-      "priteName\022\037\n\tmask_name\030\005 \001(\tB\014\202\265\030\010maskNa"
-      "me\022\r\n\005depth\030\006 \001(\005\022\r\n\005solid\030\007 \001(\010\022\017\n\007visi"
-      "ble\030\010 \001(\010\022\022\n\npersistent\030\t \001(\010\022/\n\006events\030"
-      "\n \003(\0132\037.buffers.resources.Object.Event\022&"
-      "\n\013use_physics\030\013 \001(\010B\021\202\265\030\rPhysicsObject\022+"
-      "\n\nphy_sensor\030\014 \001(\010B\027\202\265\030\023PhysicsObjectSen"
-      "sor\022V\n\016phy_shape_type\030\r \001(\0162&.buffers.re"
-      "sources.Object.PhysicsShapeB\026\202\265\030\022Physics"
-      "ObjectShape\022-\n\013phy_density\030\016 \001(\001B\030\202\265\030\024Ph"
-      "ysicsObjectDensity\0225\n\017phy_restitution\030\017 "
-      "\001(\001B\034\202\265\030\030PhysicsObjectRestitution\022)\n\tphy"
-      "_group\030\020 \001(\005B\026\202\265\030\022PhysicsObjectGroup\022:\n\022"
-      "phy_linear_damping\030\021 \001(\001B\036\202\265\030\032PhysicsObj"
-      "ectLinearDamping\022<\n\023phy_angular_damping\030"
-      "\022 \001(\001B\037\202\265\030\033PhysicsObjectAngularDamping\022/"
-      "\n\014phy_friction\030\023 \001(\001B\031\202\265\030\025PhysicsObjectF"
-      "riction\022)\n\tphy_awake\030\024 \001(\010B\026\202\265\030\022PhysicsO"
-      "bjectAwake\0221\n\rphy_kinematic\030\025 \001(\010B\032\202\265\030\026P"
-      "hysicsObjectKinematic\022V\n\tphy_shape\030\026 \003(\013"
-      "2+.buffers.resources.Object.PhysicsShape"
-      "PointB\026\202\265\030\022PhysicsShapePoints\032(\n\010Argumen"
-      "t\022\014\n\004kind\030\001 \001(\005\022\016\n\006string\030\002 \001(\t\032\252\003\n\006Acti"
-      "on\022\r\n\005libid\030\001 \001(\005\022\n\n\002id\030\002 \001(\005\022\014\n\004kind\030\003 "
-      "\001(\005\022%\n\014use_relative\030\004 \001(\010B\017\202\265\030\013userelati"
-      "ve\022#\n\013is_question\030\005 \001(\010B\016\202\265\030\nisquestion\022"
-      "$\n\014use_apply_to\030\006 \001(\005B\016\202\265\030\nuseapplyto\022\035\n"
-      "\010exe_type\030\007 \001(\005B\013\202\265\030\007exetype\022\'\n\rfunction"
-      "_name\030\010 \001(\tB\020\202\265\030\014functionname\022#\n\013code_st"
-      "ring\030\t \001(\tB\016\202\265\030\ncodestring\022\035\n\010who_name\030\n"
-      " \001(\tB\013\202\265\030\007whoName\022\020\n\010relative\030\013 \001(\010\022\031\n\006i"
-      "s_not\030\014 \001(\010B\t\202\265\030\005isnot\022L\n\010argument\030\r \001(\013"
-      "2\".buffers.resources.Object.ArgumentB\026\202\265"
-      "\030\022arguments/argument\032\212\001\n\005Event\022\033\n\004type\030\001"
-      " \001(\005B\r\202\265\030\teventtype\022\031\n\006number\030\002 \001(\005B\t\202\265\030"
-      "\005enumb\022\027\n\004name\030\003 \001(\tB\t\202\265\030\005ename\0220\n\006actio"
-      "n\030\004 \001(\0132 .buffers.resources.Object.Actio"
-      "n\032K\n\021PhysicsShapePoint\022\032\n\001x\030\001 \001(\005B\017\202\265\030\013G"
-      "MX_SPLIT/0\022\032\n\001y\030\002 \001(\005B\017\202\265\030\013GMX_SPLIT/1\"."
-      "\n\014PhysicsShape\022\n\n\006CIRCLE\020\000\022\007\n\003BOX\020\001\022\t\n\005S"
-      "HAPE\020\002"
+      "ces\032\roptions.proto\"\225\r\n\006Object\022\014\n\004name\030\001 "
+      "\001(\t\022\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022#\n\013p"
+      "arent_name\030\003 \001(\tB\016\202\265\030\nparentName\022#\n\013spri"
+      "te_name\030\004 \001(\tB\016\202\265\030\nspriteName\022\037\n\tmask_na"
+      "me\030\005 \001(\tB\014\202\265\030\010maskName\022\r\n\005depth\030\006 \001(\005\022\r\n"
+      "\005solid\030\007 \001(\010\022\017\n\007visible\030\010 \001(\010\022\022\n\npersist"
+      "ent\030\t \001(\010\022/\n\006events\030\n \003(\0132\037.buffers.reso"
+      "urces.Object.Event\022&\n\013use_physics\030\013 \001(\010B"
+      "\021\202\265\030\rPhysicsObject\022+\n\nphy_sensor\030\014 \001(\010B\027"
+      "\202\265\030\023PhysicsObjectSensor\022V\n\016phy_shape_typ"
+      "e\030\r \001(\0162&.buffers.resources.Object.Physi"
+      "csShapeB\026\202\265\030\022PhysicsObjectShape\022-\n\013phy_d"
+      "ensity\030\016 \001(\001B\030\202\265\030\024PhysicsObjectDensity\0225"
+      "\n\017phy_restitution\030\017 \001(\001B\034\202\265\030\030PhysicsObje"
+      "ctRestitution\022)\n\tphy_group\030\020 \001(\005B\026\202\265\030\022Ph"
+      "ysicsObjectGroup\022:\n\022phy_linear_damping\030\021"
+      " \001(\001B\036\202\265\030\032PhysicsObjectLinearDamping\022<\n\023"
+      "phy_angular_damping\030\022 \001(\001B\037\202\265\030\033PhysicsOb"
+      "jectAngularDamping\022/\n\014phy_friction\030\023 \001(\001"
+      "B\031\202\265\030\025PhysicsObjectFriction\022)\n\tphy_awake"
+      "\030\024 \001(\010B\026\202\265\030\022PhysicsObjectAwake\0221\n\rphy_ki"
+      "nematic\030\025 \001(\010B\032\202\265\030\026PhysicsObjectKinemati"
+      "c\022V\n\tphy_shape\030\026 \003(\0132+.buffers.resources"
+      ".Object.PhysicsShapePointB\026\202\265\030\022PhysicsSh"
+      "apePoints\032(\n\010Argument\022\014\n\004kind\030\001 \001(\005\022\016\n\006s"
+      "tring\030\002 \001(\t\032\252\003\n\006Action\022\r\n\005libid\030\001 \001(\005\022\n\n"
+      "\002id\030\002 \001(\005\022\014\n\004kind\030\003 \001(\005\022%\n\014use_relative\030"
+      "\004 \001(\010B\017\202\265\030\013userelative\022#\n\013is_question\030\005 "
+      "\001(\010B\016\202\265\030\nisquestion\022$\n\014use_apply_to\030\006 \001("
+      "\005B\016\202\265\030\nuseapplyto\022\035\n\010exe_type\030\007 \001(\005B\013\202\265\030"
+      "\007exetype\022\'\n\rfunction_name\030\010 \001(\tB\020\202\265\030\014fun"
+      "ctionname\022#\n\013code_string\030\t \001(\tB\016\202\265\030\ncode"
+      "string\022\035\n\010who_name\030\n \001(\tB\013\202\265\030\007whoName\022\020\n"
+      "\010relative\030\013 \001(\010\022\031\n\006is_not\030\014 \001(\010B\t\202\265\030\005isn"
+      "ot\022L\n\010argument\030\r \001(\0132\".buffers.resources"
+      ".Object.ArgumentB\026\202\265\030\022arguments/argument"
+      "\032\212\001\n\005Event\022\033\n\004type\030\001 \001(\005B\r\202\265\030\teventtype\022"
+      "\031\n\006number\030\002 \001(\005B\t\202\265\030\005enumb\022\027\n\004name\030\003 \001(\t"
+      "B\t\202\265\030\005ename\0220\n\006action\030\004 \001(\0132 .buffers.re"
+      "sources.Object.Action\032K\n\021PhysicsShapePoi"
+      "nt\022\032\n\001x\030\001 \001(\005B\017\202\265\030\013GMX_SPLIT/0\022\032\n\001y\030\002 \001("
+      "\005B\017\202\265\030\013GMX_SPLIT/1\".\n\014PhysicsShape\022\n\n\006CI"
+      "RCLE\020\000\022\007\n\003BOX\020\001\022\t\n\005SHAPE\020\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1726);
+      descriptor, 1746);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Object.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -3060,7 +3060,7 @@ bool Object::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2;
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -3399,7 +3399,7 @@ void Object::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000010u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
@@ -3550,7 +3550,7 @@ void Object::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2;
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000010u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
@@ -3748,7 +3748,7 @@ size_t Object::ByteSizeLong() const {
           this->mask_name());
     }
 
-    // optional int32 id = 2;
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -4069,7 +4069,7 @@ void Object::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Object.name)
 }
 
-// optional int32 id = 2;
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Object::has_id() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }

@@ -321,7 +321,7 @@ class Sound : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   double volume() const;
   void set_volume(double value);
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   bool has_id() const;
   void clear_id();
   static const int kIdFieldNumber = 2;
@@ -542,7 +542,7 @@ inline void Sound::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sound.name)
 }
 
-// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 inline bool Sound::has_id() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }

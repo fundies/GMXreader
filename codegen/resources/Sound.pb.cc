@@ -140,28 +140,28 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\025resources/Sound.proto\022\021buffers.resourc"
-      "es\032\roptions.proto\"\317\005\n\005Sound\022\014\n\004name\030\001 \001("
-      "\t\022\037\n\002id\030\002 \001(\005B\023\202\265\030\017GMX_DEPRECIATED\022\017\n\007pr"
-      "eload\030\003 \001(\010\022\013\n\003pan\030\004 \001(\001\022!\n\006volume\030\005 \001(\001"
-      "B\021\202\265\030\rvolume/volume\022\037\n\tfile_name\030\006 \001(\tB\014"
-      "\202\265\030\010origname\022%\n\016file_extension\030\007 \001(\tB\r\202\265"
-      "\030\textension\022+\n\004kind\030\010 \001(\0162\035.buffers.reso"
-      "urces.Sound.Kind\022;\n\004type\030\t \001(\0162\035.buffers"
-      ".resources.Sound.TypeB\016\202\265\030\ntypes/type\022\014\n"
-      "\004data\030\n \001(\t\022\017\n\007effects\030\013 \001(\005\022&\n\010bit_rate"
-      "\030\014 \001(\rB\024\202\265\030\020bitRates/bitRate\022/\n\013sample_r"
-      "ate\030\r \001(\rB\032\202\265\030\026sampleRates/sampleRate\022)\n"
-      "\tbit_depth\030\016 \001(\rB\026\202\265\030\022bitDepths/bitDepth"
-      "\022\022\n\ncompressed\030\017 \001(\010\022\020\n\010streamed\030\020 \001(\010\0220"
-      "\n\022uncompress_on_load\030\021 \001(\010B\024\202\265\030\020uncompre"
-      "ssOnLoad\022#\n\013audio_group\030\022 \001(\005B\016\202\265\030\naudio"
-      "Group\"V\n\004Kind\022\n\n\006NORMAL\020\000\022\024\n\020BACKGROUND_"
-      "MUSIC\020\001\022\025\n\021THREE_DIMENSIONAL\020\002\022\025\n\021MULTIM"
-      "EDIA_PLAYER\020\003\",\n\004Type\022\010\n\004MONO\020\000\022\n\n\006STERE"
-      "O\020\001\022\016\n\nPOSITIONAL\020\002"
+      "es\032\roptions.proto\"\316\005\n\005Sound\022\014\n\004name\030\001 \001("
+      "\t\022\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022\017\n\007pre"
+      "load\030\003 \001(\010\022\013\n\003pan\030\004 \001(\001\022!\n\006volume\030\005 \001(\001B"
+      "\021\202\265\030\rvolume/volume\022\037\n\tfile_name\030\006 \001(\tB\014\202"
+      "\265\030\010origname\022%\n\016file_extension\030\007 \001(\tB\r\202\265\030"
+      "\textension\022+\n\004kind\030\010 \001(\0162\035.buffers.resou"
+      "rces.Sound.Kind\022;\n\004type\030\t \001(\0162\035.buffers."
+      "resources.Sound.TypeB\016\202\265\030\ntypes/type\022\014\n\004"
+      "data\030\n \001(\t\022\017\n\007effects\030\013 \001(\005\022&\n\010bit_rate\030"
+      "\014 \001(\rB\024\202\265\030\020bitRates/bitRate\022/\n\013sample_ra"
+      "te\030\r \001(\rB\032\202\265\030\026sampleRates/sampleRate\022)\n\t"
+      "bit_depth\030\016 \001(\rB\026\202\265\030\022bitDepths/bitDepth\022"
+      "\022\n\ncompressed\030\017 \001(\010\022\020\n\010streamed\030\020 \001(\010\0220\n"
+      "\022uncompress_on_load\030\021 \001(\010B\024\202\265\030\020uncompres"
+      "sOnLoad\022#\n\013audio_group\030\022 \001(\005B\016\202\265\030\naudioG"
+      "roup\"V\n\004Kind\022\n\n\006NORMAL\020\000\022\024\n\020BACKGROUND_M"
+      "USIC\020\001\022\025\n\021THREE_DIMENSIONAL\020\002\022\025\n\021MULTIME"
+      "DIA_PLAYER\020\003\",\n\004Type\022\010\n\004MONO\020\000\022\n\n\006STEREO"
+      "\020\001\022\016\n\nPOSITIONAL\020\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 779);
+      descriptor, 778);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Sound.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -405,7 +405,7 @@ bool Sound::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -698,7 +698,7 @@ void Sound::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000040u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
@@ -826,7 +826,7 @@ void Sound::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000040u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
@@ -987,7 +987,7 @@ size_t Sound::ByteSizeLong() const {
       total_size += 1 + 8;
     }
 
-    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -1283,7 +1283,7 @@ void Sound::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Sound.name)
 }
 
-// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Sound::has_id() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }

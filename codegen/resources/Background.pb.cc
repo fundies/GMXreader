@@ -141,26 +141,26 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\032resources/Background.proto\022\021buffers.re"
-      "sources\032\roptions.proto\"\207\005\n\nBackground\022\014\n"
-      "\004name\030\001 \001(\t\022\037\n\002id\030\002 \001(\005B\023\202\265\030\017GMX_DEPRECI"
-      "ATED\022$\n\007preload\030\004 \001(\010B\023\202\265\030\017GMX_DEPRECIAT"
-      "ED\022(\n\013transparent\030\005 \001(\010B\023\202\265\030\017GMX_DEPRECI"
-      "ATED\022)\n\014smooth_edges\030\006 \001(\010B\023\202\265\030\017GMX_DEPR"
-      "ECIATED\022%\n\016use_as_tileset\030\007 \001(\010B\r\202\265\030\tist"
-      "ileset\022!\n\ntile_width\030\013 \001(\005B\r\202\265\030\ttilewidt"
-      "h\022#\n\013tile_height\030\014 \001(\005B\016\202\265\030\ntileheight\022\'"
-      "\n\021horizontal_offset\030\r \001(\005B\014\202\265\030\010tilexoff\022"
-      "%\n\017vertical_offset\030\016 \001(\005B\014\202\265\030\010tileyoff\022("
-      "\n\022horizontal_spacing\030\017 \001(\005B\014\202\265\030\010tilehsep"
-      "\022&\n\020vertical_spacing\030\020 \001(\005B\014\202\265\030\010tilevsep"
-      "\022\031\n\006h_tile\030\021 \001(\005B\t\202\265\030\005HTile\022\031\n\006v_tile\030\022 "
-      "\001(\005B\t\202\265\030\005VTile\0226\n\rtexture_group\030\023 \001(\005B\037\202"
-      "\265\030\033TextureGroups/TextureGroup0\022\030\n\005for3D\030"
-      "\024 \001(\010B\t\202\265\030\005For3D\022\r\n\005width\030\025 \001(\r\022\016\n\006heigh"
-      "t\030\026 \001(\r\022\027\n\005image\030\003 \001(\tB\010\202\265\030\004data"
+      "sources\032\roptions.proto\"\203\005\n\nBackground\022\014\n"
+      "\004name\030\001 \001(\t\022\036\n\002id\030\002 \001(\005B\022\202\265\030\016GMX_DEPRECA"
+      "TED\022#\n\007preload\030\004 \001(\010B\022\202\265\030\016GMX_DEPRECATED"
+      "\022\'\n\013transparent\030\005 \001(\010B\022\202\265\030\016GMX_DEPRECATE"
+      "D\022(\n\014smooth_edges\030\006 \001(\010B\022\202\265\030\016GMX_DEPRECA"
+      "TED\022%\n\016use_as_tileset\030\007 \001(\010B\r\202\265\030\tistiles"
+      "et\022!\n\ntile_width\030\013 \001(\005B\r\202\265\030\ttilewidth\022#\n"
+      "\013tile_height\030\014 \001(\005B\016\202\265\030\ntileheight\022\'\n\021ho"
+      "rizontal_offset\030\r \001(\005B\014\202\265\030\010tilexoff\022%\n\017v"
+      "ertical_offset\030\016 \001(\005B\014\202\265\030\010tileyoff\022(\n\022ho"
+      "rizontal_spacing\030\017 \001(\005B\014\202\265\030\010tilehsep\022&\n\020"
+      "vertical_spacing\030\020 \001(\005B\014\202\265\030\010tilevsep\022\031\n\006"
+      "h_tile\030\021 \001(\005B\t\202\265\030\005HTile\022\031\n\006v_tile\030\022 \001(\005B"
+      "\t\202\265\030\005VTile\0226\n\rtexture_group\030\023 \001(\005B\037\202\265\030\033T"
+      "extureGroups/TextureGroup0\022\030\n\005for3D\030\024 \001("
+      "\010B\t\202\265\030\005For3D\022\r\n\005width\030\025 \001(\r\022\016\n\006height\030\026 "
+      "\001(\r\022\027\n\005image\030\003 \001(\tB\010\202\265\030\004data"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 712);
+      descriptor, 708);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Background.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -337,7 +337,7 @@ bool Background::MergePartialFromCodedStream(
         break;
       }
 
-      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -367,7 +367,7 @@ bool Background::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
@@ -381,7 +381,7 @@ bool Background::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
@@ -395,7 +395,7 @@ bool Background::MergePartialFromCodedStream(
         break;
       }
 
-      // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+      // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
@@ -628,7 +628,7 @@ void Background::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
   }
@@ -643,17 +643,17 @@ void Background::SerializeWithCachedSizes(
       3, this->image(), output);
   }
 
-  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000008u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->preload(), output);
   }
 
-  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000010u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->transparent(), output);
   }
 
-  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000020u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->smooth_edges(), output);
   }
@@ -749,7 +749,7 @@ void Background::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
   }
@@ -765,17 +765,17 @@ void Background::SerializeWithCachedSizes(
         3, this->image(), target);
   }
 
-  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000008u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->preload(), target);
   }
 
-  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000010u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->transparent(), target);
   }
 
-  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+  // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
   if (cached_has_bits & 0x00000020u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->smooth_edges(), target);
   }
@@ -877,24 +877,24 @@ size_t Background::ByteSizeLong() const {
           this->image());
     }
 
-    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->id());
     }
 
-    // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_preload()) {
       total_size += 1 + 1;
     }
 
-    // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_transparent()) {
       total_size += 1 + 1;
     }
 
-    // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+    // optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
     if (has_smooth_edges()) {
       total_size += 1 + 1;
     }
@@ -1210,7 +1210,7 @@ void Background::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:buffers.resources.Background.name)
 }
 
-// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional int32 id = 2 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Background::has_id() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1234,7 +1234,7 @@ void Background::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.id)
 }
 
-// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool preload = 4 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Background::has_preload() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -1258,7 +1258,7 @@ void Background::set_preload(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.preload)
 }
 
-// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool transparent = 5 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Background::has_transparent() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -1282,7 +1282,7 @@ void Background::set_transparent(bool value) {
   // @@protoc_insertion_point(field_set:buffers.resources.Background.transparent)
 }
 
-// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECIATED"];
+// optional bool smooth_edges = 6 [(.buffers.gmx) = "GMX_DEPRECATED"];
 bool Background::has_smooth_edges() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }

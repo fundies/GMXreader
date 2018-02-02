@@ -233,6 +233,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, caption_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, width_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, height_),
@@ -260,33 +262,35 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, phy_world_xgravity_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, phy_world_ygravity_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Room, phy_world_pixel_meters_),
+  2,
+  24,
   0,
-  3,
   4,
   5,
   6,
-  8,
-  21,
-  9,
   7,
+  9,
+  22,
   10,
-  1,
+  8,
   11,
+  1,
   12,
   13,
-  2,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
   14,
+  3,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
   15,
   16,
   17,
-  20,
   18,
+  21,
   19,
-  22,
+  20,
+  23,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 19, sizeof(Room_MakerSettings)},
@@ -294,7 +298,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTR
   { 58, 77, sizeof(Room_View)},
   { 91, 106, sizeof(Room_Instance)},
   { 116, 135, sizeof(Room_Tile)},
-  { 149, 181, sizeof(Room)},
+  { 149, 183, sizeof(Room)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -358,72 +362,73 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\024resources/Room.proto\022\021buffers.resource"
-      "s\032\roptions.proto\"\254\023\n\004Room\022\017\n\007caption\030\001 \001"
-      "(\t\022\r\n\005width\030\002 \001(\r\022\016\n\006height\030\003 \001(\r\022\r\n\005vsn"
-      "ap\030\004 \001(\r\022\r\n\005hsnap\030\005 \001(\r\022\021\n\tisometric\030\006 \001"
-      "(\010\022\r\n\005speed\030\033 \001(\r\022\022\n\npersistent\030\007 \001(\010\022\031\n"
-      "\005color\030\010 \001(\005B\n\202\265\030\006colour\022\"\n\nshow_color\030\t"
-      " \001(\010B\016\202\265\030\nshowcolour\022\014\n\004code\030\n \001(\t\022%\n\014en"
-      "able_views\030\013 \001(\010B\017\202\265\030\013enableViews\0226\n\025cle"
-      "ar_view_background\030\014 \001(\010B\027\202\265\030\023clearViewB"
-      "ackground\0224\n\024clear_display_buffer\030\r \001(\010B"
-      "\026\202\265\030\022clearDisplayBuffer\022P\n\016maker_setting"
-      "s\030\016 \001(\0132%.buffers.resources.Room.MakerSe"
-      "ttingsB\021\202\265\030\rmakerSettings\022;\n\013backgrounds"
-      "\030\017 \003(\0132&.buffers.resources.Room.RoomBack"
-      "ground\022+\n\005views\030\020 \003(\0132\034.buffers.resource"
-      "s.Room.View\0223\n\tinstances\030\021 \003(\0132 .buffers"
-      ".resources.Room.Instance\022+\n\005tiles\030\022 \003(\0132"
-      "\034.buffers.resources.Room.Tile\022%\n\013use_phy"
-      "sics\030\023 \001(\010B\020\202\265\030\014PhysicsWorld\022*\n\rphy_worl"
-      "d_top\030\024 \001(\005B\023\202\265\030\017PhysicsWorldTop\022,\n\016phy_"
-      "world_left\030\025 \001(\005B\024\202\265\030\020PhysicsWorldLeft\022."
-      "\n\017phy_world_right\030\026 \001(\005B\025\202\265\030\021PhysicsWorl"
-      "dRight\0220\n\020phy_world_bottom\030\027 \001(\005B\026\202\265\030\022Ph"
-      "ysicsWorldBottom\0224\n\022phy_world_xgravity\030\030"
-      " \001(\001B\030\202\265\030\024PhysicsWorldGravityX\0224\n\022phy_wo"
-      "rld_ygravity\030\031 \001(\001B\030\202\265\030\024PhysicsWorldGrav"
-      "ityY\022;\n\026phy_world_pixel_meters\030\032 \001(\001B\033\202\265"
-      "\030\027PhysicsWorldPixToMeters\032\350\003\n\rMakerSetti"
-      "ngs\022\026\n\003set\030\001 \001(\010B\t\202\265\030\005isSet\022\024\n\005width\030\002 \001"
-      "(\010B\005\202\265\030\001w\022\025\n\006height\030\003 \001(\010B\005\202\265\030\001h\022\037\n\tshow"
-      "_grid\030\004 \001(\010B\014\202\265\030\010showGrid\022%\n\014show_object"
-      "s\030\005 \001(\010B\017\202\265\030\013showObjects\022!\n\nshow_tiles\030\006"
-      " \001(\010B\r\202\265\030\tshowTiles\022-\n\020show_backgrounds\030"
-      "\007 \001(\010B\023\202\265\030\017showBackgrounds\022-\n\020show_foreg"
-      "rounds\030\010 \001(\010B\023\202\265\030\017showForegrounds\022!\n\nsho"
-      "w_views\030\t \001(\010B\r\202\265\030\tshowViews\022:\n\031delete_u"
-      "nderlying_objects\030\n \001(\010B\027\202\265\030\023deleteUnder"
-      "lyingObj\022:\n\027delete_underlying_tiles\030\013 \001("
-      "\010B\031\202\265\030\025deleteUnderlyingTiles\022\014\n\004page\030\014 \001"
-      "(\r\022\017\n\007xoffset\030\r \001(\005\022\017\n\007yoffset\030\016 \001(\005\032\252\001\n"
-      "\016RoomBackground\022\017\n\007visible\030\001 \001(\010\022\022\n\nfore"
-      "ground\030\002 \001(\010\022\014\n\004name\030\003 \001(\t\022\t\n\001x\030\004 \001(\005\022\t\n"
-      "\001y\030\005 \001(\005\022\016\n\006htiled\030\006 \001(\010\022\016\n\006vtiled\030\007 \001(\010"
-      "\022\016\n\006hspeed\030\010 \001(\001\022\016\n\006vspeed\030\t \001(\001\022\017\n\007stre"
-      "tch\030\n \001(\010\032\370\001\n\004View\022\017\n\007visible\030\001 \001(\010\022%\n\020o"
-      "bject_following\030\002 \001(\tB\013\202\265\030\007objName\022\r\n\005xv"
-      "iew\030\003 \001(\005\022\r\n\005yview\030\004 \001(\005\022\r\n\005wview\030\005 \001(\r\022"
-      "\r\n\005hview\030\006 \001(\r\022\r\n\005xport\030\007 \001(\005\022\r\n\005yport\030\010"
-      " \001(\005\022\r\n\005wport\030\t \001(\r\022\r\n\005hport\030\n \001(\r\022\017\n\007hb"
-      "order\030\013 \001(\005\022\017\n\007vborder\030\014 \001(\005\022\016\n\006hspeed\030\r"
-      " \001(\001\022\016\n\006vspeed\030\016 \001(\001\032\333\001\n\010Instance\022 \n\013obj"
-      "ect_type\030\001 \001(\tB\013\202\265\030\007objName\022\t\n\001x\030\002 \001(\005\022\t"
-      "\n\001y\030\003 \001(\005\022\024\n\002id\030\004 \001(\tB\010\202\265\030\004name\022\016\n\006locke"
-      "d\030\005 \001(\010\022\014\n\004code\030\006 \001(\t\022\032\n\006xscale\030\007 \001(\001B\n\202"
-      "\265\030\006scaleX\022\032\n\006yscale\030\010 \001(\001B\n\202\265\030\006scaleY\022\031\n"
-      "\005color\030\t \001(\005B\n\202\265\030\006colour\022\020\n\010rotation\030\n \001"
-      "(\001\032\242\002\n\004Tile\022\031\n\005image\030\001 \001(\tB\n\202\265\030\006bgName\022\t"
-      "\n\001x\030\002 \001(\005\022\t\n\001y\030\003 \001(\005\022\024\n\005width\030\004 \001(\rB\005\202\265\030"
-      "\001w\022\025\n\006height\030\005 \001(\rB\005\202\265\030\001h\022\027\n\007xoffset\030\006 \001"
-      "(\005B\006\202\265\030\002xo\022\027\n\007yoffset\030\007 \001(\005B\006\202\265\030\002yo\022\n\n\002i"
-      "d\030\010 \001(\005\022\014\n\004name\030\t \001(\t\022\r\n\005depth\030\n \001(\005\022\016\n\006"
-      "locked\030\013 \001(\010\022\031\n\005color\030\014 \001(\005B\n\202\265\030\006colour\022"
-      "\032\n\006xscale\030\r \001(\001B\n\202\265\030\006scaleX\022\032\n\006yscale\030\016 "
-      "\001(\001B\n\202\265\030\006scaleY"
+      "s\032\roptions.proto\"\332\023\n\004Room\022\014\n\004name\030\034 \001(\t\022"
+      "\036\n\002id\030\035 \001(\005B\022\202\265\030\016GMX_DEPRECATED\022\017\n\007capti"
+      "on\030\001 \001(\t\022\r\n\005width\030\002 \001(\r\022\016\n\006height\030\003 \001(\r\022"
+      "\r\n\005vsnap\030\004 \001(\r\022\r\n\005hsnap\030\005 \001(\r\022\021\n\tisometr"
+      "ic\030\006 \001(\010\022\r\n\005speed\030\033 \001(\r\022\022\n\npersistent\030\007 "
+      "\001(\010\022\031\n\005color\030\010 \001(\005B\n\202\265\030\006colour\022\"\n\nshow_c"
+      "olor\030\t \001(\010B\016\202\265\030\nshowcolour\022\014\n\004code\030\n \001(\t"
+      "\022%\n\014enable_views\030\013 \001(\010B\017\202\265\030\013enableViews\022"
+      "6\n\025clear_view_background\030\014 \001(\010B\027\202\265\030\023clea"
+      "rViewBackground\0224\n\024clear_display_buffer\030"
+      "\r \001(\010B\026\202\265\030\022clearDisplayBuffer\022P\n\016maker_s"
+      "ettings\030\016 \001(\0132%.buffers.resources.Room.M"
+      "akerSettingsB\021\202\265\030\rmakerSettings\022;\n\013backg"
+      "rounds\030\017 \003(\0132&.buffers.resources.Room.Ro"
+      "omBackground\022+\n\005views\030\020 \003(\0132\034.buffers.re"
+      "sources.Room.View\0223\n\tinstances\030\021 \003(\0132 .b"
+      "uffers.resources.Room.Instance\022+\n\005tiles\030"
+      "\022 \003(\0132\034.buffers.resources.Room.Tile\022%\n\013u"
+      "se_physics\030\023 \001(\010B\020\202\265\030\014PhysicsWorld\022*\n\rph"
+      "y_world_top\030\024 \001(\005B\023\202\265\030\017PhysicsWorldTop\022,"
+      "\n\016phy_world_left\030\025 \001(\005B\024\202\265\030\020PhysicsWorld"
+      "Left\022.\n\017phy_world_right\030\026 \001(\005B\025\202\265\030\021Physi"
+      "csWorldRight\0220\n\020phy_world_bottom\030\027 \001(\005B\026"
+      "\202\265\030\022PhysicsWorldBottom\0224\n\022phy_world_xgra"
+      "vity\030\030 \001(\001B\030\202\265\030\024PhysicsWorldGravityX\0224\n\022"
+      "phy_world_ygravity\030\031 \001(\001B\030\202\265\030\024PhysicsWor"
+      "ldGravityY\022;\n\026phy_world_pixel_meters\030\032 \001"
+      "(\001B\033\202\265\030\027PhysicsWorldPixToMeters\032\350\003\n\rMake"
+      "rSettings\022\026\n\003set\030\001 \001(\010B\t\202\265\030\005isSet\022\024\n\005wid"
+      "th\030\002 \001(\010B\005\202\265\030\001w\022\025\n\006height\030\003 \001(\010B\005\202\265\030\001h\022\037"
+      "\n\tshow_grid\030\004 \001(\010B\014\202\265\030\010showGrid\022%\n\014show_"
+      "objects\030\005 \001(\010B\017\202\265\030\013showObjects\022!\n\nshow_t"
+      "iles\030\006 \001(\010B\r\202\265\030\tshowTiles\022-\n\020show_backgr"
+      "ounds\030\007 \001(\010B\023\202\265\030\017showBackgrounds\022-\n\020show"
+      "_foregrounds\030\010 \001(\010B\023\202\265\030\017showForegrounds\022"
+      "!\n\nshow_views\030\t \001(\010B\r\202\265\030\tshowViews\022:\n\031de"
+      "lete_underlying_objects\030\n \001(\010B\027\202\265\030\023delet"
+      "eUnderlyingObj\022:\n\027delete_underlying_tile"
+      "s\030\013 \001(\010B\031\202\265\030\025deleteUnderlyingTiles\022\014\n\004pa"
+      "ge\030\014 \001(\r\022\017\n\007xoffset\030\r \001(\005\022\017\n\007yoffset\030\016 \001"
+      "(\005\032\252\001\n\016RoomBackground\022\017\n\007visible\030\001 \001(\010\022\022"
+      "\n\nforeground\030\002 \001(\010\022\014\n\004name\030\003 \001(\t\022\t\n\001x\030\004 "
+      "\001(\005\022\t\n\001y\030\005 \001(\005\022\016\n\006htiled\030\006 \001(\010\022\016\n\006vtiled"
+      "\030\007 \001(\010\022\016\n\006hspeed\030\010 \001(\001\022\016\n\006vspeed\030\t \001(\001\022\017"
+      "\n\007stretch\030\n \001(\010\032\370\001\n\004View\022\017\n\007visible\030\001 \001("
+      "\010\022%\n\020object_following\030\002 \001(\tB\013\202\265\030\007objName"
+      "\022\r\n\005xview\030\003 \001(\005\022\r\n\005yview\030\004 \001(\005\022\r\n\005wview\030"
+      "\005 \001(\r\022\r\n\005hview\030\006 \001(\r\022\r\n\005xport\030\007 \001(\005\022\r\n\005y"
+      "port\030\010 \001(\005\022\r\n\005wport\030\t \001(\r\022\r\n\005hport\030\n \001(\r"
+      "\022\017\n\007hborder\030\013 \001(\005\022\017\n\007vborder\030\014 \001(\005\022\016\n\006hs"
+      "peed\030\r \001(\001\022\016\n\006vspeed\030\016 \001(\001\032\333\001\n\010Instance\022"
+      " \n\013object_type\030\001 \001(\tB\013\202\265\030\007objName\022\t\n\001x\030\002"
+      " \001(\005\022\t\n\001y\030\003 \001(\005\022\024\n\002id\030\004 \001(\tB\010\202\265\030\004name\022\016\n"
+      "\006locked\030\005 \001(\010\022\014\n\004code\030\006 \001(\t\022\032\n\006xscale\030\007 "
+      "\001(\001B\n\202\265\030\006scaleX\022\032\n\006yscale\030\010 \001(\001B\n\202\265\030\006sca"
+      "leY\022\031\n\005color\030\t \001(\005B\n\202\265\030\006colour\022\020\n\010rotati"
+      "on\030\n \001(\001\032\242\002\n\004Tile\022\031\n\005image\030\001 \001(\tB\n\202\265\030\006bg"
+      "Name\022\t\n\001x\030\002 \001(\005\022\t\n\001y\030\003 \001(\005\022\024\n\005width\030\004 \001("
+      "\rB\005\202\265\030\001w\022\025\n\006height\030\005 \001(\rB\005\202\265\030\001h\022\027\n\007xoffs"
+      "et\030\006 \001(\005B\006\202\265\030\002xo\022\027\n\007yoffset\030\007 \001(\005B\006\202\265\030\002y"
+      "o\022\n\n\002id\030\010 \001(\005\022\014\n\004name\030\t \001(\t\022\r\n\005depth\030\n \001"
+      "(\005\022\016\n\006locked\030\013 \001(\010\022\031\n\005color\030\014 \001(\005B\n\202\265\030\006c"
+      "olour\022\032\n\006xscale\030\r \001(\001B\n\202\265\030\006scaleX\022\032\n\006ysc"
+      "ale\030\016 \001(\001B\n\202\265\030\006scaleY"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2535);
+      descriptor, 2581);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "resources/Room.proto", &protobuf_RegisterTypes);
   ::buffers::protobuf_options_2eproto::AddDescriptors();
@@ -5726,6 +5731,8 @@ void Room_Tile::set_yscale(double value) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Room::kNameFieldNumber;
+const int Room::kIdFieldNumber;
 const int Room::kCaptionFieldNumber;
 const int Room::kWidthFieldNumber;
 const int Room::kHeightFieldNumber;
@@ -5781,14 +5788,18 @@ Room::Room(const Room& from)
   if (from.has_code()) {
     code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
   }
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_name()) {
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   if (from.has_maker_settings()) {
     maker_settings_ = new ::buffers::resources::Room_MakerSettings(*from.maker_settings_);
   } else {
     maker_settings_ = NULL;
   }
   ::memcpy(&width_, &from.width_,
-    static_cast<size_t>(reinterpret_cast<char*>(&phy_world_pixel_meters_) -
-    reinterpret_cast<char*>(&width_)) + sizeof(phy_world_pixel_meters_));
+    static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&width_)) + sizeof(id_));
   // @@protoc_insertion_point(copy_constructor:buffers.resources.Room)
 }
 
@@ -5796,9 +5807,10 @@ void Room::SharedCtor() {
   _cached_size_ = 0;
   caption_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&maker_settings_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&phy_world_pixel_meters_) -
-      reinterpret_cast<char*>(&maker_settings_)) + sizeof(phy_world_pixel_meters_));
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&maker_settings_)) + sizeof(id_));
 }
 
 Room::~Room() {
@@ -5809,6 +5821,7 @@ Room::~Room() {
 void Room::SharedDtor() {
   caption_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete maker_settings_;
 }
 
@@ -5846,7 +5859,7 @@ void Room::Clear() {
   instances_.Clear();
   tiles_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 7u) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
       GOOGLE_DCHECK(!caption_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
       (*caption_.UnsafeRawStringPointer())->clear();
@@ -5856,25 +5869,30 @@ void Room::Clear() {
       (*code_.UnsafeRawStringPointer())->clear();
     }
     if (cached_has_bits & 0x00000004u) {
+      GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*name_.UnsafeRawStringPointer())->clear();
+    }
+    if (cached_has_bits & 0x00000008u) {
       GOOGLE_DCHECK(maker_settings_ != NULL);
       maker_settings_->::buffers::resources::Room_MakerSettings::Clear();
     }
   }
-  if (cached_has_bits & 248u) {
+  if (cached_has_bits & 240u) {
     ::memset(&width_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&color_) -
-        reinterpret_cast<char*>(&width_)) + sizeof(color_));
+        reinterpret_cast<char*>(&hsnap_) -
+        reinterpret_cast<char*>(&width_)) + sizeof(hsnap_));
   }
   if (cached_has_bits & 65280u) {
-    ::memset(&isometric_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&phy_world_top_) -
-        reinterpret_cast<char*>(&isometric_)) + sizeof(phy_world_top_));
+    ::memset(&color_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&use_physics_) -
+        reinterpret_cast<char*>(&color_)) + sizeof(use_physics_));
   }
-  if (cached_has_bits & 8323072u) {
-    ::memset(&phy_world_left_, 0, static_cast<size_t>(
+  if (cached_has_bits & 16711680u) {
+    ::memset(&phy_world_top_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&phy_world_pixel_meters_) -
-        reinterpret_cast<char*>(&phy_world_left_)) + sizeof(phy_world_pixel_meters_));
+        reinterpret_cast<char*>(&phy_world_top_)) + sizeof(phy_world_pixel_meters_));
   }
+  id_ = 0;
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -6261,6 +6279,36 @@ bool Room::MergePartialFromCodedStream(
         break;
       }
 
+      // optional string name = 28;
+      case 28: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(226u /* 226 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->name().data(), static_cast<int>(this->name().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "buffers.resources.Room.name");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional int32 id = 29 [(.buffers.gmx) = "GMX_DEPRECATED"];
+      case 29: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(232u /* 232 & 0xFF */)) {
+          set_has_id();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &id_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -6299,42 +6347,42 @@ void Room::SerializeWithCachedSizes(
   }
 
   // optional uint32 width = 2;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000010u) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->width(), output);
   }
 
   // optional uint32 height = 3;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000020u) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->height(), output);
   }
 
   // optional uint32 vsnap = 4;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000040u) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->vsnap(), output);
   }
 
   // optional uint32 hsnap = 5;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000080u) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->hsnap(), output);
   }
 
   // optional bool isometric = 6;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000200u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->isometric(), output);
   }
 
   // optional bool persistent = 7;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000400u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->persistent(), output);
   }
 
   // optional int32 color = 8 [(.buffers.gmx) = "colour"];
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000100u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->color(), output);
   }
 
   // optional bool show_color = 9 [(.buffers.gmx) = "showcolour"];
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00000800u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(9, this->show_color(), output);
   }
 
@@ -6349,22 +6397,22 @@ void Room::SerializeWithCachedSizes(
   }
 
   // optional bool enable_views = 11 [(.buffers.gmx) = "enableViews"];
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00001000u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(11, this->enable_views(), output);
   }
 
   // optional bool clear_view_background = 12 [(.buffers.gmx) = "clearViewBackground"];
-  if (cached_has_bits & 0x00001000u) {
+  if (cached_has_bits & 0x00002000u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(12, this->clear_view_background(), output);
   }
 
   // optional bool clear_display_buffer = 13 [(.buffers.gmx) = "clearDisplayBuffer"];
-  if (cached_has_bits & 0x00002000u) {
+  if (cached_has_bits & 0x00004000u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(13, this->clear_display_buffer(), output);
   }
 
   // optional .buffers.resources.Room.MakerSettings maker_settings = 14 [(.buffers.gmx) = "makerSettings"];
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000008u) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       14, *this->maker_settings_, output);
   }
@@ -6398,48 +6446,63 @@ void Room::SerializeWithCachedSizes(
   }
 
   // optional bool use_physics = 19 [(.buffers.gmx) = "PhysicsWorld"];
-  if (cached_has_bits & 0x00004000u) {
+  if (cached_has_bits & 0x00008000u) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(19, this->use_physics(), output);
   }
 
   // optional int32 phy_world_top = 20 [(.buffers.gmx) = "PhysicsWorldTop"];
-  if (cached_has_bits & 0x00008000u) {
+  if (cached_has_bits & 0x00010000u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(20, this->phy_world_top(), output);
   }
 
   // optional int32 phy_world_left = 21 [(.buffers.gmx) = "PhysicsWorldLeft"];
-  if (cached_has_bits & 0x00010000u) {
+  if (cached_has_bits & 0x00020000u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(21, this->phy_world_left(), output);
   }
 
   // optional int32 phy_world_right = 22 [(.buffers.gmx) = "PhysicsWorldRight"];
-  if (cached_has_bits & 0x00020000u) {
+  if (cached_has_bits & 0x00040000u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(22, this->phy_world_right(), output);
   }
 
   // optional int32 phy_world_bottom = 23 [(.buffers.gmx) = "PhysicsWorldBottom"];
-  if (cached_has_bits & 0x00100000u) {
+  if (cached_has_bits & 0x00200000u) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(23, this->phy_world_bottom(), output);
   }
 
   // optional double phy_world_xgravity = 24 [(.buffers.gmx) = "PhysicsWorldGravityX"];
-  if (cached_has_bits & 0x00040000u) {
+  if (cached_has_bits & 0x00080000u) {
     ::google::protobuf::internal::WireFormatLite::WriteDouble(24, this->phy_world_xgravity(), output);
   }
 
   // optional double phy_world_ygravity = 25 [(.buffers.gmx) = "PhysicsWorldGravityY"];
-  if (cached_has_bits & 0x00080000u) {
+  if (cached_has_bits & 0x00100000u) {
     ::google::protobuf::internal::WireFormatLite::WriteDouble(25, this->phy_world_ygravity(), output);
   }
 
   // optional double phy_world_pixel_meters = 26 [(.buffers.gmx) = "PhysicsWorldPixToMeters"];
-  if (cached_has_bits & 0x00400000u) {
+  if (cached_has_bits & 0x00800000u) {
     ::google::protobuf::internal::WireFormatLite::WriteDouble(26, this->phy_world_pixel_meters(), output);
   }
 
   // optional uint32 speed = 27;
-  if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x00400000u) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(27, this->speed(), output);
+  }
+
+  // optional string name = 28;
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Room.name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      28, this->name(), output);
+  }
+
+  // optional int32 id = 29 [(.buffers.gmx) = "GMX_DEPRECATED"];
+  if (cached_has_bits & 0x01000000u) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(29, this->id(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6469,42 +6532,42 @@ void Room::SerializeWithCachedSizes(
   }
 
   // optional uint32 width = 2;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000010u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->width(), target);
   }
 
   // optional uint32 height = 3;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000020u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->height(), target);
   }
 
   // optional uint32 vsnap = 4;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000040u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->vsnap(), target);
   }
 
   // optional uint32 hsnap = 5;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000080u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->hsnap(), target);
   }
 
   // optional bool isometric = 6;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000200u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->isometric(), target);
   }
 
   // optional bool persistent = 7;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000400u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->persistent(), target);
   }
 
   // optional int32 color = 8 [(.buffers.gmx) = "colour"];
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000100u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->color(), target);
   }
 
   // optional bool show_color = 9 [(.buffers.gmx) = "showcolour"];
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00000800u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(9, this->show_color(), target);
   }
 
@@ -6520,22 +6583,22 @@ void Room::SerializeWithCachedSizes(
   }
 
   // optional bool enable_views = 11 [(.buffers.gmx) = "enableViews"];
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00001000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(11, this->enable_views(), target);
   }
 
   // optional bool clear_view_background = 12 [(.buffers.gmx) = "clearViewBackground"];
-  if (cached_has_bits & 0x00001000u) {
+  if (cached_has_bits & 0x00002000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(12, this->clear_view_background(), target);
   }
 
   // optional bool clear_display_buffer = 13 [(.buffers.gmx) = "clearDisplayBuffer"];
-  if (cached_has_bits & 0x00002000u) {
+  if (cached_has_bits & 0x00004000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(13, this->clear_display_buffer(), target);
   }
 
   // optional .buffers.resources.Room.MakerSettings maker_settings = 14 [(.buffers.gmx) = "makerSettings"];
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000008u) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
         14, *this->maker_settings_, deterministic, target);
@@ -6574,48 +6637,64 @@ void Room::SerializeWithCachedSizes(
   }
 
   // optional bool use_physics = 19 [(.buffers.gmx) = "PhysicsWorld"];
-  if (cached_has_bits & 0x00004000u) {
+  if (cached_has_bits & 0x00008000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(19, this->use_physics(), target);
   }
 
   // optional int32 phy_world_top = 20 [(.buffers.gmx) = "PhysicsWorldTop"];
-  if (cached_has_bits & 0x00008000u) {
+  if (cached_has_bits & 0x00010000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(20, this->phy_world_top(), target);
   }
 
   // optional int32 phy_world_left = 21 [(.buffers.gmx) = "PhysicsWorldLeft"];
-  if (cached_has_bits & 0x00010000u) {
+  if (cached_has_bits & 0x00020000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(21, this->phy_world_left(), target);
   }
 
   // optional int32 phy_world_right = 22 [(.buffers.gmx) = "PhysicsWorldRight"];
-  if (cached_has_bits & 0x00020000u) {
+  if (cached_has_bits & 0x00040000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(22, this->phy_world_right(), target);
   }
 
   // optional int32 phy_world_bottom = 23 [(.buffers.gmx) = "PhysicsWorldBottom"];
-  if (cached_has_bits & 0x00100000u) {
+  if (cached_has_bits & 0x00200000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(23, this->phy_world_bottom(), target);
   }
 
   // optional double phy_world_xgravity = 24 [(.buffers.gmx) = "PhysicsWorldGravityX"];
-  if (cached_has_bits & 0x00040000u) {
+  if (cached_has_bits & 0x00080000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(24, this->phy_world_xgravity(), target);
   }
 
   // optional double phy_world_ygravity = 25 [(.buffers.gmx) = "PhysicsWorldGravityY"];
-  if (cached_has_bits & 0x00080000u) {
+  if (cached_has_bits & 0x00100000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(25, this->phy_world_ygravity(), target);
   }
 
   // optional double phy_world_pixel_meters = 26 [(.buffers.gmx) = "PhysicsWorldPixToMeters"];
-  if (cached_has_bits & 0x00400000u) {
+  if (cached_has_bits & 0x00800000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(26, this->phy_world_pixel_meters(), target);
   }
 
   // optional uint32 speed = 27;
-  if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x00400000u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(27, this->speed(), target);
+  }
+
+  // optional string name = 28;
+  if (cached_has_bits & 0x00000004u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "buffers.resources.Room.name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        28, this->name(), target);
+  }
+
+  // optional int32 id = 29 [(.buffers.gmx) = "GMX_DEPRECATED"];
+  if (cached_has_bits & 0x01000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(29, this->id(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6694,6 +6773,13 @@ size_t Room::ByteSizeLong() const {
           this->code());
     }
 
+    // optional string name = 28;
+    if (has_name()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->name());
+    }
+
     // optional .buffers.resources.Room.MakerSettings maker_settings = 14 [(.buffers.gmx) = "makerSettings"];
     if (has_maker_settings()) {
       total_size += 1 +
@@ -6729,6 +6815,8 @@ size_t Room::ByteSizeLong() const {
           this->hsnap());
     }
 
+  }
+  if (_has_bits_[8 / 32] & 65280u) {
     // optional int32 color = 8 [(.buffers.gmx) = "colour"];
     if (has_color()) {
       total_size += 1 +
@@ -6736,8 +6824,6 @@ size_t Room::ByteSizeLong() const {
           this->color());
     }
 
-  }
-  if (_has_bits_[8 / 32] & 65280u) {
     // optional bool isometric = 6;
     if (has_isometric()) {
       total_size += 1 + 1;
@@ -6773,6 +6859,8 @@ size_t Room::ByteSizeLong() const {
       total_size += 2 + 1;
     }
 
+  }
+  if (_has_bits_[16 / 32] & 16711680u) {
     // optional int32 phy_world_top = 20 [(.buffers.gmx) = "PhysicsWorldTop"];
     if (has_phy_world_top()) {
       total_size += 2 +
@@ -6780,8 +6868,6 @@ size_t Room::ByteSizeLong() const {
           this->phy_world_top());
     }
 
-  }
-  if (_has_bits_[16 / 32] & 8323072u) {
     // optional int32 phy_world_left = 21 [(.buffers.gmx) = "PhysicsWorldLeft"];
     if (has_phy_world_left()) {
       total_size += 2 +
@@ -6826,6 +6912,13 @@ size_t Room::ByteSizeLong() const {
     }
 
   }
+  // optional int32 id = 29 [(.buffers.gmx) = "GMX_DEPRECATED"];
+  if (has_id()) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->id());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -6870,75 +6963,82 @@ void Room::MergeFrom(const Room& from) {
       code_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.code_);
     }
     if (cached_has_bits & 0x00000004u) {
-      mutable_maker_settings()->::buffers::resources::Room_MakerSettings::MergeFrom(from.maker_settings());
+      set_has_name();
+      name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
     }
     if (cached_has_bits & 0x00000008u) {
-      width_ = from.width_;
+      mutable_maker_settings()->::buffers::resources::Room_MakerSettings::MergeFrom(from.maker_settings());
     }
     if (cached_has_bits & 0x00000010u) {
-      height_ = from.height_;
+      width_ = from.width_;
     }
     if (cached_has_bits & 0x00000020u) {
-      vsnap_ = from.vsnap_;
+      height_ = from.height_;
     }
     if (cached_has_bits & 0x00000040u) {
-      hsnap_ = from.hsnap_;
+      vsnap_ = from.vsnap_;
     }
     if (cached_has_bits & 0x00000080u) {
-      color_ = from.color_;
+      hsnap_ = from.hsnap_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 65280u) {
     if (cached_has_bits & 0x00000100u) {
-      isometric_ = from.isometric_;
+      color_ = from.color_;
     }
     if (cached_has_bits & 0x00000200u) {
-      persistent_ = from.persistent_;
+      isometric_ = from.isometric_;
     }
     if (cached_has_bits & 0x00000400u) {
-      show_color_ = from.show_color_;
+      persistent_ = from.persistent_;
     }
     if (cached_has_bits & 0x00000800u) {
-      enable_views_ = from.enable_views_;
+      show_color_ = from.show_color_;
     }
     if (cached_has_bits & 0x00001000u) {
-      clear_view_background_ = from.clear_view_background_;
+      enable_views_ = from.enable_views_;
     }
     if (cached_has_bits & 0x00002000u) {
-      clear_display_buffer_ = from.clear_display_buffer_;
+      clear_view_background_ = from.clear_view_background_;
     }
     if (cached_has_bits & 0x00004000u) {
-      use_physics_ = from.use_physics_;
+      clear_display_buffer_ = from.clear_display_buffer_;
     }
     if (cached_has_bits & 0x00008000u) {
-      phy_world_top_ = from.phy_world_top_;
+      use_physics_ = from.use_physics_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 8323072u) {
+  if (cached_has_bits & 16711680u) {
     if (cached_has_bits & 0x00010000u) {
-      phy_world_left_ = from.phy_world_left_;
+      phy_world_top_ = from.phy_world_top_;
     }
     if (cached_has_bits & 0x00020000u) {
-      phy_world_right_ = from.phy_world_right_;
+      phy_world_left_ = from.phy_world_left_;
     }
     if (cached_has_bits & 0x00040000u) {
-      phy_world_xgravity_ = from.phy_world_xgravity_;
+      phy_world_right_ = from.phy_world_right_;
     }
     if (cached_has_bits & 0x00080000u) {
-      phy_world_ygravity_ = from.phy_world_ygravity_;
+      phy_world_xgravity_ = from.phy_world_xgravity_;
     }
     if (cached_has_bits & 0x00100000u) {
-      phy_world_bottom_ = from.phy_world_bottom_;
+      phy_world_ygravity_ = from.phy_world_ygravity_;
     }
     if (cached_has_bits & 0x00200000u) {
-      speed_ = from.speed_;
+      phy_world_bottom_ = from.phy_world_bottom_;
     }
     if (cached_has_bits & 0x00400000u) {
+      speed_ = from.speed_;
+    }
+    if (cached_has_bits & 0x00800000u) {
       phy_world_pixel_meters_ = from.phy_world_pixel_meters_;
     }
     _has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 0x01000000u) {
+    set_id(from.id());
   }
 }
 
@@ -6972,6 +7072,7 @@ void Room::InternalSwap(Room* other) {
   tiles_.InternalSwap(&other->tiles_);
   caption_.Swap(&other->caption_);
   code_.Swap(&other->code_);
+  name_.Swap(&other->name_);
   swap(maker_settings_, other->maker_settings_);
   swap(width_, other->width_);
   swap(height_, other->height_);
@@ -6993,6 +7094,7 @@ void Room::InternalSwap(Room* other) {
   swap(phy_world_bottom_, other->phy_world_bottom_);
   swap(speed_, other->speed_);
   swap(phy_world_pixel_meters_, other->phy_world_pixel_meters_);
+  swap(id_, other->id_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -7005,6 +7107,93 @@ void Room::InternalSwap(Room* other) {
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Room
+
+// optional string name = 28;
+bool Room::has_name() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Room::set_has_name() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Room::clear_has_name() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Room::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_name();
+}
+const ::std::string& Room::name() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Room.name)
+  return name_.GetNoArena();
+}
+void Room::set_name(const ::std::string& value) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:buffers.resources.Room.name)
+}
+#if LANG_CXX11
+void Room::set_name(::std::string&& value) {
+  set_has_name();
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:buffers.resources.Room.name)
+}
+#endif
+void Room::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:buffers.resources.Room.name)
+}
+void Room::set_name(const char* value, size_t size) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:buffers.resources.Room.name)
+}
+::std::string* Room::mutable_name() {
+  set_has_name();
+  // @@protoc_insertion_point(field_mutable:buffers.resources.Room.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Room::release_name() {
+  // @@protoc_insertion_point(field_release:buffers.resources.Room.name)
+  clear_has_name();
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Room::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    set_has_name();
+  } else {
+    clear_has_name();
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:buffers.resources.Room.name)
+}
+
+// optional int32 id = 29 [(.buffers.gmx) = "GMX_DEPRECATED"];
+bool Room::has_id() const {
+  return (_has_bits_[0] & 0x01000000u) != 0;
+}
+void Room::set_has_id() {
+  _has_bits_[0] |= 0x01000000u;
+}
+void Room::clear_has_id() {
+  _has_bits_[0] &= ~0x01000000u;
+}
+void Room::clear_id() {
+  id_ = 0;
+  clear_has_id();
+}
+::google::protobuf::int32 Room::id() const {
+  // @@protoc_insertion_point(field_get:buffers.resources.Room.id)
+  return id_;
+}
+void Room::set_id(::google::protobuf::int32 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:buffers.resources.Room.id)
+}
 
 // optional string caption = 1;
 bool Room::has_caption() const {
@@ -7071,13 +7260,13 @@ void Room::set_allocated_caption(::std::string* caption) {
 
 // optional uint32 width = 2;
 bool Room::has_width() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 void Room::set_has_width() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 void Room::clear_has_width() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 void Room::clear_width() {
   width_ = 0u;
@@ -7095,13 +7284,13 @@ void Room::set_width(::google::protobuf::uint32 value) {
 
 // optional uint32 height = 3;
 bool Room::has_height() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 void Room::set_has_height() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 void Room::clear_has_height() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 void Room::clear_height() {
   height_ = 0u;
@@ -7119,13 +7308,13 @@ void Room::set_height(::google::protobuf::uint32 value) {
 
 // optional uint32 vsnap = 4;
 bool Room::has_vsnap() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 void Room::set_has_vsnap() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
 }
 void Room::clear_has_vsnap() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 void Room::clear_vsnap() {
   vsnap_ = 0u;
@@ -7143,13 +7332,13 @@ void Room::set_vsnap(::google::protobuf::uint32 value) {
 
 // optional uint32 hsnap = 5;
 bool Room::has_hsnap() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 void Room::set_has_hsnap() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000080u;
 }
 void Room::clear_has_hsnap() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 void Room::clear_hsnap() {
   hsnap_ = 0u;
@@ -7167,13 +7356,13 @@ void Room::set_hsnap(::google::protobuf::uint32 value) {
 
 // optional bool isometric = 6;
 bool Room::has_isometric() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 void Room::set_has_isometric() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000200u;
 }
 void Room::clear_has_isometric() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 void Room::clear_isometric() {
   isometric_ = false;
@@ -7191,13 +7380,13 @@ void Room::set_isometric(bool value) {
 
 // optional uint32 speed = 27;
 bool Room::has_speed() const {
-  return (_has_bits_[0] & 0x00200000u) != 0;
+  return (_has_bits_[0] & 0x00400000u) != 0;
 }
 void Room::set_has_speed() {
-  _has_bits_[0] |= 0x00200000u;
+  _has_bits_[0] |= 0x00400000u;
 }
 void Room::clear_has_speed() {
-  _has_bits_[0] &= ~0x00200000u;
+  _has_bits_[0] &= ~0x00400000u;
 }
 void Room::clear_speed() {
   speed_ = 0u;
@@ -7215,13 +7404,13 @@ void Room::set_speed(::google::protobuf::uint32 value) {
 
 // optional bool persistent = 7;
 bool Room::has_persistent() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 void Room::set_has_persistent() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000400u;
 }
 void Room::clear_has_persistent() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 void Room::clear_persistent() {
   persistent_ = false;
@@ -7239,13 +7428,13 @@ void Room::set_persistent(bool value) {
 
 // optional int32 color = 8 [(.buffers.gmx) = "colour"];
 bool Room::has_color() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 void Room::set_has_color() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
 }
 void Room::clear_has_color() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 void Room::clear_color() {
   color_ = 0;
@@ -7263,13 +7452,13 @@ void Room::set_color(::google::protobuf::int32 value) {
 
 // optional bool show_color = 9 [(.buffers.gmx) = "showcolour"];
 bool Room::has_show_color() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 void Room::set_has_show_color() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000800u;
 }
 void Room::clear_has_show_color() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 void Room::clear_show_color() {
   show_color_ = false;
@@ -7350,13 +7539,13 @@ void Room::set_allocated_code(::std::string* code) {
 
 // optional bool enable_views = 11 [(.buffers.gmx) = "enableViews"];
 bool Room::has_enable_views() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
+  return (_has_bits_[0] & 0x00001000u) != 0;
 }
 void Room::set_has_enable_views() {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00001000u;
 }
 void Room::clear_has_enable_views() {
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 void Room::clear_enable_views() {
   enable_views_ = false;
@@ -7374,13 +7563,13 @@ void Room::set_enable_views(bool value) {
 
 // optional bool clear_view_background = 12 [(.buffers.gmx) = "clearViewBackground"];
 bool Room::has_clear_view_background() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
+  return (_has_bits_[0] & 0x00002000u) != 0;
 }
 void Room::set_has_clear_view_background() {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00002000u;
 }
 void Room::clear_has_clear_view_background() {
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00002000u;
 }
 void Room::clear_clear_view_background() {
   clear_view_background_ = false;
@@ -7398,13 +7587,13 @@ void Room::set_clear_view_background(bool value) {
 
 // optional bool clear_display_buffer = 13 [(.buffers.gmx) = "clearDisplayBuffer"];
 bool Room::has_clear_display_buffer() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
+  return (_has_bits_[0] & 0x00004000u) != 0;
 }
 void Room::set_has_clear_display_buffer() {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00004000u;
 }
 void Room::clear_has_clear_display_buffer() {
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00004000u;
 }
 void Room::clear_clear_display_buffer() {
   clear_display_buffer_ = false;
@@ -7422,13 +7611,13 @@ void Room::set_clear_display_buffer(bool value) {
 
 // optional .buffers.resources.Room.MakerSettings maker_settings = 14 [(.buffers.gmx) = "makerSettings"];
 bool Room::has_maker_settings() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 void Room::set_has_maker_settings() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 void Room::clear_has_maker_settings() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 void Room::clear_maker_settings() {
   if (maker_settings_ != NULL) maker_settings_->::buffers::resources::Room_MakerSettings::Clear();
@@ -7588,13 +7777,13 @@ Room::tiles() const {
 
 // optional bool use_physics = 19 [(.buffers.gmx) = "PhysicsWorld"];
 bool Room::has_use_physics() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
+  return (_has_bits_[0] & 0x00008000u) != 0;
 }
 void Room::set_has_use_physics() {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00008000u;
 }
 void Room::clear_has_use_physics() {
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00008000u;
 }
 void Room::clear_use_physics() {
   use_physics_ = false;
@@ -7612,13 +7801,13 @@ void Room::set_use_physics(bool value) {
 
 // optional int32 phy_world_top = 20 [(.buffers.gmx) = "PhysicsWorldTop"];
 bool Room::has_phy_world_top() const {
-  return (_has_bits_[0] & 0x00008000u) != 0;
+  return (_has_bits_[0] & 0x00010000u) != 0;
 }
 void Room::set_has_phy_world_top() {
-  _has_bits_[0] |= 0x00008000u;
+  _has_bits_[0] |= 0x00010000u;
 }
 void Room::clear_has_phy_world_top() {
-  _has_bits_[0] &= ~0x00008000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 void Room::clear_phy_world_top() {
   phy_world_top_ = 0;
@@ -7636,13 +7825,13 @@ void Room::set_phy_world_top(::google::protobuf::int32 value) {
 
 // optional int32 phy_world_left = 21 [(.buffers.gmx) = "PhysicsWorldLeft"];
 bool Room::has_phy_world_left() const {
-  return (_has_bits_[0] & 0x00010000u) != 0;
+  return (_has_bits_[0] & 0x00020000u) != 0;
 }
 void Room::set_has_phy_world_left() {
-  _has_bits_[0] |= 0x00010000u;
+  _has_bits_[0] |= 0x00020000u;
 }
 void Room::clear_has_phy_world_left() {
-  _has_bits_[0] &= ~0x00010000u;
+  _has_bits_[0] &= ~0x00020000u;
 }
 void Room::clear_phy_world_left() {
   phy_world_left_ = 0;
@@ -7660,13 +7849,13 @@ void Room::set_phy_world_left(::google::protobuf::int32 value) {
 
 // optional int32 phy_world_right = 22 [(.buffers.gmx) = "PhysicsWorldRight"];
 bool Room::has_phy_world_right() const {
-  return (_has_bits_[0] & 0x00020000u) != 0;
+  return (_has_bits_[0] & 0x00040000u) != 0;
 }
 void Room::set_has_phy_world_right() {
-  _has_bits_[0] |= 0x00020000u;
+  _has_bits_[0] |= 0x00040000u;
 }
 void Room::clear_has_phy_world_right() {
-  _has_bits_[0] &= ~0x00020000u;
+  _has_bits_[0] &= ~0x00040000u;
 }
 void Room::clear_phy_world_right() {
   phy_world_right_ = 0;
@@ -7684,13 +7873,13 @@ void Room::set_phy_world_right(::google::protobuf::int32 value) {
 
 // optional int32 phy_world_bottom = 23 [(.buffers.gmx) = "PhysicsWorldBottom"];
 bool Room::has_phy_world_bottom() const {
-  return (_has_bits_[0] & 0x00100000u) != 0;
+  return (_has_bits_[0] & 0x00200000u) != 0;
 }
 void Room::set_has_phy_world_bottom() {
-  _has_bits_[0] |= 0x00100000u;
+  _has_bits_[0] |= 0x00200000u;
 }
 void Room::clear_has_phy_world_bottom() {
-  _has_bits_[0] &= ~0x00100000u;
+  _has_bits_[0] &= ~0x00200000u;
 }
 void Room::clear_phy_world_bottom() {
   phy_world_bottom_ = 0;
@@ -7708,13 +7897,13 @@ void Room::set_phy_world_bottom(::google::protobuf::int32 value) {
 
 // optional double phy_world_xgravity = 24 [(.buffers.gmx) = "PhysicsWorldGravityX"];
 bool Room::has_phy_world_xgravity() const {
-  return (_has_bits_[0] & 0x00040000u) != 0;
+  return (_has_bits_[0] & 0x00080000u) != 0;
 }
 void Room::set_has_phy_world_xgravity() {
-  _has_bits_[0] |= 0x00040000u;
+  _has_bits_[0] |= 0x00080000u;
 }
 void Room::clear_has_phy_world_xgravity() {
-  _has_bits_[0] &= ~0x00040000u;
+  _has_bits_[0] &= ~0x00080000u;
 }
 void Room::clear_phy_world_xgravity() {
   phy_world_xgravity_ = 0;
@@ -7732,13 +7921,13 @@ void Room::set_phy_world_xgravity(double value) {
 
 // optional double phy_world_ygravity = 25 [(.buffers.gmx) = "PhysicsWorldGravityY"];
 bool Room::has_phy_world_ygravity() const {
-  return (_has_bits_[0] & 0x00080000u) != 0;
+  return (_has_bits_[0] & 0x00100000u) != 0;
 }
 void Room::set_has_phy_world_ygravity() {
-  _has_bits_[0] |= 0x00080000u;
+  _has_bits_[0] |= 0x00100000u;
 }
 void Room::clear_has_phy_world_ygravity() {
-  _has_bits_[0] &= ~0x00080000u;
+  _has_bits_[0] &= ~0x00100000u;
 }
 void Room::clear_phy_world_ygravity() {
   phy_world_ygravity_ = 0;
@@ -7756,13 +7945,13 @@ void Room::set_phy_world_ygravity(double value) {
 
 // optional double phy_world_pixel_meters = 26 [(.buffers.gmx) = "PhysicsWorldPixToMeters"];
 bool Room::has_phy_world_pixel_meters() const {
-  return (_has_bits_[0] & 0x00400000u) != 0;
+  return (_has_bits_[0] & 0x00800000u) != 0;
 }
 void Room::set_has_phy_world_pixel_meters() {
-  _has_bits_[0] |= 0x00400000u;
+  _has_bits_[0] |= 0x00800000u;
 }
 void Room::clear_has_phy_world_pixel_meters() {
-  _has_bits_[0] &= ~0x00400000u;
+  _has_bits_[0] &= ~0x00800000u;
 }
 void Room::clear_phy_world_pixel_meters() {
   phy_world_pixel_meters_ = 0;

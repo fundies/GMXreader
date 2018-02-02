@@ -5,11 +5,11 @@ import "options.proto";
 
 message Sprite {
   optional string name = 1;
-  optional int32 id = 2 [(gmx) = "GMX_DEPRECIATED"];
+  optional int32 id = 2 [(gmx) = "GMX_DEPRECATED"];
 
-  optional bool preload = 4 [(gmx) = "GMX_DEPRECIATED"];
-  optional bool transparent = 5 [(gmx) = "GMX_DEPRECIATED"];
-  optional bool smooth_edges = 6 [(gmx) = "GMX_DEPRECIATED"];
+  optional bool preload = 4 [(gmx) = "GMX_DEPRECATED"];
+  optional bool transparent = 5 [(gmx) = "GMX_DEPRECATED"];
+  optional bool smooth_edges = 6 [(gmx) = "GMX_DEPRECATED"];
 
   optional int32 alpha_tolerance = 7 [(gmx) = "coltolerance"];
   optional bool separate_mask = 8 [(gmx) = "sepmasks"];
