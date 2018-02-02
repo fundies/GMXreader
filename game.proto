@@ -10,7 +10,7 @@ import "resources/Shader.proto";
 import "resources/Path.proto";
 import "resources/Font.proto";
 import "resources/Timeline.proto";
-//import "resources/Room.proto";
+import "resources/Room.proto";
 
 message Project {
   repeated resources.Sprite sprites = 1;
@@ -22,6 +22,6 @@ message Project {
   repeated resources.Font fonts = 7;
   repeated resources.Timeline timelines = 8;
   repeated resources.Object objects = 9;
-  //repeated resources.Room rooms = 10;
+  repeated resources.Room rooms = 10;
   //repeated resources.Include includes = 11;
 }

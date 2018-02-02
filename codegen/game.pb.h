@@ -38,6 +38,7 @@
 #include "resources/Path.pb.h"
 #include "resources/Font.pb.h"
 #include "resources/Timeline.pb.h"
+#include "resources/Room.pb.h"
 // @@protoc_insertion_point(includes)
 namespace buffers {
 class Project;
@@ -260,6 +261,18 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object >&
       objects() const;
 
+  // repeated .buffers.resources.Room rooms = 10;
+  int rooms_size() const;
+  void clear_rooms();
+  static const int kRoomsFieldNumber = 10;
+  const ::buffers::resources::Room& rooms(int index) const;
+  ::buffers::resources::Room* mutable_rooms(int index);
+  ::buffers::resources::Room* add_rooms();
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room >*
+      mutable_rooms();
+  const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room >&
+      rooms() const;
+
   // @@protoc_insertion_point(class_scope:buffers.Project)
  private:
 
@@ -275,6 +288,7 @@ class Project : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Font > fonts_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Timeline > timelines_;
   ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object > objects_;
+  ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room > rooms_;
   friend struct protobuf_game_2eproto::TableStruct;
 };
 // ===================================================================
@@ -557,6 +571,36 @@ inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object 
 Project::objects() const {
   // @@protoc_insertion_point(field_list:buffers.Project.objects)
   return objects_;
+}
+
+// repeated .buffers.resources.Room rooms = 10;
+inline int Project::rooms_size() const {
+  return rooms_.size();
+}
+inline void Project::clear_rooms() {
+  rooms_.Clear();
+}
+inline const ::buffers::resources::Room& Project::rooms(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.rooms)
+  return rooms_.Get(index);
+}
+inline ::buffers::resources::Room* Project::mutable_rooms(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.rooms)
+  return rooms_.Mutable(index);
+}
+inline ::buffers::resources::Room* Project::add_rooms() {
+  // @@protoc_insertion_point(field_add:buffers.Project.rooms)
+  return rooms_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room >*
+Project::mutable_rooms() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.rooms)
+  return &rooms_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room >&
+Project::rooms() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.rooms)
+  return rooms_;
 }
 
 #ifdef __GNUC__

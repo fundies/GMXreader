@@ -62,6 +62,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, fonts_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, timelines_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, objects_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Project, rooms_),
+  ~0u,
   ~0u,
   ~0u,
   ~0u,
@@ -73,7 +75,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 14, sizeof(Project)},
+  { 0, 15, sizeof(Project)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -115,6 +117,7 @@ void TableStruct::InitDefaultsImpl() {
   ::buffers::resources::protobuf_resources_2fPath_2eproto::InitDefaults();
   ::buffers::resources::protobuf_resources_2fFont_2eproto::InitDefaults();
   ::buffers::resources::protobuf_resources_2fTimeline_2eproto::InitDefaults();
+  ::buffers::resources::protobuf_resources_2fRoom_2eproto::InitDefaults();
   _Project_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_Project_default_instance_);}
@@ -132,21 +135,22 @@ void AddDescriptorsImpl() {
       "Background.proto\032\026resources/Object.proto"
       "\032\026resources/Script.proto\032\026resources/Shad"
       "er.proto\032\024resources/Path.proto\032\024resource"
-      "s/Font.proto\032\030resources/Timeline.proto\"\227"
-      "\003\n\007Project\022*\n\007sprites\030\001 \003(\0132\031.buffers.re"
-      "sources.Sprite\022(\n\006sounds\030\002 \003(\0132\030.buffers"
-      ".resources.Sound\0222\n\013backgrounds\030\003 \003(\0132\035."
-      "buffers.resources.Background\022&\n\005paths\030\004 "
-      "\003(\0132\027.buffers.resources.Path\022*\n\007scripts\030"
-      "\005 \003(\0132\031.buffers.resources.Script\022*\n\007shad"
-      "ers\030\006 \003(\0132\031.buffers.resources.Shader\022&\n\005"
-      "fonts\030\007 \003(\0132\027.buffers.resources.Font\022.\n\t"
-      "timelines\030\010 \003(\0132\033.buffers.resources.Time"
-      "line\022*\n\007objects\030\t \003(\0132\031.buffers.resource"
-      "s.Object"
+      "s/Font.proto\032\030resources/Timeline.proto\032\024"
+      "resources/Room.proto\"\277\003\n\007Project\022*\n\007spri"
+      "tes\030\001 \003(\0132\031.buffers.resources.Sprite\022(\n\006"
+      "sounds\030\002 \003(\0132\030.buffers.resources.Sound\0222"
+      "\n\013backgrounds\030\003 \003(\0132\035.buffers.resources."
+      "Background\022&\n\005paths\030\004 \003(\0132\027.buffers.reso"
+      "urces.Path\022*\n\007scripts\030\005 \003(\0132\031.buffers.re"
+      "sources.Script\022*\n\007shaders\030\006 \003(\0132\031.buffer"
+      "s.resources.Shader\022&\n\005fonts\030\007 \003(\0132\027.buff"
+      "ers.resources.Font\022.\n\ttimelines\030\010 \003(\0132\033."
+      "buffers.resources.Timeline\022*\n\007objects\030\t "
+      "\003(\0132\031.buffers.resources.Object\022&\n\005rooms\030"
+      "\n \003(\0132\027.buffers.resources.Room"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 648);
+      descriptor, 710);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "game.proto", &protobuf_RegisterTypes);
   ::buffers::resources::protobuf_resources_2fSprite_2eproto::AddDescriptors();
@@ -158,6 +162,7 @@ void AddDescriptorsImpl() {
   ::buffers::resources::protobuf_resources_2fPath_2eproto::AddDescriptors();
   ::buffers::resources::protobuf_resources_2fFont_2eproto::AddDescriptors();
   ::buffers::resources::protobuf_resources_2fTimeline_2eproto::AddDescriptors();
+  ::buffers::resources::protobuf_resources_2fRoom_2eproto::AddDescriptors();
 }
 } // anonymous namespace
 
@@ -187,6 +192,7 @@ const int Project::kShadersFieldNumber;
 const int Project::kFontsFieldNumber;
 const int Project::kTimelinesFieldNumber;
 const int Project::kObjectsFieldNumber;
+const int Project::kRoomsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Project::Project()
@@ -210,7 +216,8 @@ Project::Project(const Project& from)
       shaders_(from.shaders_),
       fonts_(from.fonts_),
       timelines_(from.timelines_),
-      objects_(from.objects_) {
+      objects_(from.objects_),
+      rooms_(from.rooms_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:buffers.Project)
 }
@@ -265,6 +272,7 @@ void Project::Clear() {
   fonts_.Clear();
   timelines_.Clear();
   objects_.Clear();
+  rooms_.Clear();
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -387,6 +395,18 @@ bool Project::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated .buffers.resources.Room rooms = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_rooms()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -476,6 +496,13 @@ void Project::SerializeWithCachedSizes(
       9, this->objects(static_cast<int>(i)), output);
   }
 
+  // repeated .buffers.resources.Room rooms = 10;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->rooms_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      10, this->rooms(static_cast<int>(i)), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -560,6 +587,14 @@ void Project::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
         9, this->objects(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .buffers.resources.Room rooms = 10;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->rooms_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        10, this->rooms(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -678,6 +713,17 @@ size_t Project::ByteSizeLong() const {
     }
   }
 
+  // repeated .buffers.resources.Room rooms = 10;
+  {
+    unsigned int count = static_cast<unsigned int>(this->rooms_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->rooms(static_cast<int>(i)));
+    }
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -716,6 +762,7 @@ void Project::MergeFrom(const Project& from) {
   fonts_.MergeFrom(from.fonts_);
   timelines_.MergeFrom(from.timelines_);
   objects_.MergeFrom(from.objects_);
+  rooms_.MergeFrom(from.rooms_);
 }
 
 void Project::CopyFrom(const ::google::protobuf::Message& from) {
@@ -751,6 +798,7 @@ void Project::InternalSwap(Project* other) {
   fonts_.InternalSwap(&other->fonts_);
   timelines_.InternalSwap(&other->timelines_);
   objects_.InternalSwap(&other->objects_);
+  rooms_.InternalSwap(&other->rooms_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -1032,6 +1080,36 @@ const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Object >&
 Project::objects() const {
   // @@protoc_insertion_point(field_list:buffers.Project.objects)
   return objects_;
+}
+
+// repeated .buffers.resources.Room rooms = 10;
+int Project::rooms_size() const {
+  return rooms_.size();
+}
+void Project::clear_rooms() {
+  rooms_.Clear();
+}
+const ::buffers::resources::Room& Project::rooms(int index) const {
+  // @@protoc_insertion_point(field_get:buffers.Project.rooms)
+  return rooms_.Get(index);
+}
+::buffers::resources::Room* Project::mutable_rooms(int index) {
+  // @@protoc_insertion_point(field_mutable:buffers.Project.rooms)
+  return rooms_.Mutable(index);
+}
+::buffers::resources::Room* Project::add_rooms() {
+  // @@protoc_insertion_point(field_add:buffers.Project.rooms)
+  return rooms_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::buffers::resources::Room >*
+Project::mutable_rooms() {
+  // @@protoc_insertion_point(field_mutable_list:buffers.Project.rooms)
+  return &rooms_;
+}
+const ::google::protobuf::RepeatedPtrField< ::buffers::resources::Room >&
+Project::rooms() const {
+  // @@protoc_insertion_point(field_list:buffers.Project.rooms)
+  return rooms_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
