@@ -1,2 +1,4 @@
-/gmxReader
 /fail.log
+/.eobjs
+/codegen
+/libGMX.a
